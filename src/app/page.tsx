@@ -1,101 +1,129 @@
-import Image from "next/image";
+'use client';
+import {ChangeEvent, useEffect, useState} from "react";
+import {Doughnut} from "react-chartjs-2";
+import {ArcElement, Chart as ChartJS, Legend, Tooltip} from "chart.js";
+import {ProgressSummary} from "@/app/components/progressSummary";
+import {List} from "postcss/lib/list";
 
-export default function Home() {
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+export default function BudgetPlanner() {
+  const [tab, setTab] = useState("income");
+  const [budget, setBudget] = useState({
+    income: {},
+    bills: {},
+    living: {},
+    finance: {},
+    family: {},
+    travel: {},
+    leisure: {},
+  });
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const extractValues = (keys: any[]) =>
+        keys.reduce((acc, key) => {
+          acc[key] = params.get(key) || "";
+          return acc;
+        }, {});
+
+    setBudget({
+      income: extractValues(["salary", "partnerSalary", "benefits", "pension", "other"]),
+      bills: extractValues(["rent", "electricity", "gas", "water", "councilTax", "internet", "tvLicense"]),
+      living: extractValues(["groceries", "clothing", "householdItems"]),
+      finance: extractValues(["insurance", "loans", "creditCards"]),
+      family: extractValues(["childcare", "schoolFees", "petCosts"]),
+      travel: extractValues(["fuel", "publicTransport", "parking"]),
+      leisure: extractValues(["diningOut", "entertainment", "holidays"]),
+    });
+  }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams();
+    Object.entries(budget).forEach(([, values]) => {
+      Object.entries(values).forEach(([key, value]) => {
+        if (value) if (typeof value === "string") {
+          params.set(key, value);
+        }
+      });
+    });
+    window.history.replaceState({}, "", `?${params.toString()}`);
+  }, [budget]);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, category: string) => {
+
+    // @ts-ignore
+    setBudget((prev) => ({
+      ...prev,
+      [category]: { ...prev[category], [e.target.name]: e.target.value },
+    }));
+  };
+
+  const categoryTotals = Object.fromEntries(
+      Object.entries(budget).map(([key, values]) => [
+        key,
+        Object.values(values).reduce((sum, val) => sum + (parseFloat(val) || 0), 0),
+      ])
+  );
+
+  const totalIncome = categoryTotals.income;
+  // @ts-ignore
+  const totalExpenses = Object.values(categoryTotals).reduce((sum, val) => sum + val, 0) - totalIncome;
+
+  const data = {
+    labels: Object.keys(categoryTotals).filter((key) => key !== "income"),
+    datasets: [{
+      data: Object.entries(categoryTotals)
+        .filter(([key]) => key !== "income")
+        .map(([, value]) => value),
+      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"]
+    }]
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <div className="w-[83%] mx-auto p-6 bg-white rounded-2xl shadow-md mt-10">
+        <h2 className="text-xl font-bold mb-4">Budget Planner</h2>
+        <div className="flex space-x-2 mb-4 overflow-auto">
+          {Object.keys(budget).concat("summary").map((section) => (
+              <button key={section}
+                      className={`p-2 rounded ${tab === section ? "bg-blue-500 text-white" : "bg-gray-200"}`}
+                      onClick={() => setTab(section)}>
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="flex flex-row flex-wrap">
+          <div className="w-full pb-4 md:w-2/3">
+            {tab !== "summary" && (
+                <form className="space-y-4">{Object.keys(budget[tab]).map(key => (
+                    <div key={key}>
+                      <label className="block text-gray-700 capitalize">{key.replace(/([A-Z])/g, ' $1')}</label>
+                      <input type="number" name={key} value={budget[tab][key]}
+                             onChange={(e) => handleChange(e, tab)}
+                             className="flex w-[43%] p-2 border rounded" placeholder="£0"/>
+                    </div>
+                ))}</form>
+            )}
+
+            {tab === "summary" && (
+                <div className="flex flex-row flex-wrap mt-4 p-3 bg-gray-100 rounded">
+                  <div className="w-3/12">
+                    <ul className="mt-4">
+                      {Object.entries(categoryTotals).map(([key, value]) => (
+                          key !== "income" && <li key={key} className="text-gray-700">{key.charAt(0).toUpperCase() + key.slice(1)}: £{value.toFixed(2)}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="w-8/12">
+                    <Doughnut data={data}/>
+                  </div>
+                </div>
+            )}
+          </div>
+          <div className="w-full pb-4 md:w-1/3">
+            <ProgressSummary totalIncome={totalIncome} totalExpenses={totalExpenses}/>
+          </div>
+        </div>
+      </div>
   );
 }
