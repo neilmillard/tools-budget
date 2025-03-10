@@ -3,7 +3,6 @@ import {ChangeEvent, useEffect, useState} from "react";
 import {Doughnut} from "react-chartjs-2";
 import {ArcElement, Chart as ChartJS, Legend, Tooltip} from "chart.js";
 import {ProgressSummary} from "@/app/components/progressSummary";
-import {List} from "postcss/lib/list";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
