@@ -1,8 +1,7 @@
 import {render, screen, fireEvent, cleanup} from "@testing-library/react";
 import "@testing-library/jest-dom";
 import BudgetPlanner from "@/app/components/BudgetPlanner";
-import {describe} from "node:test";
-import test from "node:test";
+import {describe, test} from "@jest/globals";
 
 // Mock Chart.js to prevent rendering errors
 jest.mock("react-chartjs-2", () => ({
