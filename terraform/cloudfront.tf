@@ -1,10 +1,11 @@
 # Cloudfront distribution for main s3 site.
-resource "aws_cloudfront_origin_access_control" "default" {
-  name                              = "secure-access"
-  origin_access_control_origin_type = "s3"
-  signing_behavior                  = "always"
-  signing_protocol                  = "sigv4"
-}
+# only needs to exist once per account
+# resource "aws_cloudfront_origin_access_control" "default" {
+#   name                              = "secure-access"
+#   origin_access_control_origin_type = "s3"
+#   signing_behavior                  = "always"
+#   signing_protocol                  = "sigv4"
+# }
 
 resource "aws_cloudfront_distribution" "www_s3_distribution" {
   origin {
@@ -65,7 +66,8 @@ resource "aws_cloudfront_distribution" "root_s3_distribution" {
   origin {
     domain_name = aws_s3_bucket.root_bucket.bucket_regional_domain_name
     origin_id   = "S3-.${var.bucket_name}"
-    origin_access_control_id = aws_cloudfront_origin_access_control.default.id
+    # origin_access_control_id = data.aws_cloudfront_origin_access_control.default.id
+    origin_access_control_id = "E2HI2RHCIM7938"
   }
 
   enabled         = true
