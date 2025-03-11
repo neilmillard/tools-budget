@@ -81,7 +81,7 @@ export default function BudgetPlanner() {
           ))}
         </div>
         <div className="flex flex-row flex-wrap">
-          <div className="w-full pb-4 md:w-2/3">
+          <div className="w-full pb-4 pr-6 md:w-2/3">
             {tab !== "summary" && (
                 <form className="space-y-4">{Object.keys(budget[tab]).map(key => (
                     <div key={key}>
@@ -98,7 +98,12 @@ export default function BudgetPlanner() {
                   <div className="w-3/12">
                     <ul className="mt-4">
                       {Object.entries(categoryTotals).map(([key, value]) => (
-                          key !== "income" && <li key={key} className="text-gray-700">{key.charAt(0).toUpperCase() + key.slice(1)}: £{value.toFixed(2)}</li>
+                          key !== "income" && (
+                              <li key={key} className="text-gray-700 flex justify-between">
+                                <span className="w-40 inline-block">{key.charAt(0).toUpperCase() + key.slice(1)}:</span>
+                                <span>£{value.toFixed(0)}</span>
+                              </li>
+                          )
                       ))}
                     </ul>
                   </div>
