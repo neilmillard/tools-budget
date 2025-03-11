@@ -13,44 +13,31 @@ interface BudgetCategories {
 export default function BudgetPlanner() {
   const [tab, setTab] = useState("income");
   const [budget, setBudget] = useState<BudgetCategories>({
-    income: {},
-    bills: {},
-    living: {},
-    finance: {},
-    family: {},
-    travel: {},
-    leisure: {},
+    income: { salary: "", partnerSalary: "", benefits: "", pension: "", other: "" },
+    bills: { rent: "", electricity: "", gas: "", water: "", councilTax: "", internet: "", tvLicense: "" },
+    living: { groceries: "", clothing: "", householdItems: "" },
+    finance: { insurance: "", loans: "", creditCards: "" },
+    family: { childcare: "", schoolFees: "", petCosts: "" },
+    travel: { fuel: "", publicTransport: "", parking: "" },
+    leisure: { diningOut: "", entertainment: "", holidays: "" },
   });
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const extractValues = (keys: string[]) =>
-        keys.reduce((acc: { [key: string]: string }, key) => {
-          acc[key] = params.get(key) || "";
-          return acc;
-        }, {});
-
-    setBudget({
-      income: extractValues(["salary", "partnerSalary", "benefits", "pension", "other"]),
-      bills: extractValues(["rent", "electricity", "gas", "water", "councilTax", "internet", "tvLicense"]),
-      living: extractValues(["groceries", "clothing", "householdItems"]),
-      finance: extractValues(["insurance", "loans", "creditCards"]),
-      family: extractValues(["childcare", "schoolFees", "petCosts"]),
-      travel: extractValues(["fuel", "publicTransport", "parking"]),
-      leisure: extractValues(["diningOut", "entertainment", "holidays"]),
-    });
+    const encodeData = params.get("data")
+    if (encodeData) {
+      try {
+        const decodedData = JSON.parse(atob(encodeData));
+        setBudget(decodedData);
+      } catch (error) {
+        console.error("Failed to decode budget data", error);
+      }
+    }
   }, []);
 
   useEffect(() => {
-    const params = new URLSearchParams();
-    Object.entries(budget).forEach(([, values]) => {
-      Object.entries(values).forEach(([key, value]) => {
-        if (value) {
-          params.set(key, value);
-        }
-      });
-    });
-    window.history.replaceState({}, "", `?${params.toString()}`);
+    const encodedData = btoa(JSON.stringify(budget));
+    window.history.replaceState({}, "", `?data=${encodedData}`);
   }, [budget]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>, category: string) => {
