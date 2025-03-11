@@ -6,9 +6,13 @@ import {ProgressSummary} from "@/app/components/progressSummary";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+interface BudgetCategories {
+  [key: string]: { [key: string]: string };
+}
+
 export default function BudgetPlanner() {
   const [tab, setTab] = useState("income");
-  const [budget, setBudget] = useState({
+  const [budget, setBudget] = useState<BudgetCategories>({
     income: {},
     bills: {},
     living: {},
@@ -20,8 +24,8 @@ export default function BudgetPlanner() {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const extractValues = (keys: any[]) =>
-        keys.reduce((acc, key) => {
+    const extractValues = (keys: string[]) =>
+        keys.reduce((acc: { [key: string]: string }, key) => {
           acc[key] = params.get(key) || "";
           return acc;
         }, {});
@@ -41,7 +45,7 @@ export default function BudgetPlanner() {
     const params = new URLSearchParams();
     Object.entries(budget).forEach(([, values]) => {
       Object.entries(values).forEach(([key, value]) => {
-        if (value) if (typeof value === "string") {
+        if (value) {
           params.set(key, value);
         }
       });
@@ -51,7 +55,6 @@ export default function BudgetPlanner() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>, category: string) => {
 
-    // @ts-ignore
     setBudget((prev) => ({
       ...prev,
       [category]: { ...prev[category], [e.target.name]: e.target.value },
@@ -66,7 +69,6 @@ export default function BudgetPlanner() {
   );
 
   const totalIncome = categoryTotals.income;
-  // @ts-ignore
   const totalExpenses = Object.values(categoryTotals).reduce((sum, val) => sum + val, 0) - totalIncome;
 
   const data = {
