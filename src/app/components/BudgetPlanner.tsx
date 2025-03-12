@@ -69,7 +69,7 @@ export default function BudgetPlanner() {
   };
 
   return (
-      <div className="w-[83%] mx-auto p-6 bg-white rounded-2xl shadow-md mt-10 text-black">
+      <div className="w-[83%] mx-auto p-6 bg-white rounded-2xl shadow-md mt-10">
         <h2 className="text-xl font-bold mb-4">Budget Planner</h2>
         <div className="flex space-x-2 mb-4 overflow-auto">
           {Object.keys(budget).concat("summary").map((section) => (
