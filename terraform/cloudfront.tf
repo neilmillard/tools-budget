@@ -9,13 +9,20 @@
 
 resource "aws_cloudfront_distribution" "www_s3_distribution" {
   origin {
-    domain_name = aws_s3_bucket.www_bucket.bucket_regional_domain_name
+    domain_name = aws_s3_bucket_website_configuration.www_bucket.website_endpoint
     origin_id   = "S3-www.${var.bucket_name}"
+    custom_origin_config {
+      origin_protocol_policy = "http-only"
+      http_port              = "80"
+      https_port             = "443"
+      origin_ssl_protocols   = ["TLSv1.2", "TLSv1.1", "TLSv1"]
+    }
   }
 
   enabled             = true
   is_ipv6_enabled     = true
-  default_root_object = "index.html"
+  # putting "index.html" here means subfolders won't be served
+  # default_root_object = "index.html"
 
   aliases = ["www.${var.domain_name}"]
 
