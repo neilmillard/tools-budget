@@ -3,8 +3,6 @@ name: Deployment Workflow
 # Trigger this workflow on pushes to the specified branch
 on:
   pull_request:
-    branches-ignore:
-      - main
 
 jobs:
   test:
