@@ -7,6 +7,9 @@ export default function Home() {
             <button className={"p-2 rounded bg-blue-500 text-white"} >
                 <Link href="/budget/">Budget Planner</Link>
             </button>
+            <button className={"p-2 rounded bg-blue-500 text-white"} >
+                <Link href="/mortgage/">Mortgage Calculator</Link>
+            </button>
         </div>
     )
 }
