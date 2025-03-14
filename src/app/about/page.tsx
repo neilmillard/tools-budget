@@ -1,3 +1,5 @@
+import AboutComponent from "@/app/components/AboutComponent";
+
 export default function About() {
-    return <div>Todo</div>
+    return <AboutComponent />
 }
