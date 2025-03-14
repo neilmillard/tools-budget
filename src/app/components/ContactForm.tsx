@@ -1,15 +1,19 @@
 'use client';
-import { useState } from "react";
+import {ChangeEvent, useState} from "react";
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState({ message: ""});
-    const [apiUrl] =  useState(process.env.NEXT_PUBLIC_API_GATEWAY_URL);
+    const apiUrl = process.env.NODE_ENV === "development"
+        ? "http://localhost:5001/contact"
+        : process.env.NEXT_PUBLIC_API_GATEWAY_URL;
 
-    const handleChange = (e: { target: { name: any; value: any; }; }) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const handleChange = (
+        event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
+        setFormData({ ...formData, [event.target.name]: event.target.value });
+    }
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
@@ -22,6 +26,11 @@ export default function ContactPage() {
                 message: formData.message
             }
         };
+
+        if (!apiUrl) {
+            setSuccess({ message: "Set NEXT_PUBLIC_API_GATEWAY_URL"})
+            return
+        }
 
         try {
             const response = await fetch(apiUrl, {
