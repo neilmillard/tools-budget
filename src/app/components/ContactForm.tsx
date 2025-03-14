@@ -1,7 +1,8 @@
 'use client';
 import {ChangeEvent, useState} from "react";
+import {ApiResponse} from "@/app/types/api";
 
-export default function ContactPage() {
+export default function ContactForm() {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState({ message: ""});
@@ -21,15 +22,16 @@ export default function ContactPage() {
 
         const contactData = {
             contact: {
-                email: formData.email,
                 name: formData.name,
+                email: formData.email,
                 message: formData.message
             }
         };
 
         if (!apiUrl) {
-            setSuccess({ message: "Set NEXT_PUBLIC_API_GATEWAY_URL"})
-            return
+            setSuccess({ message: "Set NEXT_PUBLIC_API_GATEWAY_URL"});
+            setLoading(false);
+            return;
         }
 
         try {
@@ -39,7 +41,8 @@ export default function ContactPage() {
                 body: JSON.stringify(contactData)
             });
 
-            const result = await response.json();
+            const result: ApiResponse = await response.json();
+
             if (result.success) {
                 setSuccess({ message: result.message });
                 setFormData({ name: "", email: "", message: "" });
@@ -47,7 +50,7 @@ export default function ContactPage() {
                 setSuccess({ message: "Failed to send message." });
             }
         } catch (error) {
-            setSuccess({ message: "Error sending message." + error} );
+            setSuccess({ message: `Error sending message. ${error}` });
         }
 
         setLoading(false);
@@ -64,12 +67,12 @@ export default function ContactPage() {
                     BS23 1JY
                 </p>
                 <br/>
-                {success && <p className="text-center text-green-500 mb-4">{success.message}</p>}
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <input
                         className="border-b-2 mr-2"
                         type="text"
                         name="name"
+                        aria-label="name"
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleChange}
@@ -79,6 +82,7 @@ export default function ContactPage() {
                         className="border-b-2"
                         type="email"
                         name="email"
+                        aria-label="email"
                         placeholder="Your Email"
                         value={formData.email}
                         onChange={handleChange}
@@ -86,6 +90,7 @@ export default function ContactPage() {
                     />
                     <textarea
                         className="border-2 w-full"
+                        aria-label="message"
                         name="message"
                         placeholder="Your Message"
                         value={formData.message}
@@ -95,6 +100,8 @@ export default function ContactPage() {
                     <button type="submit" className="w-full bg-green-50" disabled={loading}>
                         {loading ? "Sending...": "Send Message"}
                     </button>
+
+                    {success.message && <div className="text-center text-green-500 mb-4">{success.message}</div>}
                 </form>
             </div>
         </div>
