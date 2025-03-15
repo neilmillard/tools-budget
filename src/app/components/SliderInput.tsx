@@ -1,7 +1,7 @@
 // Props interface for SliderInput
 import {ChangeEvent, Component} from "react";
 
-interface SliderInputProps {
+export interface SliderInputProps {
     label: string;
     value: number;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
