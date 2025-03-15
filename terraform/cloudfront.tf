@@ -71,8 +71,14 @@ resource "aws_cloudfront_distribution" "www_s3_distribution" {
 # Cloudfront S3 for redirect to www.
 resource "aws_cloudfront_distribution" "root_s3_distribution" {
   origin {
-    domain_name = aws_s3_bucket.root_bucket.bucket_regional_domain_name
+    domain_name = aws_s3_bucket_website_configuration.root_bucket.website_endpoint
     origin_id   = "S3-.${var.bucket_name}"
+    custom_origin_config {
+          origin_protocol_policy = "http-only"
+          http_port              = "80"
+          https_port             = "443"
+          origin_ssl_protocols   = ["TLSv1.2", "TLSv1.1", "TLSv1"]
+    }
     # origin_access_control_id = data.aws_cloudfront_origin_access_control.default.id
     origin_access_control_id = "E2HI2RHCIM7938"
   }
