@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import { GoogleTagManager } from "@next/third-parties/google"
 import {NavBar} from "@/app/components/NavBar";
 import {Footer} from "@/app/components/Footer";
 import Adsense from "@/app/components/Adsense";
@@ -43,6 +44,7 @@ export default function RootLayout({
     <NavBar/>
     {children}
     <Footer/>
+    <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
     </body>
     </html>
   );

@@ -27,6 +27,7 @@ jobs:
         uses: SpicyPizza/create-envfile@v2.0.3
         with:
           envkey_NEXT_PUBLIC_ADSENSE_PUB_ID: ${{ secrets.NEXT_PUBLIC_ADSENSE_PUB_ID }}
+          envkey_NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
           file-name: .env
           directory: out
 
