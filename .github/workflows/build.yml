@@ -26,7 +26,6 @@ jobs:
           envkey_NEXT_PUBLIC_ADSENSE_PUB_ID: ${{ secrets.NEXT_PUBLIC_ADSENSE_PUB_ID }}
           envkey_NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
           file-name: .env
-          directory: out
 
       - name: Build Next.js app
         run: npm run build
