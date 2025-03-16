@@ -53,7 +53,7 @@ export default function FiftyThirtyTwenty() {
                 </h3>
                 <p className="mt-1 text-gray-700">
                     This category includes non-essential expenses that you enjoy but could potentially reduce or eliminate if
-                    needed. These are the things that make life more enjoyable but aren't strictly necessary for survival. Examples
+                    needed. These are the things that make life more enjoyable but aren&apos;t strictly necessary for survival. Examples
                     include:
                 </p>
                 <ul className="list-disc ml-6 mt-2 text-gray-600">
@@ -104,7 +104,7 @@ export default function FiftyThirtyTwenty() {
                 <ol className="list-decimal ml-6 mt-2 text-gray-600">
                     <li>
                         <strong className="font-semibold text-gray-800">Calculate Your After-Tax Income:</strong> Determine your net
-                        income – the money you receive after taxes and other deductions. This is the base amount you'll be dividing.
+                        income – the money you receive after taxes and other deductions. This is the base amount you&apos;ll be dividing.
                     </li>
                     <li>
                         <strong className="font-semibold text-gray-800">Track Your Spending:</strong> For a month or two, monitor
@@ -113,16 +113,16 @@ export default function FiftyThirtyTwenty() {
                     </li>
                     <li>
                         <strong className="font-semibold text-gray-800">Categorize Your Expenses:</strong> Once you have a good
-                        understanding of your spending, start categorizing each expense as a "Need," "Want," or "Savings/Debt."
+                        understanding of your spending, start categorizing each expense as a &quot;Need,&quot; &quot;Want,&quot; or &quot;Savings/Debt.&quot;
                     </li>
                     <li>
                         <strong className="font-semibold text-gray-800">Adjust Your Spending:</strong> Compare your current spending
                         percentages to the 50/30/20 guideline. You may need to make adjustments to bring your spending in line with
-                        the rule. This might involve reducing your "Wants" or finding ways to lower your "Needs."
+                        the rule. This might involve reducing your &quot;Wants&quot; or finding ways to lower your &quot;Needs.&quot;
                     </li>
                     <li>
                         <strong className="font-semibold text-gray-800">Automate Savings and Debt Repayment:</strong> Set up automatic
-                        transfers to your savings accounts and for extra debt payments to ensure you're consistently allocating the
+                        transfers to your savings accounts and for extra debt payments to ensure you&apos;re consistently allocating the
                         20% to these crucial areas.
                     </li>
                     <li>
@@ -137,12 +137,12 @@ export default function FiftyThirtyTwenty() {
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">Benefits of the 50/30/20 Rule:</h3>
                 <ul className="list-disc ml-6 mt-2 text-gray-600">
                     <li>
-                        <strong className="font-semibold text-gray-800">Simplicity:</strong> It's easy to understand and implement,
+                        <strong className="font-semibold text-gray-800">Simplicity:</strong> It&apos;s easy to understand and implement,
                         even for budgeting beginners.
                     </li>
                     <li>
                         <strong className="font-semibold text-gray-800">Flexibility:</strong> While providing structure, it allows for
-                        personal preferences within the "Wants" category.
+                        personal preferences within the &quot;Wants&quot; category.
                     </li>
                     <li>
                         <strong className="font-semibold text-gray-800">Balance:</strong> It encourages saving and debt repayment
@@ -161,14 +161,14 @@ export default function FiftyThirtyTwenty() {
                     <li>
                         <strong className="font-semibold text-gray-800">Individual Circumstances:</strong> The 50/30/20 rule is a
                         guideline, and your specific situation may require adjustments. For example, if you live in a
-                        high-cost-of-living area, your "Needs" might exceed 50%.
+                        high-cost-of-living area, your &quot;Needs&quot; might exceed 50%.
                     </li>
                     <li>
                         <strong className="font-semibold text-gray-800">Debt Levels:</strong> If you have significant debt, you might
                         need to temporarily allocate more than 20% to debt repayment to get back on track.
                     </li>
                     <li>
-                        <strong className="font-semibold text-gray-800">Income Fluctuations:</strong> If your income varies, you'll
+                        <strong className="font-semibold text-gray-800">Income Fluctuations:</strong> If your income varies, you&apos;ll
                         need to adjust your spending accordingly during lower-income periods.
                     </li>
                 </ul>

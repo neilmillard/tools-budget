@@ -13,11 +13,8 @@ export default function AffordabilityCalculator() {
     const [maxed, setMaxed] = React.useState<boolean>(false);
     const [result, setResult] = useState("");
 
-    useEffect(() => {
-        calculateAffordability();
-    }, [income, deposit, expenses, interestRate]);
 
-    const calculateAffordability = () => {
+    useEffect(() => {
         const payments = 25 * 12;
         const maxMortgage = income * 4.5; // Adjust based on interest rate
         // Monthly interest rate
@@ -43,7 +40,7 @@ export default function AffordabilityCalculator() {
             setMonthlyPayment(+monthlyPayment.toFixed(2));
             setMaxed(false);
         }
-    };
+    }, [income, deposit, expenses, interestRate, maxed]);
 
     const handleInterestRateChange = (e: ChangeEvent<HTMLInputElement>): void => {
         const value = parseFloat(e.target.value);
