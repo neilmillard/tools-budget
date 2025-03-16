@@ -20,9 +20,6 @@ jobs:
       - name: Test Next.js app
         run: npm test
 
-      - name: Build Next.js app
-        run: npm run build
-
       - name: Create Env file
         uses: SpicyPizza/create-envfile@v2.0.3
         with:
@@ -30,6 +27,9 @@ jobs:
           envkey_NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
           file-name: .env
           directory: out
+
+      - name: Build Next.js app
+        run: npm run build
 
       # Add the secrets in gitHub
       - name: Configure AWS Credentials
