@@ -4,6 +4,7 @@ import "./globals.css";
 import React from "react";
 import {NavBar} from "@/app/components/NavBar";
 import {Footer} from "@/app/components/Footer";
+import Adsense from "@/app/components/Adsense";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+    <head>
+      <meta property="og:title" content="Helpful Money" />
+      <meta property="og:description" content="Helpful Money" />
+      <meta property="og:url" content="https://www.helpful-money.com" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Helpful Money" />
+      <title>Helpful Money</title>
+      <Adsense/>
+    </head>
     <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
