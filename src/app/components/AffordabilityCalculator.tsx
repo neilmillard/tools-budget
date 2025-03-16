@@ -54,6 +54,9 @@ export default function AffordabilityCalculator() {
         <div className="max-w-xl mx-auto p-6 bg-white rounded-2xl shadow-md mt-10">
             <div className="w-full max-w-md p-6">
                 <h3 className="text-xl font-bold mb-4">UK House Affordability Calculator</h3>
+                <p className="p-6">A good rule of thumb is that you can borrow between 4 and 4.5 times your total household income.
+
+                    See how much you can and should borrow for a mortgage.</p>
                 <label>Annual Income (£):</label>
                 <input
                     type="number"
