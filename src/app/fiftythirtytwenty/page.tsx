@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 export default function FiftyThirtyTwenty() {
     return (
@@ -109,7 +110,7 @@ export default function FiftyThirtyTwenty() {
                     <li>
                         <strong className="font-semibold text-gray-800">Track Your Spending:</strong> For a month or two, monitor
                         where your money is currently going. This will help you understand your current spending habits and identify
-                        areas where you might need to adjust.
+                        areas where you might need to adjust. I strongly recommend a budget and tracking tool such as <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="https://ynab.com/referral/?ref=XQAijRi88Q0CtBF7&sponsor_name=Neil&utm_source=customer_referral">You Need A Budget (YNAB)</Link>.
                     </li>
                     <li>
                         <strong className="font-semibold text-gray-800">Categorize Your Expenses:</strong> Once you have a good
