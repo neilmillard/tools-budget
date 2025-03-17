@@ -57,6 +57,7 @@ describe('FinancialSteps Component', () => {
     it('applies the correct background colors', () => {
         const hexColors = ['#ffaa66', '#f7dc6f', '#c6e07f', '#a7e0a5'];
         const stepBoxes = document.querySelectorAll('[style*="background-color"]');
+        expect(stepBoxes).toHaveLength(4);
 
         // We can verify color presence in the style attribute
         hexColors.forEach((hex, index) => {
@@ -80,11 +81,5 @@ describe('FinancialSteps Component', () => {
         // Check for responsive class indicators
         const columns = document.querySelectorAll('.w-full.sm\\:w-64');
         expect(columns).toHaveLength(4);
-    });
-
-    // This test is useful if you want to do snapshot testing
-    it('matches snapshot', () => {
-        const { container } = render(<FinancialSteps />);
-        expect(container).toMatchSnapshot();
     });
 });

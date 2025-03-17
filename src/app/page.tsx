@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FinancialSteps from "@/app/components/FinancialSteps";
 
 export default function Home() {
     return (
@@ -28,6 +29,7 @@ export default function Home() {
                 may get offered. If you enter the total outgoings from the Budget Planner, it can help you gauge if
                 you can afford the repayments too.</p>
             </div>
+            <FinancialSteps/>
         </div>
     )
 }

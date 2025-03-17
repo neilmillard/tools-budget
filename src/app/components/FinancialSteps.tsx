@@ -1,32 +1,31 @@
 import React from 'react';
+import {PostIt} from "@/app/components/PostIt";
+import {CircleNum} from "@/app/components/CircleNum";
 
 const FinancialSteps = () => {
-    const steps = [
-        { number: 1, title: "Paying Debt", color: "#ffaa66" },
-        { number: 2, title: "Saving", color: "#f7dc6f" },
-        { number: 3, title: "Buying a\nHome", color: "#c6e07f" },
-        { number: 4, title: "Investing", color: "#a7e0a5" }
-    ];
-
     return (
         <div className="w-full px-4 py-8">
             <div className="flex flex-wrap justify-between gap-4">
-                {steps.map((step) => (
-                    <div key={step.number} className="flex flex-col items-center w-full sm:w-64">
-                        {/* Circle with number */}
-                        <div className="flex items-center justify-center w-16 h-16 mb-6 border-4 border-black rounded-full">
-                            <span className="text-3xl font-bold">{step.number}</span>
-                        </div>
-
-                        {/* Colored box with title */}
-                        <div
-                            className="flex items-center justify-center w-full p-6 text-black shadow-md h-24"
-                            style={{ backgroundColor: step.color }}
-                        >
-                            <h3 className="text-2xl font-semibold text-center whitespace-pre-line">{step.title}</h3>
-                        </div>
-                    </div>
-                ))}
+                <div className="flex flex-col items-center w-full sm:w-64">
+                    <CircleNum number={1}/>
+                    <PostIt color="#ffaa66" titleTop="Paying Debt"/>
+                    <p className="pt-6">You might be spending more than your income. You have credit card debts and are paying them off.</p>
+                </div>
+                <div className="flex flex-col items-center w-full sm:w-64">
+                    <CircleNum number={2}/>
+                    <PostIt color="#f7dc6f" titleTop="Saving"/>
+                    <p className="pt-6">Your expenses are lower than your income, so you are saving money every month. Perhaps towards a Home Deposit.</p>
+                </div>
+                <div className="flex flex-col items-center w-full sm:w-64">
+                    <CircleNum number={3}/>
+                    <PostIt color="#c6e07f" titleTop="Buying a" titleBottom="Home"/>
+                    <p className="pt-6">You have a Mortgage and are paying it off. You might have savings too.</p>
+                </div>
+                <div className="flex flex-col items-center w-full sm:w-64">
+                    <CircleNum number={4}/>
+                    <PostIt color="#a7e0a5" titleTop="Investing"/>
+                    <p className="pt-6">Your money is under control, you have a home, and sufficient savings to think about investing long term.</p>
+                </div>
             </div>
         </div>
     );
