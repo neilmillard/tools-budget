@@ -6,13 +6,13 @@ export default function Home() {
         <div className="w-[83%] mx-auto p-6 bg-white rounded-2xl shadow-md mt-10">
             <h2 className="text-xl font-bold mb-4">Money Tools</h2>
             <div>
-            <button className={"p-2 rounded bg-blue-500 text-white"}>
+            <button className={"p-2 rounded border border-black shadow-lg bg-blue-500 text-white hover:bg-blue-700"}>
                 <Link href="/budget/">Budget Planner</Link>
             </button>
-            <button className={"ml-4 p-2 rounded bg-blue-500 text-white"}>
+            <button className={"ml-4 p-2 rounded border-black shadow-lg bg-blue-500 text-white hover:bg-blue-700"}>
                 <Link href="/mortgage/">Mortgage Calculator</Link>
             </button>
-            <button className={"ml-4 p-2 rounded bg-blue-500 text-white"}>
+            <button className={"ml-4 p-2 rounded border-black shadow-lg bg-blue-500 text-white hover:bg-blue-700"}>
                 <Link href="/afford/">Mortgage Affordability Calculator</Link>
             </button>
             </div>
