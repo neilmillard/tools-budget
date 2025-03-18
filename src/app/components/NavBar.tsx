@@ -10,6 +10,7 @@ export function NavBar() {
     return <nav className="hidden md:flex gap-10 h-full flex-row justify-center bg-green-50">
         <Link href="/" className={isActive("/") ? "font-bold" : "" + "flex flex-col justify-center"}><span> Home </span></Link> |
         <Link href="/about/" className={isActive("/about/") ? "font-bold" : "" + "flex flex-col justify-center"}><span> About </span></Link> |
+        <Link href="/babylon/" className={isActive("/babylon/") ? "font-bold" : "" + "flex flex-col justify-center"}><span> Babylon </span></Link> |
         <Link href="/contact/" className={isActive("/contact/") ? "font-bold" : "" + "flex flex-col justify-center"}><span> Contact </span></Link>
     </nav>;
 }
