@@ -94,7 +94,7 @@ export default function BudgetPlanner() {
                 <form className="space-y-4">{Object.keys(budget[tab]).map(key => (
                     <div key={key}>
                       <label className="block text-gray-700 capitalize">{key.replace(/([A-Z])/g, ' $1')}
-                        <input data-testid={key} type="number" name={key} value={budget[tab][key]}
+                        <input type="number" name={key} value={budget[tab][key]}
                                onChange={(e) => handleChange(e, tab)}
                                className="flex w-[43%] p-2 border rounded" placeholder="£0"/>
                       </label>

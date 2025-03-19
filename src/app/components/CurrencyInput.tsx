@@ -5,8 +5,8 @@ interface CurrencyInputProps {
     label: string;
     value: number;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    testId: string;
     min?: number;
+    max?: number;
     step?: number;
     currencySymbol?: string;
 }
@@ -15,11 +15,12 @@ interface CurrencyInputProps {
 export class CurrencyInput extends Component<CurrencyInputProps> {
     static defaultProps = {
         min: 0,
+        max: "",
         step: 1000,
         currencySymbol: "",
      };
     render() {
-        const {label, value, onChange, testId, min, step, currencySymbol} = this.props;
+        const {label, value, onChange, min, max, step, currencySymbol} = this.props;
 
         return (
             <div>
@@ -27,12 +28,13 @@ export class CurrencyInput extends Component<CurrencyInputProps> {
                     <div className="flex items-center">
                         <span className="mr-2">{currencySymbol}</span>
                         <input
-                            data-testid={testId}
+                            aria-label={label}
                             type="number"
                             value={value}
                             onChange={onChange}
                             className="w-full p-2 border rounded"
                             min={min}
+                            max={max}
                             step={step}
                         />
                     </div>

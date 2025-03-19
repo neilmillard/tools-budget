@@ -18,17 +18,17 @@ export class ProgressSummary extends Component<{ totalIncome: number, totalExpen
                 <tr
                     className="flex justify-between print:border-none border w-full h-full rounded-[4px] mb-2 py-5 px-4 bg-gray-100">
                     <th className="text-lg font-normal">Income</th>
-                    <td data-testid="income" className="text-md"><b>£{this.props.totalIncome.toFixed(2)}</b></td>
+                    <td aria-label="income" className="text-md"><b>£{this.props.totalIncome.toFixed(2)}</b></td>
                 </tr>
                 <tr
                     className="flex justify-between print:border-none border w-full h-full rounded-[4px] mb-2 py-5 px-4 bg-gray-100">
                     <th className="text-lg font-normal">Spending</th>
-                    <td data-testid="expenses" className="text-md"><b>£{this.props.totalExpenses.toFixed(2)}</b></td>
+                    <td aria-label="expenses" className="text-md"><b>£{this.props.totalExpenses.toFixed(2)}</b></td>
                 </tr>
                 <tr
                     className="flex justify-between print:border-none border w-full h-full rounded-[4px] mb-2 py-5 px-4 bg-green-700 text-white">
                     <th className="text-lg font-normal">Spare cash</th>
-                    <td data-testid="spare" className="text-md"><b>£{(this.props.totalIncome - this.props.totalExpenses).toFixed(2)}</b>
+                    <td aria-label="spare" className="text-md"><b>£{(this.props.totalIncome - this.props.totalExpenses).toFixed(2)}</b>
                     </td>
                 </tr>
                 </tbody>

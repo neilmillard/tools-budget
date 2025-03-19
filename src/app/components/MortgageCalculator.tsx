@@ -71,7 +71,6 @@ const MortgageCalculator: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-6">
                     <CurrencyInput
-                        testId="property-price"
                         label="Property Price"
                         value={propertyPrice}
                         onChange={handlePropertyPriceChange}
@@ -79,7 +78,6 @@ const MortgageCalculator: React.FC = () => {
                     />
 
                     <CurrencyInput
-                        testId="deposit"
                         label="Deposit"
                         value={deposit}
                         onChange={handleDepositChange}

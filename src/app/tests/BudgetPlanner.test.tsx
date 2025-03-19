@@ -31,24 +31,24 @@ describe("BudgetPlanner Component", () => {
 
     test("updates total income when salary is entered", () => {
         render(<BudgetPlanner />);
-        const salaryInput = screen.getByTestId("salary");
+        const salaryInput = screen.getByLabelText("salary");
         fireEvent.change(salaryInput, { target: { value: "3000" } });
-        const element = screen.getByTestId("income");
+        const element = screen.getByLabelText("income");
         expect(element).toBeInTheDocument();
-        expect(element).toContainHTML("<td class=\"text-md\" data-testid=\"income\"><b>£3000.00</b></td>")
+        expect(element).toContainHTML("<td class=\"text-md\" aria-label=\"income\"><b>£3000.00</b></td>")
         cleanup()
     });
 
     test("calculates total expenses correctly", () => {
         render(<BudgetPlanner />);
         fireEvent.click(screen.getByText("Bills"));
-        const rentInput = screen.getByTestId("rent");
+        const rentInput = screen.getByLabelText('rent');
         fireEvent.change(rentInput, { target: { value: "1000" } });
 
         fireEvent.click(screen.getByText("Summary"));
-        const element = screen.getByTestId("expenses");
+        const element = screen.getByLabelText('expenses');
         expect(element).toBeInTheDocument();
-        expect(element).toContainHTML("<td class=\"text-md\" data-testid=\"expenses\"><b>£1000.00</b></td>")
+        expect(element).toContainHTML("<td class=\"text-md\" aria-label=\"expenses\"><b>£1000.00</b></td>")
         cleanup()
     });
 });

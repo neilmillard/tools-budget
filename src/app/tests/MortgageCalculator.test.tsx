@@ -17,8 +17,8 @@ describe('MortgageCalculator', () => {
         render(<MortgageCalculator />);
 
         // Check initial defaults
-        expect(screen.getByTestId('property-price')).toHaveValue(300000)
-        expect(screen.getByTestId('deposit')).toHaveValue(30000)
+        expect(screen.getByLabelText('Property Price')).toHaveValue(300000)
+        expect(screen.getByLabelText('Deposit')).toHaveValue(30000)
 
         // Check initial mortgage amount calculation
         expect(screen.getByText('Mortgage amount')).toBeInTheDocument();
@@ -34,7 +34,7 @@ describe('MortgageCalculator', () => {
     it('updates calculations when property price changes', () => {
         render(<MortgageCalculator />);
 
-        const propertyPriceInput = screen.getByTestId('property-price');
+        const propertyPriceInput = screen.getByLabelText('Property Price');
         fireEvent.change(propertyPriceInput, { target: { value: '400000' } });
 
         // Check updated mortgage amount
@@ -50,7 +50,7 @@ describe('MortgageCalculator', () => {
     it('updates calculations when deposit changes', () => {
         render(<MortgageCalculator />);
 
-        const depositInput = screen.getByTestId('deposit');
+        const depositInput = screen.getByLabelText('Deposit');
         fireEvent.change(depositInput, { target: { value: '100000' } });
 
         // Check updated mortgage amount
@@ -102,7 +102,7 @@ describe('MortgageCalculator', () => {
         expect(screen.getByText('90.0%')).toBeInTheDocument();
 
         // Change deposit to alter LTV
-        const depositInput = screen.getByTestId('deposit');
+        const depositInput = screen.getByLabelText('Deposit');
         fireEvent.change(depositInput, { target: { value: '150000' } });
 
         // New LTV should be 50%
