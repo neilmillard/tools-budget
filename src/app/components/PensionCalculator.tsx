@@ -2,7 +2,7 @@
 
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import {CurrencyInput} from "@/app/components/CurrencyInput";
-import CurrencySelector, {currencies, Currency, currencyLookup} from "@/app/components/Currency";
+import {CurrencySelector, currencies, Currency, currencyLookup} from "@/app/components/Currency";
 
 // Chart data point interface
 interface DataPoint {

@@ -23,10 +23,11 @@ export function currencyLookup(currencyCode: string): Currency {
 }
 
 {/* Currency selector */}
-export default function CurrencySelector(props: { selectedCurrency: Currency, onChange: (e: ChangeEvent<HTMLSelectElement>) => void}) {
+export function CurrencySelector(props: { selectedCurrency: Currency, onChange: (e: ChangeEvent<HTMLSelectElement>) => void}) {
     return <div className="mb-4">
-        <label className="block text-sm font-medium mb-1">Currency</label>
+        <label className="block text-sm font-medium mb-1" htmlFor="currency">Currency</label>
         <select
+            id="currency"
             value={props.selectedCurrency.code}
             onChange={props.onChange}
             className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
