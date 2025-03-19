@@ -75,6 +75,7 @@ const MortgageCalculator: React.FC = () => {
                         label="Property Price"
                         value={propertyPrice}
                         onChange={handlePropertyPriceChange}
+                        currencySymbol="£"
                     />
 
                     <CurrencyInput
@@ -82,6 +83,7 @@ const MortgageCalculator: React.FC = () => {
                         label="Deposit"
                         value={deposit}
                         onChange={handleDepositChange}
+                        currencySymbol="£"
                     />
 
                     <SliderInput
