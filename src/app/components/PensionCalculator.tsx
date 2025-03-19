@@ -17,7 +17,7 @@ interface Results {
   savingsChart: DataPoint[];
 }
 
-function PensionCalculator() {
+export default function PensionCalculator() {
   // State for form inputs
   const [currentAge, setCurrentAge] = useState<number>(30);
   const [retirementAge, setRetirementAge] = useState<number>(65);
@@ -218,5 +218,3 @@ function PensionCalculator() {
     </div>
   );
 }
-
-export default PensionCalculator;
