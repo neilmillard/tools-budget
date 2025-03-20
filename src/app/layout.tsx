@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Helpful Money, Tools",
-  description: "How much money do you need?",
+  description: "What to do with your Money?",
 };
 
 export default function RootLayout({
@@ -42,6 +42,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
     <NavBar/>
+    <div className='h-10'></div>
     {children}
     <Footer/>
     <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
