@@ -3,6 +3,11 @@ import {render, screen, fireEvent, cleanup} from "@testing-library/react";
 import PensionCalculator from "../components/PensionCalculator";
 import {currencies} from "@/app/components/Currency";
 
+// Mock Chart.js to prevent rendering errors
+jest.mock("react-chartjs-2", () => ({
+    Bar: () => <div data-testid="mock-chart" />,
+}));
+
 describe("PensionCalculator", () => {
     test("renders correctly", () => {
         render(<PensionCalculator />);
