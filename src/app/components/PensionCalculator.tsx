@@ -3,14 +3,9 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import {CurrencyInput} from "@/app/components/CurrencyInput";
 import {CurrencySelector, currencies, Currency, currencyLookup} from "@/app/components/Currency";
+import SavingsChart, {DataPoint} from "@/app/components/SavingsChart";
 
-// Chart data point interface
-interface DataPoint {
-  age: number;
-  savings: number;
-}
 
-// Results interface
 interface Results {
   totalSavings: number;
   monthlyIncome: number;
@@ -220,38 +215,13 @@ export default function PensionCalculator() {
             <div className="bg-white p-4 rounded-lg shadow-sm">
               <h4 className="text-lg font-medium mb-2">Estimated Monthly Income</h4>
               <p className="text-3xl font-bold text-green-600">{selectedCurrency.symbol}{results.monthlyIncome.toLocaleString()}</p>
-              <p className="text-sm text-gray-500 mt-1">Based on 4% annual withdrawal rate</p>
+              <p className="text-sm text-gray-500 mt-1">Based on {withdrawalRate}% annual withdrawal rate</p>
             </div>
-          </div>
-
-          <div className="bg-white p-4 rounded-lg shadow-sm">
-            <h4 className="text-lg font-medium mb-2">Retirement Savings</h4>
-            <div className="h-64 relative">
-              {results.savingsChart.length > 0 && (
-                <div className="flex h-full items-end">
-                  {results.savingsChart.filter((_, i) => i % 5 === 0 || i === results.savingsChart.length - 1).map((point, index) => {
-                    const maxValue: number = results.savingsChart.reduce(function(prev, current) {
-                      return (prev && prev.savings > current.savings) ? prev : current
-                    }).savings
-                    const height = (point.savings / maxValue) * 100;
-                    return (
-                      <div key={index} className="flex flex-col h-full items-center flex-1">
-                        <div className={"flex"} style={{height: `${100-height}%`}}>
-                        </div>
-                        <div
-                          className="w-8/12 bg-blue-500 rounded-t-sm mx-1"
-                          style={{height: `${height}%`}}
-                        ></div>
-                        <p className="text-xs mt-1">{point.age}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-            <p className="text-sm text-gray-500 mt-2 text-center">Age</p>
           </div>
         </div>
+      </div>
+      <div>
+        <SavingsChart chart={results.savingsChart} label={"Retirement Account Balance"} responsive={true}/>
       </div>
     </div>
   );
