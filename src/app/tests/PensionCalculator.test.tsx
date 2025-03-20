@@ -19,7 +19,7 @@ describe("PensionCalculator", () => {
         expect(screen.getByLabelText(/Current Savings/i)).toHaveValue(10000);
         expect(screen.getByLabelText(/Monthly Contributions/i)).toHaveValue(500);
         expect(screen.getByLabelText(/Employer Match/i)).toHaveValue(3);
-        expect(screen.getByLabelText(/Expected Annual Return/i)).toHaveValue(7);
+        expect(screen.getByLabelText(/Expected Annual Return/i)).toHaveValue(5);
         expect(screen.getByLabelText(/Annual Salary Increase/i)).toHaveValue(2);
 
         // Check default currency selection
@@ -35,7 +35,7 @@ describe("PensionCalculator", () => {
         expect(salaryInput).toHaveValue(60000);
         const savingsInput = screen.getByLabelText(/Current Savings/i);
         fireEvent.change(savingsInput, {target: {value: "20000"}});
-        expect(screen.getByText("$1,503,217")).toBeInTheDocument();
+        expect(screen.getByText("$929,417")).toBeInTheDocument();
 
         cleanup()
     })
@@ -45,6 +45,6 @@ describe("PensionCalculator", () => {
 
         const currencySelect = screen.getByRole("combobox");
         fireEvent.change(currencySelect, { target: { value: "EUR" } });
-        expect(screen.getByText("€1,380,553")).toBeInTheDocument();
+        expect(screen.getByText("€869,397")).toBeInTheDocument();
     });
 })

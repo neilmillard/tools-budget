@@ -16,7 +16,7 @@ export class CurrencyInput extends Component<CurrencyInputProps> {
     static defaultProps = {
         min: 0,
         max: "",
-        step: 1000,
+        step: 1,
         currencySymbol: "",
      };
     render() {

@@ -25,8 +25,9 @@ export default function PensionCalculator() {
   const [currentSavings, setCurrentSavings] = useState<number>(10000);
   const [monthlySavings, setMonthlySavings] = useState<number>(500);
   const [employerMatch, setEmployerMatch] = useState<number>(3);
-  const [annualReturn, setAnnualReturn] = useState<number>(7);
+  const [annualReturn, setAnnualReturn] = useState<number>(5);
   const [annualSalaryIncrease, setAnnualSalaryIncrease] = useState<number>(2);
+  const [withdrawalRate, setWithdrawalRate] = useState<number>(5);
   const [selectedCurrency, setSelectedCurrency] = useState<Currency>(currencies[0]);
 
   // State for results
@@ -82,15 +83,39 @@ export default function PensionCalculator() {
       });
     }
 
-    // Calculate monthly income in retirement (4% withdrawal rule)
-    const monthlyIncome = (totalSavings * 0.04) / 12;
+    const retirmentSavings = totalSavings;
+
+    const withdrawRatePercent: number = withdrawalRate / 100
+    const monthlyIncome: number = (totalSavings * withdrawRatePercent) / 12;
+
+    for (let year: number = retirementAge; year < 105; year++) {
+      // Calculate for each month in the year
+      for (let month = 0; month < 12; month++) {
+        totalSavings -= monthlyIncome;
+        // Interest earned
+        totalSavings *= (1 + monthlyReturnRate);
+      }
+
+      // Skip calculations for year 0, just add to chart
+      if (year === 0) {
+        continue;
+      }
+      chart.push({
+        age: year,
+        savings: Math.round(totalSavings)
+      });
+
+      if (totalSavings < 0) {
+        break;
+      }
+    }
 
     setResults({
-      totalSavings: Math.round(totalSavings),
+      totalSavings: Math.round(retirmentSavings),
       monthlyIncome: Math.round(monthlyIncome),
       savingsChart: chart
     });
-  }, [currentAge, retirementAge, currentSalary, currentSavings, monthlySavings, employerMatch, annualReturn, annualSalaryIncrease]);
+  }, [currentAge, retirementAge, currentSalary, currentSavings, monthlySavings, employerMatch, annualReturn, annualSalaryIncrease, withdrawalRate]);
 
   return (
     <div className="w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
@@ -127,6 +152,7 @@ export default function PensionCalculator() {
             value={currentSalary}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setCurrentSalary(Number(e.target.value))}
             min={0}
+            step={1000}
           />
 
           <CurrencyInput
@@ -134,6 +160,7 @@ export default function PensionCalculator() {
             value={currentSavings}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setCurrentSavings(Number(e.target.value))}
             min={0}
+            step={1000}
           />
 
           <CurrencyInput
@@ -169,6 +196,15 @@ export default function PensionCalculator() {
             max={20}
             step={0.1}
           />
+
+          <CurrencyInput
+            label="Desired withdrawal rate (%)"
+            value={withdrawalRate}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setWithdrawalRate(Number(e.target.value))}
+            min={0}
+            max={20}
+            step={0.1}
+          />
         </div>
 
         {/* Results */}
@@ -189,12 +225,14 @@ export default function PensionCalculator() {
           </div>
 
           <div className="bg-white p-4 rounded-lg shadow-sm">
-            <h4 className="text-lg font-medium mb-2">Savings Growth</h4>
+            <h4 className="text-lg font-medium mb-2">Retirement Savings</h4>
             <div className="h-64 relative">
               {results.savingsChart.length > 0 && (
                 <div className="flex h-full items-end">
                   {results.savingsChart.filter((_, i) => i % 5 === 0 || i === results.savingsChart.length - 1).map((point, index) => {
-                    const maxValue = results.savingsChart[results.savingsChart.length - 1].savings;
+                    const maxValue: number = results.savingsChart.reduce(function(prev, current) {
+                      return (prev && prev.savings > current.savings) ? prev : current
+                    }).savings
                     const height = (point.savings / maxValue) * 100;
                     return (
                       <div key={index} className="flex flex-col h-full items-center flex-1">
