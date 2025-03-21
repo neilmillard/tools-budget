@@ -8,12 +8,24 @@ jest.mock("react-chartjs-2", () => ({
     Bar: () => <div data-testid="mock-chart" />,
 }));
 
+const originalLocation = window.location;
+
+beforeEach(() => {
+    // Save the original window.location
+    Object.defineProperty(window, 'location', {
+        writable: true,
+        value: { ...originalLocation, search: '' }
+    });
+});
+
 describe("PensionCalculator", () => {
     test("renders correctly", () => {
         render(<PensionCalculator />);
         expect(screen.getByText("Pension Calculator")).toBeInTheDocument();
         expect(screen.getByText("Your Information")).toBeInTheDocument();
         expect(screen.getByText("Your Retirement Projection")).toBeInTheDocument();
+
+        cleanup();
     });
 
     test("has correct default values", () => {
@@ -30,6 +42,8 @@ describe("PensionCalculator", () => {
         // Check default currency selection
         const currencySelect = screen.getByRole("combobox");
         expect(currencySelect).toHaveValue(currencies[0].code);
+
+        cleanup();
     });
 
     test("updates inputs and calculates pension", () => {
@@ -51,5 +65,25 @@ describe("PensionCalculator", () => {
         const currencySelect = screen.getByRole("combobox");
         fireEvent.change(currencySelect, { target: { value: "EUR" } });
         expect(screen.getByText("€869,397")).toBeInTheDocument();
+
+        cleanup();
+    });
+
+    test('loads with encoded parameters', () => {
+        // Sample encoded data
+        const sampleData = {
+            currentAge: '45',
+            retirementAge: '70',
+            // Other fields
+        };
+        const encodedData = btoa(JSON.stringify(sampleData));
+
+        // Set URL search params
+        window.location.search = `?data=${encodedData}`;
+
+        render(<PensionCalculator />);
+
+        // Your assertions here
+        expect(screen.getByLabelText(/Current Age/i)).toHaveValue(45);
     });
 })

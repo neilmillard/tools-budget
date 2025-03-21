@@ -3,6 +3,7 @@ import {ChangeEvent, Component} from "react";
 
 interface CurrencyInputProps {
     label: string;
+    name: string;
     value: number;
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     min?: number;
@@ -17,10 +18,11 @@ export class CurrencyInput extends Component<CurrencyInputProps> {
         min: 0,
         max: "",
         step: 1,
+        name: "",
         currencySymbol: "",
      };
     render() {
-        const {label, value, onChange, min, max, step, currencySymbol} = this.props;
+        const {label, name, value, onChange, min, max, step, currencySymbol} = this.props;
 
         return (
             <div>
@@ -29,6 +31,7 @@ export class CurrencyInput extends Component<CurrencyInputProps> {
                         <span className="mr-2">{currencySymbol}</span>
                         <input
                             aria-label={label}
+                            name={name}
                             type="number"
                             value={value}
                             onChange={onChange}
