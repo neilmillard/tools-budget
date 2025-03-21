@@ -5,6 +5,9 @@ import {CurrencyInput} from "@/app/components/CurrencyInput";
 import {CurrencySelector, currencies, Currency, currencyLookup} from "@/app/components/Currency";
 import SavingsChart, {DataPoint} from "@/app/components/SavingsChart";
 
+interface PensionData {
+  [key: string]: string
+}
 
 interface Results {
   totalSavings: number;
@@ -13,17 +16,70 @@ interface Results {
 }
 
 export default function PensionCalculator() {
-  // State for form inputs
-  const [currentAge, setCurrentAge] = useState<number>(30);
-  const [retirementAge, setRetirementAge] = useState<number>(65);
-  const [currentSalary, setCurrentSalary] = useState<number>(50000);
-  const [currentSavings, setCurrentSavings] = useState<number>(10000);
-  const [monthlySavings, setMonthlySavings] = useState<number>(500);
-  const [employerMatch, setEmployerMatch] = useState<number>(3);
-  const [annualReturn, setAnnualReturn] = useState<number>(5);
-  const [annualSalaryIncrease, setAnnualSalaryIncrease] = useState<number>(2);
-  const [withdrawalRate, setWithdrawalRate] = useState<number>(5);
+  const [pension, setPension] = useState<PensionData>({
+    currentAge: '30',
+    retirementAge: '65',
+    currentSalary: '50000',
+    currentSavings: '10000',
+    monthlySavings: '500',
+    employerMatch: '3',
+    annualReturn: '5',
+    annualSalaryIncrease: '2',
+    withdrawalRate: '4',
+    currencyCode: 'USD',
+  });
+
   const [selectedCurrency, setSelectedCurrency] = useState<Currency>(currencies[0]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const encodeData = params.get("data")
+    if (encodeData) {
+      try {
+        const decodedData = JSON.parse(atob(encodeData));
+        setPension(decodedData);
+
+        if (decodedData.currencyCode) {
+          setSelectedCurrency(currencyLookup(decodedData.currencyCode));
+        }
+      } catch (error) {
+        console.error("Failed to decode budget data", error);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const encodedData = btoa(JSON.stringify(pension));
+    window.history.replaceState({}, "", `?data=${encodedData}`);
+  }, [pension]);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setPension((prev) => ({
+      ...prev,
+      [name]: value ,
+    }));
+  };
+
+  const currentAge = Number(pension.currentAge || 30);
+  const retirementAge = Number(pension.retirementAge || 65);
+  const currentSalary = Number(pension.currentSalary || 50000);
+  const currentSavings = Number(pension.currentSavings || 10000);
+  const monthlySavings = Number(pension.monthlySavings || 500);
+  const employerMatch = Number(pension.employerMatch || 3);
+  const annualReturn = Number(pension.annualReturn || 7);
+  const annualSalaryIncrease = Number(pension.annualSalaryIncrease || 2);
+  const withdrawalRate = Number(pension.withdrawalRate || 4);
+
+  const handleCurrencyChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const currency = currencyLookup(e.target.value);
+    setSelectedCurrency(currency);
+
+    setPension(prev => ({
+      ...prev,
+      currencyCode: currency.code
+    }));
+  };
 
   // State for results
   const [results, setResults] = useState<Results>({
@@ -78,7 +134,7 @@ export default function PensionCalculator() {
       });
     }
 
-    const retirmentSavings = totalSavings;
+    const retirementSavings = totalSavings;
 
     const withdrawRatePercent: number = withdrawalRate / 100
     const monthlyIncome: number = (totalSavings * withdrawRatePercent) / 12;
@@ -106,7 +162,7 @@ export default function PensionCalculator() {
     }
 
     setResults({
-      totalSavings: Math.round(retirmentSavings),
+      totalSavings: Math.round(retirementSavings),
       monthlyIncome: Math.round(monthlyIncome),
       savingsChart: chart
     });
@@ -123,52 +179,58 @@ export default function PensionCalculator() {
 
           <CurrencySelector
             selectedCurrency={selectedCurrency}
-            onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelectedCurrency(currencyLookup(e.target.value))}
+            onChange={handleCurrencyChange}
           />
 
           <CurrencyInput
             label="Current Age"
+            name="currentAge"
             value={currentAge}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setCurrentAge(Number(e.target.value))}
+            onChange={handleChange}
             min={18}
             max={100}
           />
 
           <CurrencyInput
             label="Retirement Age"
+            name="retirementAge"
             value={retirementAge}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setRetirementAge(Number(e.target.value))}
+            onChange={handleChange}
             min={currentAge + 1}
             max={100}
           />
 
           <CurrencyInput
             label={"Current Annual Salary (" + selectedCurrency.symbol + ")"}
+            name="currentSalary"
             value={currentSalary}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setCurrentSalary(Number(e.target.value))}
+            onChange={handleChange}
             min={0}
             step={1000}
           />
 
           <CurrencyInput
             label={"Current Savings / Pension Value (" + selectedCurrency.symbol + ")"}
+            name="currentSavings"
             value={currentSavings}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setCurrentSavings(Number(e.target.value))}
+            onChange={handleChange}
             min={0}
             step={1000}
           />
 
           <CurrencyInput
             label={"Monthly Contributions (" + selectedCurrency.symbol + ")"}
+            name="monthlySavings"
             value={monthlySavings}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setMonthlySavings(Number(e.target.value))}
+            onChange={handleChange}
             min={0}
           />
 
           <CurrencyInput
             label="Employer Match (%)"
+            name="employerMatch"
             value={employerMatch}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setEmployerMatch(Number(e.target.value))}
+            onChange={handleChange}
             min={0}
             max={100}
             step={0.1}
@@ -176,8 +238,9 @@ export default function PensionCalculator() {
 
           <CurrencyInput
             label="Expected Annual Return (%)"
+            name="annualReturn"
             value={annualReturn}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setAnnualReturn(Number(e.target.value))}
+            onChange={handleChange}
             min={0}
             max={20}
             step={0.1}
@@ -185,8 +248,9 @@ export default function PensionCalculator() {
 
           <CurrencyInput
             label="Annual Salary Increase (%)"
+            name="annualSalaryIncrease"
             value={annualSalaryIncrease}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setAnnualSalaryIncrease(Number(e.target.value))}
+            onChange={handleChange}
             min={0}
             max={20}
             step={0.1}
@@ -194,8 +258,9 @@ export default function PensionCalculator() {
 
           <CurrencyInput
             label="Desired withdrawal rate (%)"
+            name="withdrawalRate"
             value={withdrawalRate}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setWithdrawalRate(Number(e.target.value))}
+            onChange={handleChange}
             min={0}
             max={20}
             step={0.1}
