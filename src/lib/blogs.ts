@@ -42,14 +42,11 @@ export async function getBlogPost(id: string) {
   const fileContents = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContents);
 
-  const processedContent = await remark().use(html).process(content);
-  const contentHtml = processedContent.toString();
-
   return {
     id,
     title: data.title,
     date: data.date,
-    content: contentHtml,
+    content: content,
   };
 }
 
