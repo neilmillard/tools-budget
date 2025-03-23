@@ -1,10 +1,12 @@
 import {getAdjacentBlogPosts, getAllBlogPosts, getBlogPost} from "@/lib/blogs";
 import BlogPost, {BlogNav, BlogPostShort} from "@/app/components/BlogPost";
 
-export default async function BlogPage({ params }: { params: { id: string } }) {
-  const { id } = await params
+export default async function BlogPage({ params, }: {
+  params: Promise<{ id: string }>
+}) {
+  const {id} = await params
   const blog = await getBlogPost(id);
-  const { previous, next } = getAdjacentBlogPosts(id);
+  const {previous, next} = getAdjacentBlogPosts(id);
 
   return (
     <div className={"max-w-2x1 mx-auto pt-6"}>
@@ -19,5 +21,5 @@ export default async function BlogPage({ params }: { params: { id: string } }) {
 
 export async function generateStaticParams() {
   const blogs = getAllBlogPosts();
-  return blogs.map((blog: BlogPostShort) => ({ id: blog.id}));
+  return blogs.map((blog: BlogPostShort) => ({id: blog.id}));
 }
