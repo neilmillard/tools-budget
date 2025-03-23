@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import {remark} from "remark";
-import html from "remark-html";
 import {BlogPostShort} from "@/app/components/BlogPost";
 
 const POSTS_DIR = path.join(process.cwd(), "src", "data", "blog-posts");
@@ -42,14 +40,11 @@ export async function getBlogPost(id: string) {
   const fileContents = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContents);
 
-  const processedContent = await remark().use(html).process(content);
-  const contentHtml = processedContent.toString();
-
   return {
     id,
     title: data.title,
     date: data.date,
-    content: contentHtml,
+    content: content,
   };
 }
 
