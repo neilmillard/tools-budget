@@ -13,6 +13,7 @@ interface NavLinkItem {
 }
 
 const navLinks: NavLinkItem[] = [
+  {name: ' Blog ', path: '/blog/'},
   {name: ' About ', path: '/about/'},
   {name: ' Babylon', path: '/babylon/'},
   {name: ' Contact ', path: '/contact/'},
