@@ -1,7 +1,7 @@
 'use client';
 import React, {useState} from "react";
 import Link from "next/link";
-import { MenuIcon, XIcon } from 'lucide-react'
+import {ChevronDown, MenuIcon, XIcon} from 'lucide-react'
 import {usePathname} from "next/navigation";
 import {useViewportSize} from "@mantine/hooks";
 import {twMerge} from "tailwind-merge";
@@ -13,14 +13,21 @@ interface NavLinkItem {
 }
 
 const navLinks: NavLinkItem[] = [
-  {name: ' Home ', path: '/'},
   {name: ' About ', path: '/about/'},
   {name: ' Babylon', path: '/babylon/'},
   {name: ' Contact ', path: '/contact/'},
 ]
 
+const toolLinks: NavLinkItem[] = [
+  {name: 'Budget Planner', path: '/budget/'},
+  {name: 'Mortgage Calculator', path: '/mortgage/'},
+  {name: 'Mortgage Affordability Calculator', path: "/afford/"},
+  {name: 'Pension Calculator', path: "/pension/"},
+]
+
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isToolsOpen, setIsToolsOpen] = useState(false)
   const { width } = useViewportSize()
   const isMobile = width < 768 // below md breakpoint
 
@@ -35,6 +42,7 @@ export function NavBar() {
     if (isMobile) {
       setIsMenuOpen(false)
     }
+    setIsToolsOpen(false)
   }
 
   return <header className='fixed w-full px-8 bg-green-50 shadow-sm shadow-neutral-500 h-10 flex items-center'>
@@ -52,6 +60,29 @@ export function NavBar() {
           'bg-green-50 flex-col fixed top-10 right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-full'
         ))}
       >
+        <li className="relative">
+          <button
+            className="flex items-center gap-1"
+            onClick={() => setIsToolsOpen(!isToolsOpen)}
+          >
+            Tools <ChevronDown className="size-4" />
+          </button>
+          {isToolsOpen && (
+            <ul className="absolute bg-white shadow-lg rounded-lg mt-2 p-2">
+              {toolLinks.map((tool) => (
+                <li key={tool.name}>
+                  <Link
+                    href={tool.path}
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={closeMenuOnMobile}
+                  >
+                    {tool.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
         {navLinks.map((link) => (
         <li key={link.name}>
           <Link
