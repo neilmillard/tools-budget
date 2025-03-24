@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: 12 10 * * SUN
 
 jobs:
   build:
@@ -21,6 +23,7 @@ jobs:
         run: npm test
 
       - name: Create Env file
+        # create unexpected and undefined parameters - https://github.com/SpicyPizza/create-envfile/issues/10
         uses: SpicyPizza/create-envfile@v2.0.3
         with:
           envkey_NEXT_PUBLIC_ADSENSE_PUB_ID: ${{ secrets.NEXT_PUBLIC_ADSENSE_PUB_ID }}
