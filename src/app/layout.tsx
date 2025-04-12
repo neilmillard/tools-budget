@@ -36,7 +36,7 @@ export default function RootLayout({
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Helpful Money" />
       <title>Helpful Money</title>
-      <Adsense/>
+      <Adsense />
     </head>
     <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
