@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 export default function Adsense() {
     const isProd = process.env.NODE_ENV === 'production';
     if (isProd) {
