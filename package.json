@@ -19,7 +19,7 @@
     "react-router-dom": "^7.4.1",
     "dotenv": "^16.4.7",
     "lucide-react": "^0.487.0",
-    "@mantine/hooks": "^7.17.2",
+    "@mantine/hooks": "^7.17.4",
     "tailwind-merge": "^3.0.2",
     "clsx": "^2.1.1",
     "markdown-to-jsx": "^7.7.4",
