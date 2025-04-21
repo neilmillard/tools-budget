@@ -1,4 +1,4 @@
-import PensionCalculator from "@/app/components/PensionCalculator";
+import PensionCalculator from "@/app/components/calculators/PensionCalculator";
 
 export default function Mortgage() {
     return (

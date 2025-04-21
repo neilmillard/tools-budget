@@ -1,9 +1,9 @@
 'use client';
 
 import React, {ChangeEvent, useEffect, useState} from 'react';
-import {CurrencyInput} from "@/app/components/CurrencyInput";
-import {CurrencySelector, currencies, Currency, currencyLookup} from "@/app/components/Currency";
-import SavingsChart, {DataPoint} from "@/app/components/SavingsChart";
+import {CurrencyInput} from "@/app/components/ui/CurrencyInput";
+import {CurrencySelector, currencies, Currency, currencyLookup} from "@/app/components/ui/Currency";
+import SavingsChart, {DataPoint} from "@/app/components/ui/SavingsChart";
 
 interface PensionData {
   [key: string]: string

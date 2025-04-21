@@ -1,8 +1,9 @@
-import MortgageCalculator from "@/app/components/MortgageCalculator";
-
+import MortgageCalculator from "@/app/components/calculators/MortgageCalculator";
 
 export default function Mortgage() {
     return (
-        <MortgageCalculator />
+      <div>
+          <MortgageCalculator />
+      </div>
     )
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import React, {ChangeEvent, useEffect, useState} from "react";
-import {SliderInput} from "@/app/components/SliderInput";
+import {SliderInput} from "@/app/components/ui/SliderInput";
 
 export default function AffordabilityCalculator() {
     const defaultInterestRate: number = 5.0

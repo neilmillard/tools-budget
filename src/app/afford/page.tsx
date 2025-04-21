@@ -1,4 +1,4 @@
-import AffordabilityCalculator from "@/app/components/AffordabilityCalculator";
+import AffordabilityCalculator from "@/app/components/calculators/AffordabilityCalculator";
 
 export default function Afford() {
     return (

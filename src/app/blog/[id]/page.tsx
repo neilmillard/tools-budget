@@ -1,5 +1,5 @@
 import {getAdjacentBlogPosts, getAllBlogPosts, getBlogPost} from "@/lib/blogs";
-import BlogPost, {BlogNav, BlogPostShort} from "@/app/components/BlogPost";
+import BlogPost, {BlogNav, BlogPostShort} from "@/app/components/blog/BlogPost";
 
 export default async function BlogPage({ params, }: {
   params: Promise<{ id: string }>

@@ -2,7 +2,7 @@
 import {ChangeEvent, useEffect, useState} from "react";
 import {Doughnut} from "react-chartjs-2";
 import {ArcElement, Chart as ChartJS, Legend, Tooltip} from "chart.js";
-import {ProgressSummary} from "@/app/components/progressSummary";
+import {ProgressSummary} from "@/app/components/calculators/progressSummary";
 import Link from "next/link";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -75,7 +75,7 @@ export default function BudgetPlanner() {
         <p className="pl-6 pr-6">
           This calculator will tell you how much you have left over.
           If you are following the 50/30/20 rule, this left over cash
-          should be 20%. Find out more <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/fiftythirtytwenty/">50-30-20</Link>.
+          should be 20%. Find out more <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/fiftythirtytwenty">50-30-20</Link>.
         </p>
         <p className="pl-6 pr-6 pb-6">You can save your progress by copying the whole URL in the address bar.
         </p>

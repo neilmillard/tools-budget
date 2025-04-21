@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import {describe, test} from "@jest/globals";
 import {cleanup, render, screen} from "@testing-library/react";
-import BlogPost, {BlogPostProps} from "@/app/components/BlogPost";
+import BlogPost, {BlogPostProps} from "@/app/components/blog/BlogPost";
 import matter from "gray-matter";
 
 
