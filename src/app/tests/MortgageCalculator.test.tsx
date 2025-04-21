@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, screen, fireEvent, cleanup} from '@testing-library/react';
 import '@testing-library/jest-dom';
-import MortgageCalculator from "@/app/components/MortgageCalculator";
+import MortgageCalculator from "@/app/components/calculators/MortgageCalculator";
 
 
 describe('MortgageCalculator', () => {

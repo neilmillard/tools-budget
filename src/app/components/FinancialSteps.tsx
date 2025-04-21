@@ -1,6 +1,6 @@
 import React from 'react';
-import {PostIt} from "@/app/components/PostIt";
-import {CircleNum} from "@/app/components/CircleNum";
+import {PostIt} from "@/app/components/ui/PostIt";
+import {CircleNum} from "@/app/components/ui/CircleNum";
 
 const FinancialSteps = () => {
     return (

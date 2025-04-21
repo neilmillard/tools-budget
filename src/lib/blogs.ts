@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import {BlogPostShort} from "@/app/components/BlogPost";
+import {BlogPostShort} from "@/app/components/blog/BlogPost";
 
 const POSTS_DIR = path.join(process.cwd(), "src", "data", "blog-posts");
 

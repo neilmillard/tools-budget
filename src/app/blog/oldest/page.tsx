@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {getAllBlogPosts} from "@/lib/blogs";
-import SortLinks from "@/app/components/SortLinks";
+import SortLinks from "@/app/components/blog/SortLinks";
 
 export default function BlogIndex() {
   const blogs = getAllBlogPosts("oldest");

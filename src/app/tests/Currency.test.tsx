@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
-import {CurrencySelector, currencyLookup, currencies} from "@/app/components/Currency";
+import {CurrencySelector, currencyLookup, currencies} from "@/app/components/ui/Currency";
 
 
 describe("currencyLookup", () => {

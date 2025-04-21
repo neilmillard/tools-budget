@@ -1,8 +1,8 @@
 'use client';
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import {CurrencyInput} from "@/app/components/CurrencyInput";
-import {SliderInput} from "@/app/components/SliderInput";
-import {ResultsPanel} from "@/app/components/ResultsPanel";
+import {CurrencyInput} from "@/app/components/ui/CurrencyInput";
+import {SliderInput} from "@/app/components/ui/SliderInput";
+import {ResultsPanel} from "@/app/components/calculators/ResultsPanel";
 
 // Main component
 const MortgageCalculator: React.FC = () => {

@@ -1,6 +1,6 @@
 import {render, screen, fireEvent, cleanup} from "@testing-library/react";
 import "@testing-library/jest-dom";
-import BudgetPlanner from "@/app/components/BudgetPlanner";
+import BudgetPlanner from "@/app/components/calculators/BudgetPlanner";
 import {describe, test} from "@jest/globals";
 
 // Mock Chart.js to prevent rendering errors

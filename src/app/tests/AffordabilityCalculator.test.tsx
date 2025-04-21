@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor, cleanup } from '@testing-library/react';
 import "@testing-library/jest-dom";
-import AffordabilityCalculator from "@/app/components/AffordabilityCalculator";
+import AffordabilityCalculator from "@/app/components/calculators/AffordabilityCalculator";
 
 
 
