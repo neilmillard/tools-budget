@@ -28,6 +28,10 @@ export default function Home() {
           much your pension pot could be when you retire. Playing with the Withdrawal Rate can help you understand how
           long the money will last.</p>
       </div>
+      <div className="flex justify-center">
+        <p className="pt-6 pb-6">If you would like to hear about a new budgeting app, here is a survey to help us build it for you.</p>
+      </div>
+      <div className="flex justify-center" data-tf-live="01JTDAGBS12DNVW9YS48YXE667"></div><script async src="//embed.typeform.com/next/embed.js"></script>
     </div>
   )
 }
