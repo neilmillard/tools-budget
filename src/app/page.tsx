@@ -10,21 +10,21 @@ export default function Home() {
         <p>You want to live below your income and invest the rest. If you have loans or credit cards, pay these off
           before investing.</p>
         <FinancialSteps/>
-        <p className="pt-6"><Link href={'/budget/'}><b>Budget Planner</b></Link> enables you to fill in the form similar
+        <p className="pt-6"><Link href={'/tools/budget/'}><b>Budget Planner</b></Link> enables you to fill in the form similar
           to a bank loan.
           This will help you understand where you think your money is going. To know for sure
           you will have to make a record.
           The main benefit this too will give you, is to understand if your &apos;spare&apos; cash is greater than 10%.
           Read about the <Link className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                href="/fiftythirtytwenty/">50-30-20</Link> budget guide.</p>
-        <p className="pt-6"><Link href={'/mortgage/'}><b>Mortgage Calculator</b></Link> is a fun tool to check how
+        <p className="pt-6"><Link href={'/tools/mortgage/'}><b>Mortgage Calculator</b></Link> is a fun tool to check how
           much the repayments will be on a mortgage, based on amount borrowed, interest rate and term.</p>
-        <p className="pt-6"><Link href={'/mortgage-overpayment-calculator/'}><b>Mortgage Overpayment Calculator</b></Link> will enable you to
+        <p className="pt-6"><Link href={'/tools/mortgage-overpayment-calculator/'}><b>Mortgage Overpayment Calculator</b></Link> will enable you to
           see how much overpayments can effect the term of your mortgage, based on lump sum or regular overpayments.</p>
-        <p className="pt-6"><Link href={'afford'}><b>Mortgage Affordability Calculator</b></Link> will help you
+        <p className="pt-6"><Link href={'/tools/afford/'}><b>Mortgage Affordability Calculator</b></Link> will help you
           calculate based on your earnings, how much mortgage you may get offered. If you enter the total
           outgoings from the Budget Planner, it can help you gauge if you can afford the repayments too.</p>
-        <p className="pt-6"><Link href={'/pension/'}><b>Pension Calculator</b></Link> will give you a rough guide of how
+        <p className="pt-6"><Link href={'/tools/pension/'}><b>Pension Calculator</b></Link> will give you a rough guide of how
           much your pension pot could be when you retire. Playing with the Withdrawal Rate can help you understand how
           long the money will last.</p>
       </div>
