@@ -9,6 +9,8 @@ export default function Home() {
         <p>Helpful Money, a collection of tools so you stay on track with your Money Journey.</p>
         <p>You want to live below your income and invest the rest. If you have loans or credit cards, pay these off
           before investing.</p>
+        <p>“Investing should be more like watching paint dry or watching grass grow. If you want excitement, take $800 and go to Las Vegas.”
+          ― Paul Samuelson</p>
         <FinancialSteps/>
         <p className="pt-6"><Link href={'/tools/budget/'}><b>Budget Planner</b></Link> enables you to fill in the form similar
           to a bank loan.
