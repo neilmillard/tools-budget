@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { getAllBlogPosts } from '@/lib/blogs';
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.helpfulmoney.site';
 

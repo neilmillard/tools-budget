@@ -2,8 +2,10 @@ import {getAdjacentBlogPosts, getAllBlogPosts, getBlogPost} from "@/lib/blogs";
 import BlogPost, {BlogNav, BlogPostShort} from "@/app/components/blog/BlogPost";
 import { Metadata } from "next";
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const blog = await getBlogPost(params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> | undefined }): Promise<Metadata> {
+  const resolvedParams = params ? await params : { id: '' };
+  const { id } = resolvedParams;
+  const blog = await getBlogPost(id);
 
   // Create a plain text excerpt from the content (first 160 characters)
   const contentText = blog.content.replace(/<[^>]*>/g, '');
@@ -19,10 +21,11 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   };
 }
 
-export default async function BlogPage({ params, }: {
-  params: Promise<{ id: string }>
+export default async function BlogPage({ params }: {
+  params: Promise<{ id: string }> | undefined
 }) {
-  const {id} = await params
+  const resolvedParams = params ? await params : { id: '' };
+  const { id } = resolvedParams;
   const blog = await getBlogPost(id);
   const {previous, next} = getAdjacentBlogPosts(id);
 
