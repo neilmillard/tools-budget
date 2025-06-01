@@ -1,6 +1,16 @@
 import Link from "next/link";
 import {getAllBlogPosts} from "@/lib/blogs";
 import SortLinks from "@/app/components/blog/SortLinks";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog Posts | Helpful Money",
+  description: "Read our latest blog posts about personal finance, budgeting tips, investing strategies, and more to improve your financial knowledge.",
+  openGraph: {
+    title: "Blog Posts | Helpful Money",
+    description: "Read our latest blog posts about personal finance, budgeting tips, investing strategies, and more to improve your financial knowledge.",
+  },
+};
 
 export default function BlogIndex() {
   const blogs = getAllBlogPosts("newest");

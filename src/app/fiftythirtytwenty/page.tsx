@@ -1,5 +1,15 @@
 import React from 'react';
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "50/30/20 Budgeting Rule | Helpful Money",
+  description: "Learn about the 50/30/20 budgeting rule - a simple path to financial balance. Allocate 50% for needs, 30% for wants, and 20% for savings and debt repayment.",
+  openGraph: {
+    title: "50/30/20 Budgeting Rule | Helpful Money",
+    description: "Learn about the 50/30/20 budgeting rule - a simple path to financial balance. Allocate 50% for needs, 30% for wants, and 20% for savings and debt repayment.",
+  },
+};
 
 export default function FiftyThirtyTwenty() {
     return (
