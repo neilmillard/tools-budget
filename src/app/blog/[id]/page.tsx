@@ -1,10 +1,31 @@
 import {getAdjacentBlogPosts, getAllBlogPosts, getBlogPost} from "@/lib/blogs";
 import BlogPost, {BlogNav, BlogPostShort} from "@/app/components/blog/BlogPost";
+import { Metadata } from "next";
 
-export default async function BlogPage({ params, }: {
-  params: Promise<{ id: string }>
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> | undefined }): Promise<Metadata> {
+  const resolvedParams = params ? await params : { id: '' };
+  const { id } = resolvedParams;
+  const blog = await getBlogPost(id);
+
+  // Create a plain text excerpt from the content (first 160 characters)
+  const contentText = blog.content.replace(/<[^>]*>/g, '');
+  const excerpt = contentText.length > 160 ? contentText.substring(0, 157) + '...' : contentText;
+
+  return {
+    title: `${blog.title} | Helpful Money Blog`,
+    description: excerpt,
+    openGraph: {
+      title: `${blog.title} | Helpful Money Blog`,
+      description: excerpt,
+    },
+  };
+}
+
+export default async function BlogPage({ params }: {
+  params: Promise<{ id: string }> | undefined
 }) {
-  const {id} = await params
+  const resolvedParams = params ? await params : { id: '' };
+  const { id } = resolvedParams;
   const blog = await getBlogPost(id);
   const {previous, next} = getAdjacentBlogPosts(id);
 

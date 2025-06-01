@@ -1,5 +1,15 @@
 import Link from "next/link";
 import FinancialSteps from "@/app/components/FinancialSteps";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Helpful Money | Financial Tools to Manage Your Money Better",
+  description: "Discover free financial tools including budget planner, mortgage calculator, pension calculator, and more to help you make smarter money decisions.",
+  openGraph: {
+    title: "Helpful Money | Financial Tools to Manage Your Money Better",
+    description: "Discover free financial tools including budget planner, mortgage calculator, pension calculator, and more to help you make smarter money decisions.",
+  },
+};
 
 export default function Home() {
   return (
