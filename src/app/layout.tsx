@@ -18,8 +18,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Helpful Money, Tools",
-  description: "What to do with your Money?",
+  title: "Helpful Money | Financial Tools and Resources",
+  description: "Discover financial tools, calculators, and resources to help you make better decisions with your money. Learn about investing, budgeting, and financial planning.",
+  keywords: ["money management", "financial tools", "budgeting", "investing", "personal finance", "financial planning"],
+  authors: [{ name: "Helpful Money Team" }],
+  creator: "Helpful Money",
+  publisher: "Helpful Money",
+  formatDetection: {
+    email: false,
+    telephone: false,
+    address: false,
+  },
+  metadataBase: new URL("https://www.helpfulmoney.site"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Helpful Money | Financial Tools and Resources",
+    description: "Discover financial tools, calculators, and resources to help you make better decisions with your money.",
+    url: "https://www.helpfulmoney.site",
+    siteName: "Helpful Money",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Helpful Money | Financial Tools and Resources",
+    description: "Discover financial tools, calculators, and resources to help you make better decisions with your money.",
+    creator: "@helpfulmoney",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
 };
 
 export default function RootLayout({
@@ -30,12 +71,6 @@ export default function RootLayout({
   return (
     <html lang="en">
     <head>
-      <meta property="og:title" content="Helpful Money" />
-      <meta property="og:description" content="Helpful Money" />
-      <meta property="og:url" content="https://www.helpful-money.com" />
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Helpful Money" />
-      <title>Helpful Money</title>
       <Adsense />
     </head>
     <body
