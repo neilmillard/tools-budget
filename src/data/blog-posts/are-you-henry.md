@@ -12,12 +12,12 @@ The term HENRY describes individuals or households that earn significant incomes
 
 ### Key Characteristics of UK HENRYs:
 
-**Income Range**: Usually earning £75,000-£300,000 per year (well above the UK median of £31,285)
-**Net Worth**: Often less than £500,000 despite high earnings
-**Age Demographics**: Primarily millennials and Gen X professionals (ages 28-45)
-**Education**: Typically highly educated with university degrees or professional qualifications
-**Location**: Often living in London, Edinburgh, Manchester, or other expensive UK cities
-**Career Fields**: Common in finance, technology, law, medicine, consulting, and other professional services
+**Income Range**: Usually earning £75,000-£300,000 per year (well above the UK median of £31,285)  
+**Net Worth**: Often less than £500,000 despite high earnings  
+**Age Demographics**: Primarily millennials and Gen X professionals (ages 28-45)  
+**Education**: Typically highly educated with university degrees or professional qualifications  
+**Location**: Often living in London, Edinburgh, Manchester, or other expensive UK cities  
+**Career Fields**: Common in finance, technology, law, medicine, consulting, and other professional services  
 
 ## The UK HENRY Trap: Why High Earners Struggle to Build Wealth
 
