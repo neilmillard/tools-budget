@@ -79,45 +79,45 @@ Even high earners struggle with:
 
 ### 1. Maximise Tax-Efficient Savings
 
-**ISA Strategy**: Use the full £20,000 annual allowance across Stocks & Shares and Cash ISAs
-**Pension Contributions**: Contribute enough to maximise employer matching, then consider additional voluntary contributions
-**Salary Sacrifice**: Use schemes for pensions, cycle-to-work, electric vehicles, or childcare vouchers
-**Consider SIPP**: Self-Invested Personal Pensions offer more investment control for higher earners
+**ISA Strategy**: Use the full £20,000 annual allowance across Stocks & Shares and Cash ISAs  
+**Pension Contributions**: Contribute enough to maximise employer matching, then consider additional voluntary contributions  
+**Salary Sacrifice**: Use schemes for pensions, cycle-to-work, electric vehicles, or childcare vouchers  
+**Consider SIPP**: Self-Invested Personal Pensions offer more investment control for higher earners  
 
 ### 2. Strategic Property Approach
 
-**House Hacking**: Consider buy-to-let with lodgers or HMOs to generate rental income
-**Help to Buy ISA/LISA**: Use Lifetime ISA for first-time buyers (£4,000 annual limit with 25% government bonus)
-**Shared Ownership**: Consider for getting on the property ladder in expensive areas
-**Regional Investment**: Look beyond London for better-value property investments
+**House Hacking**: Consider buy-to-let with lodgers or HMOs to generate rental income  
+**Help to Buy ISA/LISA**: Use Lifetime ISA for first-time buyers (£4,000 annual limit with 25% government bonus)  
+**Shared Ownership**: Consider for getting on the property ladder in expensive areas  
+**Regional Investment**: Look beyond London for better-value property investments  
 
 ### 3. Optimise Your Tax Position
 
-**Understand Tax Bands**: Plan around the 40% and 45% thresholds
-**Pension Contributions**: Reduce taxable income whilst building retirement wealth
-**Capital Gains Planning**: Use annual CGT allowance (£6,000 for 2023-24)
-**Consider Professional Advice**: Accountants and financial advisers can save significant tax
+**Understand Tax Bands**: Plan around the 40% and 45% thresholds  
+**Pension Contributions**: Reduce taxable income whilst building retirement wealth  
+**Capital Gains Planning**: Use annual CGT allowance (£6,000 for 2023-24)  
+**Consider Professional Advice**: Accountants and financial advisers can save significant tax  
 
 ### 4. Build Diversified Investment Portfolios
 
-**Low-Cost Platforms**: Use providers like Vanguard, iShares, or Hargreaves Lansdown
-**Index Fund Strategy**: FTSE All-World or S&P 500 trackers for broad diversification
-**UK vs Global**: Balance domestic and international exposure
-**Regular Investing**: Set up monthly direct debits for pound-cost averaging
+**Low-Cost Platforms**: Use providers like Vanguard, iShares, or Hargreaves Lansdown  
+**Index Fund Strategy**: FTSE All-World or S&P 500 trackers for broad diversification  
+**UK vs Global**: Balance domestic and international exposure  
+**Regular Investing**: Set up monthly direct debits for pound-cost averaging  
 
 ### 5. Create Additional Income Streams
 
-**Consulting**: Leverage professional expertise for freelance work
-**Property Investment**: Buy-to-let or commercial property
-**Side Businesses**: Online businesses or professional services
-**Investment Income**: Build dividend-paying portfolios
+**Consulting**: Leverage professional expertise for freelance work  
+**Property Investment**: Buy-to-let or commercial property  
+**Side Businesses**: Online businesses or professional services  
+**Investment Income**: Build dividend-paying portfolios  
 
 ### 6. Manage Debt Strategically
 
-**Student Loans**: Understand when overpaying makes sense (high earners may benefit)
-**Mortgage vs Investment**: Consider whether to overpay mortgage or invest difference
-**Credit Cards**: Use cashback cards strategically whilst avoiding interest
-**Personal Loans**: Consolidate expensive debt at lower rates
+**Student Loans**: Understand when overpaying makes sense (high earners may benefit)  
+**Mortgage vs Investment**: Consider whether to overpay mortgage or invest difference  
+**Credit Cards**: Use cashback cards strategically whilst avoiding interest  
+**Personal Loans**: Consolidate expensive debt at lower rates  
 
 ## The UK Path from HENRY to Wealthy
 
@@ -167,11 +167,11 @@ Many UK HENRYs have successfully transitioned to genuine wealth by:
 
 ## Common UK HENRY Mistakes to Avoid
 
-**Lifestyle Inflation in London**: Don't assume you need to live in Zone 1
-**Ignoring Pensions**: Auto-enrolment minimums are insufficient
-**Cash Hoarding**: Keeping too much in low-interest accounts
-**Property Timing**: Waiting for the "perfect" time to buy
-**Tax Inefficiency**: Not using available allowances and reliefs
+**Lifestyle Inflation in London**: Don't assume you need to live in Zone 1  
+**Ignoring Pensions**: Auto-enrolment minimums are insufficient  
+**Cash Hoarding**: Keeping too much in low-interest accounts  
+**Property Timing**: Waiting for the "perfect" time to buy  
+**Tax Inefficiency**: Not using available allowances and reliefs  
 
 ## UK-Specific Tools and Resources
 
