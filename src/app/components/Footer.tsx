@@ -13,6 +13,9 @@ export function Footer() {
       href="https://www.youtube.com/channel/UCAaoh3jk1qtvD3ALPp48_8w" target="_blank">YouTube channel</a> - <a
       href="https://www.techanswers.club/" target="_blank">Tech Answers Club</a>
     </div>
+    <div className="text-xs text-gray-500 h-8 text-center">
+      <a href="/privacy-policy">Privacy Policy</a> - <a href="/terms-of-service">Terms of Service</a>
+    </div>
         <div className="text-xs text-gray-500 h-6 text-center">
             Calculators provided are a guide, your financial provider may use a different calculation
         </div>
