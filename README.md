@@ -1,3 +1,9 @@
+# Helpful Money
+
+this is the source code for the helpful money website.
+
+https://www.helpfulmoney.site
+
 This is a [Next.js](https://nextjs.org) project
 
 ## Getting Started
