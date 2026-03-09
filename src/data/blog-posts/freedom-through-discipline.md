@@ -35,6 +35,13 @@ Using your 10% savings to eliminate high-interest debt is mathematically the bes
 
 This "debt avalanche" method mathematically saves you the most money, though some prefer the psychological wins of the "debt snowball" method (paying smallest balances first).
 
+<ToolCTA 
+  title="See the Cost of Debt" 
+  toolName="Mortgage Overpayment Calculator" 
+  toolUrl="/tools/mortgage-overpayment-calculator" 
+  description="While focused on mortgages, our overpayment calculator shows the incredible power of paying down debt early. See how much interest you can save by adding just a little extra to your payments."
+/>
+
 ## Avoiding the Debt Cycle
 
 Equally important is stopping the debt cycle. This requires:

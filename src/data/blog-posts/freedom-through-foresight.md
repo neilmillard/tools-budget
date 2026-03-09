@@ -29,6 +29,13 @@ Determining how much you need requires estimating:
 
 Most financial planners suggest targeting 25-33 times your annual retirement income needs (beyond Social Security and pensions) as your retirement portfolio goal.
 
+<ToolCTA 
+  title="Map Your Retirement Journey" 
+  toolName="Pension Calculator" 
+  toolUrl="/tools/pension" 
+  description="Wondering if you're on track? Use our Pension Calculator to project your future income based on your current savings and contributions."
+/>
+
 ## Retirement Account Options
 
 Strategic use of tax-advantaged accounts accelerates progress:
