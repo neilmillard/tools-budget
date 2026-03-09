@@ -43,9 +43,9 @@ export default function AboutComponent() {
                     "Start thy purse to fattening."
                 </p>
                 <p className="mb-4 text-lg leading-relaxed">
-                    The lessons from <a href="/babylon/" className="italic text-blue-600 hover:underline">The Richest Man in Babylon</a> aren't just old stories;
+                    The lessons from <a href="/babylon/" className="italic text-blue-600 hover:underline">The Babylon Series</a> aren't just old stories;
                     they are fundamental truths. I believe in the power of ancient wisdom made actionable through
-                    modern technology.
+                    modern technology. For those just starting, the <a href="/babylon/" className="font-semibold text-blue-600 hover:underline">7 Cures for a Lean Purse</a> is my recommended starting point.
                 </p>
             </section>
 
