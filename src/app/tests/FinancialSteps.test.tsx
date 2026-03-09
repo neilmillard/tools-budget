@@ -82,4 +82,26 @@ describe('FinancialSteps Component', () => {
         const columns = document.querySelectorAll('.w-full.sm\\:w-64');
         expect(columns).toHaveLength(4);
     });
+
+    it('links each step to the correct journey page and shows arrow indicators', () => {
+        const expectedLinks = [
+            '/journey/paying-debt',
+            '/journey/saving',
+            '/journey/buying-a-home',
+            '/journey/investing'
+        ];
+
+        const links = screen.getAllByRole('link');
+        expect(links).toHaveLength(4);
+
+        expectedLinks.forEach((href, index) => {
+            expect(links[index]).toHaveAttribute('href', href);
+        });
+
+        // Check if ArrowRight icons (or their containers) are present within the links
+        const arrows = document.querySelectorAll('.lucide-arrow-right');
+        // Depending on how lucide-react renders, it might be an svg with this class
+        // or we can check the container we added
+        expect(arrows).toHaveLength(4);
+    });
 });
