@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 export default function Budget() {
     const relatedPosts = [
+        { title: "What the 50-30-20 Rule Actually Looks Like on a Real Salary", url: "/blog/what-the-50-30-20-rule-looks-like" },
         { title: "The Forgotten Art of Living Below Your Means", url: "/blog/the-forgotton-art-of-living-below-your-means" },
         { title: "Your Financial Safety Net", url: "/blog/your-financial-safety-net" }
     ];

@@ -14,10 +14,12 @@ describe("BlogPost Component", () => {
     content: content,
   }
 
-  test("renders without crashing", () => {
-    render(<BlogPost content={article.content} date={article.date} title={article.title}/>);
-    expect(screen.getByText(article.title)).toBeInTheDocument();
-    expect(screen.getByText(article.date)).toBeInTheDocument();
+  test("renders with ToolCTA without crashing", () => {
+    const contentWithCTA = "# Hello World\n\n<ToolCTA title='Try this' toolName='My Tool' toolUrl='/tools/my-tool' description='Cool tool' />";
+    render(<BlogPost content={contentWithCTA} date={article.date} title={article.title}/>);
+    expect(screen.getByText("Try this")).toBeInTheDocument();
+    expect(screen.getByText("Try the My Tool")).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Try the My Tool/i })).toHaveAttribute('href', '/tools/my-tool');
     cleanup()
   });
 });

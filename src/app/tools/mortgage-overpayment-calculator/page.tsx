@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 
 export default function Mortgage() {
   const relatedPosts = [
+    { title: "How Much Could You Save by Overpaying Your Mortgage?", url: "/blog/how-much-save-mortgage-overpayment" },
     { title: "Freedom Through Discipline: Eliminating Consumer Debt", url: "/blog/freedom-through-discipline" }
   ];
 
