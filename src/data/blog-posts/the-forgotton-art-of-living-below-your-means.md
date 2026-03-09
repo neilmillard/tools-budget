@@ -37,6 +37,13 @@ The wealthy-minded approach is different: as your income increases, maintain you
 5. **Find joy in activities and relationships** rather than consumption
 6. **Automate your savings** so they occur before you can spend the money
 
+<ToolCTA 
+  title="Take Control of Your Spending" 
+  toolName="Budget Planner" 
+  toolUrl="/tools/budget" 
+  description="Ready to apply these principles? Use our Budget Planner to track your spending and find your 'investable surplus'."
+/>
+
 ## The Psychology of Contentment
 
 Living below your means isn't about sacrifice—it's about prioritizing future financial freedom over temporary pleasures. Studies consistently show that after basic needs are met, additional consumption has minimal impact on happiness.

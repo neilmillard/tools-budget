@@ -31,6 +31,13 @@ For most people, a progression works best:
 3. Expand to three months of expenses
 4. Eventually reach six months of expenses (or more for those with variable incomes)
 
+<ToolCTA 
+  title="Calculate Your Safety Net" 
+  toolName="Budget Planner" 
+  toolUrl="/tools/budget" 
+  description="Unsure how much '3 months of expenses' actually is? Use our Budget Planner to see your monthly outgoings and calculate your ideal emergency fund target."
+/>
+
 ## Where to Keep Your Emergency Fund
 
 Your emergency fund should be:
