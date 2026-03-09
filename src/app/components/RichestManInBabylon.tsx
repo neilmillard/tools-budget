@@ -25,7 +25,7 @@ function RichestManInBabylon() {
                 </div>
             </div>
 
-            <div className="flex flex-wrap gap-2 mb-8 justify-center">
+            <div className="flex flex-wrap gap-2 mb-8 justify-center mt-8">
                 {babylonLessons.map((lesson: BabylonLesson, index: number) => (
                     <button
                         key={index}
@@ -40,7 +40,10 @@ function RichestManInBabylon() {
                 ))}
             </div>
             <Story lessonData={babylonLessons[activeLesson]}/>
-            <div className="justify-center flex pt-6 font-bold">
+            <div className="justify-center flex pt-6 font-bold flex-col items-center gap-4">
+                <Link href="/babylon/" className="text-amber-800 hover:text-amber-900 flex items-center gap-2">
+                    <span>← Back to Overview</span>
+                </Link>
                 <Link href="https://upload.wikimedia.org/wikipedia/commons/e/e7/The_Richest_Man_In_Babylon.pdf">Download the PDF</Link>
             </div>
         </div>
