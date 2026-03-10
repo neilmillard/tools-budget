@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import React from "react";
-import { GoogleTagManager } from "@next/third-parties/google"
+import {GoogleTagManager} from "@/components/GoogleTagManager";
+import CookieBanner from "@/components/CookieConsentBanner";
 import {NavBar} from "@/app/components/NavBar";
 import {Footer} from "@/app/components/Footer";
 import Adsense from "@/app/components/Adsense";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,9 +73,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <head>
+    <Head>
       <Adsense />
-    </head>
+    </Head>
     <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
@@ -82,6 +84,7 @@ export default function RootLayout({
     {children}
     <Footer/>
     <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
+    <CookieBanner />
     </body>
     </html>
   );
