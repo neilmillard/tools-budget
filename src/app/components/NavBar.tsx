@@ -48,19 +48,20 @@ export function NavBar() {
     setIsToolsOpen(false)
   }
 
-  return <header className='fixed w-full px-8 bg-green-50 shadow-sm shadow-neutral-500 h-10 flex items-center'>
+  return <header className='fixed w-full px-8 bg-green-50 shadow-sm shadow-neutral-500 h-14 flex items-center'>
     <nav className="flex justify-between items-center w-full">
-      <Link href="/" className='font-bold'>
-        Helpful Money
+      <Link href="/" className='flex flex-col'>
+        <span className='font-bold text-lg leading-tight'>Helpful Money</span>
+        <span className='text-xs italic text-neutral-600'>Ancient wisdom. Modern tools.</span>
       </Link>
       <ul
         className={twMerge(clsx(
           'flex items-center gap-8',
           isMenuOpen &&
-          'bg-green-50 flex-col fixed top-10 right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-0',
+          'bg-green-50 flex-col fixed top-14 right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-0',
           !isMenuOpen &&
           isMobile &&
-          'bg-green-50 flex-col fixed top-10 right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-full'
+          'bg-green-50 flex-col fixed top-14 right-0 bottom-0 w-1/2 p-8 transform transition-transform duration-300 ease-in-out translate-x-full'
         ))}
       >
         <li className="relative">
