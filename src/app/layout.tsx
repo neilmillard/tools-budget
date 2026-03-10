@@ -80,7 +80,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
     <NavBar/>
-    <div className='h-10'></div>
+    <div className='h-14'></div>
     {children}
     <Footer/>
     <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />

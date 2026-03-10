@@ -14,6 +14,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="w-[83%] mx-auto p-6 bg-white rounded-2xl shadow-md">
+      <div className="flex flex-col items-center mb-8">
+        <h2 className="text-3xl font-bold">Helpful Money</h2>
+        <p className="text-xl italic text-neutral-600 mt-2">Ancient wisdom. Modern tools.</p>
+      </div>
       <h2 className="text-xl flex justify-center font-bold mb-4">Money Tools</h2>
       <div className="p-6">
         <p>Helpful Money, a collection of tools so you stay on track with your Money Journey.</p>
