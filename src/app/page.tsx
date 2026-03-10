@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FinancialSteps from "@/app/components/FinancialSteps";
 import { Metadata } from "next";
+import {ChevronRight} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Helpful Money | Financial Tools to Manage Your Money Better",
@@ -25,6 +26,31 @@ export default function Home() {
           before investing.</p>
         <p>“Investing should be more like watching paint dry or watching grass grow. If you want excitement, take $800 and go to Las Vegas.”
           ― Paul Samuelson</p>
+        
+        <div className="my-10 p-8 bg-amber-50 rounded-2xl border border-amber-100 shadow-sm relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+            <span className="text-6xl font-serif text-amber-900 leading-none">“</span>
+          </div>
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold text-amber-900 mb-2 flex items-center gap-2">
+              Ancient Wisdom for Modern Money
+            </h3>
+            <p className="text-lg text-amber-800 italic mb-4">
+              "Timeless money wisdom, written 4,000 years ago — still true today"
+            </p>
+            <p className="text-gray-700 mb-6 max-w-2xl">
+              Feeling overwhelmed by modern finance? Start with the <b>7 Cures for a Lean Purse</b>. 
+              These ancient Babylonian parables are the perfect entry point for anyone starting their financial journey.
+            </p>
+            <Link 
+              href="/babylon/" 
+              className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 text-white font-bold rounded-lg hover:bg-amber-700 transition-all shadow hover:shadow-md"
+            >
+              Explore the Babylon Series <ChevronRight className="size-4" />
+            </Link>
+          </div>
+        </div>
+
         <FinancialSteps/>
         <p className="pt-6"><Link href={'/tools/budget/'}><b>Budget Planner</b></Link> enables you to fill in the form similar
           to a bank loan.
