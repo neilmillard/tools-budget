@@ -1,17 +1,17 @@
-import BenGrahamInvesting from "@/app/components/BenGrahamInvesting";
+import InvestingHub from "@/app/components/InvestingHub";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ben Graham Investing Principles | Helpful Money",
-  description: "Explore Ben Graham's investing principles inspired by 'The Intelligent Investor'. Learn timeless wisdom for successful value investing and building wealth.",
+  title: "Investing Resource Hub | Helpful Money",
+  description: "A structured guide to investing: foundations, asset classes, strategy, and mindset. Start your journey to financial freedom with our curated reading path.",
   openGraph: {
-    title: "Ben Graham Investing Principles | Helpful Money",
-    description: "Explore Ben Graham's investing principles inspired by 'The Intelligent Investor'. Learn timeless wisdom for successful value investing and building wealth.",
+    title: "Investing Resource Hub | Helpful Money",
+    description: "A structured guide to investing: foundations, asset classes, strategy, and mindset. Start your journey to financial freedom with our curated reading path.",
   },
 };
 
 export default function InvestingPage() {
     return (
-        <BenGrahamInvesting />
+        <InvestingHub />
     )
 }
