@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import {redirect} from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Blog | Helpful Money",
@@ -13,10 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function BlogIndex() {
-    return (
-        <div className="max-w-2xl mx-auto p-6">
-            <meta httpEquiv="refresh" content="0; url=/blog/newest/" />
-            <p>Redirecting to <a href="/blog/newest/" className="text-blue-500 hover:underline">/blog/newest/</a>...</p>
-        </div>
-    );
+  redirect("/blog/newest/")
 }
