@@ -16,14 +16,12 @@ const navLinks: NavLinkItem[] = [
   {name: ' Blog ', path: '/blog/'},
   {name: ' About ', path: '/about/'},
   {name: ' 7 Cures', path: '/babylon/'},
-  {name: ' Investing', path: '/investing/'},
-  {name: ' Contact ', path: '/contact/'},
 ]
 
 const toolLinks: NavLinkItem[] = [
   {name: 'Budget Planner', path: '/tools/budget/'},
   {name: 'Mortgage Calculator', path: '/tools/mortgage/'},
-  {name: 'Mortgage Overpayment Calculator', path: '/tools/mortgage-overpayment-calculator'},
+  {name: 'Mortgage Overpayment Calculator', path: '/tools/mortgage-overpayment-calculator/'},
   {name: 'Mortgage Affordability Calculator', path: "/tools/afford/"},
   {name: 'Pension Calculator', path: "/tools/pension/"},
 ]
@@ -48,7 +46,7 @@ export function NavBar() {
     setIsToolsOpen(false)
   }
 
-  return <header className='fixed w-full px-8 bg-green-50 shadow-sm shadow-neutral-500 h-14 flex items-center'>
+  return <header className='fixed w-full px-8 bg-green-50 shadow-sm shadow-neutral-500 h-14 flex items-center z-50'>
     <nav className="flex justify-between items-center w-full">
       <Link href="/" className='flex flex-col'>
         <span className='font-bold text-lg leading-tight'>Helpful Money</span>

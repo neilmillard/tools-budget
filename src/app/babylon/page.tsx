@@ -4,6 +4,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "The Babylon Series: Timeless Money Wisdom | Helpful Money",
   description: "Ancient Babylonian wisdom for modern financial success. Discover the Seven Cures for a Lean Purse and build your wealth.",
+  alternates: {
+    canonical: "/babylon/",
+  },
 };
 
 export default function BabylonLanding() {

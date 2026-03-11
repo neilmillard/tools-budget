@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     title: "Contact Us | Helpful Money",
     description: "Have questions or feedback about our financial tools? Contact the Helpful Money team and we'll get back to you as soon as possible.",
   },
+  alternates: {
+    canonical: "/contact/",
+  },
 };
 
 export default function Contact() {

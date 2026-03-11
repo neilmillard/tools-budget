@@ -8,6 +8,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: "Stage 2: Saving | Helpful Money",
     description: "The second stage: building your financial cushion and working towards a house deposit.",
+    alternates: {
+        canonical: "/journey/saving/",
+    },
 };
 
 export default function SavingPage() {

@@ -1,5 +1,18 @@
 import PensionCalculator from "@/app/components/calculators/PensionCalculator";
 import RelatedInsights from "@/app/components/calculators/RelatedInsights";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pension Calculator | Helpful Money",
+  description: "Estimate your retirement income with our free pension calculator. See how much your pension pot could be worth and how long it might last based on your contributions and withdrawal rate.",
+  openGraph: {
+    title: "Pension Calculator | Helpful Money",
+    description: "Estimate your retirement income with our free pension calculator. See how much your pension pot could be worth and how long it might last based on your contributions and withdrawal rate.",
+  },
+  alternates: {
+    canonical: "/tools/pension/",
+  },
+};
 
 export default function Pension() {
     const relatedPosts = [

@@ -8,6 +8,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: "Stage 4: Investing | Helpful Money",
     description: "The final stage: long-term wealth building and planning for a comfortable retirement.",
+    alternates: {
+        canonical: "/journey/investing/",
+    },
 };
 
 export default function InvestingPage() {

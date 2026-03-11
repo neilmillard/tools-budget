@@ -85,4 +85,4 @@ Ancient financial wisdom tells us that wealth begins not with acquisition but wi
 
 A person with modest income and a robust emergency fund is financially stronger than someone with high income but no financial buffer. The former sleeps peacefully; the latter lives one paycheck away from crisis.
 
-In our next article, we'll explore understanding inflation—the silent wealth eroder—and why traditional savings accounts alone can't build wealth in the modern economy.
+In our next article, we'll explore [The Invisible Tax: Understanding Inflation](/blog/the-invisible-tax/)—the silent wealth eroder—and why traditional savings accounts alone can't build wealth in the modern economy.

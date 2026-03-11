@@ -36,7 +36,7 @@ export default function CookieBanner() {
           <p className="text-sm">
             We use cookies to enhance your experience and analyze site traffic.
             By clicking &quot;Accept&quot;, you consent to our use of cookies.{' '}
-            <Link href="/privacy" className="underline hover:text-gray-300">
+            <Link href="/privacy-policy/" className="underline hover:text-gray-300">
               Learn more
             </Link>
           </p>
