@@ -16,6 +16,7 @@ const navLinks: NavLinkItem[] = [
   {name: ' Blog ', path: '/blog/'},
   {name: ' About ', path: '/about/'},
   {name: ' 7 Cures', path: '/babylon/'},
+  {name: ' Investing', path: '/investing/'},
 ]
 
 const toolLinks: NavLinkItem[] = [
