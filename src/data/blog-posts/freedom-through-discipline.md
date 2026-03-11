@@ -69,4 +69,4 @@ In just under three years, she was debt-free. She then redirected those same pay
 
 The lesson? Sometimes you must clear the path before you can begin the journey.
 
-In our next article, we'll explore how to build your emergency fund—your financial buffer against life's inevitable surprises and the foundation of your investment strategy.
+In our next article, we'll explore [Your Financial Safety Net](/blog/your-financial-safety-net/)—your financial buffer against life's inevitable surprises and the foundation of your investment strategy.

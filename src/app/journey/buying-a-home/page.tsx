@@ -8,6 +8,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: "Stage 3: Buying a Home | Helpful Money",
     description: "The third stage: navigating mortgage affordability and overpayment strategies.",
+    alternates: {
+        canonical: "/journey/buying-a-home/",
+    },
 };
 
 export default function BuyingAHomePage() {

@@ -10,30 +10,30 @@ export const journeySteps = [
     {
         number: 1,
         titleTop: "Paying Debt",
-        description: "You might be spending more than your income. You have credit card debts and are paying them off.",
-        href: "/journey/paying-debt",
+        description: "Stop digging the hole. Learn about [Eliminating Consumer Debt](/blog/freedom-through-discipline/) and getting your spending under control.",
+        href: "/journey/paying-debt/",
         color: "#ffaa66"
     },
     {
         number: 2,
         titleTop: "Saving",
-        description: "Your expenses are lower than your income, so you are saving money every month. Perhaps towards a Home Deposit.",
-        href: "/journey/saving",
+        description: "Build your foundation. Create [Your Financial Safety Net](/blog/your-financial-safety-net/) and start saving for a home deposit.",
+        href: "/journey/saving/",
         color: "#f7dc6f"
     },
     {
         number: 3,
         titleTop: "Buying a",
         titleBottom: "Home",
-        description: "You have a Mortgage and are paying it off. You might have savings too.",
-        href: "/journey/buying-a-home",
+        description: "Secure your future. [Know if you can afford a mortgage](/blog/know-if-you-can-afford-mortgage/) before you apply.",
+        href: "/journey/buying-a-home/",
         color: "#c6e07f"
     },
     {
         number: 4,
         titleTop: "Investing",
-        description: "Your money is under control, you have a home, and sufficient savings to think about investing long term.",
-        href: "/journey/investing",
+        description: "Grow your wealth. [Start investing long term](/blog/owning-a-piece-of-the-future/) once your home and savings are secure.",
+        href: "/journey/investing/",
         color: "#a7e0a5"
     }
 ];

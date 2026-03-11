@@ -54,6 +54,13 @@ The "Rule of 72" provides a simple way to understand how quickly inflation erode
 
 This simple calculation demonstrates why beating inflation isn't optional—it's essential for maintaining your standard of living over time.
 
+<ToolCTA 
+  title="Plan for Your Future" 
+  toolName="Pension Calculator" 
+  toolUrl="/tools/pension" 
+  description="Inflation is a pension's greatest enemy. Use our Pension Calculator to see how your future income stacks up against rising costs over the long term."
+/>
+
 ## Taking Action: Your Inflation Protection Plan
 
 1. **Keep only necessary amounts in cash** (emergency fund and short-term needs)
@@ -67,4 +74,4 @@ This simple calculation demonstrates why beating inflation isn't optional—it's
 
 Throughout history, successful merchants understood that gold and silver coins maintained value while paper currency fluctuated. The modern equivalent is understanding that only productive assets—those that generate income or appreciate—can truly preserve wealth in an inflationary environment.
 
-In our next article, we'll explore the cornerstone of most investment strategies: understanding stocks and how to approach this powerful wealth-building tool with confidence.
+In our next article, we'll explore [Owning a Piece of the Future: The Power of Stock Market Investing](/blog/owning-a-piece-of-the-future/)—the cornerstone of most investment strategies—and how to approach this powerful wealth-building tool with confidence.

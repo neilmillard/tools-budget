@@ -14,7 +14,10 @@ export function Footer() {
       href="https://www.techanswers.club/" target="_blank">Tech Answers Club</a>
     </div>
     <div className="text-xs text-gray-500 h-8 text-center">
-      <a href="/privacy-policy">Privacy Policy</a> - <a href="/terms-of-service">Terms of Service</a>
+      <a href="/about/">About</a> - <a href="/contact/">Contact</a> - <a href="/investing/">Investing Hub</a>
+    </div>
+    <div className="text-xs text-gray-500 h-8 text-center">
+      <a href="/privacy-policy/">Privacy Policy</a> - <a href="/terms-of-service/">Terms of Service</a>
     </div>
         <div className="text-xs text-gray-500 h-6 text-center">
             Calculators provided are a guide, your financial provider may use a different calculation

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     title: "Blog Posts | Helpful Money",
     description: "Read our latest blog posts about personal finance, budgeting tips, investing strategies, and more to improve your financial knowledge.",
   },
+  alternates: {
+    canonical: "/blog/newest/",
+  },
 };
 
 export default function BlogIndex() {

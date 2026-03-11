@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       title: `${blog.title} | Helpful Money Blog`,
       description: excerpt,
     },
+    alternates: {
+      canonical: `/blog/${id}/`,
+    },
   };
 }
 

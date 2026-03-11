@@ -7,7 +7,6 @@ import CookieBanner from "@/components/CookieConsentBanner";
 import {NavBar} from "@/app/components/NavBar";
 import {Footer} from "@/app/components/Footer";
 import Adsense from "@/app/components/Adsense";
-import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,12 +72,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <Head>
-      <Adsense />
-    </Head>
     <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
+    <Adsense />
     <NavBar/>
     <div className='h-14'></div>
     {children}

@@ -17,16 +17,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/fiftythirtytwenty',
     '/investing',
+    '/babylon/series',
+    '/journey/paying-debt',
+    '/journey/saving',
+    '/journey/buying-a-home',
+    '/journey/investing',
     '/tools/afford',
     '/tools/budget',
     '/tools/mortgage',
     '/tools/mortgage-overpayment-calculator',
     '/tools/pension',
+    '/start-here',
   ];
 
   // Create sitemap entries for static routes
   const staticRoutes = routes.map((route) => ({
-    url: `${baseUrl}${route}`,
+    url: `${baseUrl}${route}/`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: route === '' ? 1.0 : 0.8,
@@ -35,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Get all blog posts and add them to the sitemap
   const blogPosts = getAllBlogPosts();
   const blogRoutes = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.id}`,
+    url: `${baseUrl}/blog/${post.id}/`,
     lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,

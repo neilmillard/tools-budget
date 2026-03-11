@@ -8,6 +8,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
     title: "Stage 1: Paying Debt | Helpful Money",
     description: "The first step on your financial journey: eliminating debt and getting your spending under control.",
+    alternates: {
+        canonical: "/journey/paying-debt/",
+    },
 };
 
 export default function PayingDebtPage() {
