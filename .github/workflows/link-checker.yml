@@ -28,11 +28,4 @@ jobs:
         run: npm run build
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v2
-        with:
-          # Check links in the generated 'out' folder
-          args: --verbose --no-progress './out/**/*.html'
-          # Fail the build if broken links are found
-          fail: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run check-links
