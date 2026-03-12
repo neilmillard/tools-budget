@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "check-links": "linkinator out/ --recurse --skip \"(?:https:\\/\\/www\\.linkedin\\.com\\/|https:\\/\\/twitter\\.com\\/|https:\\/\\/x\\.com\\/|https:\\/\\/facebook\\.com\\/|https:\\/\\/instagram\\.com\\/|mailto:|tel:)\""
   },
   "dependencies": {
     "@mantine/hooks": "^8.3.16",
@@ -42,6 +43,7 @@
     "eslint-config-next": "16.1.4",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "linkinator": "^7.6.1",
     "minimatch": "^9.0.9",
     "tailwindcss": "^4.1.16",
     "ts-node": "^10.9.2",

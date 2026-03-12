@@ -17,7 +17,7 @@ export default function InvestingPage() {
     const relatedPosts = [
         { title: "Freedom Through Foresight: Strategic Retirement Planning", url: "/blog/freedom-through-foresight" },
         { title: "How to Use a Pension Calculator — and What the Numbers Really Mean", url: "/blog/how-to-use-pension-calculator" },
-        { title: "The Seven Cures — Make thy gold multiply", url: "/babylon/cure3" }
+        { title: "The Seven Cures — Make thy gold multiply", url: "/babylon/series/" }
     ];
 
     return (

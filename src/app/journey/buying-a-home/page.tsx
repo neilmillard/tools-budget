@@ -17,7 +17,7 @@ export default function BuyingAHomePage() {
     const relatedPosts = [
         { title: "How to Know if You Can Afford a Mortgage Before You Apply", url: "/blog/know-if-you-can-afford-mortgage" },
         { title: "How Much Could You Save by Overpaying Your Mortgage?", url: "/blog/how-much-save-mortgage-overpayment" },
-        { title: "The Seven Cures — Make of thy dwelling a profitable investment", url: "/babylon/cure5" }
+        { title: "The Seven Cures — Make of thy dwelling a profitable investment", url: "/babylon/series/" }
     ];
 
     return (
