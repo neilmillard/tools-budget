@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function SavingPage() {
     const relatedPosts = [
         { title: "Your Financial Safety Net", url: "/blog/your-financial-safety-net" },
-        { title: "The Seven Cures — Start thy purse to fattening", url: "/babylon/cure1" }
+        { title: "The Seven Cures — Start thy purse to fattening", url: "/babylon/series/" }
     ];
 
     return (

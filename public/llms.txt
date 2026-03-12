@@ -1,0 +1,20 @@
+# Helpful Money
+
+Financial tools, calculators, and resources to help you make better decisions with your money. Ancient wisdom meets modern tools.
+
+## Key Sections
+
+- **Tools**: Free financial calculators.
+    - [Budget Planner](/tools/budget/)
+    - [Mortgage Calculator](/tools/mortgage/)
+    - [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/)
+    - [Mortgage Affordability Calculator](/tools/afford/)
+    - [Pension Calculator](/tools/pension/)
+- **Wisdom**: The Babylon Series - [7 Cures for a Lean Purse](/babylon/)
+- **Blog**: Financial insights and stories - [/blog/](/blog/)
+- **About**: The story behind Helpful Money - [/about/](/about/)
+
+## Core Philosophy
+- Ancient principles like compounding interest and discipline.
+- Transparent, simple, and functional tools.
+- Authenticity and personal experience from bankruptcy to financial freedom.

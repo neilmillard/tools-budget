@@ -1,0 +1,25 @@
+# Lychee configuration file
+# For more options, see: https://github.com/lycheeverse/lychee#configuration
+
+# Check all links except those that match a regex
+exclude:
+  - "https://www.linkedin.com/.*"
+  - "https://twitter.com/.*"
+  - "https://x.com/.*"
+  - "https://facebook.com/.*"
+  - "https://instagram.com/.*"
+  - "mailto:.*"
+  - "tel:.*"
+
+# Max number of retries for each link
+max_retries: 2
+
+# Max number of concurrent requests
+max_concurrency: 8
+
+# Wait time between requests (in milliseconds)
+# delay: 100
+
+# Do not fail if a link is forbidden (403)
+# accept:
+#  - 403

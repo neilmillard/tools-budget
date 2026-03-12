@@ -1,6 +1,7 @@
 import AffordabilityCalculator from "@/app/components/calculators/AffordabilityCalculator";
 import RelatedInsights from "@/app/components/calculators/RelatedInsights";
 import { Metadata } from "next";
+import SoftwareApplicationSchema from "@/components/schema/SoftwareApplicationSchema";
 
 export const metadata: Metadata = {
   title: "Mortgage Affordability Calculator | Helpful Money",
@@ -21,6 +22,12 @@ export default function Afford() {
 
     return (
         <>
+            <SoftwareApplicationSchema 
+                name="Mortgage Affordability Calculator"
+                description="Calculate how much house you can afford based on your income, deposit, and expenses. See estimated affordable house prices and monthly mortgage payments."
+                url="https://www.helpfulmoney.site/tools/afford/"
+                applicationCategory="FinanceApplication"
+            />
             <AffordabilityCalculator />
             <div className="max-w-4xl mx-auto px-6 pb-12">
                 <RelatedInsights posts={relatedPosts} />
