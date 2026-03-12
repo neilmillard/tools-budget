@@ -15,13 +15,13 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="text-center mb-16">
+    <main className="max-w-4xl mx-auto px-6 py-12">
+      <header className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to Helpful Money</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
           We combine ancient financial wisdom with modern tools to help you build a life of financial freedom and peace.
         </p>
-      </div>
+      </header>
 
       {/* The Journey Section */}
       <section className="mb-20">
@@ -167,6 +167,6 @@ export default function Home() {
         <div data-tf-live="01JTDAGBS12DNVW9YS48YXE667"></div>
         <Script async src="//embed.typeform.com/next/embed.js" strategy="afterInteractive" />
       </section>
-    </div>
+    </main>
   );
 }

@@ -1,7 +1,7 @@
 import SocialLinks from "@/app/components/SocialLinks";
 
 export function Footer() {
-    return <div className="pt-4 flex h-full flex-col justify-center">
+    return <footer className="pt-4 flex h-full flex-col justify-center">
               <SocialLinks />
     <div className="flex flex-row justify-center mt-3">
       © 2017-2025 Neil Millard
@@ -22,5 +22,5 @@ export function Footer() {
         <div className="text-xs text-gray-500 h-6 text-center">
             Calculators provided are a guide, your financial provider may use a different calculation
         </div>
-    </div>
+    </footer>
 }

@@ -4,6 +4,8 @@ import "./globals.css";
 import React from "react";
 import {GoogleTagManager} from "@/components/GoogleTagManager";
 import CookieBanner from "@/components/CookieConsentBanner";
+import OrganizationSchema from "@/components/schema/OrganizationSchema";
+import WebSiteSchema from "@/components/schema/WebSiteSchema";
 import {NavBar} from "@/app/components/NavBar";
 import {Footer} from "@/app/components/Footer";
 import Adsense from "@/app/components/Adsense";
@@ -75,6 +77,8 @@ export default function RootLayout({
     <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
+    <OrganizationSchema />
+    <WebSiteSchema />
     <Adsense />
     <NavBar/>
     <div className='h-14'></div>
