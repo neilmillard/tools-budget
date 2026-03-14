@@ -4,7 +4,7 @@ export function Footer() {
     return <footer className="pt-4 flex h-full flex-col justify-center">
               <SocialLinks />
     <div className="flex flex-row justify-center mt-3">
-      © 2017-2025 Neil Millard
+      © 2017-2026 Neil Millard
     </div>
     <div className="text-xs text-gray-500 h-8 mt-2 text-center">
       <a href="https://github.com/neilmillard" target="_blank">Github</a> - <a
