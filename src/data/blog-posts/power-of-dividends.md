@@ -19,9 +19,10 @@ The real magic happens when you don't spend that £4.50. You use it to buy more 
 This is the "chain reaction" of compounding. It's the 3rd Cure in its purest form. 
 
 ## How I Make My Gold Multiply
-1. **I don't pick winners:** I use global index funds (Stage 4). I own a tiny slice of thousands of profitable companies. If one fails, the others carry me. This is also the **4th Cure: "Guard thy treasures from loss."**
-2. **I automate the reinvestment:** Most modern platforms let you "auto-reinvest." I never even see the dividend cash; it just buys more seeds for my forest.
-3. **I play the Long Game:** In the beginning, the dividends are tiny. It feels like nothing is happening. But after a decade, the "offspring" start to do the heavy lifting.
+1. **The 'Terry Smith' Approach:** I've moved beyond just buying the whole market. Terry Smith (from Fundsmith) often points out that broad index funds can feel like "momentum investing"—buying more of what's already expensive. I prefer to focus on high-quality **Value** companies: businesses that earn high returns on their capital and can reinvest that profit at high rates. 
+2. **I don't pick winners, I pick quality:** While I still use global index funds (Stage 4) for the base of my "forest," I look for the 4th Cure in my individual holdings: **"Guard thy treasures from loss."** This means only investing in companies that are already profitable and have a "moat" around their business. 
+3. **I automate the reinvestment:** Most modern platforms let you "auto-reinvest." I never even see the dividend cash; it just buys more seeds for my forest.
+4. **I play the Long Game:** In the beginning, the dividends are tiny. It feels like nothing is happening. But after a decade, those high-quality "offspring" start to do the heavy lifting.
 
 ## The Goal: The 6th Cure
 The ultimate goal of the 3rd Cure is the **6th Cure: "Insure a future income."** 
