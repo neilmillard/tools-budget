@@ -4,33 +4,38 @@ date: "2026-05-09"
 ---
 # Should You Invest or Pay Off the Mortgage?
 
-This is one of the most common questions in modern personal finance. It's a classic conflict between the **3rd Cure (Make thy gold multiply)** and the **5th Cure (Make of thy dwelling a profitable investment).**
+This is the question I get asked more than any other. It's a classic conflict between the **3rd Cure (Make thy gold multiply)** and the **5th Cure (Make of thy dwelling a profitable investment).**
 
-In **Stage 3: Buying a Home**, many people wonder whether to use their surplus to pay down their mortgage or to invest it in the stock market (Stage 4). There is no single "right" answer, but there is a clear way to make the decision.
+For years, I was torn. On one hand, the "math nerds" on the internet told me I should never pay off a low-interest mortgage. On the other hand, my gut told me that owing the bank hundreds of thousands of pounds was a weight I didn't want to carry.
 
 ## The Math: Comparing Returns
 The mathematical answer is simple: where will your pound earn more?
 
 1. **Mortgage Payoff:** Paying down your mortgage gives you a guaranteed "return" equal to your mortgage interest rate. If your mortgage is 4%, every pound you overpay is like earning 4% tax-free.
-2. **Investing:** Investing in a global index fund historically returns around 7–8% per year. However, this isn't guaranteed, and you may have to pay taxes on your gains.
+2. **Investing:** Historically, a global index fund returns around 7–8% per year. 
+
+The "spread" between 4% and 8% is what the math nerds are chasing. But there's a catch: **the 4% is guaranteed; the 8% is not.**
+
+## My "Wait, Really?" Moment with Overpayments
+The turning point for me was when I built the **Mortgage Overpayment Calculator**. I put in my own numbers: a £250,000 mortgage at 3.5%. 
+
+I saw that by overpaying just £200 a month, I could:
+- Save over **£42,000 in interest**.
+- Be mortgage-free **6 years earlier**.
+
+Seeing those numbers made it real. It wasn't just an abstract "4% vs 8%" debate anymore. It was about whether I wanted to give the bank an extra £42,000 of my hard-earned gold. 
 
 ## The Psychology of the 5th Cure
-The 5th Cure isn't just about the math; it's about the security of owning your "dwelling." For many, the peace of mind that comes from being debt-free is more valuable than the extra 2% return they might get in the market. 
+Arkad suggests that owning your own home—not a landlord's home—is a key part of financial well-being. I agree. 
 
-Arkad suggests that owning your own home—not a landlord's home—is a key part of financial well-being. Once your home is paid off, your "expenditures" (2nd Cure) decrease significantly, leaving more in your purse to fatten and multiply.
+Once your home is paid off, your "expenditures" (2nd Cure) drop off a cliff. That leaves massive amounts of surplus to fatten and multiply in **Stage 4: Investing**. For me, the peace of mind of a paid-off roof over my head is worth more than a few extra percentage points in the market.
 
-## How to Decide
-1. **Interest Rates:** If mortgage rates are high, overpaying becomes much more attractive.
-2. **Tax Efficiency:** Are you using your ISA and pension allowances? (Cure 4 and 6). These tax benefits can tip the scales in favor of investing.
-3. **Emergency Fund:** Never overpay your mortgage if it leaves you with no cash in your purse (Stage 2).
+## How I Decide
+1. **The "Sleep at Night" Test:** If mortgage debt keeps you awake, pay it off. No return is worth your sanity.
+2. **Tax Efficiency First:** I always max out my ISA and pension (4th and 6th Cures) before I think about overpaying. The tax benefits are too good to ignore.
+3. **The Hybrid Approach:** I do both. I invest 15% and use any extra surplus to chip away at the mortgage. 
 
-## Run the Numbers
-The best way to decide is to see the impact for yourself. Use our **Mortgage Overpayment Calculator** to see how much interest you could save and how much sooner you could be mortgage-free.
-
-Compare that to the potential growth in our **Pension Calculator**.
-
-## Conclusion
-Make of thy dwelling a profitable investment. Whether you choose to invest or pay down your mortgage, the goal is the same: to build a secure future for you and your family.
+The best way to decide is to see the impact for yourself. 
 
 <ToolCTA
   title="See the Impact of Overpaying"

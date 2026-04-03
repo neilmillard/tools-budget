@@ -6,30 +6,32 @@ date: "2026-05-23"
 
 The fourth cure from ancient Babylon is to **"Guard thy treasures from loss."** In the modern world of investing (**Stage 4**), guarding your treasures often means **Rebalancing**.
 
-Think of your portfolio like a garden. Some plants (stocks) will grow faster than others (bonds). Over time, if you don't prune and rearrange, your garden can become overgrown and riskier than you intended.
+I like to think of my portfolio like a garden. Some plants (stocks) will grow much faster than others (bonds). If you don't prune and rearrange, your garden can become overgrown and far riskier than you ever intended. 
+
+## The "Accidental" Risk
+I remember looking at my portfolio after a particularly good year for the stock market. I had started with a 60/40 split between stocks and bonds. But because stocks had done so well, they now made up 75% of my total wealth. 
+
+I felt like a genius. But I was actually in danger. I was over-exposed. If the market crashed the next day, I'd lose far more than I had originally planned for. That was my "Wait, really?" moment: **Success had made me vulnerable.**
 
 ## What is Rebalancing?
-Rebalancing is the process of bringing your portfolio back to its original target asset allocation. If you decided on a portfolio of 70% stocks and 30% bonds, a strong stock market year might push your stocks to 80% of your total wealth. 
+Rebalancing is the process of bringing your portfolio back to its original target. In my case, it meant selling some of those high-flying stocks and using the proceeds to buy more bonds. 
 
-At this point, your garden is overgrown. You have more risk (stocks) than you originally planned. Rebalancing means selling some of those high-flying stocks and using the proceeds to buy more bonds. This is the **4th Cure** in action—it's preventing your "treasures" from being over-exposed to market volatility.
+It felt counter-intuitive. Why sell the thing that's doing well to buy the thing that's flat? 
 
 ## Why Rebalancing Works
-1. **It Forces You to Sell High and Buy Low:** By selling the assets that have grown (stocks) and buying the ones that have underperformed (bonds), you are doing exactly what every successful investor wants: buying low and selling high.
-2. **It Manages Risk:** It keeps your portfolio's risk level consistent with your original plan and stage in the journey.
-3. **It Instills Discipline:** It removes emotion from your decision-making. You're following a system, not chasing performance.
+1. **It Forces You to Sell High and Buy Low:** By selling the assets that have grown and buying the ones that haven't, you are doing exactly what every successful investor wants.
+2. **It Manages the 4th Cure:** It prevents your "treasures" from being over-exposed to market volatility. It's a defensive move.
+3. **It Removes Emotion:** I don't have to "guess" when to sell. My target allocation tells me.
 
 ## The 6th Cure: Insuring a Future Income
-As you age, the **6th Cure** becomes more important: **"Insure a future income."** This usually means gradually shifting your portfolio from growth (stocks) to stability (bonds). 
+As I get older, the **6th Cure** becomes more important: **"Insure a future income."** This means gradually shifting my garden from growth (stocks) to stability (bonds). 
 
-Rebalancing is the mechanism you use to make this shift over time. By pruning your stocks and planting more bonds as you get closer to retirement, you are ensuring that your income will be there when you need it.
+Rebalancing is the mechanism I use to make this shift. By pruning my stocks and planting more bonds as I get closer to retirement, I am ensuring that my income will be there when I need it.
 
-## Plan Your Garden
-A good rebalancing strategy is simple:
-- Rebalance once or twice a year.
-- Use our **Pension Calculator** to project your future needs and determine the best asset allocation for your stage in the journey.
-
-## Conclusion
-Guard thy treasures from loss. Don't let your financial garden become overgrown. Rebalance regularly, stick to your plan, and ensure your gold is protected for the long term.
+## How I Prune My Garden
+I don't check my portfolio every day. That leads to emotional decisions. Instead:
+- I rebalance once a year, usually in January.
+- I use the **Pension Calculator** to project my future needs and see if my current "garden layout" is still on track.
 
 <ToolCTA
   title="Project Your Future Stability"

@@ -4,31 +4,35 @@ date: "2026-04-18"
 ---
 # Good Debt vs. Bad Debt: A Modern Guide
 
-In the ancient story of Babylon, the second cure for a lean purse is: **"Control thy expenditures."** Arkad warns his students that what we call "necessary expenses" always grow to equal our incomes unless we resist.
+In the ancient story of Babylon, the second cure is: **"Control thy expenditures."** Arkad warns that what we call "necessary expenses" always grow to equal our incomes unless we resist.
 
-Today, those "necessary expenses" often take the form of debt payments. But not all debt is created equal.
+For years, my "necessary expenses" included a mountain of credit card debt. I was the classic example of someone whose expenditures had grown to swallow my entire salary.
 
-## The Distinction
-In **Stage 1: Paying Debt** of our financial journey, we have to distinguish between "Good Debt" and "Bad Debt."
+## The Debt Trap
+I used to think that as long as I could make the minimum payments, I was "managing" my debt. I wasn't. I was drowning. 
 
-- **Bad Debt:** This is debt that costs you money and interest. It's usually spent on things that lose value, like clothes, electronics, or vacations. This is a direct violation of the 2nd Cure—it's allowing your expenditures to grow beyond your means.
-- **Good Debt:** This is debt that helps you build wealth or income over the long term. A mortgage (Stage 3) or a student loan (Stage 4, investing in yourself) are common examples. These are tools to be used carefully, not avoided entirely.
+In **Stage 1: Paying Debt**, we have to be brutal about the distinction:
+
+- **Bad Debt:** This is the credit card balance from a holiday I've already forgotten, or the finance on a car that's losing value every day. This is the "enemy" in your purse. Borrowing against your home for holidays does not count as good debt—it's just moving the "enemy" into your foundation.
+- **Good Debt:** This is debt used to buy an asset that grows in value, like a mortgage (Stage 3) or investing in your own skills (the 7th Cure). 
+
+## My "Wait, Really?" Moment with Debt
+The turning point for me was when I actually sat down and calculated the total interest I was paying on my "bad" debt. It wasn't just a monthly payment; it was a massive leak in my financial engine. 
+
+I realized that every pound of high-interest debt I paid off was like a **guaranteed 20% return** on my money. You can't get that anywhere else. 
 
 ## Mapping the 2nd Cure
-The 2nd Cure isn't just about saving money; it's about **conscious spending**. When you take on debt, you are committing your future income to pay for your past decisions.
+The 2nd Cure isn't about deprivation; it's about **conscious spending**. When you take on debt, you are committing your future income to pay for your past decisions.
 
 To control your expenditures, you must audit your debt:
-1. **Identify the high-interest leaks:** Credit cards and payday loans are the "enemy" in your purse.
-2. **Prioritize repayment:** Every pound of high-interest debt you pay off is a guaranteed return on your investment.
-3. **Avoid lifestyle creep:** As your income grows (7th Cure), don't automatically grow your debt.
+1. **Identify the high-interest leaks:** Be honest about what's costing you the most.
+2. **Prioritize repayment:** Kill the high-interest debt first. It's the only way to "fatten your purse."
+3. **Avoid lifestyle creep:** When my income grew, my first instinct was to buy more. Now, my first instinct is to keep more.
 
 ## Before You Borrow
-Before taking on any new debt, even "good" debt like a mortgage, you need to understand the impact on your cash flow. Borrowing too much, even for a home, can leave you "house poor"—unable to fatten your purse (1st Cure) or invest your gold (3rd Cure).
+Even "good" debt like a mortgage can become a trap if it's too large. I've seen too many people become "house poor"—owning a beautiful home but unable to save a single penny. 
 
-Use our **Affordability Calculator** to see how a potential mortgage fits into your life *before* you apply.
-
-## Conclusion
-Control thy expenditures. Debt is a powerful tool, but like a sharp blade, it must be handled with extreme care. Eliminate the bad debt, use the good debt wisely, and always keep enough in your purse to continue your journey.
+I built the **Affordability Calculator** because I wanted a tool that told me the truth, not just what a bank was willing to lend me. It's about finding a mortgage that fits your life, not just your salary.
 
 <ToolCTA
   title="Check Your Borrowing Power"

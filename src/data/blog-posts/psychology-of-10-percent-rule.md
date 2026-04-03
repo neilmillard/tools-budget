@@ -4,29 +4,31 @@ date: "2026-04-11"
 ---
 # The Psychology of the '10% Rule'
 
-In the ancient city of Babylon, Arkad, the richest man in the city, shared his first cure for a lean purse: **"Start thy purse to fattening."** His advice was simple: for every ten coins you earn, spend only nine, and keep the tenth for yourself.
+In the ancient city of Babylon, Arkad shared his first cure: **"Start thy purse to fattening."** For every ten coins you earn, keep the tenth for yourself. 
 
-Today, we call this the **10% Rule**. But why 10%? And why does it feel so hard to start?
+Today we call this the **10% Rule**. But for a long time, I thought it was a trick. 
 
-## The Power of the Small Slice
-The genius of the 10% rule isn't the amount itself; it's the psychological shift it creates. When you commit to keeping 10% of your income, you are fundamentally changing your relationship with money. You are moving from a "consumer" mindset to a "builder" mindset.
+## The "Trick" of the Small Slice
+I used to think that saving 10% was something you did *after* you'd already paid everyone else. I'd pay the mortgage, the bills, the grocery shop, and then I'd look at what was left. Usually, it was zero. 
 
-Most people view their salary as a "spending allowance." They pay the landlord, the supermarket, and the utility company, and then they wonder why there is nothing left at the end of the month. By following the first cure, you are **paying yourself first**.
+The genius of the 10% rule isn't the amount itself; it's the psychological shift it creates. When I finally committed to keeping 10% *first*, I stopped being a "consumer" and started being a "builder." 
 
-## Why 10% Works
-1. **It is manageable:** Most people can adjust their lifestyle by 10% without significant hardship. It's the difference between eating out three times a week and eating out twice.
-2. **The 90/10 lifestyle:** Surprisingly, once you adjust to living on 90% of your income, you rarely miss the other 10%. Your brain adapts to the new "baseline."
-3. **The Compound Effect:** 10% saved and invested consistently over decades doesn't just add up; it multiplies. This is the foundation of **Stage 2: Saving** in our 4-stage journey.
+## Why 10% Works for Me
+1. **The Invisible Cut:** I found that if I moved 10% of my salary the day after payday, I didn't actually notice it was gone. My brain just adapted to the new "100%."
+2. **The 90/10 lifestyle:** Once you adjust to living on 90% of your income, you rarely miss the other 10%. It's the difference between a slightly nicer coffee or a slightly better meal out.
+3. **The "Wait, Really?" Moment:** When I put that 10% into my own [Budget Planner](/tools/budget) and projected it forward 10 years, I saw a number that actually felt like freedom. It wasn't just "savings"—it was future time I'd bought back.
 
-## From Ancient Wisdom to Modern Automation
-Arkad's students had to manually set aside their copper coins. We have it much easier. The best way to ensure you follow the 10% rule is to **automate it**.
+## From Copper Coins to Automation
+Arkad's students had to manually set aside their coins. I realized that the only way I'd stick to this was to remove myself from the equation. 
 
-Set up a standing order that triggers the day after your payday. Move that 10% into a separate account before you have the chance to spend it. If you don't see it, you won't miss it.
+I set up a standing order that triggers the day after my payday. It moves that 10% into a separate account before I even have the chance to think about it. If I don't see it, I don't spend it. 
 
-## Where to Find Your 10%
-If you aren't sure where that 10% is going to come from, it's time to look at the data. Use our **Budget Planner** to map out your current spending. You'll likely find "leaks" in your purse—small, recurring expenses that don't bring you joy but do drain your gold.
+## Finding Your 10%
+If you aren't sure where that 10% is going to come from, you're where I was three years ago. I thought I was "optimized." I wasn't. 
 
-Once you find that 10%, you have taken the single most important step toward financial freedom.
+I built the **Budget Planner** to help me find the "leaks." I found small, recurring expenses—subscriptions I didn't use, insurance I was overpaying for—that didn't bring me joy but did drain my gold. 
+
+Finding that 10% was the single most important step I took toward financial freedom. 
 
 <ToolCTA
   title="Find Your 10%"
