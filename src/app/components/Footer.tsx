@@ -19,8 +19,11 @@ export function Footer() {
     <div className="text-xs text-gray-500 h-8 text-center">
       <a href="/privacy-policy/">Privacy Policy</a> - <a href="/terms-of-service/">Terms of Service</a>
     </div>
-        <div className="text-xs text-gray-500 h-6 text-center">
-            Calculators provided are a guide, your financial provider may use a different calculation
-        </div>
+    <div className="text-xs text-gray-500 text-center mb-1">
+      Some links on this site are affiliate links. We may earn a commission at no cost to you.
+    </div>
+    <div className="text-xs text-gray-500 h-6 text-center">
+        Calculators provided are a guide, your financial provider may use a different calculation
+    </div>
     </footer>
 }

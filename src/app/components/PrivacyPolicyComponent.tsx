@@ -4,7 +4,20 @@ export default function PrivacyPolicyComponent() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-      <p className="mb-4 text-gray-700">Last Updated: July 23, 2025</p>
+      <p className="mb-4 text-gray-700">Last Updated: April 4, 2026</p>
+      
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">Affiliate Disclosure</h2>
+        <p className="mb-4">
+          Helpful Money is a participant in various affiliate marketing programs. This means we may earn a commission if you click on or make a purchase through certain links on our website.
+        </p>
+        <p className="mb-4">
+          Our use of affiliate links does not influence the information we provide or our recommendations. We only recommend products, services, and tools that we believe will provide value to our readers. Any commission earned helps us to maintain and improve the free tools and content available on this site, at no additional cost to you.
+        </p>
+        <p className="mb-4">
+          Where an affiliate link is used, we will clearly disclose this on the page. For financial products, we also include necessary risk warnings as required by the Financial Conduct Authority (FCA).
+        </p>
+      </section>
       
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Introduction</h2>

@@ -4,7 +4,20 @@ export default function TermsOfServiceComponent() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
-      <p className="mb-4 text-gray-700">Last Updated: July 23, 2025</p>
+      <p className="mb-4 text-gray-700">Last Updated: April 4, 2026</p>
+      
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">Affiliate Disclosure</h2>
+        <p className="mb-4">
+          Some of the links on this website are affiliate links. This means that, at no additional cost to you, we may earn a small commission if you click through and make a purchase or sign up for a service.
+        </p>
+        <p className="mb-4">
+          This site earns income through these partnerships to support the creation and maintenance of our free tools and educational content. However, we only recommend products or services that we believe will provide value to our users. Our recommendations are independent and based on our research and personal experience.
+        </p>
+        <p className="mb-4">
+          In accordance with Financial Conduct Authority (FCA) guidance, we also provide clear disclosures on pages containing affiliate links, as well as necessary risk warnings (e.g., &quot;Capital at Risk&quot;) for investment-related products.
+        </p>
+      </section>
       
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
