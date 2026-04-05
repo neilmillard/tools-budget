@@ -37,7 +37,7 @@ I built the **Pension Calculator** to help me visualize this "handover" point—
 
 ## Your Action Plan
 1. **Start the Machine:** If you have an ISA or a Pension, check if your dividends are being reinvested or just sitting as cash.
-2. **Project the Future:** Use the [Pension Calculator](/tools/pension) to see what 20 years of compounding looks like for your current savings.
+2. **Project the Future:** Use the [Pension Calculator](/tools/pension/) to see what 20 years of compounding looks like for your current savings.
 3. **Focus on Quality:** Read about "Dividend Aristocrats"—companies that have raised their dividends every year for 25+ years. These are the "strongest trees" in the forest.
 4. **Be Patient:** Remember Arkad's words. Wealth grows like a tree. It starts with a small seed, and it requires years of watering and protection before you can sit in its shade.
 

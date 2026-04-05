@@ -59,7 +59,7 @@ The 4th Cure tells us to "consult with wise men." Most "wise men" in the world o
 I built the **Pension Calculator** to help me set these targets. It lets me see how different mixes of assets (stocks vs. bonds vs. cash) might perform over decades. Once I have my "target forest," rebalancing is how I ensure I actually stay on that path.
 
 ## Your Action Plan
-1. **Define Your Targets:** What is your ideal mix? (e.g., 80% Global Stocks, 20% Bonds). Use the [Pension Calculator](/tools/pension) to test your assumptions.
+1. **Define Your Targets:** What is your ideal mix? (e.g., 80% Global Stocks, 20% Bonds). Use the [Pension Calculator](/tools/pension/) to test your assumptions.
 2. **Check the Current State:** Look at your accounts today. Has "lifestyle creep" or "market creep" moved you away from your plan?
 3. **Prune if Necessary:** If you are more than 5% off-target, consider a rebalance. (Be mindful of transaction costs and taxes!)
 4. **Automate the Inflow:** Try to use your monthly savings to buy the "laggards" and keep your garden in balance naturally.
@@ -75,4 +75,4 @@ Keep it safe by keeping it balanced.
   description="What should your asset mix look like? Use our tool to project different scenarios and find the balance that helps you sleep at night."
 />
 
-*Ready to learn more about the 4th Cure? Explore our section on [Protecting Your Progress](/blog/protecting-your-progress).*
+*Ready to learn more about the 4th Cure? Explore our section on [Protecting Your Progress](/blog/protecting-your-progress/).*

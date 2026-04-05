@@ -50,9 +50,9 @@ I built the **Affordability Calculator** because I wanted a tool that told me th
 Our tool helps you find the "sweet spot"—a mortgage that allows you to own your home while still having enough left over to fatten your purse (1st Cure) and make your gold multiply (3rd Cure).
 
 ## Your Action Plan
-1. **Face the Numbers:** Use the [Budget Planner](/tools/budget) to list all your current debt and interest rates.
+1. **Face the Numbers:** Use the [Budget Planner](/tools/budget/) to list all your current debt and interest rates.
 2. **Kill the High Interest:** Redirect every spare penny toward the debt with the highest interest rate. This is your #1 priority.
-3. **Check Your Reality:** If you're thinking about a move, use the [Affordability Calculator](/tools/afford) to see what a "safe" mortgage looks like for *your* lifestyle, not the bank's.
+3. **Check Your Reality:** If you're thinking about a move, use the [Affordability Calculator](/tools/afford/) to see what a "safe" mortgage looks like for *your* lifestyle, not the bank's.
 4. **Resist the Creep:** The next time you get a pay rise, commit 50% of it to debt repayment or savings immediately. 
 
 Arkad said: "That which each of us calls our 'necessary expenses' will always grow to equal our incomes unless we protest to the contrary." 
@@ -66,4 +66,4 @@ Consider this your protest.
   description="Don't guess what you can afford. Use our tool to calculate a mortgage that fits your life without draining your purse. Ensure your home is a blessing, not a burden."
 />
 
-*Ready to start paying down debt? See our guide on [Freedom Through Discipline](/blog/freedom-through-discipline).*
+*Ready to start paying down debt? See our guide on [Freedom Through Discipline](/blog/freedom-through-discipline/).*

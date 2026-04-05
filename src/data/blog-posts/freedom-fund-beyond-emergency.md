@@ -41,7 +41,7 @@ I used to think "freedom" was a million pounds. I thought it was a number so lar
 I saw that by cutting back on things I didn't even care about—the mindless Amazon purchases, the unused subscriptions—I could reach my "One Year Freedom Number" in just 18 months. That was my "Wait, really?" moment. Freedom wasn't a distant dream; it was a project with a deadline.
 
 ## Your Action Plan
-1. **Define Your Moat:** Use the [Budget Planner](/tools/budget) to calculate your monthly "survival" cost. Multiply by 6. That is your Emergency Fund goal.
+1. **Define Your Moat:** Use the [Budget Planner](/tools/budget/) to calculate your monthly "survival" cost. Multiply by 6. That is your Emergency Fund goal.
 2. **Define Your Freedom:** What would one year of life cost you? That is your first Freedom Fund milestone.
 3. **Audit the Leaks:** Find the money that is currently going toward corporations and redirect it toward your future self.
 4. **Invest the Surplus:** While an Emergency Fund should be in cash, a Freedom Fund can be invested (Stage 4) to benefit from the 3rd Cure (Make thy gold multiply).
@@ -57,4 +57,4 @@ Stop saving for a rainy day and start saving for a sunny one.
   description="How much could you be saving for your future? Use our Budget Planner to find the surplus that will fund your freedom. See how close you really are to your first year of independence."
 />
 
-*Ready for the next step? Learn about [The Simple Portfolio Most People Should Use](/blog/simple-portfolio-index-funds).*
+*Ready for the next step? Learn about [The Simple Portfolio Most People Should Use](/blog/simple-portfolio-index-funds/).*

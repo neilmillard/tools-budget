@@ -33,7 +33,7 @@ When you keep the 10% first, you force yourself to be more intentional with the 
 ## The "Wait, Really?" Moment: Seeing the Future
 The real psychological breakthrough happened when I stopped looking at the 10% as "lost spending" and started looking at it as "bought freedom." 
 
-I put that 10% into my own [Budget Planner](/tools/budget) and projected it forward 10 years, assuming a modest 7% return. I didn't see a pile of cash; I saw a number that felt like *time*. It was three years of my life, fully paid for. It was the ability to walk away from a toxic job. It was the "Freedom Fund" in its infancy.
+I put that 10% into my own [Budget Planner](/tools/budget/) and projected it forward 10 years, assuming a modest 7% return. I didn't see a pile of cash; I saw a number that felt like *time*. It was three years of my life, fully paid for. It was the ability to walk away from a toxic job. It was the "Freedom Fund" in its infancy.
 
 That was my "Wait, really?" moment. I wasn't "saving money"—I was buying back my future self.
 
@@ -64,7 +64,7 @@ There is a profound sense of peace that comes with knowing you are "keeping" som
 When you keep 10%, you are working 4 hours a week for *yourself*. You are the primary beneficiary of your own labor. That shift in perspective—from being a servant to the economy to being a shareholder in your own life—is the real "cure" for a lean purse.
 
 ## Your Action Plan
-1. **Audit:** Use the [Budget Planner](/tools/budget) to see exactly where your 100% is going right now.
+1. **Audit:** Use the [Budget Planner](/tools/budget/) to see exactly where your 100% is going right now.
 2. **Identify:** Find the "leaks"—the 10% that isn't bringing you joy or utility.
 3. **Automate:** Set up a standing order for the day after payday. Don't wait until the end of the month.
 4. **Observe:** Watch your "purse" begin to fatten. Resist the urge to "dip in" for non-emergencies.
@@ -80,4 +80,4 @@ Start building your army today.
   description="Use our Budget Planner to see where your money is going and identify the 10% you can start keeping for yourself today. It's the first step toward your own Babylonian cure."
 />
 
-*Continue your journey with the [2nd Cure: Control thy expenditures](/blog/freedom-through-discipline).*
+*Continue your journey with the [2nd Cure: Control thy expenditures](/blog/freedom-through-discipline/).*

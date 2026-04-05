@@ -23,15 +23,15 @@ I built this site to break that barrier. I wanted to take the same formulas that
 
 I am fascinated by the [Babylon Series](/babylon/). These lessons were written thousands of years ago, yet they are still fundamentally true today. 
 
-- **"Start thy purse to fattening"** (Cure 1) becomes our [Budget Planner](/tools/budget).
+- **"Start thy purse to fattening"** (Cure 1) becomes our [Budget Planner](/tools/budget/).
 - **"Control thy expenditures"** (Cure 2) is the output of that same tool.
-- **"Insure a future income"** (Cure 6) is why I built the [Pension Calculator](/tools/pension).
+- **"Insure a future income"** (Cure 6) is why I built the [Pension Calculator](/tools/pension/).
 
 Writing about these cures is one thing. But seeing exactly how "fattening your purse" by £100 a month changes your retirement date by five years is another. That is the moment where *wisdom* becomes *action*.
 
 ## The Power of the "Wait, Really?" Moment
 
-I remember the first time I ran my own mortgage numbers through what is now our [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator). 
+I remember the first time I ran my own mortgage numbers through what is now our [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/). 
 
 I saw that by skipping a few luxury purchases and adding £150 a month to my payment, I could save over £35,000 in interest. That "Wait, really?" moment changed how I looked at every purchase. It wasn't about deprivation; it was about the math of freedom.
 
@@ -48,7 +48,7 @@ I built these tools because:
 
 My goal for this site isn't to become a massive media outlet. It is to provide a clean, calm space where you can get the information you need and the tools to act on it. 
 
-Whether you are in [Stage 1: Paying Debt](/blog/freedom-through-discipline) or [Stage 4: Investing](/investing/), I hope these tools give you the same "Wait, really?" moments they gave me.
+Whether you are in [Stage 1: Paying Debt](/blog/freedom-through-discipline/) or [Stage 4: Investing](/investing/), I hope these tools give you the same "Wait, really?" moments they gave me.
 
 *To see the full roadmap of the journey we're on together, visit our [Start Here page](/babylon/series/).*
 

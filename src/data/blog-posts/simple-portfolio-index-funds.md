@@ -22,7 +22,7 @@ When you buy a global index fund, you aren't trying to pick the "best" stock. Yo
 For most people, a portfolio only needs three things:
 
 1. **Global Equities (Stocks):** A low-cost index fund that tracks the whole world. This gives you ownership in thousands of companies from Apple and Microsoft to emerging market firms. This is your growth engine.
-2. **High-Quality Bonds:** These act as the "ballast" of your ship. When the stock market gets stormy, bonds generally hold their value better. See our guide on [Bonds and Stability](/blog/stability-and-income).
+2. **High-Quality Bonds:** These act as the "ballast" of your ship. When the stock market gets stormy, bonds generally hold their value better. See our guide on [Bonds and Stability](/blog/stability-and-income/).
 3. **Cash/Liquid Assets:** Your financial safety net.
 
 ## The "100 Minus Age" Rule
@@ -46,7 +46,7 @@ There are three reasons why this approach beats the experts over the long term:
 
 The goal of this strategy is to turn your monthly contributions into a significant retirement fund. But what does that look like in practice? 
 
-By using our [Pension Calculator](/tools/pension), you can see how even a modest monthly contribution into a global index fund can grow over 20 or 30 years. It’s not about finding a "get-rich-quick" scheme; it’s about the patient compounding of the entire global economy.
+By using our [Pension Calculator](/tools/pension/), you can see how even a modest monthly contribution into a global index fund can grow over 20 or 30 years. It’s not about finding a "get-rich-quick" scheme; it’s about the patient compounding of the entire global economy.
 
 ## Next Steps
 
@@ -61,4 +61,4 @@ Remember: you don't need to be a genius to build wealth. You just need a simple 
   description="See the power of long-term compounding. Enter your monthly contribution and see where you'll be by age 65."
 />
 
-*Ready for more? Explore our deep dive on [Owning a Piece of the Future](/blog/owning-a-piece-of-the-future).*
+*Ready for more? Explore our deep dive on [Owning a Piece of the Future](/blog/owning-a-piece-of-the-future/).*
