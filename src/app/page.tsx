@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 import { ChevronRight, Calculator, BookOpen, Map, Mail } from 'lucide-react';
 import { journeySteps } from '@/app/journey/_components/JourneyNavigation';
+import NewsletterForm from '@/app/components/NewsletterForm';
 
 export const metadata: Metadata = {
   title: "Helpful Money | Financial Tools to Manage Your Money Better",
@@ -155,17 +156,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Final CTA - Email Signup */}
       <section className="text-center p-12 bg-blue-600 rounded-3xl text-white">
         <div className="bg-blue-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
           <Mail size={32} />
         </div>
-        <h2 className="text-3xl font-bold mb-4">Stay Informed</h2>
+        <h2 className="text-3xl font-bold mb-4">Get the 4-Stage Money Checklist</h2>
         <p className="text-blue-100 mb-8 max-w-xl mx-auto text-lg">
-          We're building a new kind of budgeting app to help you automate these principles. Join our survey and be the first to know when we launch.
+          Join our newsletter and get our exclusive PDF checklist to help you navigate your journey to financial freedom.
         </p>
-        <div data-tf-live="01JTDAGBS12DNVW9YS48YXE667"></div>
-        <Script async src="//embed.typeform.com/next/embed.js" strategy="afterInteractive" />
+        <div className="mx-auto text-left text-gray-900">
+          <NewsletterForm />
+        </div>
       </section>
     </main>
   );
