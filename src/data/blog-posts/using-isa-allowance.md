@@ -40,7 +40,7 @@ Using an ISA is a key part of **Stage 4: Investing**. Once you have cleared your
 
 1. **Emergency Fund:** Keep this in a Cash ISA or high-interest savings account.
 2. **Long-Term Wealth:** Use a Stocks and Shares ISA for your global index fund portfolio.
-3. **Retirement:** For most, a pension is even more tax-efficient than an ISA because of the tax relief on contributions. See our [Pension Calculator](/tools/pension) to see how your pension contributions grow over time.
+3. **Retirement:** For most, a pension is even more tax-efficient than an ISA because of the tax relief on contributions. See our [Pension Calculator](/tools/pension/) to see how your pension contributions grow over time.
 
 ## The Strategy for Most People
 

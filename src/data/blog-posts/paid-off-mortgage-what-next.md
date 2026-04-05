@@ -31,7 +31,7 @@ By taking that former mortgage payment and putting it into your pension or a glo
 
 How much of a difference does it really make? 
 
-Open our [Pension Calculator](/tools/pension) and try this:
+Open our [Pension Calculator](/tools/pension/) and try this:
 - Enter your current retirement savings.
 - Enter your regular monthly contribution.
 - Now, add your *entire former mortgage payment* as an additional monthly contribution.
@@ -59,4 +59,4 @@ If you’ve reached this bridge, you have done the hard work. You’ve cleared t
   description="What happens if you redirect your mortgage payment into your pension? Run the numbers today and see your retirement goal within reach."
 />
 
-*Not quite there yet? Use our [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator) to see how much sooner you could reach this milestone.*
+*Not quite there yet? Use our [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/) to see how much sooner you could reach this milestone.*

@@ -15,7 +15,7 @@ Modern financial success requires a similar approach. You need a "Financial Oper
 
 The first component of your FOS is the **1st Cure: "Start thy purse to fattening."** This is the engine of your wealth. 
 
-You should aim to save 10-20% of your income before you pay for anything else. Use our [Budget Planner](/tools/budget) to map out your 50/30/20 rule and see exactly where that surplus is coming from. 
+You should aim to save 10-20% of your income before you pay for anything else. Use our [Budget Planner](/tools/budget/) to map out your 50/30/20 rule and see exactly where that surplus is coming from. 
 
 Once your budget is set, **automate it.** Set up a standing order to move that 10% into your investment account the day after you get paid.
 
@@ -26,25 +26,25 @@ Next, your FOS needs a defense mechanism against life's inevitable surprises. Th
 Your safety net should include:
 - **An Emergency Fund:** 3-6 months of expenses (Stage 2).
 - **Adequate Insurance:** Protecting your income and your life.
-- **Debt-Free Living:** Eliminating consumer debt to remove the "interest leak" from your system (Stage 1). See our guide on [Eliminating Consumer Debt](/blog/freedom-through-discipline).
+- **Debt-Free Living:** Eliminating consumer debt to remove the "interest leak" from your system (Stage 1). See our guide on [Eliminating Consumer Debt](/blog/freedom-through-discipline/).
 
 ## 3. The Growth Engine: Your Assets
 
 Once your defenses are in place, your FOS shifts to offense. This is the **3rd Cure: "Make thy gold multiply."** 
 
-Your system should include a simple, diversified portfolio of global index funds (Stage 4). The goal is to make your money work as hard as you do. Use the [Pension Calculator](/tools/pension) to project your long-term growth and ensure you are on track for the **6th Cure: "Insure a future income."**
+Your system should include a simple, diversified portfolio of global index funds (Stage 4). The goal is to make your money work as hard as you do. Use the [Pension Calculator](/tools/pension/) to project your long-term growth and ensure you are on track for the **6th Cure: "Insure a future income."**
 
 ## 4. The Home Foundation: Your Dwelling
 
 For many, their home is the largest line item in their Financial Operating System. The **5th Cure: "Make of thy dwelling a profitable investment"** isn't about property speculation; it's about efficient home ownership (Stage 3). 
 
-Use our [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator) to see if accelerating your mortgage payoff fits into your broader system.
+Use our [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/) to see if accelerating your mortgage payoff fits into your broader system.
 
 ## 5. The Feedback Loop: Regular Reviews
 
 A system is only as good as its feedback loop. Every quarter, you should:
-1. Re-run your [Budget Planner](/tools/budget) to account for life changes.
-2. Check your [Pension Calculator](/tools/pension) projections against your actual account balances.
+1. Re-run your [Budget Planner](/tools/budget/) to account for life changes.
+2. Check your [Pension Calculator](/tools/pension/) projections against your actual account balances.
 3. Review your asset allocation.
 
 ## Ancient Wisdom, Modern Tools

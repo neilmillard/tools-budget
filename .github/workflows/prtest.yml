@@ -18,5 +18,8 @@ jobs:
       - name: Test Next.js app
         run: npm test
 
+      - name: Check markdown links
+        run: npm run lint:links
+
       - name: Build Next.js app
         run: npm run build

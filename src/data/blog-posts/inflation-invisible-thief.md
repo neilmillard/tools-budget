@@ -43,7 +43,7 @@ I built the **Pension Calculator** specifically to help me visualize this. It’
 Our tool lets you see the difference between "nominal" growth (the big number that makes you feel good) and "real" growth (the number that actually buys the groceries). It helps you determine how much you *really* need to save to guard your future treasures.
 
 ## Your Action Plan
-1. **Calculate Your Real Number:** Use the [Pension Calculator](/tools/pension) to see how inflation will impact your retirement goals.
+1. **Calculate Your Real Number:** Use the [Pension Calculator](/tools/pension/) to see how inflation will impact your retirement goals.
 2. **Audit Your Cash:** Do you have more than 6 months of expenses in a low-interest bank account? If so, the invisible thief is currently raiding your purse.
 3. **Shift to Quality:** Ensure your long-term savings are in assets that have historically outperformed inflation (equities, index funds).
 4. **Guard Against Scams:** The 4th Cure also means "consult with wise men." Before making a big investment, check the fees and the track record. High fees are just another form of inflation.
@@ -59,4 +59,4 @@ Inflation is the ultimate trickster. Don't let it win.
   description="Don't let inflation win. Use our tool to see how your money needs to grow to support your future lifestyle. View your real returns, not just the nominal numbers."
 />
 
-*Ready to learn more about the 4th Cure? Explore our section on [Protecting Your Progress](/blog/protecting-your-progress).*
+*Ready to learn more about the 4th Cure? Explore our section on [Protecting Your Progress](/blog/protecting-your-progress/).*

@@ -7,7 +7,7 @@ date: "2026-02-28"
 
 In the ancient parables of Babylon, the Fifth Cure for a Lean Purse is: *"Make of thy dwelling a profitable investment."* While modern finance often debates whether a primary residence is an "asset" or a "liability," there is one mathematical certainty: reducing the interest you pay to a bank is one of the most effective ways to build wealth.
 
-Today, we’re going to walk through a real-world example of how to use our [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator) to reclaim years of your life from debt.
+Today, we’re going to walk through a real-world example of how to use our [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/) to reclaim years of your life from debt.
 
 ## The Scenario: Meet the Taylors
 
@@ -21,7 +21,7 @@ If they simply make their minimum payments for the next 25 years, they will pay 
 
 ## Step 1: Finding the "Hidden" Surplus
 
-The Taylors recently used our [Budget Planner](/tools/budget) and realized that by "controlling their expenditures" (Babylon’s Second Cure), they could comfortably free up an extra £200 per month.
+The Taylors recently used our [Budget Planner](/tools/budget/) and realized that by "controlling their expenditures" (Babylon’s Second Cure), they could comfortably free up an extra £200 per month.
 
 They have two choices:
 1. Save that £200 in a savings account.
@@ -29,7 +29,7 @@ They have two choices:
 
 ## Step 2: The Power of the Overpayment
 
-By entering their details into the [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator), the Taylors see a dramatic shift in their financial future.
+By entering their details into the [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/), the Taylors see a dramatic shift in their financial future.
 
 By adding just **£200 per month** to their payment:
 - **Interest Saved:** They save **£43,850** in interest charges.
@@ -52,7 +52,7 @@ In Babylon, they spoke of "guarding thy treasures from loss." In the modern worl
 ## When Should You NOT Overpay?
 
 While the math is compelling, overpaying isn't always the right move. You should prioritize:
-1. **Eliminating High-Interest Debt:** If you have credit card debt at 20%, pay that before a 4.5% mortgage. See our guide on [Eliminating Consumer Debt](/blog/freedom-through-discipline).
+1. **Eliminating High-Interest Debt:** If you have credit card debt at 20%, pay that before a 4.5% mortgage. See our guide on [Eliminating Consumer Debt](/blog/freedom-through-discipline/).
 2. **Emergency Fund:** Ensure you have 3-6 months of expenses in a liquid account.
 3. **Employer Pension Match:** Never turn down "free money" from a pension match to pay down a low-interest mortgage.
 
@@ -62,7 +62,7 @@ Your mortgage is likely your largest monthly expense. It is also your largest op
 
 Take ten minutes today to:
 1. Find your latest mortgage statement.
-2. Open the [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator).
+2. Open the [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/).
 3. Experiment with different amounts—even £50 a month makes a difference.
 
 By making your dwelling a "profitable investment," you aren't just paying for a roof over your head; you are building a foundation for Stage 4 of our journey: [Investing for the Long Term](/investing/).
@@ -74,4 +74,4 @@ By making your dwelling a "profitable investment," you aren't just paying for a 
   description="See exactly how many years you could shave off your mortgage and how much interest you'll save by making even small overpayments."
 />
 
-*This post is part of our series on [Stage 3: Buying a Home](/journey/buying-a-home). For more timeless wisdom, explore the full [Babylon Series](/babylon/).*
+*This post is part of our series on [Stage 3: Buying a Home](/journey/buying-a-home/). For more timeless wisdom, explore the full [Babylon Series](/babylon/).*

@@ -53,8 +53,8 @@ The best way to decide is to stop dealing in abstractions and start dealing in y
 I built the **Mortgage Overpayment Calculator** to give you the data. Put in your current balance, your rate, and a potential overpayment. See the interest saved. See the years shaved off. Then, compare that to your investment goals in the **Pension Calculator**.
 
 ## Your Action Plan
-1. **Run the Numbers:** Use the [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator) to see your "interest saved" number.
-2. **Check Your Spread:** Compare your mortgage rate to the expected returns in your [Pension Calculator](/tools/pension).
+1. **Run the Numbers:** Use the [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/) to see your "interest saved" number.
+2. **Check Your Spread:** Compare your mortgage rate to the expected returns in your [Pension Calculator](/tools/pension/).
 3. **Hybridize:** You don't have to choose one or the other. Many people (including myself) choose to split their surplus—50% to investments, 50% to the mortgage. 
 
 Arkad said: "Thus come many blessings to the man who owneth his own house. And greatly will it reduce his cost of living, making available more of his earnings for pleasures and the gratification of his desires."
@@ -68,4 +68,4 @@ Own your house; don't let it own you.
   description="Don't just guess. Calculate the exact interest you could save and the years you could shave off your mortgage by overpaying today."
 />
 
-*Need more help with home buying? Check out our [Affordability Calculator](/tools/afford).*
+*Need more help with home buying? Check out our [Affordability Calculator](/tools/afford/).*
