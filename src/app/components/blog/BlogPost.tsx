@@ -7,23 +7,31 @@ const ReactMarkdown = process.env.NODE_ENV === 'test'
 const remarkGfm = process.env.NODE_ENV === 'test' 
   ? null 
   : require("remark-gfm").default;
+const rehypeRaw = process.env.NODE_ENV === 'test'
+  ? null
+  : require("rehype-raw").default;
 import ToolCTA from "./ToolCTA";
 
 const MockReactMarkdown = ({ children, components }: any) => {
   const ToolCTAComponent = components?.ToolCTA;
   const content = typeof children === 'string' ? children : '';
-  const ctaMatch = content.match(/<ToolCTA\s+title='([^']+)'\s+toolName='([^']+)'\s+toolUrl='([^']+)'\s+description='([^']+)'\s*\/>/);
+  const ctaMatch = content.match(/<ToolCTA\s+([^>]+)\s*\/>/i);
+
+  let props: any = {};
+  if (ctaMatch && ctaMatch[1]) {
+    const attrString = ctaMatch[1];
+    const attrRegex = /([a-z0-9]+)=["']([^"']+)["']/gi;
+    let m;
+    while ((m = attrRegex.exec(attrString)) !== null) {
+      props[m[1]] = m[2];
+    }
+  }
 
   return (
     <div className="mock-react-markdown">
       {children}
-      {ctaMatch && ToolCTAComponent && (
-        <ToolCTAComponent
-          title={ctaMatch[1]}
-          toolName={ctaMatch[2]}
-          toolUrl={ctaMatch[3]}
-          description={ctaMatch[4]}
-        />
+      {Object.keys(props).length > 0 && ToolCTAComponent && (
+        <ToolCTAComponent {...props} />
       )}
     </div>
   );
@@ -52,9 +60,12 @@ export default function BlogPost({ title, date, content }: BlogPostProps) {
         <article className="prose">
           <MarkdownComponent
             remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
             components={{
               // @ts-ignore
               ToolCTA: ({ node, ...props }: any) => <ToolCTA {...props} />,
+              // @ts-ignore
+              toolcta: ({ node, ...props }: any) => <ToolCTA {...props} />,
             }}
           >
             {content}

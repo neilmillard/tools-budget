@@ -8,17 +8,20 @@ interface ToolCTAProps {
   description: string;
 }
 
-export default function ToolCTA({ title, toolName, toolUrl, description }: ToolCTAProps) {
+export default function ToolCTA({ title, toolName, toolUrl, description, ...props }: ToolCTAProps & { toolname?: string, toolurl?: string }) {
+  const finalToolName = toolName || props.toolname;
+  const finalToolUrl = toolUrl || props.toolurl;
+
   return (
-    <div className="my-8 p-6 bg-blue-50 border border-blue-100 rounded-xl shadow-sm transition-all hover:shadow-md">
-      <h3 className="text-xl font-bold text-blue-900 mb-2">{title}</h3>
-      <p className="text-blue-800 mb-4">{description}</p>
+    <span className="block my-8 p-6 bg-blue-50 border border-blue-100 rounded-xl shadow-sm transition-all hover:shadow-md">
+      <span className="block text-xl font-bold text-blue-900 mb-2">{title}</span>
+      <span className="block text-blue-800 mb-4">{description}</span>
       <Link 
-        href={toolUrl}
+        href={finalToolUrl as string}
         className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
       >
-        Try the {toolName}
+        Try the {finalToolName}
       </Link>
-    </div>
+    </span>
   );
 }
