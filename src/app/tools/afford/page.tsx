@@ -4,11 +4,11 @@ import { Metadata } from "next";
 import SoftwareApplicationSchema from "@/components/schema/SoftwareApplicationSchema";
 
 export const metadata: Metadata = {
-  title: "Mortgage Affordability Calculator | Helpful Money",
-  description: "Calculate how much house you can afford based on your income, deposit, and expenses. See estimated affordable house prices and monthly mortgage payments.",
+  title: "What Mortgage Can I Afford? UK Calculator | Helpful Money",
+  description: "Find out how much mortgage you can afford based on your income, deposit and expenses. Free UK affordability calculator — see your borrowing limit in seconds.",
   openGraph: {
-    title: "Mortgage Affordability Calculator | Helpful Money",
-    description: "Calculate how much house you can afford based on your income, deposit, and expenses. See estimated affordable house prices and monthly mortgage payments.",
+    title: "What Mortgage Can I Afford? UK Calculator | Helpful Money",
+    description: "Find out how much mortgage you can afford based on your income, deposit and expenses. Free UK affordability calculator — see your borrowing limit in seconds.",
   },
   alternates: {
     canonical: "/tools/afford/",
@@ -24,7 +24,7 @@ export default function Afford() {
         <>
             <SoftwareApplicationSchema 
                 name="Mortgage Affordability Calculator"
-                description="Calculate how much house you can afford based on your income, deposit, and expenses. See estimated affordable house prices and monthly mortgage payments."
+                description="Find out how much mortgage you can afford based on your income, deposit and expenses. Free UK affordability calculator — see your borrowing limit in seconds."
                 url="https://www.helpfulmoney.site/tools/afford/"
                 applicationCategory="FinanceApplication"
             />
