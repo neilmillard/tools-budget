@@ -4,11 +4,11 @@ import { Metadata } from "next";
 import SoftwareApplicationSchema from "@/components/schema/SoftwareApplicationSchema";
 
 export const metadata: Metadata = {
-  title: "Mortgage Overpayment Calculator | Helpful Money",
-  description: "Calculate how much time and interest you can save by making overpayments on your mortgage. See the impact of monthly and one-off overpayments on your mortgage term.",
+  title: "Mortgage Overpayment Calculator — See How Much You Could Save | Helpful Money",
+  description: "Find out exactly how much interest you could save and how many years you could cut from your mortgage by overpaying each month. Free UK calculator.",
   openGraph: {
-    title: "Mortgage Overpayment Calculator | Helpful Money",
-    description: "Calculate how much time and interest you can save by making overpayments on your mortgage. See the impact of monthly and one-off overpayments on your mortgage term.",
+    title: "Mortgage Overpayment Calculator — See How Much You Could Save | Helpful Money",
+    description: "Find out exactly how much interest you could save and how many years you could cut from your mortgage by overpaying each month. Free UK calculator.",
   },
   alternates: {
     canonical: "/tools/mortgage-overpayment-calculator/",
@@ -25,7 +25,7 @@ export default function Mortgage() {
     <>
       <SoftwareApplicationSchema 
         name="Mortgage Overpayment Calculator"
-        description="Calculate how much time and interest you can save by making overpayments on your mortgage. See the impact of monthly and one-off overpayments on your mortgage term."
+        description="Find out exactly how much interest you could save and how many years you could cut from your mortgage by overpaying each month. Free UK calculator."
         url="https://www.helpfulmoney.site/tools/mortgage-overpayment-calculator/"
         applicationCategory="FinanceApplication"
       />
