@@ -24,7 +24,7 @@ describe("RelatedInsights Component", () => {
   test("renders links with correct hrefs", () => {
     render(<RelatedInsights posts={posts} />);
     const links = screen.getAllByRole("link");
-    expect(links[0]).toHaveAttribute("href", posts[0].url);
-    expect(links[1]).toHaveAttribute("href", posts[1].url);
+    expect(links[0].getAttribute("href")).toBe(posts[0].url.replace(/\/$/, ""));
+    expect(links[1].getAttribute("href")).toBe(posts[1].url.replace(/\/$/, ""));
   });
 });

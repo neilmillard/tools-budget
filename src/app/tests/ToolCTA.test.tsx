@@ -7,7 +7,7 @@ describe("ToolCTA Component", () => {
   const props = {
     title: "Plan Your Future",
     toolName: "Budget Planner",
-    toolUrl: "/tools/budget",
+    toolUrl: "/tools/budget/",
     description: "Take control of your finances today."
   };
 
@@ -21,6 +21,6 @@ describe("ToolCTA Component", () => {
     render(<ToolCTA {...props} />);
     const link = screen.getByRole("link", { name: /Try the Budget Planner/i });
     expect(link).toBeInTheDocument();
-    expect(link).toHaveAttribute("href", props.toolUrl);
+    expect(link.getAttribute("href")).toBe(props.toolUrl.replace(/\/$/, ""));
   });
 });
