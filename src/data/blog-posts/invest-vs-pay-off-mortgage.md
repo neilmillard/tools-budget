@@ -33,7 +33,7 @@ There is a psychological "unlock" that happens when your housing cost drops to z
 - Max out your 3rd Cure (Investing) with much higher confidence.
 - Survive economic downturns with almost zero stress.
 
-For me, the peace of mind of a paid-off roof is a "return" that you can't capture in an Excel formula.
+For me, the peace of mind of a paid-off roof is a "return" that you can't capture in an Excel formula. [Once your mortgage is gone, your next financial journey begins](/blog/paid-off-mortgage-what-next).
 
 ## The Risk of the "Math" Approach
 The problem with the "never overpay" argument is that it assumes you will actually invest the difference. In my experience, most people who decide not to overpay their mortgage don't actually put that extra £200 into an index fund every month. They spend it. 

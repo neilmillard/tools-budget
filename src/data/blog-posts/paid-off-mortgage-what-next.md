@@ -6,17 +6,17 @@ description: "You have paid off your mortgage—now what? Learn how to manage yo
 
 # I Paid Off My Mortgage. Now What?
 
-There is a unique financial euphoria that comes when you make your final mortgage payment. For most, this marks the end of **Stage 3: Buying a Home**. 
+There is a unique financial euphoria that comes when you make your final mortgage payment. For most, this marks the end of [Stage 3: Buying a Home](/journey/buying-a-home). 
 
 The burden of your largest monthly expense is gone. In Babylon’s terms, you have fulfilled the Fifth Cure: *"Make of thy dwelling a profitable investment."* Now, your home is not just a roof over your head; it is a fully-owned asset—a fortress against the uncertainties of the future.
 
 But this moment also creates a new challenge. Suddenly, you have a massive surplus in your monthly cash flow. If you aren't careful, this surplus will simply disappear into "lifestyle creep"—the subtle expansion of spending that happens when we feel "flush" with cash. 
 
-Whether your home is paid off today or you are planning for that final payment, here is how to bridge the gap from Stage 3 to **Stage 4: Investing** and turn your paid-off home into a springboard for generational wealth.
+Whether your home is paid off today or you are planning for that final payment, here is how to bridge the gap from Stage 3 to [Stage 4: Investing](/journey/investing) and turn your paid-off home into a springboard for generational wealth.
 
 ## Step 1: Re-Fattening the Purse
 
-In Babylon, they taught us to **"Start thy purse to fattening"** by saving 10%. But once your mortgage is gone, you can do much more. 
+In Babylon, they taught us to [**"Start thy purse to fattening"**](/babylon/series) by saving 10%. But once your mortgage is gone, you can do much more. 
 
 Suppose your monthly mortgage payment was £1,200. You are already used to that money leaving your account every month. The smartest move is to keep that discipline but change the destination. For years, you’ve been building equity for the bank; now it's time to build it for yourself.
 
@@ -26,7 +26,7 @@ Instead of paying the bank, you start paying *your future self*. This isn't just
 
 Before you dive head-first into the stock market, remember that a paid-off house is still a physical asset that requires maintenance. Without a mortgage, you are your own landlord, but you are also your own maintenance department.
 
-In addition to your emergency fund, now is the time to create a **Home Sinking Fund**. A general rule of thumb is to set aside 1% of the home's value each year for maintenance. If your home is worth £300,000, that’s £3,000 a year, or £250 a month. 
+In addition to your [emergency fund](/journey/saving), now is the time to create a **Home Sinking Fund**. A general rule of thumb is to set aside 1% of the home's value each year for maintenance. If your home is worth £300,000, that’s £3,000 a year, or £250 a month. 
 
 By using a small portion of your former mortgage payment to fund this, you ensure that a surprise roof leak or a broken boiler never becomes a financial crisis. You’ve worked too hard to pay off the house to let it fall into disrepair.
 
@@ -62,7 +62,7 @@ Stage 4 is about **Diversification**.
 Now that your "real estate" bucket is full, you should focus on:
 - **Equities:** Buying shares in the world’s most successful companies.
 - **Bonds:** Providing stability to your portfolio.
-- **Cash:** Keeping a robust emergency fund (Stage 2) even larger than before, as you no longer have a bank to "borrow" against in an emergency.
+- **Cash:** Keeping a robust [emergency fund (Stage 2)](/journey/saving) even larger than before, as you no longer have a bank to "borrow" against in an emergency.
 
 By spreading your wealth across different asset classes, you protect yourself against a downturn in the local housing market.
 
@@ -70,7 +70,7 @@ By spreading your wealth across different asset classes, you protect yourself ag
 
 While it’s tempting to immediately upgrade your life—perhaps a newer car or more frequent fine dining—try to follow the **"50/50 Rule"** for the first year:
 
-- **50% of the surplus** goes directly into your long-term investments (Stage 4).
+- **50% of the surplus** goes directly into your long-term investments ([Stage 4](/journey/investing)).
 - **50% of the surplus** can be used to enjoy your new financial freedom (hobbies, travel, or home improvements).
 
 This allows you to feel the benefit of your hard work while still "guarding thy treasures" and building lasting wealth. It’s important to celebrate the win, but don’t let the celebration become your new baseline spending level.
@@ -88,7 +88,7 @@ In Babylon, they knew that wealth was not just for the individual, but for the f
 
 ## Your Final Destination: Stage 4
 
-The goal of our 4-stage journey is to move from being a servant to debt (Stage 1) to becoming a master of your own wealth (Stage 4). 
+The goal of our 4-stage journey is to move from being a servant to [debt (Stage 1)](/journey/paying-debt) to becoming a master of your own wealth ([Stage 4](/journey/investing)). 
 
 If you’ve reached this bridge, you have done the hard work. You’ve cleared the consumer debt, built the safety net, and secured your home. Now, it’s time to make your gold truly multiply. Welcome to the world of true investing.
 

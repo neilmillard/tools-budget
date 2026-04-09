@@ -49,4 +49,4 @@ Mortgage interest is typically calculated daily based on the remaining balance. 
 
 ## The Psychological Win
 
-Beyond the mathematics, there is a profound psychological benefit to seeing your mortgage end date creep closer. It represents a level of security and freedom that few other financial milestones can match.
+Beyond the mathematics, there is a profound psychological benefit to seeing your mortgage end date creep closer. It represents a level of security and freedom that few other financial milestones can match. [But what should you do once that final payment is made?](/blog/paid-off-mortgage-what-next)
