@@ -57,7 +57,7 @@ Remember: you don't need to be a genius to build wealth. You just need a simple 
 <ToolCTA 
   title="Project Your Future" 
   toolName="Pension Calculator" 
-  toolUrl="/tools/pension" 
+  toolUrl="/tools/pension/" 
   description="See the power of long-term compounding. Enter your monthly contribution and see where you'll be by age 65."
 />
 

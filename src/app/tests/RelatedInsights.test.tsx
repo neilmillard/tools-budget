@@ -5,8 +5,8 @@ import RelatedInsights from "@/app/components/calculators/RelatedInsights";
 
 describe("RelatedInsights Component", () => {
   const posts = [
-    { title: "First Insight", url: "/blog/first" },
-    { title: "Second Insight", url: "/blog/second" }
+    { title: "First Insight", url: "/blog/first/" },
+    { title: "Second Insight", url: "/blog/second/" }
   ];
 
   test("renders nothing when posts are empty", () => {

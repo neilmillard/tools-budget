@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function SavingPage() {
     const relatedPosts = [
-        { title: "Your Financial Safety Net", url: "/blog/your-financial-safety-net" },
+        { title: "Your Financial Safety Net", url: "/blog/your-financial-safety-net/" },
         { title: "The Seven Cures — Start thy purse to fattening", url: "/babylon/series/" }
     ];
 
@@ -60,7 +60,7 @@ export default function SavingPage() {
                     Our Budget Planner's 50/30/20 view helps you ensure that 20% of your income is consistently 
                     moving towards your savings goals.
                 </p>
-                <Link href="/tools/budget" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
+                <Link href="/tools/budget/" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
                     Plan Your Savings
                 </Link>
             </div>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Mortgage() {
     const relatedPosts = [
-        { title: "How to Know if You Can Afford a Mortgage Before You Apply", url: "/blog/know-if-you-can-afford-mortgage" }
+        { title: "How to Know if You Can Afford a Mortgage Before You Apply", url: "/blog/know-if-you-can-afford-mortgage/" }
     ];
 
     return (

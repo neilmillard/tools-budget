@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 
 export default function InvestingPage() {
     const relatedPosts = [
-        { title: "Investing Resource Hub", url: "/investing" },
-        { title: "I Paid Off My Mortgage. Now What?", url: "/blog/paid-off-mortgage-what-next" },
-        { title: "Freedom Through Foresight: Strategic Retirement Planning", url: "/blog/freedom-through-foresight" },
-        { title: "How to Use a Pension Calculator — and What the Numbers Really Mean", url: "/blog/how-to-use-pension-calculator" },
+        { title: "Investing Resource Hub", url: "/investing/" },
+        { title: "I Paid Off My Mortgage. Now What?", url: "/blog/paid-off-mortgage-what-next/" },
+        { title: "Freedom Through Foresight: Strategic Retirement Planning", url: "/blog/freedom-through-foresight/" },
+        { title: "How to Use a Pension Calculator — and What the Numbers Really Mean", url: "/blog/how-to-use-pension-calculator/" },
         { title: "The Seven Cures — Make thy gold multiply", url: "/babylon/series/" }
     ];
 
@@ -71,7 +71,7 @@ export default function InvestingPage() {
                     Explore our curated reading path through the fundamental principles of wealth building. 
                     No jargon, just timeless wisdom made actionable.
                 </p>
-                <Link href="/investing" className="inline-block bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-emerald-700 transition-colors">
+                <Link href="/investing/" className="inline-block bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-emerald-700 transition-colors">
                     Visit the Hub
                 </Link>
             </div>
@@ -82,7 +82,7 @@ export default function InvestingPage() {
                     Our Pension Calculator can help you project your future income and see how small changes 
                     today can make a huge difference in your retirement.
                 </p>
-                <Link href="/tools/pension" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
+                <Link href="/tools/pension/" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
                     Plan Your Retirement
                 </Link>
             </div>

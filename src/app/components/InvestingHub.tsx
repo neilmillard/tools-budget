@@ -83,7 +83,7 @@ export default function InvestingHub() {
           {readingPath.map((post, index) => (
             <Link 
               key={post.id} 
-              href={`/blog/${post.id}`}
+              href={`/blog/${post.id}/`}
               className="group bg-white p-6 rounded-xl border border-blue-200 hover:border-blue-400 hover:shadow-md transition-all flex flex-col justify-between"
             >
               <div>
@@ -115,7 +115,7 @@ export default function InvestingHub() {
               {section.posts.map((post) => (
                 <li key={post.id}>
                   <Link 
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.id}/`}
                     className="group block p-4 bg-gray-50 border border-gray-100 rounded-lg hover:bg-white hover:border-blue-200 hover:shadow-sm transition-all"
                   >
                     <h3 className="font-semibold text-gray-800 group-hover:text-blue-600">

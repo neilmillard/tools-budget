@@ -71,7 +71,7 @@ Keep it safe by keeping it balanced.
 <ToolCTA
   title="Project Your Ideal Garden"
   toolName="Pension Calculator"
-  toolUrl="/tools/pension"
+  toolUrl="/tools/pension/"
   description="What should your asset mix look like? Use our tool to project different scenarios and find the balance that helps you sleep at night."
 />
 

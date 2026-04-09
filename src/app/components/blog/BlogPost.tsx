@@ -80,7 +80,7 @@ export function BlogNav(props: { previous: BlogPostShort | null, next: BlogPostS
   return <div className={"w-[83%] mx-auto mt-6 grid grid-cols-3 text-blue-500"}>
     <div className={"text-left"}>
       {props.previous ? (
-      <Link href={`/blog/${props.previous.id}`} className={"hover:underline"}>
+      <Link href={`/blog/${props.previous.id}/`} className={"hover:underline"}>
         &lt;- {props.previous.title}
       </Link>
     ) : <div/>}
@@ -90,7 +90,7 @@ export function BlogNav(props: { previous: BlogPostShort | null, next: BlogPostS
     </div>
     <div className={"text-right"}>
       {props.next ? (
-        <Link href={`/blog/${props.next.id}`} className="hover:underline">
+        <Link href={`/blog/${props.next.id}/`} className="hover:underline">
           {props.next.title} -&gt;
         </Link>
       ) : <div/>}

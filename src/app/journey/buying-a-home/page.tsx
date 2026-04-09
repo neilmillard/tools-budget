@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 export default function BuyingAHomePage() {
     const relatedPosts = [
-        { title: "How to Know if You Can Afford a Mortgage Before You Apply", url: "/blog/know-if-you-can-afford-mortgage" },
-        { title: "How Much Could You Save by Overpaying Your Mortgage?", url: "/blog/how-much-save-mortgage-overpayment" },
+        { title: "How to Know if You Can Afford a Mortgage Before You Apply", url: "/blog/know-if-you-can-afford-mortgage/" },
+        { title: "How Much Could You Save by Overpaying Your Mortgage?", url: "/blog/how-much-save-mortgage-overpayment/" },
         { title: "The Seven Cures — Make of thy dwelling a profitable investment", url: "/babylon/series/" }
     ];
 
@@ -61,7 +61,7 @@ export default function BuyingAHomePage() {
                     <p className="text-blue-800 mb-6">
                         See what a bank might lend you and how much your monthly payments could be.
                     </p>
-                    <Link href="/tools/afford" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
+                    <Link href="/tools/afford/" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
                         Check Affordability
                     </Link>
                 </div>
@@ -70,7 +70,7 @@ export default function BuyingAHomePage() {
                     <p className="text-green-800 mb-6">
                         Calculate how much interest you could save by paying just a little more each month.
                     </p>
-                    <Link href="/tools/mortgage-overpayment-calculator" className="inline-block bg-green-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-700 transition-colors">
+                    <Link href="/tools/mortgage-overpayment-calculator/" className="inline-block bg-green-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-700 transition-colors">
                         Calculate Savings
                     </Link>
                 </div>
@@ -83,10 +83,10 @@ export default function BuyingAHomePage() {
                     Learn how to bridge the gap from home ownership to long-term wealth building.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link href="/blog/paid-off-mortgage-what-next" className="inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-colors">
+                    <Link href="/blog/paid-off-mortgage-what-next/" className="inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-colors">
                         Now What? Guide
                     </Link>
-                    <Link href="/journey/investing" className="inline-block bg-white text-purple-600 border-2 border-purple-600 font-bold py-3 px-8 rounded-lg hover:bg-purple-50 transition-colors">
+                    <Link href="/journey/investing/" className="inline-block bg-white text-purple-600 border-2 border-purple-600 font-bold py-3 px-8 rounded-lg hover:bg-purple-50 transition-colors">
                         Go to Stage 4: Investing
                     </Link>
                 </div>

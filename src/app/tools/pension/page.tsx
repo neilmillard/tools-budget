@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 export default function Pension() {
     const relatedPosts = [
-        { title: "How to Use a Pension Calculator — and What the Numbers Really Mean", url: "/blog/how-to-use-pension-calculator" },
-        { title: "Freedom Through Foresight: Strategic Retirement Planning", url: "/blog/freedom-through-foresight" }
+        { title: "How to Use a Pension Calculator — and What the Numbers Really Mean", url: "/blog/how-to-use-pension-calculator/" },
+        { title: "Freedom Through Foresight: Strategic Retirement Planning", url: "/blog/freedom-through-foresight/" }
     ];
 
     return (

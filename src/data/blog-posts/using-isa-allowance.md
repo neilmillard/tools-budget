@@ -58,7 +58,7 @@ Don't let the "tax drag" slow your journey to financial freedom. Start your ISA 
 <ToolCTA 
   title="Project Your Growth" 
   toolName="Pension Calculator" 
-  toolUrl="/tools/pension" 
+  toolUrl="/tools/pension/" 
   description="While ISAs are great, pensions offer different tax benefits. Use our tool to compare how your money could grow in a tax-advantaged account."
 />
 

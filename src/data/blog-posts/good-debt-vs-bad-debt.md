@@ -62,7 +62,7 @@ Consider this your protest.
 <ToolCTA
   title="Check Your Borrowing Power"
   toolName="Affordability Calculator"
-  toolUrl="/tools/afford"
+  toolUrl="/tools/afford/"
   description="Don't guess what you can afford. Use our tool to calculate a mortgage that fits your life without draining your purse. Ensure your home is a blessing, not a burden."
 />
 
