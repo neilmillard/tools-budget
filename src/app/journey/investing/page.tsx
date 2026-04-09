@@ -15,6 +15,8 @@ export const metadata: Metadata = {
 
 export default function InvestingPage() {
     const relatedPosts = [
+        { title: "Investing Resource Hub", url: "/investing" },
+        { title: "I Paid Off My Mortgage. Now What?", url: "/blog/paid-off-mortgage-what-next" },
         { title: "Freedom Through Foresight: Strategic Retirement Planning", url: "/blog/freedom-through-foresight" },
         { title: "How to Use a Pension Calculator — and What the Numbers Really Mean", url: "/blog/how-to-use-pension-calculator" },
         { title: "The Seven Cures — Make thy gold multiply", url: "/babylon/series/" }
@@ -28,6 +30,13 @@ export default function InvestingPage() {
             </div>
 
             <div className="prose prose-lg max-w-none mb-12">
+                <div className="bg-purple-50 p-6 rounded-xl border border-purple-200 mb-8">
+                    <p className="text-purple-900 mb-0">
+                        <strong>Just paid off your mortgage?</strong> You've freed up your most significant 
+                        monthly expense. Now is the time to redirect that surplus toward your future 
+                        self and make your gold truly multiply.
+                    </p>
+                </div>
                 <p>
                     With your home secured and your safety net built, you've reached the final stage of the 
                     financial journey: <strong>long-term wealth building</strong>. 
@@ -48,11 +57,23 @@ export default function InvestingPage() {
                 </div>
                 <h3>Key Strategies for Stage 4:</h3>
                 <ul>
-                    <li>Maximize your pension contributions and take advantage of any employer matching.</li>
+                    <li>Maximize your pension contributions and take advantage of any employer matching. (If you have a financial advisor, they can help you optimize this for tax efficiency).</li>
+                    <li>Research investment platforms (like Hargreaves Lansdown) to manage your ISAs or SIPPs with ease.</li>
                     <li>Research low-cost index funds as a core part of your strategy.</li>
                     <li>Understand the power of tax-efficient wrappers like ISAs or SIPPs.</li>
                     <li>Maintain a long-term perspective and avoid chasing market trends.</li>
                 </ul>
+            </div>
+
+            <div className="bg-emerald-50 p-8 rounded-2xl border border-emerald-200 mb-12">
+                <h3 className="text-xl font-bold text-emerald-900 mb-4">Investing Resource Hub</h3>
+                <p className="text-emerald-800 mb-6">
+                    Explore our curated reading path through the fundamental principles of wealth building. 
+                    No jargon, just timeless wisdom made actionable.
+                </p>
+                <Link href="/investing" className="inline-block bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-emerald-700 transition-colors">
+                    Visit the Hub
+                </Link>
             </div>
 
             <div className="bg-blue-50 p-8 rounded-2xl border border-blue-100 mb-12">

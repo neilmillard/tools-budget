@@ -76,6 +76,22 @@ export default function BuyingAHomePage() {
                 </div>
             </div>
 
+            <div className="bg-purple-50 p-8 rounded-2xl border border-purple-200 mb-12 text-center">
+                <h3 className="text-2xl font-bold text-purple-900 mb-4">Just Paid Off Your Mortgage?</h3>
+                <p className="text-purple-800 mb-6 max-w-2xl mx-auto">
+                    Congratulations! You've reached a massive milestone. But what comes next? 
+                    Learn how to bridge the gap from home ownership to long-term wealth building.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link href="/blog/paid-off-mortgage-what-next" className="inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-colors">
+                        Now What? Guide
+                    </Link>
+                    <Link href="/journey/investing" className="inline-block bg-white text-purple-600 border-2 border-purple-600 font-bold py-3 px-8 rounded-lg hover:bg-purple-50 transition-colors">
+                        Go to Stage 4: Investing
+                    </Link>
+                </div>
+            </div>
+
             <RelatedInsights posts={relatedPosts} />
             <JourneyNavigation currentStep={3} />
         </div>
