@@ -7,16 +7,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = resolvedParams;
   const blog = await getBlogPost(id);
 
-  // Create a plain text excerpt from the content (first 160 characters)
-  const contentText = blog.content.replace(/<[^>]*>/g, '');
-  const excerpt = contentText.length > 160 ? contentText.substring(0, 157) + '...' : contentText;
+  // Use description from frontmatter if available, otherwise create an excerpt
+  const description = blog.description || 
+    (blog.content.replace(/<[^>]*>/g, '').length > 160 
+      ? blog.content.replace(/<[^>]*>/g, '').substring(0, 157) + '...' 
+      : blog.content.replace(/<[^>]*>/g, ''));
 
   return {
     title: `${blog.title} | Helpful Money Blog`,
-    description: excerpt,
+    description: description,
     openGraph: {
       title: `${blog.title} | Helpful Money Blog`,
-      description: excerpt,
+      description: description,
     },
     alternates: {
       canonical: `/blog/${id}/`,

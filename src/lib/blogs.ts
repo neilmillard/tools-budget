@@ -44,6 +44,7 @@ export async function getBlogPost(id: string) {
     id,
     title: data.title,
     date: data.date,
+    description: data.description,
     content: content,
   };
 }
