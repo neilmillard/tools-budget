@@ -34,7 +34,7 @@ Is £20,600 per year enough for David's retirement? If his current lifestyle cos
 <ToolCTA 
   title="Forecast Your Retirement" 
   toolName="Pension Calculator" 
-  toolUrl="/tools/pension" 
+  toolUrl="/tools/pension/" 
   description="Input your current savings and monthly contributions to see how your pension might grow over time. Adjust your withdrawal rate to see how much income you could receive in retirement."
 />
 

@@ -30,7 +30,7 @@ Sarah's question is: "Can I live on £375 of spare cash while maintaining my cur
 <ToolCTA 
   title="Calculate Your Mortgage Affordability" 
   toolName="Mortgage Affordability Calculator" 
-  toolUrl="/tools/afford" 
+  toolUrl="/tools/afford/" 
   description="Determine your potential maximum loan amount based on your income and see how it compares to your current budget. Know your numbers before you talk to a broker."
 />
 

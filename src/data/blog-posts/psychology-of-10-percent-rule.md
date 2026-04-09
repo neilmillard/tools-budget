@@ -76,7 +76,7 @@ Start building your army today.
 <ToolCTA
   title="Find Your 10%"
   toolName="Budget Planner"
-  toolUrl="/tools/budget"
+  toolUrl="/tools/budget/"
   description="Use our Budget Planner to see where your money is going and identify the 10% you can start keeping for yourself today. It's the first step toward your own Babylonian cure."
 />
 

@@ -50,7 +50,7 @@ In this scenario, Alex would need to reduce the "Wants" category to maintain the
 <ToolCTA 
   title="Map Your Own 50-30-20 Budget" 
   toolName="Budget Planner" 
-  toolUrl="/tools/budget" 
+  toolUrl="/tools/budget/" 
   description="Use our Budget Planner to enter your real numbers. It will automatically calculate your 'spare' cash and help you see how your spending aligns with the 50-30-20 framework."
 />
 

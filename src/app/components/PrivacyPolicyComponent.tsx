@@ -176,7 +176,7 @@ export default function PrivacyPolicyComponent() {
         </p>
         <p className="mb-4">
           Email: team @ neilmillard.com<br />
-          Or via our <a href="/contact" className="text-blue-600 hover:underline">Contact Page</a>
+          Or via our <a href="/contact/" className="text-blue-600 hover:underline">Contact Page</a>
         </p>
       </section>
     </div>

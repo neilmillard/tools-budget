@@ -36,7 +36,7 @@ Mortgage interest is typically calculated daily based on the remaining balance. 
 <ToolCTA 
   title="Calculate Your Own Mortgage Savings" 
   toolName="Mortgage Overpayment Calculator" 
-  toolUrl="/tools/mortgage-overpayment-calculator" 
+  toolUrl="/tools/mortgage-overpayment-calculator/" 
   description="Input your own mortgage details and see exactly how much interest you can save and how many years you can shave off your term with a lump sum or monthly overpayments."
 />
 
@@ -49,4 +49,4 @@ Mortgage interest is typically calculated daily based on the remaining balance. 
 
 ## The Psychological Win
 
-Beyond the mathematics, there is a profound psychological benefit to seeing your mortgage end date creep closer. It represents a level of security and freedom that few other financial milestones can match.
+Beyond the mathematics, there is a profound psychological benefit to seeing your mortgage end date creep closer. It represents a level of security and freedom that few other financial milestones can match. [But what should you do once that final payment is made?](/blog/paid-off-mortgage-what-next/)

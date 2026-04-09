@@ -55,6 +55,6 @@ Whether you are in [Stage 1: Paying Debt](/blog/freedom-through-discipline/) or 
 <ToolCTA 
   title="Explore the Suite" 
   toolName="Budget Planner" 
-  toolUrl="/tools/budget" 
+  toolUrl="/tools/budget/" 
   description="Start where I started: mapping out your cash flow and seeing where your 10% savings can take you."
 />

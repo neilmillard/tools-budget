@@ -60,7 +60,7 @@ By building your own Financial Operating System, you move from "hoping" for weal
 <ToolCTA 
   title="Initialize Your System" 
   toolName="Budget Planner" 
-  toolUrl="/tools/budget" 
+  toolUrl="/tools/budget/" 
   description="The first step in any system is accurate data. Use our Budget Planner today to find the 10% that will start your journey."
 />
 

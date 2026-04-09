@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 
 export default function PayingDebtPage() {
     const relatedPosts = [
-        { title: "Freedom Through Discipline: Eliminating Consumer Debt", url: "/blog/freedom-through-discipline" },
-        { title: "The Forgotten Art of Living Below Your Means", url: "/blog/the-forgotton-art-of-living-below-your-means" }
+        { title: "Freedom Through Discipline: Eliminating Consumer Debt", url: "/blog/freedom-through-discipline/" },
+        { title: "The Forgotten Art of Living Below Your Means", url: "/blog/the-forgotton-art-of-living-below-your-means/" }
     ];
 
     return (
@@ -59,7 +59,7 @@ export default function PayingDebtPage() {
                 <p className="text-blue-800 mb-6">
                     Our Budget Planner can help you see exactly where your money is going and identify areas where you can save to pay down debt faster.
                 </p>
-                <Link href="/tools/budget" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
+                <Link href="/tools/budget/" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors">
                     Try the Budget Planner
                 </Link>
             </div>

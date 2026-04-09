@@ -38,7 +38,7 @@ This "debt avalanche" method mathematically saves you the most money, though som
 <ToolCTA 
   title="See the Cost of Debt" 
   toolName="Mortgage Overpayment Calculator" 
-  toolUrl="/tools/mortgage-overpayment-calculator" 
+  toolUrl="/tools/mortgage-overpayment-calculator/" 
   description="While focused on mortgages, our overpayment calculator shows the incredible power of paying down debt early. See how much interest you can save by adding just a little extra to your payments."
 />
 

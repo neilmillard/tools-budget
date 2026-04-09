@@ -57,7 +57,7 @@ This simple calculation demonstrates why beating inflation isn't optional—it's
 <ToolCTA 
   title="Plan for Your Future" 
   toolName="Pension Calculator" 
-  toolUrl="/tools/pension" 
+  toolUrl="/tools/pension/" 
   description="Inflation is a pension's greatest enemy. Use our Pension Calculator to see how your future income stacks up against rising costs over the long term."
 />
 

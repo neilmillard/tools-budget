@@ -55,7 +55,7 @@ Inflation is the ultimate trickster. Don't let it win.
 <ToolCTA
   title="Project Your Long-Term Growth"
   toolName="Pension Calculator"
-  toolUrl="/tools/pension"
+  toolUrl="/tools/pension/"
   description="Don't let inflation win. Use our tool to see how your money needs to grow to support your future lifestyle. View your real returns, not just the nominal numbers."
 />
 

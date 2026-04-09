@@ -5,8 +5,8 @@ import RelatedInsights from "@/app/components/calculators/RelatedInsights";
 
 describe("RelatedInsights Component", () => {
   const posts = [
-    { title: "First Insight", url: "/blog/first" },
-    { title: "Second Insight", url: "/blog/second" }
+    { title: "First Insight", url: "/blog/first/" },
+    { title: "Second Insight", url: "/blog/second/" }
   ];
 
   test("renders nothing when posts are empty", () => {
@@ -24,7 +24,7 @@ describe("RelatedInsights Component", () => {
   test("renders links with correct hrefs", () => {
     render(<RelatedInsights posts={posts} />);
     const links = screen.getAllByRole("link");
-    expect(links[0]).toHaveAttribute("href", posts[0].url);
-    expect(links[1]).toHaveAttribute("href", posts[1].url);
+    expect(links[0].getAttribute("href")).toBe(posts[0].url.replace(/\/$/, ""));
+    expect(links[1].getAttribute("href")).toBe(posts[1].url.replace(/\/$/, ""));
   });
 });

@@ -70,7 +70,7 @@ By making your dwelling a "profitable investment," you aren't just paying for a 
 <ToolCTA 
   title="Run Your Own Numbers" 
   toolName="Mortgage Overpayment Calculator" 
-  toolUrl="/tools/mortgage-overpayment-calculator" 
+  toolUrl="/tools/mortgage-overpayment-calculator/" 
   description="See exactly how many years you could shave off your mortgage and how much interest you'll save by making even small overpayments."
 />
 

@@ -53,7 +53,7 @@ Stop saving for a rainy day and start saving for a sunny one.
 <ToolCTA
   title="Calculate Your Freedom Path"
   toolName="Budget Planner"
-  toolUrl="/tools/budget"
+  toolUrl="/tools/budget/"
   description="How much could you be saving for your future? Use our Budget Planner to find the surplus that will fund your freedom. See how close you really are to your first year of independence."
 />
 

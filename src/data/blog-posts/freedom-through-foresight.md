@@ -32,7 +32,7 @@ Most financial planners suggest targeting 25-33 times your annual retirement inc
 <ToolCTA 
   title="Map Your Retirement Journey" 
   toolName="Pension Calculator" 
-  toolUrl="/tools/pension" 
+  toolUrl="/tools/pension/" 
   description="Wondering if you're on track? Use our Pension Calculator to project your future income based on your current savings and contributions."
 />
 

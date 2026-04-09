@@ -55,7 +55,7 @@ Start investing in the most important asset you will ever own: Yourself.
 <ToolCTA
   title="Plan Your Financial Future"
   toolName="Pension Calculator"
-  toolUrl="/tools/pension"
+  toolUrl="/tools/pension/"
   description="See how increasing your contributions today—fueled by your growing earning power—can transform your retirement reality. Small increases in earning power lead to massive changes in your future wealth."
 />
 

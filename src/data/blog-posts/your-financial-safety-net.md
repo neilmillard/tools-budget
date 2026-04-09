@@ -34,7 +34,7 @@ For most people, a progression works best:
 <ToolCTA 
   title="Calculate Your Safety Net" 
   toolName="Budget Planner" 
-  toolUrl="/tools/budget" 
+  toolUrl="/tools/budget/" 
   description="Unsure how much '3 months of expenses' actually is? Use our Budget Planner to see your monthly outgoings and calculate your ideal emergency fund target."
 />
 

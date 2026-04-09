@@ -25,7 +25,7 @@ export default function BlogIndex() {
       <ul>
         {blogs.map((blog) => (
           <li key={blog.id} className="mb-2">
-            <Link href={`/blog/${blog.id}`} className="text-blue-500 hover:underline">
+            <Link href={`/blog/${blog.id}/`} className="text-blue-500 hover:underline">
               {blog.title}
             </Link>
             <p className="text-sm text-gray-500">{blog.date}</p>

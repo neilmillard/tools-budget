@@ -40,7 +40,7 @@ The wealthy-minded approach is different: as your income increases, maintain you
 <ToolCTA 
   title="Take Control of Your Spending" 
   toolName="Budget Planner" 
-  toolUrl="/tools/budget" 
+  toolUrl="/tools/budget/" 
   description="Ready to apply these principles? Use our Budget Planner to track your spending and find your 'investable surplus'."
 />
 

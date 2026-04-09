@@ -48,7 +48,7 @@ Don't spend the children. Let them grow up and have children of their own.
 <ToolCTA
   title="Project Your Long-Term Multiplier"
   toolName="Pension Calculator"
-  toolUrl="/tools/pension"
+  toolUrl="/tools/pension/"
   description="See how the 3rd Cure works over decades. Project your future wealth and see how compounding turns small savings into a forest of gold."
 />
 
