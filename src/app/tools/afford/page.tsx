@@ -4,11 +4,11 @@ import { Metadata } from "next";
 import SoftwareApplicationSchema from "@/components/schema/SoftwareApplicationSchema";
 
 export const metadata: Metadata = {
-  title: "What Mortgage Can I Afford? UK Calculator | Helpful Money",
-  description: "Find out how much mortgage you can afford based on your income, deposit and expenses. Free UK affordability calculator — see your borrowing limit in seconds.",
+  title: "Mortgage Affordability Calculator: How Much Can I Afford? | Helpful Money",
+  description: "Find out exactly how much mortgage you can afford. Our UK affordability calculator helps you calculate an affordable house price based on your income, deposit, and expenses.",
   openGraph: {
-    title: "What Mortgage Can I Afford? UK Calculator | Helpful Money",
-    description: "Find out how much mortgage you can afford based on your income, deposit and expenses. Free UK affordability calculator — see your borrowing limit in seconds.",
+    title: "Mortgage Affordability Calculator: How Much Can I Afford? | Helpful Money",
+    description: "Find out exactly how much mortgage you can afford. Our UK affordability calculator helps you calculate an affordable house price based on your income, deposit, and expenses.",
   },
   alternates: {
     canonical: "/tools/afford/",
@@ -17,14 +17,15 @@ export const metadata: Metadata = {
 
 export default function Afford() {
     const relatedPosts = [
-        { title: "How to Know if You Can Afford a Mortgage Before You Apply", url: "/blog/know-if-you-can-afford-mortgage/" }
+        { title: "How to Know if You Can Afford a Mortgage Before You Apply", url: "/blog/know-if-you-can-afford-mortgage/" },
+        { title: "I Paid Off My Mortgage. Now What?", url: "/blog/paid-off-mortgage-what-next/" }
     ];
 
     return (
         <>
             <SoftwareApplicationSchema 
                 name="Mortgage Affordability Calculator"
-                description="Find out how much mortgage you can afford based on your income, deposit and expenses. Free UK affordability calculator — see your borrowing limit in seconds."
+                description="Find out exactly how much mortgage you can afford. Our UK affordability calculator helps you calculate an affordable house price based on your income, deposit, and expenses."
                 url="https://www.helpfulmoney.site/tools/afford/"
                 applicationCategory="FinanceApplication"
             />
