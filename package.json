@@ -12,7 +12,7 @@
     "check-links": "linkinator out/ --recurse --skip \"(?:https:\\/\\/www\\.linkedin\\.com\\/|https:\\/\\/twitter\\.com\\/|https:\\/\\/x\\.com\\/|https:\\/\\/facebook\\.com\\/|https:\\/\\/instagram\\.com\\/|mailto:|tel:)\""
   },
   "dependencies": {
-    "@mantine/hooks": "^8.3.18",
+    "@mantine/hooks": "^9.0.1",
     "@tailwindcss/typography": "^0.5.19",
     "chart.js": "^4.5.1",
     "clsx": "^2.1.1",
