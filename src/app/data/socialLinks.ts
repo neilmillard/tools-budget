@@ -22,7 +22,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'linkedin',
-    url: 'https://linkedin.com/in/neilmillard/',
+    url: 'https://www.linkedin.com/in/neilmillard/',
     ariaLabel: 'LinkedIn',
     hoverColorClass: 'hover:text-[#0A66C2]',
     icon: {
