@@ -48,6 +48,6 @@
     "minimatch": "^10.2.4",
     "tailwindcss": "^4.2.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5"
+    "typescript": "^6"
   }
 }
