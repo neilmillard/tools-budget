@@ -16,7 +16,8 @@ import {
   ArrowUpRight,
   Settings,
   Download,
-  Plus
+  Plus,
+  RefreshCcw
 } from 'lucide-react';
 import {
   Chart as ChartJS,
@@ -41,14 +42,17 @@ ChartJS.register(
 );
 
 const INITIAL_TICKERS = [
-  'MSFT', 'AAPL', 'GOOGL', 'AMZN', 'META', 'V', 'NVDA', 'PEP', 
+  'GOOGL', 'V', 'META', 'MSFT', 'AAPL', 'AMZN', 'NVDA', 'PEP', 
   'KO', 'NKE', 'JNJ', 'COST', 'UNH', 'WMT', 'ADBE', 'TSM'
 ];
+
+const CACHE_KEY = 'quality_metrics_cache_v1';
 
 export default function QualityMetricsDashboard() {
   const [companies, setCompanies] = useState<CompanyMetrics[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [apiWarning, setApiWarning] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
   const [thresholds, setThresholds] = useState(DEFAULT_THRESHOLDS);
   const [showSettings, setShowSettings] = useState(false);
   const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null);
@@ -56,41 +60,128 @@ export default function QualityMetricsDashboard() {
   const [filterPassing, setFilterPassing] = useState(false);
 
   useEffect(() => {
-    async function loadData() {
-      if (!FMP_API_KEY) {
-        setCompanies(MOCK_COMPANIES);
-        setLoading(false);
-        return;
-      }
-
-      setLoading(true);
+    // Initial load from cache or mock data
+    const saved = localStorage.getItem(CACHE_KEY);
+    if (saved) {
       try {
-        const results = await Promise.all(
-          INITIAL_TICKERS.map(async (symbol) => {
-            try {
-              return await processCompanyData(symbol, thresholds);
-            } catch (e) {
-              console.error(`Failed to fetch ${symbol}`, e);
-              return null;
-            }
-          })
-        );
-        const validCompanies = results.filter((c): c is CompanyMetrics => c !== null);
-        
-        if (validCompanies.length === 0) {
-          setCompanies(MOCK_COMPANIES);
-        } else {
-          setCompanies(validCompanies);
-        }
-      } catch (err) {
-        setError('Failed to load financial data. Please check your API key.');
-        setCompanies(MOCK_COMPANIES);
-      } finally {
+        const parsed = JSON.parse(saved);
+        setCompanies(parsed.data);
+        setLastUpdated(parsed.timestamp);
         setLoading(false);
+        
+        // If the cache is mock data but we have an API key, we might want to suggest a refresh
+        const isAllMock = parsed.data.every((c: any) => c.isMock);
+        if (isAllMock && FMP_API_KEY) {
+          setApiWarning('Live data is available. Click refresh to update from mock data.');
+        }
+        return;
+      } catch (e) {
+        console.error('Failed to parse cache', e);
       }
     }
-    loadData();
+
+    // No cache or failed to parse, use mock data as starting point
+    setCompanies(MOCK_COMPANIES);
+    setLoading(false);
+    if (FMP_API_KEY) {
+      setApiWarning('Click refresh to load live financial data.');
+    }
   }, []);
+
+  const saveToCache = (data: CompanyMetrics[]) => {
+    const timestamp = new Date().toLocaleString();
+    localStorage.setItem(CACHE_KEY, JSON.stringify({
+      data,
+      timestamp
+    }));
+    setLastUpdated(timestamp);
+  };
+
+  const handleRefresh = async () => {
+    if (!FMP_API_KEY) {
+      alert('FMP API key is required for live data.');
+      return;
+    }
+
+    setLoading(true);
+    setApiWarning(null);
+    try {
+      const symbolsToFetch = companies.length > 0 
+        ? companies.map(c => c.symbol) 
+        : INITIAL_TICKERS;
+
+      const results = await Promise.all(
+        symbolsToFetch.map(async (symbol) => {
+          try {
+            return await processCompanyData(symbol, thresholds);
+          } catch (e) {
+            if (e instanceof Error && e.message.includes('429')) {
+              throw e;
+            }
+            console.error(`Failed to fetch ${symbol}`, e);
+            // Return existing data if fetch fails
+            return companies.find(c => c.symbol === symbol) || null;
+          }
+        })
+      );
+
+      const validCompanies = results.filter((c): c is CompanyMetrics => c !== null);
+      
+      if (validCompanies.length === 0) {
+        setApiWarning('Could not fetch live data. Please check your API key or connection.');
+      } else {
+        setCompanies(validCompanies);
+        saveToCache(validCompanies);
+        if (validCompanies.length < symbolsToFetch.length) {
+          setApiWarning('Some company data could not be loaded.');
+        }
+      }
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Failed to load financial data.';
+      setApiWarning(`${message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleAddTicker = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newTicker) return;
+
+    const ticker = newTicker.toUpperCase().trim();
+    if (companies.some(c => c.symbol === ticker)) {
+      alert(`${ticker} is already in the list.`);
+      return;
+    }
+
+    if (!FREE_TICKERS.includes(ticker)) {
+      alert(`The ticker "${ticker}" is not in the supported free list. Payment is needed to access data for this company.`);
+      return;
+    }
+
+    if (!FMP_API_KEY) {
+      alert('Cannot add new ticker without a valid FMP API key.');
+      return;
+    }
+
+    setLoading(true);
+    setApiWarning(null);
+    try {
+      const data = await processCompanyData(ticker, thresholds);
+      const updatedCompanies = [...companies, data];
+      setCompanies(updatedCompanies);
+      saveToCache(updatedCompanies);
+      setNewTicker('');
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Failed to add ticker.';
+      alert(message);
+      if (message.includes('429')) {
+        setApiWarning('Rate limit reached. Data for new companies cannot be fetched at this time.');
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const scoredCompanies = useMemo(() => {
     return companies.map(c => {
@@ -118,33 +209,6 @@ export default function QualityMetricsDashboard() {
       avgOperatingMargin: companies.reduce((sum, c) => sum + c.operatingMarginLatest, 0) / count,
     };
   }, [companies]);
-
-  const handleAddTicker = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newTicker) return;
-
-    const ticker = newTicker.toUpperCase().trim();
-    if (!FREE_TICKERS.includes(ticker)) {
-      alert(`The ticker "${ticker}" is not in the supported free list. Payment is needed to access data for this company.`);
-      return;
-    }
-
-    if (!FMP_API_KEY) {
-      alert('Cannot add new ticker without a valid FMP API key.');
-      return;
-    }
-
-    setLoading(true);
-    try {
-      const data = await processCompanyData(ticker, thresholds);
-      setCompanies(prev => [...prev, data]);
-      setNewTicker('');
-    } catch (err) {
-      alert('Failed to add ticker. Check symbol and API key.');
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const formatPercent = (val: number) => (val * 100).toFixed(1) + '%';
   const formatValue = (val: number) => val.toFixed(2);
@@ -187,15 +251,19 @@ export default function QualityMetricsDashboard() {
     return pass ? 'text-green-600 bg-green-50' : 'text-amber-600 bg-amber-50';
   };
 
-  if (error && companies.length === 0) {
-    return <div className="p-8 text-center text-red-600">{error}</div>;
-  }
 
   return (
     <div className="max-w-7xl mx-auto p-4 md:p-8 space-y-8 font-sans text-slate-900">
       <header className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-6">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Quality Metrics Dashboard</h1>
+          <div className="flex items-center gap-3">
+            <h1 className="text-3xl font-bold tracking-tight">Quality Metrics Dashboard</h1>
+            {lastUpdated && (
+              <span className="text-[10px] bg-slate-100 text-slate-500 px-2 py-1 rounded uppercase font-bold tracking-wider">
+                Updated: {lastUpdated}
+              </span>
+            )}
+          </div>
           <p className="text-slate-500 mt-1">Fundsmith-style universe screening & analysis</p>
         </div>
         <div className="flex items-center gap-3">
@@ -218,6 +286,14 @@ export default function QualityMetricsDashboard() {
             </button>
           </form>
           <button 
+            onClick={handleRefresh}
+            disabled={loading}
+            title="Refresh live data"
+            className={`p-2 border rounded-md hover:bg-slate-50 transition-colors ${loading ? 'animate-spin text-slate-400' : ''}`}
+          >
+            <RefreshCcw size={20} />
+          </button>
+          <button 
             onClick={() => setShowSettings(!showSettings)}
             className={`p-2 border rounded-md hover:bg-slate-50 transition-colors ${showSettings ? 'bg-slate-100' : ''}`}
           >
@@ -231,6 +307,17 @@ export default function QualityMetricsDashboard() {
           </button>
         </div>
       </header>
+
+      {/* API Status Warning */}
+      {apiWarning && (
+        <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg flex items-start gap-3 text-amber-800 animate-in fade-in slide-in-from-top-2">
+          <AlertTriangle size={20} className="shrink-0 mt-0.5" />
+          <div>
+            <p className="text-sm font-bold">Warning: Data is not live</p>
+            <p className="text-sm opacity-90">{apiWarning}</p>
+          </div>
+        </div>
+      )}
 
       {/* Settings Panel */}
       {showSettings && (
@@ -329,7 +416,12 @@ export default function QualityMetricsDashboard() {
                   onClick={() => setSelectedSymbol(selectedSymbol === company.symbol ? null : company.symbol)}
                 >
                   <td className="px-6 py-4">
-                    <div className="font-bold">{company.symbol}</div>
+                    <div className="flex items-center gap-2">
+                      <div className="font-bold">{company.symbol}</div>
+                      {company.isMock && (
+                        <span className="text-[8px] bg-slate-100 text-slate-400 px-1 rounded uppercase font-bold tracking-tighter">Mock</span>
+                      )}
+                    </div>
                     <div className="text-xs text-slate-500 truncate max-w-37.5">{company.name}</div>
                   </td>
                   <td className="px-4 py-4 text-center">
@@ -368,7 +460,7 @@ export default function QualityMetricsDashboard() {
       {/* Drill-down Section (Simple Version) */}
       {selectedSymbol && (
         <CompanyDrillDown 
-          company={companies.find(c => c.symbol === selectedSymbol)!} 
+          company={scoredCompanies.find(c => c.symbol === selectedSymbol)!} 
           onClose={() => setSelectedSymbol(null)} 
         />
       )}
@@ -392,7 +484,9 @@ function CompanyDrillDown({ company, onClose }: { company: CompanyMetrics, onClo
         <div className="sticky top-0 bg-white border-b px-6 py-4 flex items-center justify-between z-10">
           <div>
             <h2 className="text-2xl font-bold">{company.name} ({company.symbol})</h2>
-            <p className="text-slate-500">10-Year Financial History</p>
+            <p className="text-slate-500">
+              10-Year Financial History {company.lastUpdated && `• Updated: ${new Date(company.lastUpdated).toLocaleDateString()}`}
+            </p>
           </div>
           <button onClick={onClose} className="p-2 hover:bg-slate-100 rounded-full transition-colors">
             <XCircle size={24} className="text-slate-400" />

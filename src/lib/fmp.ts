@@ -22,7 +22,10 @@ export async function fetchFMP(endpoint: string, params: Record<string, string> 
   
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`FMP API error: ${response.statusText}`);
+    if (response.status === 429) {
+      throw new Error('FMP API rate limit exceeded (429). Please try again later.');
+    }
+    throw new Error(`FMP API error: ${response.status} ${response.statusText}`);
   }
   return response.json();
 }
