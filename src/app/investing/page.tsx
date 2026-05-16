@@ -1,5 +1,6 @@
 import InvestingHub from "@/app/components/InvestingHub";
 import { Metadata } from "next";
+import { getAllBlogPosts } from "@/lib/blogs";
 
 export const metadata: Metadata = {
   title: "Investing Resource Hub | Helpful Money",
@@ -14,7 +15,9 @@ export const metadata: Metadata = {
 };
 
 export default function InvestingPage() {
+    const allPosts = getAllBlogPosts("newest", true);
+    const serverDate = new Date().toISOString();
     return (
-        <InvestingHub />
+        <InvestingHub allPosts={allPosts} serverDate={serverDate} />
     )
 }

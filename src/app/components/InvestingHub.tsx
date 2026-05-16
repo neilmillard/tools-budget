@@ -3,6 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import BenGrahamInvesting from "@/app/components/BenGrahamInvesting";
+import { BlogPostShort } from "@/app/components/blog/BlogPost";
+
+interface InvestingHubProps {
+  allPosts?: BlogPostShort[];
+  serverDate?: string;
+}
 
 const sections = [
   {
@@ -13,6 +19,19 @@ const sections = [
       { id: "the-invisible-tax", title: "The Invisible Tax: Defeating Inflation" },
       { id: "the-forgotton-art-of-living-below-your-means", title: "Living Below Your Means" },
       { id: "freedom-through-discipline", title: "Eliminating Consumer Debt" }
+    ]
+  },
+  {
+    title: "History & Mechanics",
+    description: "To understand where we are going, we must understand where we came from. The origins and nature of money itself.",
+    posts: [
+      { id: "the-barter-myth", title: "The Barter Myth: Why Money Was Invented" },
+      { id: "chinas-heavy-money", title: "China's Heavy Money: The First Paper Currency" },
+      { id: "london-goldsmiths", title: "The London Goldsmiths: Birth of Banking" },
+      { id: "bretton-woods-1944", title: "Bretton Woods: The Gold Standard Era" },
+      { id: "fiat-transition-1971", title: "The Fiat Transition: Trust-Based Money" },
+      { id: "how-money-is-made", title: "How Money is Made: Fractional Reserve Banking" },
+      { id: "debt-interest-inflation", title: "Debt, Interest, and Inflation" }
     ]
   },
   {
@@ -56,7 +75,19 @@ const readingPath = [
   { id: "the-art-of-balance", title: "6. Building a Diversified Portfolio" }
 ];
 
-export default function InvestingHub() {
+export default function InvestingHub({ allPosts = [], serverDate }: InvestingHubProps) {
+  const today = serverDate ? new Date(serverDate) : new Date();
+  
+  const getPostStatus = (id: string) => {
+    const post = allPosts.find(p => p.id === id);
+    if (!post) return { exists: false, published: false };
+    return { 
+      exists: true, 
+      published: new Date(post.date) <= today,
+      date: post.date
+    };
+  };
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-12">
       <div className="text-center mb-16">
@@ -80,23 +111,47 @@ export default function InvestingHub() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {readingPath.map((post, index) => (
-            <Link 
-              key={post.id} 
-              href={`/blog/${post.id}/`}
-              className="group bg-white p-6 rounded-xl border border-blue-200 hover:border-blue-400 hover:shadow-md transition-all flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-xs font-bold text-blue-500 mb-2 block uppercase tracking-tighter">Step {index + 1}</span>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
-              </div>
-              <div className="mt-4 flex items-center text-blue-600 font-medium text-sm">
-                Read Article <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </Link>
-          ))}
+          {readingPath.map((post, index) => {
+            const status = getPostStatus(post.id);
+            const isAvailable = status.published;
+
+            if (!isAvailable) {
+              return (
+                <div 
+                  key={post.id} 
+                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 opacity-75 flex flex-col justify-between"
+                >
+                  <div>
+                    <span className="text-xs font-bold text-gray-400 mb-2 block uppercase tracking-tighter">Step {index + 1}</span>
+                    <h3 className="text-lg font-bold text-gray-500 line-clamp-2">
+                      {post.title}
+                    </h3>
+                  </div>
+                  <div className="mt-4 flex items-center text-gray-400 font-medium text-sm">
+                    Coming Soon {status.date ? `(${status.date})` : ''}
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <Link 
+                key={post.id} 
+                href={`/blog/${post.id}/`}
+                className="group bg-white p-6 rounded-xl border border-blue-200 hover:border-blue-400 hover:shadow-md transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <span className="text-xs font-bold text-blue-500 mb-2 block uppercase tracking-tighter">Step {index + 1}</span>
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                </div>
+                <div className="mt-4 flex items-center text-blue-600 font-medium text-sm">
+                  Read Article <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -112,18 +167,36 @@ export default function InvestingHub() {
               <p className="text-gray-600">{section.description}</p>
             </div>
             <ul className="space-y-4 flex-grow">
-              {section.posts.map((post) => (
-                <li key={post.id}>
-                  <Link 
-                    href={`/blog/${post.id}/`}
-                    className="group block p-4 bg-gray-50 border border-gray-100 rounded-lg hover:bg-white hover:border-blue-200 hover:shadow-sm transition-all"
-                  >
-                    <h3 className="font-semibold text-gray-800 group-hover:text-blue-600">
-                      {post.title}
-                    </h3>
-                  </Link>
-                </li>
-              ))}
+              {section.posts.map((post) => {
+                const status = getPostStatus(post.id);
+                const isAvailable = status.published;
+
+                if (!isAvailable) {
+                  return (
+                    <li key={post.id}>
+                      <div className="p-4 bg-gray-50 border border-gray-100 rounded-lg opacity-75">
+                        <h3 className="font-semibold text-gray-400">
+                          {post.title}
+                          <span className="ml-2 text-xs font-normal text-gray-400">(Coming Soon)</span>
+                        </h3>
+                      </div>
+                    </li>
+                  );
+                }
+
+                return (
+                  <li key={post.id}>
+                    <Link 
+                      href={`/blog/${post.id}/`}
+                      className="group block p-4 bg-gray-50 border border-gray-100 rounded-lg hover:bg-white hover:border-blue-200 hover:shadow-sm transition-all"
+                    >
+                      <h3 className="font-semibold text-gray-800 group-hover:text-blue-600">
+                        {post.title}
+                      </h3>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ))}
