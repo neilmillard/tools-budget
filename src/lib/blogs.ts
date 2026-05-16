@@ -5,7 +5,7 @@ import {BlogPostShort} from "@/app/components/blog/BlogPost";
 
 const POSTS_DIR = path.join(process.cwd(), "src", "data", "blog-posts");
 
-export function getAllBlogPosts(sortOrder: "newest" | "oldest" = "newest"): BlogPostShort[] {
+export function getAllBlogPosts(sortOrder: "newest" | "oldest" = "newest", includeFuture: boolean = false): BlogPostShort[] {
   const files = fs.readdirSync(POSTS_DIR);
   const today = new Date();
 
@@ -14,11 +14,11 @@ export function getAllBlogPosts(sortOrder: "newest" | "oldest" = "newest"): Blog
     const fileContents = fs.readFileSync(filePath, "utf-8");
     const { data } = matter(fileContents);
 
-    if (new Date(data.date) > today){
+    if (!includeFuture && new Date(data.date) > today){
       return { id: "",
         title: null,
         date: null,
-      };
+      } as unknown as BlogPostShort;
     } else {
       return {
         id: file.replace(/\.md$/, ""),
