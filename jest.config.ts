@@ -1,3 +1,4 @@
+import type { InitialProjectOptions } from 'jest'
 import nextJest from 'next/jest.js'
 
 const createJestConfig = nextJest({
@@ -6,11 +7,11 @@ const createJestConfig = nextJest({
 })
 
 // Add any custom config to be passed to Jest
-const config = {
+const config: InitialProjectOptions = {
     coverageProvider: 'v8',
     testEnvironment: 'jsdom',
     transformIgnorePatterns: [
-        '/node_modules/(?!(react-markdown|vfile|vfile-message|unist-.*|unified|bail|is-plain-obj|trough|remark-.*|mdast-util-.*|micromark.*|decode-named-character-reference|character-entities|property-information|hast-util-.*|space-separated-tokens|comma-separated-tokens|pretty-ms|shiki|devlop|trim-lines)/)',
+        '/node_modules/(?!(react-markdown|vfile|vfile-message|unist-.*|unified|bail|is-plain-obj|trough|remark-.*|mdast-util-.*|micromark.*|decode-named-character-reference|character-entities|property-information|comma-separated-tokens|hast-util-.*|space-separated-tokens|web-namespaces|zwitch|html-url-attributes|ccount|devlop|estree-util-.*|@ungap/structured-clone|trim-lines|mdurl|uvu|dequal)/)',
     ],
     // Add more setup options before each test is run
     // setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
