@@ -6,7 +6,7 @@ interface RelatedPost {
   url: string;
 }
 
-interface RelatedInsightsProps {
+export interface RelatedInsightsProps {
   posts: RelatedPost[];
 }
 

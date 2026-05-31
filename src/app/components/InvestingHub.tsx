@@ -72,7 +72,12 @@ const readingPath = [
   { id: "mastering-your-mind", title: "3. The Psychology of Investing" },
   { id: "owning-a-piece-of-the-future", title: "4. Understanding Stocks" },
   { id: "stability-and-income", title: "5. The Role of Bonds" },
-  { id: "the-art-of-balance", title: "6. Building a Diversified Portfolio" }
+      { id: "the-art-of-balance", title: "6. Building a Diversified Portfolio" }
+];
+
+const tools = [
+  { id: "pension", title: "Pension Calculator", url: "/tools/pension/", description: "Plan your retirement income" },
+  { id: "investment-calculator", title: "Investment Calculator", url: "/tools/investment-calculator/", description: "Plan your wealth-building journey" }
 ];
 
 export default function InvestingHub({ allPosts = [], serverDate }: InvestingHubProps) {
@@ -97,6 +102,23 @@ export default function InvestingHub({ allPosts = [], serverDate }: InvestingHub
           No jargon, just timeless wisdom made actionable.
         </p>
       </div>
+
+      {/* Tools Section */}
+      <section className="mb-20">
+        <h2 className="text-3xl font-bold mb-8 text-gray-900">Calculators & Tools</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {tools.map((tool) => (
+            <Link 
+              key={tool.id} 
+              href={tool.url}
+              className="group p-6 bg-white border border-gray-200 rounded-2xl hover:border-blue-400 hover:shadow-lg transition-all"
+            >
+              <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 mb-2">{tool.title}</h3>
+              <p className="text-gray-600">{tool.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* Recommended Reading Order / Start Here */}
       <section className="mb-20 bg-blue-50 border border-blue-100 rounded-2xl p-8 md:p-12 shadow-sm">

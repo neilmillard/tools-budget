@@ -25,6 +25,7 @@ const toolLinks: NavLinkItem[] = [
   {name: 'Mortgage Overpayment Calculator', path: '/tools/mortgage-overpayment-calculator/'},
   {name: 'Mortgage Affordability Calculator', path: "/tools/afford/"},
   {name: 'Pension Calculator', path: "/tools/pension/"},
+  {name: 'Investment Calculator', path: '/tools/investment-calculator/'},
 ]
 
 export function NavBar() {
