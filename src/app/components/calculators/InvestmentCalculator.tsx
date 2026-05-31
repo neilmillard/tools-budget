@@ -264,22 +264,22 @@ export default function InvestmentCalculator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow-lg border border-gray-100">
-      <div className="flex flex-wrap gap-2 mb-8 p-1 bg-gray-50 rounded-lg">
+    <div className={`max-w-4xl mx-auto p-6 rounded-xl shadow-lg border border-gray-100 transition-colors duration-500 bg-blue-50`}>
+      <div className="flex border border-gray-200 rounded-lg mb-8 overflow-hidden divide-x divide-gray-200 bg-white">
         {[
-          { id: 'endAmount', label: 'End Amount' },
-          { id: 'contribution', label: 'Contribution' },
-          { id: 'returnRate', label: 'Return Rate' },
-          { id: 'startingAmount', label: 'Starting Amount' },
-          { id: 'length', label: 'Length' },
+          { id: 'endAmount', label: 'End Amount', color: 'bg-blue-100' },
+          { id: 'contribution', label: 'Contribution', color: 'bg-blue-100' },
+          { id: 'returnRate', label: 'Return Rate', color: 'bg-blue-100' },
+          { id: 'startingAmount', label: 'Starting Amount', color: 'bg-blue-100' },
+          { id: 'length', label: 'Length', color: 'bg-blue-100' },
         ].map((tab) => (
           <button
             key={tab.id}
             onClick={() => { setMode(tab.id as CalcMode); setResults(null); }}
-            className={`flex-1 px-4 py-2 rounded-md text-sm font-medium transition-all ${
+            className={`flex-1 px-4 py-3 text-sm font-medium transition-all whitespace-nowrap ${
               mode === tab.id 
-                ? 'bg-white text-blue-600 shadow-sm border border-gray-200' 
-                : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                ? `${tab.color} text-black border-b-2 border-blue-600` 
+                : 'bg-white text-gray-500 hover:text-gray-700 hover:bg-gray-50'
             }`}
           >
             {tab.label}
@@ -309,7 +309,7 @@ export default function InvestmentCalculator() {
                 name="years"
                 value={data.years}
                 onChange={handleChange}
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border rounded bg-white"
               />
             </div>
           )}
@@ -322,7 +322,7 @@ export default function InvestmentCalculator() {
                 name="returnRate"
                 value={data.returnRate}
                 onChange={handleChange}
-                className="w-full p-2 border rounded"
+                className="w-full p-2 border rounded bg-white"
                 step="0.1"
               />
             </div>
@@ -392,13 +392,13 @@ export default function InvestmentCalculator() {
 
           <button
             onClick={calculate}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-md mt-6"
+            className="w-full bg-blue-600 text-black py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors shadow-md mt-6"
           >
             Calculate
           </button>
         </div>
 
-        <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 flex flex-col">
+        <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl border border-gray-100 flex flex-col">
           <h3 className="text-lg font-bold mb-4 text-gray-800">Results</h3>
           
           {results ? (
