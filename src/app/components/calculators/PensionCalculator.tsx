@@ -274,12 +274,12 @@ export default function PensionCalculator() {
           <div className="mb-6">
             <div className="bg-white p-4 rounded-lg shadow-sm mb-4">
               <h4 className="text-lg font-medium mb-2">Total Savings at Retirement</h4>
-              <p className="text-3xl font-bold text-blue-600">{selectedCurrency.symbol}{results.totalSavings.toLocaleString()}</p>
+              <p className="text-3xl font-bold text-blue-600">{selectedCurrency.symbol}{results.totalSavings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
             </div>
 
             <div className="bg-white p-4 rounded-lg shadow-sm">
               <h4 className="text-lg font-medium mb-2">Estimated Monthly Income</h4>
-              <p className="text-3xl font-bold text-green-600">{selectedCurrency.symbol}{results.monthlyIncome.toLocaleString()}</p>
+              <p className="text-3xl font-bold text-green-600">{selectedCurrency.symbol}{results.monthlyIncome.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
               <p className="text-sm text-gray-500 mt-1">Based on {withdrawalRate}% annual withdrawal rate</p>
             </div>
           </div>

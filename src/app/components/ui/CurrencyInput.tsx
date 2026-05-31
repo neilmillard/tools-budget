@@ -35,7 +35,7 @@ export class CurrencyInput extends Component<CurrencyInputProps> {
                             type="number"
                             value={value}
                             onChange={onChange}
-                            className="w-full p-2 border rounded"
+                            className="w-full p-2 border rounded bg-white"
                             min={min}
                             max={max}
                             step={step}
