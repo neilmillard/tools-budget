@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@mantine/hooks": "^9.2.2",
-    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/typography": "^0.5.20",
     "chart.js": "^4.5.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.4.2",
