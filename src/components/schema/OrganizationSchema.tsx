@@ -6,7 +6,6 @@ export default function OrganizationSchema() {
     "@type": "Organization",
     "name": "Helpful Money",
     "url": "https://www.helpfulmoney.site",
-    "logo": "https://www.helpfulmoney.site/logo.png", // Assuming logo exists or will exist
     "sameAs": [
       "https://twitter.com/neil_millard",
       "https://github.com/neilmillard",
