@@ -28,6 +28,12 @@ Requires:
 - `cloudflare_account_id` — non-secret, can go in `terraform.tfvars`.
 - `cloudflare_api_token` — set via `TF_VAR_cloudflare_api_token`, never
   commit it.
+- `next_public_adsense_pub_id`, `next_public_gtm_id`, `next_public_fmp_api_key`
+  — set via `TF_VAR_next_public_*`, never commit them. Cloudflare Pages runs
+  its own build via the GitHub integration (independent of
+  `.github/workflows/build.yml`), so these are wired into the Pages
+  project's production `deployment_configs` — the same `NEXT_PUBLIC_*`
+  values already stored as GitHub Actions secrets for the `build.yml` job.
 - The Cloudflare GitHub App must already be authorised for this repo/account
   (one-time step done via the Cloudflare dashboard) before `cloudflare_pages_project`
   with a `github` source can be created.
