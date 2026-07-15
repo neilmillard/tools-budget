@@ -31,19 +31,6 @@ jobs:
           envkey_NEXT_PUBLIC_FMP_API_KEY: ${{ secrets.NEXT_PUBLIC_FMP_API_KEY }}
           file-name: .env
 
-      - name: Build Next.js app
-        run: npm run build
-
-      # Add the secrets in gitHub
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4.1.0
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-1
-
-      - name: Deploy to S3
-        run: aws s3 sync ./out s3://www.helpfulmoney.site
-
-      - name: Invalidate CloudFront Cache
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/" "/*" "/budget/" "/mortage/" "/afford/" "/pension/"
+      # Deployment is handled by Cloudflare Pages' own GitHub integration,
+      # which builds and publishes `out/` on every push to main — no deploy
+      # step is needed here. This job just keeps main green.
