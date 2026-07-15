@@ -11,13 +11,17 @@ tofu apply
 
 ## Cloudflare Pages migration
 
-`cloudflare.tf` creates only the Cloudflare Pages project connected to this
-GitHub repo. It does **not** touch DNS or custom domains — no
-`cloudflare_pages_domain` or `cloudflare_record` resources are created here,
-so `helpfulmoney.site` / `www.helpfulmoney.site` keep resolving to the
-existing CloudFront CNAMEs, untouched. The AWS S3/CloudFront/Route53
-resources (`s3.tf`, `cloudfront.tf`, `route53.tf`, `acm.tf`) are also left in
-place and untouched by this change.
+`cloudflare.tf` creates the Cloudflare Pages project connected to this
+GitHub repo, plus a `cloudflare_pages_domain` custom domain association for
+`www.helpfulmoney.site` only. The apex/root (`helpfulmoney.site`) is
+deliberately left out for now — it isn't needed yet. No `cloudflare_record`
+resources are created here, so DNS for `www.helpfulmoney.site` keeps
+resolving to the existing CloudFront CNAME until that's applied — but
+associating the custom domain is itself DNS-affecting on an
+already-Cloudflare-hosted zone, so applying this still needs the same care
+as a DNS change. The AWS S3/CloudFront/Route53 resources (`s3.tf`,
+`cloudfront.tf`, `route53.tf`, `acm.tf`) are left in place and untouched by
+this change.
 
 Requires:
 
@@ -30,15 +34,13 @@ Requires:
 
 Rollout:
 
-1. `tofu apply` to create the Pages project, then verify the site on the
-   assigned `*.pages.dev` subdomain.
-2. Custom domain association (`cloudflare_pages_domain`) and DNS cutover
-   (pointing the CNAME records at Pages instead of CloudFront, plus dropping
-   the S3 sync / CloudFront invalidation steps from
-   `.github/workflows/build.yml`) are handled in a separate follow-up PR once
-   step 1 is verified in production — on an already-Cloudflare-hosted zone,
-   associating a custom domain is itself a DNS-affecting action, so it's kept
-   out of this PR.
+1. `tofu apply` to create the Pages project and the `www` custom domain, then
+   verify the site on the assigned `*.pages.dev` subdomain and on
+   `www.helpfulmoney.site` once the custom domain is validated.
+2. Apex/root custom domain and DNS cutover (pointing the `cloudflare_record`
+   CNAME records at Pages instead of CloudFront, plus dropping the S3 sync /
+   CloudFront invalidation steps from `.github/workflows/build.yml`) are
+   handled in a separate follow-up PR once step 1 is verified in production.
 3. Manually confirm the Cloudflare Registrar transfer has completed (nameservers
    were already pointed at Cloudflare ahead of this, but the registrar transfer
    itself needs separate verification).

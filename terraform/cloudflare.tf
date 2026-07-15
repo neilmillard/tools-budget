@@ -26,9 +26,13 @@ resource "cloudflare_pages_project" "budget" {
 }
 
 
-# Custom domain association (cloudflare_pages_domain) and DNS cutover
-# (pointing helpfulmoney.site / www at this Pages project instead of the
-# existing CloudFront CNAMEs) are deliberately left out of this change — on
-# an already-Cloudflare-hosted zone, associating a custom domain is itself a
-# DNS-affecting action. Both will land in a follow-up PR once the Pages
-# project has been verified on its *.pages.dev subdomain.
+# www custom domain only — the apex/root (var.domain_name) is left out for
+# now since it isn't needed yet. Associating this domain is itself a
+# DNS-affecting action on an already-Cloudflare-hosted zone: applying it
+# points www.helpfulmoney.site at this Pages project instead of the existing
+# CloudFront CNAME.
+resource "cloudflare_pages_domain" "www" {
+  account_id   = var.cloudflare_account_id
+  project_name = cloudflare_pages_project.budget.name
+  domain       = "www.${var.domain_name}"
+}
