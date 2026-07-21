@@ -19,9 +19,13 @@ resources are created here, so DNS for `www.helpfulmoney.site` keeps
 resolving to the existing CloudFront CNAME until that's applied — but
 associating the custom domain is itself DNS-affecting on an
 already-Cloudflare-hosted zone, so applying this still needs the same care
-as a DNS change. The AWS S3/CloudFront/Route53 resources (`s3.tf`,
-`cloudfront.tf`, `route53.tf`, `acm.tf`) are left in place and untouched by
-this change.
+as a DNS change.
+
+The old AWS S3/CloudFront/ACM resources (`s3.tf`, `cloudfront.tf`,
+`acm.tf`) and the Route53 alias records that pointed at those CloudFront
+distributions have since been removed — the migration to Cloudflare Pages
+is complete and verified. `route53.tf` now only keeps the hosted zone and
+the mail-related records (MX, DKIM, site-verification TXT).
 
 Requires:
 
