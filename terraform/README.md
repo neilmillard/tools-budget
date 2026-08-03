@@ -22,10 +22,11 @@ already-Cloudflare-hosted zone, so applying this still needs the same care
 as a DNS change.
 
 The old AWS S3/CloudFront/ACM resources (`s3.tf`, `cloudfront.tf`,
-`acm.tf`) and the Route53 alias records that pointed at those CloudFront
-distributions have since been removed — the migration to Cloudflare Pages
-is complete and verified. `route53.tf` now only keeps the hosted zone and
-the mail-related records (MX, DKIM, site-verification TXT).
+`acm.tf`) and `route53.tf` (hosted zone, CloudFront alias records, and the
+mail-related records — MX, DKIM, site-verification TXT) have since been
+removed — the migration to Cloudflare Pages is complete and verified, and
+Cloudflare's own nameservers now answer all of those records (confirmed
+live via `dig` against Cloudflare's NS before the zone was deleted).
 
 Requires:
 
