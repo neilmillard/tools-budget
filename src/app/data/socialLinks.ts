@@ -42,7 +42,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'youtube',
-    url: 'https://studio.youtube.com/channel/UCPh537bqnb4A5M3YpKwo1HQ',
+    url: 'https://www.youtube.com/channel/UCAaoh3jk1qtvD3ALPp48_8w',
     ariaLabel: 'YouTube',
     hoverColorClass: 'hover:text-[#FF0000]',
     icon: {
