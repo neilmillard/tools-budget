@@ -5,6 +5,14 @@ date: "2026-06-13"
 
 # China's Heavy Money: The First Paper Currency
 
+> **Quick answer:** The world's first paper money grew out of a practical
+> problem — 10th-century Song Dynasty iron coins were too heavy to carry
+> for large transactions, so merchants issued paper "promise notes"
+> instead. The government eventually took the system over as the
+> *Jiaozi*, then over-printed notes beyond what they could back, causing
+> history's first paper-money inflation crisis — the same failure mode
+> that recurs whenever a currency loses the trust backing it.
+
 For most of human history, money was something you could drop on your toe and feel it. It was gold, silver, copper, or even iron. But in 10th-century China, a practical problem led to one of the most significant revolutions in financial history: the invention of paper money.
 
 ## The Burden of Iron
@@ -22,7 +30,7 @@ Seeing the success of these private notes, the Song government eventually took o
 
 This was a massive leap forward. For the first time, the "value" of money was completely detached from the weight of the material it was printed on. It allowed for easier trade over long distances and gave the government much more control over the economy.
 
-## The First Inflation Crisis
+## What caused the first paper-money inflation crisis?
 However, this new power came with a dangerous temptation. Because paper money was so easy to produce, the government eventually began to print more notes than they had iron or silk to back them up. 
 
 When people realized there were more "promises" in circulation than there were physical assets in the vaults, trust collapsed. Prices skyrocketed, and the first great experiment in paper money ended in a massive inflationary crisis. 

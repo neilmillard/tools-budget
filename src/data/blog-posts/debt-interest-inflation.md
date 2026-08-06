@@ -5,6 +5,14 @@ date: "2026-07-18"
 
 # Debt, Interest, and Inflation: The Mathematical Necessity
 
+> **Quick answer:** Banks create the principal of a loan but not the
+> money to pay its interest, so the total interest owed across the
+> economy can only be paid if the money supply keeps expanding —
+> new borrowing has to fund the "gap." This is why central banks target
+> steady inflation (~2%) rather than zero: inflation makes existing debt
+> easier to repay with cheaper future money, and it's also why holding
+> only cash guarantees a slow loss of value over time.
+
 We have seen that in our modern fiat system, almost all money is created as debt. But there is a mathematical catch that few people talk about: when a bank creates £1,000 of new money as a loan, they don't create the money to pay the interest.
 
 If the only money in existence is the principal of the loans, where does the money for the interest come from?
@@ -23,7 +31,7 @@ Imagine a small island where only one bank exists. The bank lends out £1,000 to
 
 For the islanders to pay back the £50 in interest, the bank must lend out *even more* money to someone else. This is the "musical chairs" of our financial system. As long as the total amount of debt (and therefore the total amount of money) keeps growing, the system works. But the moment the growth stops, someone is left without a chair.
 
-## Why We Have Target Inflation
+## Why do central banks deliberately target inflation, not zero?
 This mathematical reality is why central banks aim for a steady rate of inflation (usually around 2%). Inflation makes yesterday's debt easier to pay off with tomorrow's "cheaper" money. It acts as a lubricant for the system, ensuring that the total money supply keeps expanding fast enough to cover the interest on the existing debt.
 
 Without inflation, the weight of the interest would eventually crush the economy, leading to a massive wave of defaults and a complete collapse of the money supply.
