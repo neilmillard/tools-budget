@@ -104,12 +104,16 @@ deliberate retrofit pass (highest-traffic / highest-intent first):
 3. Saving stage: `your-financial-safety-net.md`, `freedom-fund-beyond-emergency.md`
 4. Investing stage: `simple-portfolio-index-funds.md`, `using-isa-allowance.md`
 
-`worked-example-mortgage-overpayment.md` and `good-debt-vs-bad-debt.md`
-have been retrofitted as the reference examples (DEL-170). Home stage
-(`how-much-save-mortgage-overpayment.md`, `know-if-you-can-afford-mortgage.md`),
-Debt stage (`freedom-through-discipline.md`), and Saving stage
-(`your-financial-safety-net.md`, `freedom-fund-beyond-emergency.md`) are
-also done; Investing stage remains.
+All four priority posts across all four journey stages have been
+retrofitted to this template under DEL-170: Home
+(`worked-example-mortgage-overpayment.md`, `how-much-save-mortgage-overpayment.md`,
+`know-if-you-can-afford-mortgage.md`), Debt (`good-debt-vs-bad-debt.md`,
+`freedom-through-discipline.md`), Saving (`your-financial-safety-net.md`,
+`freedom-fund-beyond-emergency.md`), Investing
+(`simple-portfolio-index-funds.md`, `using-isa-allowance.md`).
+
+Apply the same template to any new post going forward, and to the rest
+of the back catalogue opportunistically when a post is next touched.
 
 Per-post JSON-LD schema and a rendered author/byline field are tracked
 separately as DEL-180 (engineering work, not a content-only pass).
