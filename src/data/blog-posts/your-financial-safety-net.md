@@ -5,9 +5,17 @@ date: "2025-04-06"
 
 # Your Financial Safety Net: Building the Perfect Emergency Fund
 
+> **Quick answer:** Most households should hold 3-6 months of essential
+> expenses in an emergency fund, built in stages — a $1,000 starter fund
+> while paying off high-interest debt, then 1 month, then 3, then 6+.
+> Keep it liquid (easy access, no penalty) and safe (not market-exposed),
+> separate from everyday spending. Use the [Budget
+> Planner](/tools/budget/) to turn "3 months of expenses" into an actual
+> number for your household.
+
 Before venturing into the world of investments, prudent financial wisdom dictates establishing a solid foundation—your emergency fund. This financial buffer stands between you and life's unexpected challenges, preventing you from derailing your long-term financial strategy when surprises occur.
 
-## The Purpose of Your Emergency Fund
+## What is an emergency fund actually for?
 
 An emergency fund serves several critical functions:
 - Prevents you from going into debt when unexpected expenses arise
@@ -16,7 +24,7 @@ An emergency fund serves several critical functions:
 - Gives you flexibility during career transitions or economic downturns
 - Creates a psychological separation between "safety" money and "investment" money
 
-## How Much Should You Save?
+## How much should you actually save?
 
 The traditional advice of saving 3-6 months of expenses remains sound, but consider these factors when determining your target:
 - Job stability and industry volatility
@@ -38,7 +46,7 @@ For most people, a progression works best:
   description="Unsure how much '3 months of expenses' actually is? Use our Budget Planner to see your monthly outgoings and calculate your ideal emergency fund target."
 />
 
-## Where to Keep Your Emergency Fund
+## Where should you keep your emergency fund?
 
 Your emergency fund should be:
 - **Liquid** - Accessible without penalties or delays
@@ -59,7 +67,7 @@ Appropriate vehicles include:
 4. **Consider a side hustle** - Dedicate specific income streams to this goal
 5. **Set milestone celebrations** - Reward yourself (inexpensively) at key milestones
 
-## When to Use Your Emergency Fund
+## When should you actually use your emergency fund?
 
 An emergency fund is for genuine emergencies, not convenience or desires. Appropriate uses include:
 - Medical emergencies
@@ -86,3 +94,5 @@ Ancient financial wisdom tells us that wealth begins not with acquisition but wi
 A person with modest income and a robust emergency fund is financially stronger than someone with high income but no financial buffer. The former sleeps peacefully; the latter lives one paycheck away from crisis.
 
 In our next article, we'll explore [The Invisible Tax: Understanding Inflation](/blog/the-invisible-tax/)—the silent wealth eroder—and why traditional savings accounts alone can't build wealth in the modern economy.
+
+*Turn "3-6 months of expenses" into your own number with the [Budget Planner](/tools/budget/) — it totals your actual essential outgoings rather than relying on a national-average estimate.*

@@ -4,6 +4,13 @@ date: "2026-05-02"
 ---
 # The 'Freedom Fund': Beyond the Emergency Fund
 
+> **Quick answer:** A Freedom Fund is savings beyond your emergency fund
+> (which covers 3-6 months of expenses defensively) sized to cover a full
+> year of living costs — enough that you could walk away from your job
+> and nothing critical would break. Calculate your own "One Year Freedom
+> Number" as 12x your monthly essential spend from the [Budget
+> Planner](/tools/budget/).
+
 In ancient Babylon, Arkad's first cure is to **"Start thy purse to fattening."** For most people, this means saving for a rainy day. I call that the Emergency Fund. It's essential, but it’s not the goal. The true goal is something far more powerful: the **Freedom Fund**.
 
 For years, I lived in a state of constant "financial anxiety." Even when I had a few thousand pounds in the bank, I was terrified of losing my job or having a major car repair. I was playing pure defense, constantly looking over my shoulder for the next disaster. I was saving out of fear.
@@ -35,10 +42,10 @@ To build a Freedom Fund, you have to be relentless about the **1st and 2nd Cures
 2. **Control the Lifestyle Creep:** This is the hard part. As my income grew, I made a conscious decision to keep my core expenses flat. I lived in the same house, drove the same car, and ate the same food. The gap between my income and my expenses is where "freedom" is born.
 3. **The "Opportunity" Bucket:** I keep my Freedom Fund in a separate account from my Emergency Fund. Psychologically, this is important. One is for "bad" things; the other is for "good" things. If a great investment opportunity comes along, or a chance to start a business, the Freedom Fund is my capital.
 
-## How Much is Your Freedom Worth?
+## How much is your freedom actually worth?
 I used to think "freedom" was a million pounds. I thought it was a number so large I would never reach it. But when I built the **Budget Planner**, I realized that "freedom" was actually much closer than I thought.
 
-I saw that by cutting back on things I didn't even care about—the mindless Amazon purchases, the unused subscriptions—I could reach my "One Year Freedom Number" in just 18 months. That was my "Wait, really?" moment. Freedom wasn't a distant dream; it was a project with a deadline.
+Worked example: my essential monthly spend was roughly £2,800, so my "One Year Freedom Number" was £33,600 (12 x £2,800). By cutting back on things I didn't even care about — the mindless Amazon purchases, the unused subscriptions — I reached that number in 18 months. That was my "Wait, really?" moment. Freedom wasn't a distant dream; it was a project with a deadline.
 
 ## Your Action Plan
 1. **Define Your Moat:** Use the [Budget Planner](/tools/budget/) to calculate your monthly "survival" cost. Multiply by 6. That is your Emergency Fund goal.
@@ -49,6 +56,8 @@ I saw that by cutting back on things I didn't even care about—the mindless Ama
 Arkad said: "The man who hath of his earnings retained and which can be used to earn for him is the man who is free." 
 
 Stop saving for a rainy day and start saving for a sunny one.
+
+*The "One Year Freedom Number" above (12x essential monthly spend) is generated with our own [Budget Planner](/tools/budget/) — enter your own outgoings for your number, not mine.*
 
 <ToolCTA
   title="Calculate Your Freedom Path"
