@@ -5,9 +5,17 @@ date: "2025-03-30"
 
 # Freedom Through Discipline: Eliminating Consumer Debt
 
+> **Quick answer:** Paying off high-interest debt is mathematically the
+> best investment most people can make — clearing an 18% APR credit card
+> is a guaranteed, tax-free, risk-free 18% return, which beats what almost
+> any investment consistently offers. Making only minimum payments on a
+> $5,000 balance at 18% takes nearly 30 years and costs over $10,000 in
+> interest; directing your savings rate at the highest-interest debt first
+> (the "avalanche" method) clears it far faster.
+
 Before you can build wealth, you must first stop digging the hole that keeps most people financially trapped. Consumer debt—particularly high-interest credit card debt—is perhaps the greatest obstacle to financial independence.
 
-## The Mathematics of Debt Servitude
+## How much does minimum-payment-only debt actually cost?
 
 Consider this sobering reality: If you carry a $5,000 credit card balance at 18% interest and make only minimum payments, it will take you nearly 30 years to pay it off, and you'll pay over $10,000 in interest alone.
 
@@ -42,7 +50,7 @@ This "debt avalanche" method mathematically saves you the most money, though som
   description="While focused on mortgages, our overpayment calculator shows the incredible power of paying down debt early. See how much interest you can save by adding just a little extra to your payments."
 />
 
-## Avoiding the Debt Cycle
+## How do you avoid falling back into the debt cycle?
 
 Equally important is stopping the debt cycle. This requires:
 
@@ -61,12 +69,16 @@ Each debt payment eliminated creates both financial and psychological freedom. Y
 - Greater flexibility in career and life choices
 - Increased capacity to build wealth
 
-## Case Study: The Power of Focus
+## What happens after you clear the debt? A worked example
 
 Consider the story of Sarah, who had $27,000 in consumer debt spread across credit cards and personal loans. Rather than trying to invest while carrying this burden, she dedicated her 10% savings entirely to debt elimination.
 
-In just under three years, she was debt-free. She then redirected those same payments into investments. Ten years later, her investment portfolio had grown to over $100,000.
+Inputs: $27,000 starting balance, 10% of income redirected to debt, avalanche method (highest-interest first), same payments redirected to investing once debt-free.
+
+Result: debt-free in under three years; investment portfolio over $100,000 ten years after that.
 
 The lesson? Sometimes you must clear the path before you can begin the journey.
 
 In our next article, we'll explore [Your Financial Safety Net](/blog/your-financial-safety-net/)—your financial buffer against life's inevitable surprises and the foundation of your investment strategy.
+
+*The "guaranteed return" framing above is arithmetic, not opinion: clearing debt at rate R is mathematically equivalent to an investment returning R after tax. For your own debt payoff timeline, use the [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/)'s payment-schedule logic as a stand-in — enter your balance and rate to see your own numbers.*
