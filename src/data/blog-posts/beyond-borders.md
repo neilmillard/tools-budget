@@ -5,9 +5,17 @@ date: "2025-05-18"
 
 # Beyond Borders: The Power of International Investing
 
+> **Quick answer:** Most financial experts suggest allocating 20-40% of
+> your equity holdings to international stocks, split across developed
+> markets (lower risk) and emerging markets (higher growth, higher
+> volatility) — global index funds are the simplest way to get this
+> exposure in one holding. The point isn't chasing higher returns abroad,
+> it's reducing risk: different economies move through different cycles
+> at different times.
+
 In an increasingly interconnected world, limiting your investments to your home country is like shopping at a store that only sells products from your neighborhood. International investing allows you to participate in global growth and reduce risk through geographic diversification.
 
-## Why Invest Internationally?
+## Why invest internationally at all?
 
 Compelling reasons to look beyond your borders include:
 - **Expanded opportunity set**: Access to thousands more companies and sectors
@@ -70,3 +78,5 @@ Ancient merchants understood that trading across multiple regions reduced risk�
 As one sage observed: "A wise person scatters investments like seeds across many fields, for who knows which will grow and which will fail." International investing embodies this principle perfectly.
 
 In our next article, we'll explore how to build a properly diversified portfolio that combines various asset classes into a cohesive investment strategy.
+
+*The 20-40% allocation range above is a general industry guideline, not personalised advice — model your own split with the [Pension Calculator](/tools/pension/).*

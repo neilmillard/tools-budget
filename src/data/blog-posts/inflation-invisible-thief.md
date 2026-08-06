@@ -4,13 +4,21 @@ date: "2026-04-25"
 ---
 # Inflation: The Invisible Thief in Your Purse
 
+> **Quick answer:** Cash sitting in a low-interest account isn't "safe" —
+> at 3% inflation, £1,000 today buys £970 of goods next year, £740 in ten
+> years, and roughly half its value in twenty. A £500,000 retirement
+> target adjusted for 25 years of 3% inflation actually requires over
+> £1,000,000 to buy the same lifestyle. The only durable defence is
+> holding productive assets (equities, real estate) that can raise prices
+> or rents as inflation rises.
+
 The fourth cure shared by Arkad in ancient Babylon is: **"Guard thy treasures from loss."** In his day, this meant avoiding bad loans, shady business partners, and outright scams. Today, we face a much more subtle and persistent threat: **Inflation**.
 
 For a long time, I thought "safe" meant keeping my money in a high-street bank account. I liked seeing the number stay the same. I thought I was being prudent. I thought I was "guarding my treasures." 
 
 I was wrong. I was watching my wealth evaporate.
 
-## The "Safe" Loss: A Mathematical Illusion
+## Why is "safe" cash actually a guaranteed loss?
 I realized that if my money was sitting in an account earning 1% interest while the price of bread, milk, and rent was rising by 4%, I wasn't "guarding" anything. I was losing 3% of my purchasing power every single year. 
 
 Inflation is like a tiny, invisible leak in your purse. If you have £1,000 today, and inflation is 3%, that same £1,000 will only buy you £970 worth of goods next year. In ten years, it buys you about £740. In twenty years, it’s worth nearly half. 
@@ -51,6 +59,8 @@ Our tool lets you see the difference between "nominal" growth (the big number th
 Arkad said: "Gold fleeth from the man who would force it to impossible earnings or who followeth the alluring advice of tricksters and schemers." 
 
 Inflation is the ultimate trickster. Don't let it win.
+
+*The £500,000-vs-£1,000,000 figure above is my own illustrative projection at a fixed 3% inflation rate, generated with the [Pension Calculator](/tools/pension/) — model your own target and timeline there.*
 
 <ToolCTA
   title="Project Your Long-Term Growth"
