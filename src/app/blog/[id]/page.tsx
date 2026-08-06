@@ -1,5 +1,8 @@
 import {getAdjacentBlogPosts, getAllBlogPosts, getBlogPost} from "@/lib/blogs";
+import {extractFAQItems, hasFAQPattern} from "@/lib/faq";
 import BlogPost, {BlogNav, BlogPostShort} from "@/app/components/blog/BlogPost";
+import ArticleSchema from "@/components/schema/ArticleSchema";
+import FAQPageSchema from "@/components/schema/FAQPageSchema";
 import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> | undefined }): Promise<Metadata> {
@@ -33,12 +36,23 @@ export default async function BlogPage({ params }: {
   const { id } = resolvedParams;
   const blog = await getBlogPost(id);
   const {previous, next} = getAdjacentBlogPosts(id);
+  const url = `https://www.helpfulmoney.site/blog/${id}/`;
+  const faqItems = hasFAQPattern(blog.content) ? extractFAQItems(blog.content) : [];
 
   return (
     <div className={"max-w-2x1 mx-auto pt-6"}>
+      <ArticleSchema
+        headline={blog.title}
+        description={blog.description}
+        datePublished={blog.date}
+        author={blog.author}
+        url={url}
+      />
+      <FAQPageSchema items={faqItems}/>
+
       <BlogNav previous={previous} next={next}/>
 
-      <BlogPost title={blog.title} date={blog.date} content={blog.content}/>
+      <BlogPost title={blog.title} date={blog.date} content={blog.content} author={blog.author} authorUrl={blog.authorUrl}/>
 
       <BlogNav previous={previous} next={next}/>
     </div>
