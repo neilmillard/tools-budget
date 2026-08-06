@@ -5,6 +5,12 @@ date: "2025-08-19"
 
 # How to Use a Pension Calculator — and What the Numbers Really Mean
 
+> **Quick answer:** A pension calculator turns "save more" into an actual
+> number: a 35-year-old with £50,000 saved, contributing £500/month at
+> 5% growth, could reach ~£515,000 by 67 — a 4% safe withdrawal rate on
+> that is £20,600/year. Compare that to your actual target retirement
+> spend to find your gap, then adjust contributions or retirement age.
+
 Planning for retirement often feels like guessing. We see massive numbers like £500,000 or £1 million, but what do they actually mean for our daily lives?
 
 A pension calculator is a vital tool for turning those abstract numbers into a concrete plan. Let's look at how to use one effectively.
@@ -38,7 +44,7 @@ Is £20,600 per year enough for David's retirement? If his current lifestyle cos
   description="Input your current savings and monthly contributions to see how your pension might grow over time. Adjust your withdrawal rate to see how much income you could receive in retirement."
 />
 
-## Key Variables to Watch
+## Which variables move the outcome the most?
 
 1. **Growth Rate:** Small changes in growth—say from 4% to 5%—can result in tens of thousands of pounds over 30 years.
 2. **Management Fees:** High fees eat into your returns every year. Aim for low-cost index funds within your pension.
@@ -49,3 +55,5 @@ Is £20,600 per year enough for David's retirement? If his current lifestyle cos
 Don't just run the numbers once and forget about them. Your income, contributions, and the markets will change. Check your pension forecast annually and adjust your plan as needed. 
 
 Retirement isn't an age; it's a financial number. Once your pot can reliably generate the income you need, you have achieved financial independence.
+
+*David's figures are generated with our own [Pension Calculator](/tools/pension/) at a fixed 5% growth assumption — enter your own pot, contributions and target age for your numbers.*

@@ -6,6 +6,13 @@ description: "You have paid off your mortgage—now what? Learn how to manage yo
 
 # I Paid Off My Mortgage. Now What?
 
+> **Quick answer:** Redirect your old mortgage payment rather than
+> letting it dissolve into lifestyle creep — split it roughly 50/50 for
+> the first year between long-term investing and enjoying the freedom,
+> after first funding a home-maintenance sinking fund (~1% of home value
+> per year) and a larger emergency fund. Redirecting £1,000/month into a
+> portfolio growing at 7% from age 45 can add over £500,000 by 65.
+
 There is a unique financial euphoria that comes when you make your final mortgage payment. For most, this marks the end of [Stage 3: Buying a Home](/journey/buying-a-home/). 
 
 The burden of your largest monthly expense is gone. In Babylon’s terms, you have fulfilled the Fifth Cure: *"Make of thy dwelling a profitable investment."* Now, your home is not just a roof over your head; it is a fully-owned asset—a fortress against the uncertainties of the future.
@@ -22,7 +29,7 @@ Suppose your monthly mortgage payment was £1,200. You are already used to that 
 
 Instead of paying the bank, you start paying *your future self*. This isn't just about saving; it's about shifting from a "debt-management" mindset to a "wealth-management" mindset.
 
-## Step 2: The "Hidden" Costs of Ownership
+## What hidden costs remain once the mortgage is gone?
 
 Before you dive head-first into the stock market, remember that a paid-off house is still a physical asset that requires maintenance. Without a mortgage, you are your own landlord, but you are also your own maintenance department.
 
@@ -100,5 +107,7 @@ If you are ready to move from saving to investing, your next stop should be our 
   toolUrl="/tools/pension/" 
   description="What happens if you redirect your mortgage payment into your pension? Run the numbers today and see your retirement goal within reach."
 />
+
+*The £500,000-by-65 projection above assumes a 45-year-old redirecting £1,000/month at a 7% return — generated with our own [Pension Calculator](/tools/pension/), not a guarantee. Model your own age, contribution and timeline there.*
 
 *Not quite there yet? Use our [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/) to see how much sooner you could reach this milestone.*

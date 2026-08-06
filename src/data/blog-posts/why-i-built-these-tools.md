@@ -5,13 +5,20 @@ date: "2026-03-07"
 
 # Why I Built These Tools Instead of Just Writing About Money
 
+> **Quick answer:** Generic advice like "save 10%" doesn't tell you what
+> that means for your life — a calculator that says "£100/month moves
+> your retirement date five years earlier" does. This site's calculators
+> (Budget Planner, Mortgage Overpayment Calculator, Pension Calculator)
+> exist to turn the Babylon "cures" into a precise, personal number
+> instead of a platitude.
+
 I have spent the last decade reading almost every personal finance book ever written—from modern classics to ancient parables. Yet, for years, my own financial journey felt like it was stuck in first gear. 
 
 The problem wasn't a lack of knowledge. It was a lack of visibility. 
 
 Most financial advice tells you *what* to do: "Save 10%," "Live below your means," or "Diversify your assets." But it rarely shows you the immediate, mathematical impact of those choices on *your* specific life. 
 
-## The Spreadsheet Trap
+## What was wrong with just using a spreadsheet?
 
 When I first started taking my money seriously, I did what everyone suggests: I built a spreadsheet. 
 
@@ -49,6 +56,8 @@ I built these tools because:
 My goal for this site isn't to become a massive media outlet. It is to provide a clean, calm space where you can get the information you need and the tools to act on it. 
 
 Whether you are in [Stage 1: Paying Debt](/blog/freedom-through-discipline/) or [Stage 4: Investing](/investing/), I hope these tools give you the same "Wait, really?" moments they gave me.
+
+*The £35,000-interest-saved figure above is my own number on my own mortgage, generated with the [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/) — run your own to get yours.*
 
 *To see the full roadmap of the journey we're on together, visit our [Start Here page](/babylon/series/).*
 
