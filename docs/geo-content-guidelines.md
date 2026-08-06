@@ -105,7 +105,13 @@ deliberate retrofit pass (highest-traffic / highest-intent first):
 4. Investing stage: `simple-portfolio-index-funds.md`, `using-isa-allowance.md`
 
 `worked-example-mortgage-overpayment.md` and `good-debt-vs-bad-debt.md`
-have been retrofitted as the reference examples (DEL-170). The rest of
-the Home stage (`how-much-save-mortgage-overpayment.md`,
-`know-if-you-can-afford-mortgage.md`) has also been retrofitted; Debt,
-Saving and Investing stages remain to be done.
+have been retrofitted as the reference examples (DEL-170). Home stage
+(`how-much-save-mortgage-overpayment.md`, `know-if-you-can-afford-mortgage.md`)
+and the Debt stage (`freedom-through-discipline.md`) are also done; Saving
+and Investing stages remain.
+
+**Separate observation, not fixed in this pass:** `freedom-through-discipline.md`
+uses `$` throughout while the rest of the journey (and its own tool
+CTAs/links) is UK/£-denominated. Worth a currency pass before this one
+gets cited, but that's a content-accuracy fix independent of the GEO
+template and out of scope here.
