@@ -5,6 +5,14 @@ date: "2025-05-11"
 
 # Hard Assets in a Digital Age: Commodities and Precious Metals
 
+> **Quick answer:** Most financial advisors suggest limiting commodities
+> and precious metals to 5-15% of a portfolio — enough for the inflation
+> hedge and low-correlation diversification benefit, not so much that you
+> lose out on the cash flow that stocks, bonds and real estate generate.
+> Gold is the most accessible entry point for most investors, valued for
+> being nobody else's liability and having roughly 5,000 years of
+> monetary history behind it.
+
 Since the dawn of civilization, tangible assets have been valued for their intrinsic utility and scarcity. In our increasingly digital world, these "hard assets" continue to play a unique role in wealth preservation and portfolio diversification.
 
 ## Understanding Commodities
@@ -28,7 +36,7 @@ Gold and silver have served as money and stores of value for thousands of years 
 
 Ancient wisdom recognized that while currencies have come and gone, precious metals have maintained purchasing power across millennia.
 
-## Why Include Hard Assets in Your Portfolio?
+## Why include hard assets in a portfolio at all?
 
 Commodities and precious metals offer several potential benefits:
 - **Inflation hedge**: Tend to maintain value when paper currencies lose purchasing power
@@ -82,3 +90,5 @@ Ancient financial wisdom teaches diversification across asset classes. One sage 
 Modern portfolio theory confirms this intuitive wisdom—different assets perform best in different economic environments. Commodities and precious metals often shine precisely when traditional financial assets struggle.
 
 In our next article, we'll explore international investing—how expanding beyond your home country can reduce risk and capture growth opportunities in the global economy.
+
+*The 5-15% allocation range above is a general industry guideline, not personalised advice — model your own mix with the [Pension Calculator](/tools/pension/).*

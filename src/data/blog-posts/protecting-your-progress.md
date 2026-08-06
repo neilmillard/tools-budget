@@ -5,6 +5,15 @@ date: "2025-07-20"
 
 # Protecting Your Progress: Essential Risk Management Strategies
 
+> **Quick answer:** Risk management rests on four moves — avoid, reduce,
+> transfer (insurance), or accept — applied across an emergency fund
+> (3-6 months of expenses), the right insurance for catastrophic (not
+> inconvenient) risks, real diversification across asset classes and
+> geographies, and financial knowledge that protects against fees, scams,
+> and emotional decisions. Even modest 3% inflation halves your money's
+> value in 24 years, so "safe" cash is itself a risk to manage, not a
+> place to hide from one.
+
 Building wealth requires more than just accumulating assets—it demands protecting what you've built. Comprehensive risk management is the often-overlooked foundation of financial security, preventing decades of progress from being undone by unexpected events.
 
 ## The Risk Management Mindset
@@ -19,7 +28,7 @@ Effective risk management follows a simple framework:
 
 This systematic approach ensures nothing critical is overlooked.
 
-## The Four Risk Management Strategies
+## What are the four ways to actually manage a financial risk?
 
 When facing potential financial threats, you have four primary strategies at your disposal:
 
@@ -109,3 +118,5 @@ The wisdom of the ages suggests a balanced approach: protect your principal vigo
 Effective risk management creates a virtuous cycle. By protecting against catastrophic losses, you can confidently participate in growth opportunities. This participation, properly diversified, creates greater wealth—which in turn allows for more comprehensive protection.
 
 Start where you are with the protections most critical to your situation. Build your emergency fund, secure essential insurance, diversify available investments, and continuously expand your financial knowledge. Over time, this systematic approach to risk management will become not just a practice but a mindset—one that preserves your progress on the path to lasting wealth.
+
+*Size your own emergency fund and inflation-adjusted targets with the [Budget Planner](/tools/budget/) and [Pension Calculator](/tools/pension/) rather than relying on the general 3-6 month guideline alone.*

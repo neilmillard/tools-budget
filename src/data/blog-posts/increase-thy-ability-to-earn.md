@@ -4,11 +4,18 @@ date: "2026-05-30"
 ---
 # The 7th Cure: Increase Thy Ability to Earn
 
+> **Quick answer:** There's a hard ceiling on how much you can cut
+> expenses (you can't spend below zero) but no ceiling on how much you
+> can earn — so earning capacity is the highest-leverage lever in the
+> whole framework once basic frugality is in place. Practically: master
+> the tools of your industry, specialise rather than generalise, learn
+> continuously, and build a network of people ahead of you.
+
 In the final, most forward-looking cure shared in the ancient parables of Babylon, Arkad teaches the **7th Cure: "Increase thy ability to earn."** He tells his students that the most valuable asset they have is not their gold, their land, or their houses—it is their own knowledge, their own skills, and their own desire to excel.
 
 For a long time, I focused entirely on the first six cures. I was obsessed with the mechanics of wealth. I meticulously saved my 10% (1st Cure), I ruthlessly cut my expenses (2nd Cure), and I spent hours analyzing the stock market to make my gold multiply (3rd Cure). But I eventually realized I was missing the most powerful lever of all. I was focusing on the *size of the slice*, when I should have been focusing on the *size of the pie*.
 
-## The Ceiling of Frugality vs. The Sky of Opportunity
+## Why does earning power beat frugality as a wealth lever?
 There is a hard mathematical limit to how much you can cut your expenses. You can't live on zero. You need to eat, you need a roof, and you need to stay warm. Frugality is a defensive skill; it’s about protection. 
 
 But there is no theoretical ceiling to how much you can increase your ability to earn. Your earning capacity is an offensive skill. It’s about growth.
@@ -51,6 +58,8 @@ If you feel stuck in your financial journey, stop looking at your bank statement
 Arkad's final message was simple: "Cultivate thy own powers, to study and become wiser, to become more skillful, to so act as to respect thyself."
 
 Start investing in the most important asset you will ever own: Yourself.
+
+*I write about the contractor-transition specifics in [Confident Contractor](https://www.confident-contractor.co.uk/) — that's my own account, not a universal path, so treat it as one worked example of the 7th Cure rather than a template to copy exactly.*
 
 <ToolCTA
   title="Plan Your Financial Future"

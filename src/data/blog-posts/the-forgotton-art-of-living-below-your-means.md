@@ -5,9 +5,16 @@ date: "2025-03-23"
 
 # The Forgotten Art of Living Below Your Means
 
+> **Quick answer:** Two people earning the same $50,000/year, one saving
+> 4% and one saving 20%, end up roughly five times further apart after 30
+> years at a 7% return — about $202,000 vs. $1,010,000. The only variable
+> that changes is the savings rate; income and returns are held equal.
+> That's the entire case for living below your means: it's the one lever
+> under your direct control that dominates the outcome.
+
 In a world obsessed with displaying wealth rather than building it, the concept of living below your means might seem outdated. Yet this principle remains the cornerstone of every genuine wealth-building strategy throughout history.
 
-## The Math That Changes Everything
+## How much difference does savings rate actually make?
 
 Living below your means is simple mathematics: spend less than you earn, and invest the difference. This creates a financial surplus that becomes the seed capital for your investments.
 
@@ -62,3 +69,5 @@ When you live below your means, you gain something invaluable: options. You can:
 This freedom is the true luxury that the consumption-focused miss while pursuing status symbols.
 
 In our next article, we'll discuss how to apply your 10% savings toward eliminating consumer debt—the first and most important investment you can make on your path to financial freedom.
+
+*The $202,000/$1,010,000 comparison above assumes a fixed 7% annual return over 30 years for illustration — model your own income and savings rate with the [Budget Planner](/tools/budget/).*

@@ -5,6 +5,14 @@ date: "2025-04-13"
 
 # The Invisible Tax: Understanding and Defeating Inflation
 
+> **Quick answer:** At 3% inflation, $100,000 held in a standard savings
+> account for 30 years keeps its nominal balance but its real purchasing
+> power falls to roughly $46,000 in today's dollars. The Rule of 72 gives
+> a quick gut-check: divide 72 by the inflation rate to see how many
+> years until prices double — 24 years at 3%, 12 at 6%, 8 at 9%. Only
+> assets that historically outpace inflation (stocks, real estate,
+> inflation-linked bonds) protect real wealth over decades.
+
 Imagine saving diligently for decades, only to discover your purchasing power has dramatically declined. This is the reality for many who fail to understand inflation—the silent wealth eroder that transforms seemingly prudent savers into unwitting financial losers.
 
 ## What Is Inflation?
@@ -44,7 +52,7 @@ To maintain and grow wealth, you must earn returns that exceed inflation. Histor
 - **Treasury Inflation-Protected Securities (TIPS)**: Government bonds specifically designed to protect against inflation
 - **I Bonds**: Savings bonds with interest rates tied directly to inflation
 
-## The Rule of 72: Understanding the Impact
+## What is the Rule of 72, and how do you use it?
 
 The "Rule of 72" provides a simple way to understand how quickly inflation erodes your wealth. Divide 72 by the inflation rate to see how many years it takes for prices to double:
 
@@ -75,3 +83,5 @@ This simple calculation demonstrates why beating inflation isn't optional—it's
 Throughout history, successful merchants understood that gold and silver coins maintained value while paper currency fluctuated. The modern equivalent is understanding that only productive assets—those that generate income or appreciate—can truly preserve wealth in an inflationary environment.
 
 In our next article, we'll explore [Owning a Piece of the Future: The Power of Stock Market Investing](/blog/owning-a-piece-of-the-future/)—the cornerstone of most investment strategies—and how to approach this powerful wealth-building tool with confidence.
+
+*The $46,000 real-purchasing-power figure above assumes a fixed 3% inflation rate over 30 years for illustration — model your own numbers with the [Pension Calculator](/tools/pension/).*
