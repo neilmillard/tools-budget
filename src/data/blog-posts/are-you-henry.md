@@ -4,9 +4,16 @@ date: "2025-07-22"
 ---
 # HENRY: High Earner, Not Rich Yet - The UK Financial Paradox
 
+> **Quick answer:** A UK HENRY (High Earner, Not Rich Yet) typically earns
+> £75,000-£300,000 a year but has under £500,000 net worth, because
+> London-level living costs, a 60% effective tax rate in the £100,000-£125,140
+> "trap," and lifestyle inflation eat the surplus before it becomes wealth.
+> The fix is mechanical, not motivational: max the £20,000 ISA allowance
+> and employer pension match before anything else.
+
 Are you earning a six-figure salary in London or another major UK city but still feeling financially stretched? Do you earn well above the national average yet struggle to build substantial wealth? If so, you might be a HENRY – a High Earner, Not Rich Yet. This increasingly common financial demographic represents hundreds of thousands of UK professionals who earn significantly more than most Britons but haven't achieved true financial security or wealth accumulation.
 
-## What Exactly Is a HENRY in the UK Context?
+## What exactly is a HENRY in the UK context?
 
 The term HENRY describes individuals or households that earn significant incomes – typically between £75,000 to £300,000 annually – but have relatively low net worth compared to their earnings. Despite their high salaries, UK HENRYs often live month to month, struggle with debt, and find it challenging to build significant wealth.
 
@@ -226,5 +233,7 @@ Remember, the goal isn't just to earn well – it's to build sustainable wealth 
 The journey requires discipline, smart use of UK tax advantages, and often professional guidance. But for those willing to make strategic changes and stick to their financial plan, the transformation from High Earner, Not Rich Yet to financially independent is entirely achievable – even in one of the world's most expensive countries.
 
 ---
+
+*Figures above (income bands, tax thresholds, ISA/pension allowances) reflect current UK rules cited throughout this article — check your own position with the [Budget Planner](/tools/budget/) and [Mortgage Affordability Calculator](/tools/afford/).*
 
 *Ready to escape the UK HENRY trap? Start by maximising your ISA allowance and reviewing your pension contributions. These tax-efficient vehicles are your foundation for building wealth despite the UK's challenging financial environment.*

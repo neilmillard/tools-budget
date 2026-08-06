@@ -5,6 +5,13 @@ date: "2025-07-06"
 
 # Beyond the Numbers: Defining True Financial Independence
 
+> **Quick answer:** Your financial independence number is roughly 25x
+> your annual expenses (the "25x rule," a 4% safe withdrawal rate) — on
+> £60,000/year that's a £1.5M portfolio. Savings rate, not investment
+> return, is what actually controls your timeline: a 10% savings rate
+> takes ~46 years to reach FI, 25% takes ~32, 50% takes ~17, and 75%
+> takes ~7.
+
 Financial independence means different things to different people, but at its core lies a universal truth: true wealth isn't measured by possessions but by freedom—the ability to make life choices without financial constraints.
 
 ## Defining Financial Independence
@@ -27,7 +34,7 @@ The journey typically progresses through several stages:
 
 Understanding your current position helps determine your next steps.
 
-## Calculating Your Financial Independence Number
+## How do you calculate your financial independence number?
 
 While personal definitions vary, a common approach uses the "25x rule":
 - Calculate your annual expenses
@@ -58,7 +65,7 @@ Financial independence isn't achieved through investment returns alone. Holistic
 
 The most powerful approach often combines several of these strategies.
 
-## The Speed Equation: Savings Rate Matters Most
+## Does savings rate or investment return matter more for FI timeline?
 
 The single biggest factor determining your timeline to financial independence isn't investment returns but your savings rate:
 - 10% savings rate: ~46 years to financial independence
@@ -86,3 +93,5 @@ Ancient wisdom teaches that a rich life comes not from abundance of possessions 
 This perspective transforms the journey itself. Rather than deferring life until some future "retirement," financial independence becomes about creating a life you don't need to escape from—work that matters, relationships that nourish, and a lifestyle aligned with your deepest values.
 
 In our next article, we'll explore how to protect your financial progress through appropriate insurance and risk management strategies.
+
+*The 25x figure and savings-rate timelines above are standard FI-community heuristics (a 4% safe withdrawal rate) — model your own number and timeline with the [Budget Planner](/tools/budget/) and [Pension Calculator](/tools/pension/).*
