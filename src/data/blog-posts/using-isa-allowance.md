@@ -5,9 +5,16 @@ date: "2026-03-21"
 
 # Using Your ISA Allowance: The Single Best Tax Decision You Can Make
 
+> **Quick answer:** Money inside a UK ISA is shielded from Capital Gains
+> Tax, Dividend Tax, and Income Tax on interest — the annual allowance is
+> £20,000 per person, use-it-or-lose-it by 5 April. Two people saving
+> £500/month from age 30 to 60 at the same 7% return end up tens of
+> thousands of pounds apart purely because of tax drag, not stock-picking
+> — the one investing inside the ISA keeps more.
+
 Imagine two people: both save £500 a month in the same global index fund. Both start at age 30. Both earn a 7% annual return. 
 
-By age 60:
+Inputs: £500/month, age 30-60, 7% annual return.
 - Person A saves in a regular taxable account.
 - Person B saves inside an ISA (Individual Savings Account).
 
@@ -15,7 +22,7 @@ By the time they retire, Person B will likely have **tens of thousands of pounds
 
 This is the modern way to "guard thy treasures from loss" (Babylon's Fourth Cure)—by legally and ethically shielding your money from unnecessary taxes.
 
-## What is an ISA?
+## What exactly is an ISA?
 
 An ISA is a "tax wrapper." You can think of it like an umbrella for your investments. Any money inside the umbrella is shielded from:
 - **Capital Gains Tax:** No tax when you sell your investments for a profit.
@@ -24,13 +31,13 @@ An ISA is a "tax wrapper." You can think of it like an umbrella for your investm
 
 For a UK investor, this is the single most powerful tool for building long-term wealth.
 
-## The Annual Allowance
+## How much can you put into an ISA each year?
 
 Every year, the government gives you an allowance of how much you can put into an ISA. Currently, that limit is **£20,000 per person**. 
 
 This is a "use it or lose it" allowance. If you don't use your £20,000 by April 5th, you lose it forever. You can't carry it over to the next year. 
 
-## Stocks and Shares ISA vs. Cash ISA
+## Stocks and Shares ISA or Cash ISA — which should you use?
 
 Most people are familiar with the Cash ISA. It’s like a regular savings account, but tax-free. However, for long-term wealth building, the **Stocks and Shares ISA** is often the better choice. It allows you to invest your money in the global economy while keeping all the growth and dividends for yourself.
 
@@ -54,6 +61,8 @@ If you are earning a surplus (Cure 1: Fattening your purse), your order of prior
 Tax efficiency isn't just for the wealthy. It is a fundamental part of "increasing thy ability to earn" (Cure 7)—because keeping an extra 20% of your investment gains is functionally the same as earning 20% more. 
 
 Don't let the "tax drag" slow your journey to financial freedom. Start your ISA today and keep your gold where it belongs: in your purse.
+
+*The £20,000 allowance and the Person A/B comparison above use current UK ISA rules and a stated 7% return assumption — model your own contribution and timeline with the [Pension Calculator](/tools/pension/) to compare tax-advantaged growth paths.*
 
 <ToolCTA 
   title="Project Your Growth" 

@@ -5,13 +5,21 @@ date: "2026-03-14"
 
 # The Simple Portfolio Most People Should Just Use
 
+> **Quick answer:** For most people, a portfolio needs three things —
+> global equities (growth), high-quality bonds (ballast), and cash
+> (safety net) — with a stock/bond split of roughly `100 - your age` in
+> stocks. A 30-year-old holds ~70% stocks/30% bonds; a 60-year-old holds
+> ~40%/60%. Index funds achieve this at 0.1-0.2% annual cost vs. 1-2% for
+> active funds — the fee gap alone compounds to a large difference over
+> decades.
+
 In the world of finance, complexity is often used to sell products. Expensive fund managers and complex hedge strategies make investing feel like it is reserved for the elite. 
 
 But for the individual investor, the opposite is true. Complexity is the enemy. Simplicity is the engine of wealth.
 
 Babylon's Third Cure teaches us to **"Make thy gold multiply."** It doesn't suggest that you should try to outsmart every merchant in the marketplace. It simply says to put your surplus to work. Today, the most effective way to do that is through a low-cost, passive index fund portfolio.
 
-## What is Passive Index Investing?
+## What is passive index investing?
 
 An index fund is a type of mutual fund or ETF that aims to match the performance of a specific market index—like the S&P 500 in the US or the FTSE All-Share in the UK. 
 
@@ -25,7 +33,7 @@ For most people, a portfolio only needs three things:
 2. **High-Quality Bonds:** These act as the "ballast" of your ship. When the stock market gets stormy, bonds generally hold their value better. See our guide on [Bonds and Stability](/blog/stability-and-income/).
 3. **Cash/Liquid Assets:** Your financial safety net.
 
-## The "100 Minus Age" Rule
+## What's a sensible stock/bond split for your age?
 
 A common starting point for your asset allocation (how much you put into stocks vs. bonds) is to subtract your age from 100. 
 
@@ -34,7 +42,7 @@ A common starting point for your asset allocation (how much you put into stocks 
 
 This naturally makes your portfolio more conservative as you approach retirement—what we call the [Sixth Cure: Insuring a future income](/babylon/series/).
 
-## Why Simple Wins
+## Why does the simple approach beat the experts?
 
 There are three reasons why this approach beats the experts over the long term:
 
@@ -53,6 +61,8 @@ By using our [Pension Calculator](/tools/pension/), you can see how even a modes
 If you are ready to move from saving to investing, your next stop should be our [Investing Hub](/investing/). We’ve curated a reading path that takes you from the absolute foundations to more advanced topics like tax efficiency.
 
 Remember: you don't need to be a genius to build wealth. You just need a simple plan and the discipline to follow it.
+
+*The stock/bond split and long-term projections above are starting heuristics, not personalised advice — model your own contribution and timeline with the [Pension Calculator](/tools/pension/).*
 
 <ToolCTA 
   title="Project Your Future" 
