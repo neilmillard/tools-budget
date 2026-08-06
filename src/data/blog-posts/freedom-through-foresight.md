@@ -5,6 +5,13 @@ date: "2025-06-15"
 
 # Freedom Through Foresight: Strategic Retirement Planning
 
+> **Quick answer:** Starting early beats saving more. Three investors
+> contributing £6,000/year at 7% returns: one who invests ages 25-35 then
+> stops (£60,000 total in) ends up with £566,765 by 65 — nearly matching
+> someone who invested ages 35-65 (£180,000 total in, £500,139 result).
+> Most planners target a retirement portfolio of 25-33x your annual
+> income need beyond pension/state support.
+
 Retirement planning is ultimately about creating freedom—the freedom to choose how you spend your time without financial constraints. This journey requires both foresight and discipline, but the rewards of financial independence make it one of life's most worthwhile pursuits.
 
 ## The Retirement Equation
@@ -47,7 +54,7 @@ Strategic use of tax-advantaged accounts accelerates progress:
 
 Maximizing contributions to these vehicles—particularly those with employer matching—should be prioritized.
 
-## The Power of Starting Early
+## How much does starting 10 years earlier actually matter?
 
 Consider three investors who each contribute $6,000 annually with 7% returns:
 - **Early starter**: Ages 25-35 (10 years), then stops ($60,000 invested)
@@ -74,7 +81,7 @@ Mitigating this risk typically involves:
 - Creating income streams from different sources
 - Gradually reducing equity exposure as retirement approaches
 
-## The 4% Rule and Withdrawal Strategies
+## What is the 4% rule for retirement withdrawals?
 
 The traditional "4% rule" suggests that withdrawing 4% of your initial portfolio in year one, then adjusting that amount for inflation in subsequent years, provides a high probability of portfolio survival for 30+ years.
 
@@ -91,3 +98,5 @@ Ancient wisdom teaches that the ant prepares its provisions in summer, ensuring 
 As one sage observed: "The best time to plant a tree was 20 years ago. The second best time is now." Whatever your age or circumstances, improving your retirement strategy today will yield benefits for your future self.
 
 In our next article, we'll explore estate planning and generational wealth transfer—ensuring that the assets you've built benefit those you care about most.
+
+*The early-vs-late-starter figures above are generated with our own [Pension Calculator](/tools/pension/) at a fixed 7% return assumption — model your own contribution schedule and timeline for your numbers.*

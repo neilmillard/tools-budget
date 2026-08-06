@@ -5,6 +5,14 @@ date: "2025-06-01"
 
 # Mastering Your Mind: The Psychology of Successful Investing
 
+> **Quick answer:** Investor psychology, not market performance, is the
+> biggest drag on returns — the average equity fund investor underperforms
+> the S&P 500 by 3-4% annually because of buying high in euphoria and
+> selling low in panic. Over decades that "behavior gap" can leave an
+> emotional investor with roughly half the wealth of a disciplined one.
+> The fix is structural: automate contributions, write your investment
+> policy before emotions run high, and limit financial-news exposure.
+
 The greatest obstacle to investment success isn't market performance, economic conditions, or even financial knowledge—it's our own psychology. Understanding and managing your emotional responses to market movements may be the most valuable investment skill you can develop.
 
 ## The Emotional Cycle of Investing
@@ -28,7 +36,7 @@ Recognizing these mental traps is the first step to avoiding them:
 - **Anchoring**: Fixating on specific price points regardless of fundamentals
 - **Mental accounting**: Treating money differently based on its source or designation
 
-## The Impact of Emotions on Returns
+## How much do emotions actually cost investors in returns?
 
 Studies consistently show that investor behavior significantly impacts actual returns:
 - The average equity fund investor underperforms the S&P 500 by 3-4% annually
@@ -72,3 +80,5 @@ Ancient philosophy teaches that true wealth begins with mastery of oneself. As o
 In investing, this wisdom translates directly to financial outcomes. The disciplined investor who maintains perspective during market extremes will almost inevitably outperform the reactive investor regardless of intelligence or financial knowledge.
 
 In our next article, we'll explore tax-efficient investing—strategies to ensure you keep more of what you earn by minimizing the impact of taxation on your investments.
+
+*The 3-4% "behavior gap" figure is a widely cited industry benchmark (e.g. Dalbar-style investor-behavior studies), not our own data — treated here as context, not a claim specific to any fund.*

@@ -5,9 +5,16 @@ date: "2025-03-16"
 
 # Taking Control of Your Financial Future
 
+> **Quick answer:** Wealth-building isn't reserved for the financially
+> elite or economics graduates — it comes from a small set of repeatable
+> principles: save at least 10% of income first, invest it rather than
+> hold cash, and stay consistent over decades. This article opens our
+> Debt→Saving→Home→Investing series that works through each principle in
+> detail.
+
 In a world of economic uncertainty, one truth remains constant: those who understand how to make their money work for them will always have an advantage. Welcome to the first in our series of articles designed to help you navigate the complex but rewarding world of personal investing.
 
-## Why Most People Never Build Wealth
+## Why do most people never build real wealth?
 
 The average person works their entire life, earning millions in income over their career, yet retires with barely enough to sustain themselves. Why? Because they never learned the fundamental principles of wealth creation that have been practiced by the financially successful throughout history.
 

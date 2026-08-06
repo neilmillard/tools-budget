@@ -4,6 +4,13 @@ date: "2026-04-11"
 ---
 # The Psychology of the '10% Rule'
 
+> **Quick answer:** Saving 10% of income works because it's automated and
+> "invisible," not because 10% is a magic amount — move it the day after
+> payday and, within a few months, your spending compresses to fit the
+> remaining 90% the same way it expands to fit a raise. Find your 10% by
+> auditing spending with a [Budget Planner](/tools/budget/) first, then
+> automate a standing order rather than relying on end-of-month willpower.
+
 In the ancient, sun-drenched streets of Babylon, a man named Arkad shared his "first cure" for a lean purse: **"Start thy purse to fattening."** For every ten coins you earn, keep the tenth for yourself. 
 
 Today we call this the **10% Rule**. For a long time, I thought it was a trick—a bit of clever accounting designed to make you feel better about being poor. I was wrong. The 10% rule isn't about the money; it's about the mind.
@@ -15,7 +22,7 @@ Usually, it was zero. Sometimes it was less than zero.
 
 The genius of the 10% rule isn't the amount itself; it's the fundamental psychological shift it creates. When I finally committed to keeping 10% *first*, I stopped being a "consumer" whose job was to redistribute my salary to corporations, and I started being a "builder."
 
-## Why 10% is the Magic Number
+## Why is 10% the number, and not 5% or 20%?
 You might ask: "Why not 5%? Or 20%?" 
 
 Arkad's wisdom was practical. 10% is large enough to make a difference over time, but small enough that you can almost always find a way to live without it. It's the "invisible cut." 
@@ -72,6 +79,8 @@ When you keep 10%, you are working 4 hours a week for *yourself*. You are the pr
 Arkad told his students: "Every gold piece you save is a slave to work for you. Every copper it earns is its child that also can earn for you." 
 
 Start building your army today.
+
+*The £300/month "leak" figure above is my own audited number, generated with our [Budget Planner](/tools/budget/) — find your own leaks with the same tool rather than assuming yours match mine.*
 
 <ToolCTA
   title="Find Your 10%"

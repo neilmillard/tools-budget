@@ -5,6 +5,14 @@ date: "2025-06-22"
 
 # Beyond Your Lifetime: Principles of Estate Planning and Generational Wealth
 
+> **Quick answer:** Every adult needs at minimum a will, a durable power
+> of attorney, and a healthcare power of attorney — trusts (revocable,
+> irrevocable, or specialised) become worth considering once you want to
+> avoid probate, protect assets, or provide for a beneficiary who can't
+> manage a lump sum directly. The most common failure isn't a missing
+> document, it's an outdated one: beneficiary designations and titling
+> that never got updated after a life change.
+
 Truly comprehensive financial planning extends beyond your own lifetime. Thoughtful estate planning ensures that your assets benefit those you care about most while minimizing taxes, complications, and potential conflicts.
 
 ## Estate Planning: More Than Just Wealth Transfer
@@ -32,7 +40,7 @@ Every adult should consider these fundamental documents:
 
 Those with more complex situations may need additional structures like trusts.
 
-## Understanding Trusts: When and Why They Matter
+## What are trusts, and when do you actually need one?
 
 Trusts are legal arrangements where a trustee holds assets for beneficiaries. Common types include:
 - **Revocable Living Trusts**: Avoid probate while maintaining control
@@ -91,3 +99,5 @@ Ancient wisdom teaches that a good person leaves an inheritance to their childre
 As one sage observed: "The true meaning of life is to plant trees under whose shade you do not expect to sit." Thoughtful estate planning represents the culmination of your financial journey—ensuring that the fruits of your labor continue to provide benefits long after you're gone.
 
 In our next article, we'll explore sustainable and ethical investing—aligning your investments with your values while still pursuing financial returns.
+
+*Estate planning is jurisdiction-specific and this article is not legal advice — treat it as a checklist of what to ask a solicitor or estate planner about, not a substitute for one.*
