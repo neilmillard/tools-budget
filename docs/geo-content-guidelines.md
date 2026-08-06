@@ -105,4 +105,7 @@ deliberate retrofit pass (highest-traffic / highest-intent first):
 4. Investing stage: `simple-portfolio-index-funds.md`, `using-isa-allowance.md`
 
 `worked-example-mortgage-overpayment.md` and `good-debt-vs-bad-debt.md`
-have been retrofitted as the reference examples (DEL-170).
+have been retrofitted as the reference examples (DEL-170). The rest of
+the Home stage (`how-much-save-mortgage-overpayment.md`,
+`know-if-you-can-afford-mortgage.md`) has also been retrofitted; Debt,
+Saving and Investing stages remain to be done.
