@@ -4,6 +4,14 @@ date: "2026-04-18"
 ---
 # Good Debt vs. Bad Debt: A Modern Guide
 
+> **Quick answer:** Bad debt finances things that lose value or get
+> consumed immediately (credit cards, BNPL, car finance) and should be
+> paid off first — every pound cleared on 20% APR debt is a guaranteed,
+> risk-free 20% return. Good debt finances an asset likely to rise in
+> value or generate income (a sensible mortgage, a loan for a
+> high-value skill) — but even good debt turns bad if it leaves you
+> "house poor," unable to cover normal living costs.
+
 In the ancient story of Babylon, the second cure shared by Arkad is: **"Control thy expenditures."** He warns that what we call "necessary expenses" always grow to equal our incomes unless we resist. 
 
 For years, I was the living embodiment of this problem. My "necessary expenses" included a mountain of credit card debt, a car on finance that I didn't need, and a lifestyle that required every penny of my salary just to maintain. I wasn't living; I was just servicing my past decisions.
@@ -15,7 +23,7 @@ The reality was much darker. Of that £150, nearly £120 was just interest. I wa
 
 In **Stage 1: Paying Debt**, we have to be brutal about the distinction between what helps us and what hurts us.
 
-## The Modern Definition: Good vs. Bad
+## What's the actual difference between good debt and bad debt?
 We often hear these terms, but what do they actually mean in the 21st century?
 
 - **Bad Debt (The Enemy):** This is debt used to buy things that lose value or are consumed immediately. The credit card balance from a holiday you've already forgotten, the "Buy Now, Pay Later" for clothes you don't wear, or the high-interest finance on a car. This is the "thief" in your purse. Arkad would call this "paying for things that bring no lasting joy."
@@ -39,7 +47,7 @@ When you take on debt, you are committing your future income to pay for your pas
 2. **The "Snowball" vs. "Avalanche":** Whether you pay the smallest balance first (Snowball) for the psychological win, or the highest interest first (Avalanche) for the mathematical win, the key is to *start*. 
 3. **The Lifestyle Creep Lockdown:** When my income grew, my first instinct was to "upgrade." I wanted the better car, the bigger TV. Now, my first instinct is to "keep." I ask myself: "Will this purchase still make me happy in six months, or am I just satisfying a temporary urge?"
 
-## The "House Poor" Trap
+## Can "good" debt still be a trap?
 Even "good" debt like a mortgage can become a trap if it's too large. I've seen too many friends become "house poor"—owning a beautiful home but unable to afford a meal out or a holiday because 60% of their take-home pay goes to the bank. 
 
 They are "rich" on paper because of their home equity, but "poor" in their daily life. This is a violation of Arkad's principles. Your dwelling should be a "profitable investment," not a golden cage.
@@ -65,5 +73,7 @@ Consider this your protest.
   toolUrl="/tools/afford/"
   description="Don't guess what you can afford. Use our tool to calculate a mortgage that fits your life without draining your purse. Ensure your home is a blessing, not a burden."
 />
+
+*The "guaranteed return" framing above is arithmetic, not opinion: paying off debt at rate R is mathematically equivalent to an investment returning R after tax. The affordability boundary is generated with our own [Affordability Calculator](/tools/afford/), not a bank's lending-maximum formula.*
 
 *Ready to start paying down debt? See our guide on [Freedom Through Discipline](/blog/freedom-through-discipline/).*
