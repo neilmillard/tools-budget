@@ -106,9 +106,13 @@ deliberate retrofit pass (highest-traffic / highest-intent first):
 
 `worked-example-mortgage-overpayment.md` and `good-debt-vs-bad-debt.md`
 have been retrofitted as the reference examples (DEL-170). Home stage
-(`how-much-save-mortgage-overpayment.md`, `know-if-you-can-afford-mortgage.md`)
-and the Debt stage (`freedom-through-discipline.md`) are also done; Saving
-and Investing stages remain.
+(`how-much-save-mortgage-overpayment.md`, `know-if-you-can-afford-mortgage.md`),
+Debt stage (`freedom-through-discipline.md`), and Saving stage
+(`your-financial-safety-net.md`, `freedom-fund-beyond-emergency.md`) are
+also done; Investing stage remains.
+
+Per-post JSON-LD schema and a rendered author/byline field are tracked
+separately as DEL-180 (engineering work, not a content-only pass).
 
 **Separate observation, not fixed in this pass:** `freedom-through-discipline.md`
 uses `$` throughout while the rest of the journey (and its own tool
