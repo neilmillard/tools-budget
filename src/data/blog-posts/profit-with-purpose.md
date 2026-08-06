@@ -5,6 +5,13 @@ date: "2025-06-29"
 
 # Profit With Purpose: The Rise of Sustainable Investing
 
+> **Quick answer:** Sustainable/ESG investing doesn't have to mean
+> sacrificing returns — many ESG-focused indexes have matched or
+> outperformed conventional benchmarks historically, though performance
+> varies by approach and period. Guard against "greenwashing" by checking
+> a fund's actual methodology and holdings rather than trusting its name
+> or marketing.
+
 Investors increasingly recognize that how they deploy capital affects not just their financial returns but the world they'll live in and leave behind. Sustainable investing allows you to align your portfolio with your values while still pursuing competitive financial returns.
 
 ## The Evolution of Values-Based Investing
@@ -73,7 +80,7 @@ Historical data challenges the misconception that sustainable investing necessar
 
 As with any investment strategy, implementation quality matters significantly.
 
-## Avoiding Greenwashing
+## How do you avoid "greenwashing" when picking ESG funds?
 
 As sustainable investing grows, so does the risk of "greenwashing"—misleading claims about environmental or social benefits. Protection strategies include:
 - **Checking fund methodology**: Understanding how ESG factors are actually incorporated
@@ -98,3 +105,5 @@ Ancient wisdom teaches that true prosperity includes not just material wealth bu
 As one sage observed: "What does it profit a person to gain the whole world but lose their soul?" Sustainable investing suggests we need not choose between financial returns and our deeper values—both can be pursued simultaneously.
 
 In our next article, we'll explore financial independence—defining what true wealth means and creating a lifestyle aligned with your personal values and goals.
+
+*Performance claims for ESG/sustainable strategies vary widely by index, provider and period — treat the summary above as general context, not a specific fund recommendation.*

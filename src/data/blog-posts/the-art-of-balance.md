@@ -5,6 +5,14 @@ date: "2025-05-25"
 
 # The Art of Balance: Building a Properly Diversified Portfolio
 
+> **Quick answer:** A moderate-risk diversified portfolio commonly runs
+> roughly 40% domestic stocks, 20% international stocks, 25% bonds, 10%
+> real estate, 5% commodities/precious metals — more conservative
+> versions shift weight from stocks into bonds and cash, more aggressive
+> versions the reverse. Diversification works because different assets
+> respond differently to the same economic conditions (bonds often hold
+> up when stocks fall, real assets often hold up during inflation).
+
 Diversification—spreading your investments across different assets—is often called the only "free lunch" in investing. It allows you to reduce risk without necessarily sacrificing returns. Understanding how to properly diversify is perhaps the most crucial investment skill you can develop.
 
 ## The Science Behind Diversification
@@ -38,7 +46,7 @@ Complete diversification requires consideration of:
 - **Property types**: For real estate investments
 - **Position sizing**: Appropriate allocation to each investment
 
-## Sample Portfolio Allocations
+## What does a sample diversified portfolio actually look like?
 
 **Conservative Portfolio (Lower Risk):**
 - 30% Domestic Stocks
@@ -100,3 +108,5 @@ Ancient financial wisdom teaches that dividing one's wealth across different ven
 Modern portfolio theory confirms this timeless wisdom, demonstrating mathematically that properly diversified portfolios offer better risk-adjusted returns over time.
 
 In our next article, we'll explore the psychology of investing—understanding and managing the emotional aspects that often determine success or failure in wealth building.
+
+*The sample allocations above are illustrative starting points, not personalised advice — model your own mix with the [Pension Calculator](/tools/pension/).*

@@ -5,6 +5,13 @@ date: "2025-06-08"
 
 # Keeping What You Earn: Principles of Tax-Efficient Investing
 
+> **Quick answer:** Where you hold an investment matters as much as what
+> you hold — put high-growth assets in tax-exempt wrappers (UK ISA/LISA,
+> US Roth), and bonds/REITs/high-turnover funds in tax-deferred accounts
+> (UK pension, US 401k/IRA), leaving low-turnover index funds for taxable
+> accounts. Tax-loss harvesting (offsetting gains with realised losses)
+> alone can add roughly 0.5-1.0% a year to after-tax returns.
+
 It's not what you earn that determines your wealth—it's what you keep after taxes. Even small improvements in tax efficiency can dramatically impact your long-term results. This often-overlooked aspect of investing deserves careful attention in your financial strategy.
 
 ## The Three Types of Investment Taxation
@@ -26,7 +33,7 @@ Tax efficiency begins with proper account selection. While specific names vary b
 
 Each serves a distinct role in a comprehensive investment strategy.
 
-## Asset Location: Matching Investments to Accounts
+## Which investments belong in which account type?
 
 Proper "asset location" places investments in their most tax-advantaged accounts:
 
@@ -101,3 +108,5 @@ Remember that tax laws change frequently, and strategies should be reviewed with
 />
 
 In our next article, we'll explore retirement planning—developing a strategy to ensure your investments support you when your working years are complete.
+
+*Tax rules and allowances change frequently and vary by country — this article is general education, not personalised tax advice; check current UK ISA/pension rules or consult a tax professional for your situation.*
