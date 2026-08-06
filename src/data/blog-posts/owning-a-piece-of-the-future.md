@@ -5,6 +5,12 @@ date: "2025-04-20"
 
 # Owning a Piece of the Future: Understanding Stocks
 
+> **Quick answer:** A stock is partial ownership in a real business, and
+> historically large-company stocks have returned roughly 10% a year
+> before inflation. At that rate, £10,000 compounds to about £25,937
+> after 10 years, £67,275 after 20, and £174,494 after 30 — the return
+> comes from patience and time in market, not timing it.
+
 When you purchase a stock, you're not just buying a financial instrument—you're acquiring partial ownership in a real business. This fundamental truth forms the foundation of wealth creation for many of history's most successful investors.
 
 ## What Exactly Is a Stock?
@@ -15,7 +21,7 @@ A stock (or share) represents a unit of ownership in a company. When you own a s
 - May receive dividends when the company distributes profits
 - Can benefit from the company's growth through appreciation of share price
 
-## Why Stocks Build Wealth
+## Why do stocks build wealth over the long term?
 
 Despite their short-term volatility, stocks have historically delivered superior long-term returns compared to most other asset classes. Consider these historical averages:
 - Large U.S. companies: ~10% annual returns (before inflation)
@@ -79,3 +85,5 @@ For most investors, a disciplined approach works best:
 Ancient wisdom teaches that "wealth gained hastily will dwindle, but whoever gathers little by little will increase it." This perfectly describes successful stock investing—consistent contributions compounded over decades.
 
 In our next article, we'll explore fixed-income investments—bonds and similar instruments that can provide stability and income in your diversified portfolio.
+
+*The compounding figures above assume a fixed 10% annual return for illustration — real returns vary year to year. Project your own contributions with the [Pension Calculator](/tools/pension/).*

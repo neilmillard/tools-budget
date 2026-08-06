@@ -4,11 +4,18 @@ date: "2026-05-16"
 ---
 # The Power of Dividends: Your Gold Multiplying
 
+> **Quick answer:** A dividend is a company sharing profit directly with
+> its owners — reinvesting it buys more shares, which produce their own
+> dividends, compounding the position over decades. Look for "Dividend
+> Aristocrats" (companies that have raised their dividend every year for
+> 25+ years) as a quality filter, and auto-reinvest so the cash never sits
+> idle waiting to be spent.
+
 In the ancient city of Babylon, Arkad teaches the **3rd Cure: "Make thy gold multiply."** He compares wealth to a farmer's crop: the original seeds are your savings, but the true abundance happens when those seeds produce their own offspring, and those offspring produce offspring of their own.
 
 For a long time, I thought of "investing" as trying to guess which stock price would go up. I looked at the green and red lines on financial news and it felt like gambling. I thought I had to "buy low and sell high" to make any money. Then I discovered the quiet, relentless power of **Dividends**.
 
-## The "Employee" that Never Sleeps
+## What exactly is a dividend, and where does it come from?
 A dividend is simply a company sharing its profit with you, the owner. When I received my first dividend payment—I think it was from a utility company and it was only about £4.50—it was a profound "Wait, really?" moment. 
 
 I hadn't "worked" for that £4.50. I hadn't traded an hour of my life for it. My money had gone out into the world, worked in a company, helped provide electricity to thousands of people, and returned to me with a small "thank you" in the form of cash. Arkad was right: my gold had produced its own offspring.
@@ -44,6 +51,8 @@ I built the **Pension Calculator** to help me visualize this "handover" point—
 Arkad said: "Every gold piece you save is a slave to work for you. Every copper it earns is its child that also can earn for you." 
 
 Don't spend the children. Let them grow up and have children of their own.
+
+*The £4.50 first-dividend figure above is my own account, not a benchmark — project your own numbers with the [Pension Calculator](/tools/pension/).*
 
 <ToolCTA
   title="Project Your Long-Term Multiplier"

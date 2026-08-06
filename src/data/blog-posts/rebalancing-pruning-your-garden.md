@@ -4,13 +4,20 @@ date: "2026-05-23"
 ---
 # Rebalancing: Pruning Your Financial Garden
 
+> **Quick answer:** Rebalancing means periodically selling some of your
+> winning assets and buying more of your laggards to return to your
+> target allocation — e.g. a 50/50 stocks/bonds mix that drifts to 55/45
+> after a strong stock year gets sold back down to 50/50. It's a
+> mechanical way to "sell high, buy low," and matters most for risk
+> control if you hold a broad index rather than hand-picked stocks.
+
 In the ancient parables of Babylon, wealth is often compared to a forest or a garden. To keep a garden healthy, you can't just plant seeds and walk away. You have to water it, protect it, and—crucially—you have to prune it. 
 
 In modern investing, we call this **Rebalancing**.
 
 When I first started investing (Stage 4), I thought that if I picked a good mix of assets, I should just leave them alone forever. I thought "activity" was the enemy of "returns." But I soon learned that a garden left to itself eventually becomes overgrown and lopsided.
 
-## The Problem of "Winner's Bias"
+## What actually happens to your allocation if you never rebalance?
 Imagine you start with a simple, balanced garden: 50% Stocks (high growth, high risk) and 50% Bonds (low growth, low risk). 
 
 After a year, the stock market has a fantastic run and goes up by 20%, while bonds stay flat. Your "garden" is no longer 50/50. It’s now roughly 55% Stocks and 45% Bonds. 
@@ -67,6 +74,8 @@ I built the **Pension Calculator** to help me set these targets. It lets me see 
 Arkad said: "A part of all you earn is yours to keep." 
 
 Keep it safe by keeping it balanced.
+
+*The 55/45 drift example above is illustrative arithmetic, not a specific-year claim — test your own targets with the [Pension Calculator](/tools/pension/).*
 
 <ToolCTA
   title="Project Your Ideal Garden"

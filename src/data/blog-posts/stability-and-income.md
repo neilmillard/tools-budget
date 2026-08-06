@@ -5,6 +5,13 @@ date: "2025-04-27"
 
 # Stability and Income: The Role of Bonds in Your Portfolio
 
+> **Quick answer:** A bond is a loan you make to a government or company
+> in exchange for regular interest and return of principal at maturity —
+> less volatile than stocks, but not risk-free (interest-rate, credit,
+> and inflation risk all apply). A common starting allocation is `100 -
+> your age` in stocks, with the rest in bonds and cash, shifting more
+> conservative as you approach your goals.
+
 While stocks offer growth potential, bonds provide something equally important: stability and predictable income. Understanding this complementary asset class is essential for building a resilient portfolio that can weather various economic conditions.
 
 ## What Are Bonds?
@@ -41,7 +48,7 @@ Bonds aren't risk-free. Key risks include:
 - **Liquidity risk**: Some bonds may be difficult to sell quickly
 - **Call risk**: Some bonds can be redeemed early by the issuer
 
-## The Relationship Between Price and Yield
+## Why do bond prices and yields move in opposite directions?
 
 Bond prices and yields move in opposite directions—a fundamental principle to understand:
 - When bond prices rise, yields fall
@@ -82,3 +89,5 @@ Ancient financial wisdom teaches that the prudent person divides their wealth in
 As one sage put it: "The rich person is not one who has much, but one who can withstand the storms that would wash away others." A properly structured bond allocation helps your financial house stand firm during market turbulence.
 
 In our next article, we'll explore real estate investing—another powerful asset class that has created wealth throughout history.
+
+*The "100 minus age" split is a starting heuristic, not personalised advice — model your own allocation with the [Pension Calculator](/tools/pension/).*
