@@ -5,6 +5,14 @@ date: "2026-07-04"
 
 # The Fiat Transition (1971): Trust-Based Money
 
+> **Quick answer:** On 15 August 1971, Nixon ended the dollar's
+> convertibility into gold, moving the entire global financial system
+> onto fiat money — currency with no intrinsic backing, valuable purely
+> because of collective trust and government decree. This removed the
+> natural limit on money creation, which is the structural reason
+> inflation has been a persistent feature of the economy since the 1970s,
+> and why holding cash long-term guarantees a slow loss of purchasing power.
+
 On the evening of August 15, 1971, President Richard Nixon appeared on national television to deliver a shock to the world economy. Without consulting other nations, he announced that the US would "temporarily" suspend the convertibility of the US Dollar into gold.
 
 That "temporary" measure has lasted for over half a century. It marked the moment the world fully entered the era of Fiat money.
@@ -19,7 +27,7 @@ The move to fiat money gave governments and central banks immense new powers. No
 
 This flexibility is what allowed the modern economy to grow at an unprecedented scale. It enabled the massive expansion of credit that funds everything from mortgages to corporate innovation.
 
-## The Price of Freedom: Inflation
+## Why did leaving the gold standard cause persistent inflation?
 However, this flexibility came with a cost. Without the "anchor" of gold, there is no natural limit to how much money a government can create. When more money is created than there are goods and services to buy, the value of each individual unit of currency goes down. This is the root cause of the persistent inflation we have experienced since the 1970s.
 
 In a fiat system, money is a "leaking bucket." If you hold your wealth in cash, its purchasing power will inevitably evaporate over time. This is why understanding investing is no longer optional—it is a survival skill in a fiat world.

@@ -5,6 +5,13 @@ date: "2026-07-11"
 
 # How Money is Made: Fractional Reserve Banking
 
+> **Quick answer:** Most money isn't printed by the government — it's
+> created by commercial banks the moment they issue a loan, by typing a
+> number into your account, not by moving pre-existing deposits. The Bank
+> of England doesn't enforce a fixed reserve ratio; lending is instead
+> constrained by capital requirements, liquidity rules, and the interest
+> rate. Nearly all money in circulation exists as debt.
+
 If you ask the average person where money comes from, they'll likely say "the government prints it." While the government does print physical bills, they only account for a tiny fraction of the total money in our economy. The vast majority of the money you use every day—the numbers in your bank account—was actually created by commercial banks.
 
 Understanding how this happens is the key to understanding the modern financial world.
@@ -19,7 +26,7 @@ Historically, this system was known as "Fractional Reserve Banking." It's based 
 
 In many textbooks, this is explained using a "money multiplier" model: if a bank has £1,000 in reserves, it can lend out £10,000, which then gets deposited elsewhere and lent again. While this helps explain the *concept* of credit creation, it isn't actually how the modern Bank of England system works.
 
-## The Reality: Modern Money Creation
+## What actually limits how much a bank can lend?
 In the UK, the Bank of England does not set a mandatory "reserve ratio." Banks don't wait for deposits before they lend. Instead, the act of lending *creates* the deposit. 
 
 If the bank doesn't have a 10% limit, what stops them from printing infinite money? The "actual rules" are based on three main constraints:

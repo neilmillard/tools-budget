@@ -5,6 +5,13 @@ date: "2026-06-20"
 
 # The London Goldsmiths: Private Receipts to Public Currency
 
+> **Quick answer:** Fractional reserve banking was discovered by accident
+> — 17th-century London goldsmiths noticed depositors rarely reclaimed
+> their gold all at once, so they issued more paper receipts than gold in
+> the vault and lent out the difference for interest. In 1694 this system
+> was formalised into the Bank of England, turning private goldsmith
+> receipts into the basis of the modern banking system.
+
 In 17th-century London, if you were wealthy enough to own gold, you had a security problem. Keeping large amounts of bullion in your home was an invitation to robbery. To solve this, people began storing their gold in the secure vaults of the city's goldsmiths.
 
 What started as a simple storage service accidentally gave birth to the modern British banking system.
@@ -14,7 +21,7 @@ When you left your gold with a goldsmith, they would give you a receipt. Like th
 
 The recipient would accept the receipt because they knew they could take it to the goldsmith and get the physical gold whenever they wanted. These receipts were the direct ancestors of the modern banknote.
 
-## Fractional Reserve: The Goldsmith's Discovery
+## How did goldsmiths discover fractional reserve banking?
 Over time, the goldsmiths noticed something interesting: people rarely came back for their gold all at once. At any given time, 90% of the gold just sat in the vault, while the paper receipts circulated in the economy.
 
 The goldsmiths realized they could lend out some of that "idle" gold to other people and charge interest on the loan. Or, even more effectively, they could issue *more paper receipts* than they had gold in the vault. As long as everyone didn't show up at the same time to claim their gold (a "bank run"), the system worked. This was the birth of fractional reserve banking.

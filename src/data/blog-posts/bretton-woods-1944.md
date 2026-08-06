@@ -5,6 +5,14 @@ date: "2026-06-27"
 
 # Bretton Woods (1944): The Era of the Gold Standard
 
+> **Quick answer:** Under the 1944 Bretton Woods system, world currencies
+> were pegged to the US Dollar, which the US pegged to gold at a fixed
+> $35/ounce — a "discipline of gold" that limited money-printing and
+> produced roughly 27 years of stable prices (1944-1971). It collapsed
+> because dollar issuance outran US gold reserves; when France and others
+> started demanding physical gold for dollars, the US couldn't honour the
+> peg and the system broke.
+
 As World War II drew to a close in 1944, delegates from 44 nations gathered at a hotel in Bretton Woods, New Hampshire. Their mission was to design a new global financial architecture that would prevent the kind of economic chaos that had led to the Great Depression and the war itself.
 
 The result was the Bretton Woods system—the last great era of the Gold Standard.
@@ -19,7 +27,7 @@ The Bretton Woods era (1944–1971) was a time of remarkable economic growth and
 
 This "discipline of gold" provided a check on inflation and gave international investors the confidence to move capital across borders, helping to rebuild Europe and Japan after the war.
 
-## The Crack in the Foundation
+## Why did the Bretton Woods system eventually collapse?
 However, the system had a fatal flaw. For the global economy to grow, the world needed more and more Dollars to facilitate trade. But the US could only issue more Dollars if it acquired more gold—which was limited by the speed of mining.
 
 By the late 1960s, the US was spending heavily on the Vietnam War and social programs at home. To fund this, they printed more Dollars than they had gold to back up. Foreign nations, led by France, began to notice the imbalance and started demanding physical gold in exchange for their Dollars.

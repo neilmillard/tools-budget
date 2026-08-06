@@ -5,6 +5,14 @@ date: "2026-06-06"
 
 # The Barter Myth: Why Money Was Invented
 
+> **Quick answer:** Money didn't replace barter — anthropologists have
+> never found a society that ran on routine barter for daily needs. Small
+> communities ran on trust-based credit (you helped a neighbour, they
+> owed you one); barter only shows up between strangers with no trust, or
+> after a monetary system has already collapsed. Money's real job was
+> replacing the need to track who-owes-whom once communities grew too
+> large for everyone to know each other.
+
 Most economics textbooks start with a similar story: Once upon a time, people bartered. If you had chickens but needed shoes, you had to find a shoemaker who wanted chickens. This was "the double coincidence of wants," and it was supposedly so difficult that humans eventually invented money to make trading easier.
 
 There is just one problem with this story: it isn't true.
@@ -14,7 +22,7 @@ Anthropologists have searched for decades, but they have never found a single so
 
 Barter only happens between strangers—often enemies—where there is no trust. Or, it happens when a monetary system collapses entirely, such as during periods of extreme hyperinflation.
 
-## Why Money Really Appeared
+## If not barter, why did money really appear?
 If money didn't replace barter, what did it replace? It replaced the need to remember who owed what to whom as societies grew too large for everyone to know each other.
 
 In a small village, everyone knows who is a hard worker and who is a slacker. But in a city of 10,000 people, you can't keep track of everyone's reputation. Money became a way to outsource trust. It allowed people to trade with strangers by carrying a physical token of "value" that everyone agreed to accept.
