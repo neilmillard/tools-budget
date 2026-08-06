@@ -22,4 +22,22 @@ describe("BlogPost Component", () => {
     expect(screen.getByRole('link', { name: /Try the My Tool/i })).toHaveAttribute('href', '/tools/my-tool');
     cleanup()
   });
+
+  test("renders the author byline when an author is provided", () => {
+    render(<BlogPost content={content} date={article.date} title={article.title} author="Jane Doe"/>);
+    expect(screen.getByText((_, element) => element?.textContent === "By Jane Doe")).toBeInTheDocument();
+    cleanup()
+  });
+
+  test("links the author name when authorUrl is provided", () => {
+    render(<BlogPost content={content} date={article.date} title={article.title} author="Jane Doe" authorUrl="/about/jane-doe/"/>);
+    expect(screen.getByRole('link', { name: 'Jane Doe' })).toHaveAttribute('href', '/about/jane-doe/');
+    cleanup()
+  });
+
+  test("renders no byline when author is not provided", () => {
+    render(<BlogPost content={content} date={article.date} title={article.title}/>);
+    expect(screen.queryByText(/By/)).not.toBeInTheDocument();
+    cleanup()
+  });
 });

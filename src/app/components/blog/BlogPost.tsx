@@ -43,6 +43,8 @@ export type BlogPostProps = {
   title: string;
   date: string;
   content: string;
+  author?: string;
+  authorUrl?: string;
 };
 
 export type BlogPostShort = {
@@ -51,11 +53,23 @@ export type BlogPostShort = {
   date: string
 }
 
-export default function BlogPost({ title, date, content }: BlogPostProps) {
+export default function BlogPost({ title, date, content, author, authorUrl }: BlogPostProps) {
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <h1 className="text-xs font-bold">{title}</h1>
       <p className="text-gray-500 text-sm">{date}</p>
+      {author && (
+        <p className="text-gray-500 text-sm">
+          By{" "}
+          {authorUrl ? (
+            <a href={authorUrl} className="hover:underline">
+              {author}
+            </a>
+          ) : (
+            author
+          )}
+        </p>
+      )}
       <div className="mt-4 text-lg">
         <article className="prose">
           <MarkdownComponent

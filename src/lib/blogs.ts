@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import {BlogPostShort} from "@/app/components/blog/BlogPost";
 
 const POSTS_DIR = path.join(process.cwd(), "src", "data", "blog-posts");
+const DEFAULT_AUTHOR = "Helpful Money Team";
 
 export function getAllBlogPosts(sortOrder: "newest" | "oldest" = "newest", includeFuture: boolean = false): BlogPostShort[] {
   const files = fs.readdirSync(POSTS_DIR);
@@ -45,6 +46,8 @@ export async function getBlogPost(id: string) {
     title: data.title,
     date: data.date,
     description: data.description,
+    author: data.author || DEFAULT_AUTHOR,
+    authorUrl: data.authorUrl,
     content: content,
   };
 }
