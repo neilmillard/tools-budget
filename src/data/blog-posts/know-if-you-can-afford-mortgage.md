@@ -5,13 +5,20 @@ date: "2025-08-12"
 
 # How to Know if You Can Afford a Mortgage Before You Apply
 
+> **Quick answer:** A bank will typically lend around 4.5x gross income —
+> on a £45,000 salary that's roughly £202,500, with a monthly payment of
+> about £1,125 at 4.5% over 25 years. Whether you can *afford* it is a
+> separate question: after normal living costs, that can leave as little
+> as 13% of take-home pay for savings and emergencies. Check your own
+> numbers in the [Mortgage Affordability Calculator](/tools/afford/).
+
 Applying for a mortgage can be a nerve-wracking process. But the biggest question isn't whether a bank will lend you the money—it's whether you can actually afford to live with that mortgage.
 
 Banks use their own affordability calculators to determine your maximum loan amount. However, their calculation doesn't always account for your specific lifestyle, hobbies, or financial goals.
 
-## The Worked Example: "Sarah"
+## How much mortgage will a bank lend on a £45,000 salary?
 
-Sarah is planning to buy her first home. She earns **£45,000 per year**.
+A Worked Example: Sarah is planning to buy her first home. She earns **£45,000 per year**.
 
 1. **The Bank's View:** Most lenders in the UK offer around 4.5 times your gross annual income. For Sarah, this would be a mortgage of **£202,500**.
 2. **The Reality Check:** Sarah's monthly take-home pay is around **£2,900**. If she takes out the maximum mortgage at an interest rate of 4.5% over 25 years, her monthly payment will be approximately **£1,125**.
@@ -34,7 +41,7 @@ Sarah's question is: "Can I live on £375 of spare cash while maintaining my cur
   description="Determine your potential maximum loan amount based on your income and see how it compares to your current budget. Know your numbers before you talk to a broker."
 />
 
-## Why Knowing Your Numbers Matters
+## Why does knowing your numbers matter more than the bank's maximum?
 
 1. **Budgeting for Success:** By understanding the monthly cost before you buy, you can adjust your lifestyle now.
 2. **Stress Testing:** What if interest rates rise to 6%? Sarah's payment would jump from £1,125 to £1,300. Could she still afford it?
@@ -43,3 +50,5 @@ Sarah's question is: "Can I live on £375 of spare cash while maintaining my cur
 ## The Next Step
 
 Use our **Budget Planner** to get an accurate picture of your current outgoings. Then, use our **Mortgage Affordability Calculator** to see how much a bank might lend you. Finally, combine the two to see what your life will really look like after you move in.
+
+*The affordability boundary above is generated with our own [Mortgage Affordability Calculator](/tools/afford/), which stress-tests against your actual budget rather than only the bank's income multiple — enter your own income and outgoings for your numbers, not Sarah's.*
