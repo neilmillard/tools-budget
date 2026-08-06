@@ -5,13 +5,21 @@ date: "2026-04-04"
 
 # Building Your Own Financial Operating System
 
+> **Quick answer:** A "Financial Operating System" automates the 4-stage
+> journey into a single repeatable loop: save 10-20% automatically (the
+> engine), build a 3-6 month emergency fund plus insurance (the defense),
+> invest the surplus in diversified index funds (the growth engine), and
+> review the whole thing quarterly. The point is removing willpower from
+> the equation — automate the decisions once rather than making them
+> every month.
+
 Most people don't have a money problem; they have a system problem. 
 
 In Babylon, Arkad didn't just give his students "money." He gave them a set of seven rules—a system to follow that would lead to wealth regardless of their starting point.
 
 Modern financial success requires a similar approach. You need a "Financial Operating System" (FOS) that automates the good decisions and makes the bad ones harder. Here is how to build yours using our 4-stage framework and the tools we’ve built for you.
 
-## 1. The Core Engine: Your Cash Flow
+## What's the core engine of a financial operating system?
 
 The first component of your FOS is the **1st Cure: "Start thy purse to fattening."** This is the engine of your wealth. 
 
@@ -56,6 +64,8 @@ The beauty of this system is that it's based on timeless principles. Whether it 
 - Keep learning (the **7th Cure: "Increase thy ability to earn"**).
 
 By building your own Financial Operating System, you move from "hoping" for wealth to "engineering" it. 
+
+*This framework maps our four-stage journey to a repeatable checklist — model your own numbers at each step with the [Budget Planner](/tools/budget/), [Pension Calculator](/tools/pension/), and [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/).*
 
 <ToolCTA 
   title="Initialize Your System" 

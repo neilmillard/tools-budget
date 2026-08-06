@@ -5,6 +5,13 @@ date: "2025-07-29"
 
 # What the 50-30-20 Rule Actually Looks Like on a Real Salary
 
+> **Quick answer:** On a £40,000 UK salary (~£2,650/month take-home),
+> 50-30-20 works out to roughly £1,325 needs, £795 wants, £530
+> savings/debt. In high-cost areas the "needs" bucket often blows past
+> 50% (e.g. £1,570 on higher rent, nearly 60%), forcing a real trade-off
+> against the "wants" category to protect the 20% savings rate — that
+> tension is the actual value of the rule.
+
 The 50-30-20 rule is often cited as the "gold standard" of simple budgeting. It suggests allocating 50% of your take-home pay to **Needs**, 30% to **Wants**, and 20% to **Savings and Debt Repayment**.
 
 But how does this actually work in practice? Let's look at a worked example for a professional earning a typical UK salary.
@@ -41,7 +48,7 @@ This is Alex's future-building fund:
 - **ISA Investment:** £330
 - **Total:** £530
 
-## The Reality Check
+## What happens when "needs" exceed 50% of income?
 
 For many, especially in high-cost-of-living areas like London, the "Needs" category often exceeds 50%. If Alex's rent were £1,100 instead of £850, their "Needs" would jump to £1,570 (nearly 60%).
 
@@ -62,3 +69,5 @@ In this scenario, Alex would need to reduce the "Wants" category to maintain the
 4. **Identify the gaps.** Are you spending 45% on "Wants" while only saving 5%?
 
 Remember, the 50-30-20 rule is a target, not a law. The most important part is the **20%**. If you can hit that, you're ahead of the vast majority of people.
+
+*Alex's budget above is generated with our own [Budget Planner](/tools/budget/) on an illustrative £40,000 salary — enter your own take-home pay and outgoings for your split.*

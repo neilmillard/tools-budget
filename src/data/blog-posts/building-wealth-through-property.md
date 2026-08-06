@@ -5,6 +5,13 @@ date: "2025-05-04"
 
 # Building Wealth Through Property: Real Estate Investing Fundamentals
 
+> **Quick answer:** Real estate builds wealth through appreciation, rental
+> income, mortgage paydown, tax advantages, and leverage — e.g. £100,000
+> down on a £500,000 property means a 5% price rise (£25,000) is a 25%
+> gain on your actual cash invested. REITs give the same asset-class
+> exposure with none of the landlord workload, and are where most
+> beginners should start before direct ownership.
+
 Throughout history, land and property ownership has been a cornerstone of wealth building. There's wisdom in the ancient saying, "Buy land—they're not making any more of it." Real estate offers unique advantages as an asset class that deserves consideration in a diversified portfolio.
 
 ## Why Real Estate Builds Wealth
@@ -46,7 +53,7 @@ Successful real estate investors evaluate properties using key metrics:
 
 For most beginner investors, properties that generate positive cash flow after all expenses should be prioritized over speculative appreciation plays.
 
-## The Power of Leverage in Real Estate
+## How does leverage actually magnify real estate returns?
 
 Real estate allows the use of leverage (mortgages) to control valuable assets with relatively little cash:
 
@@ -93,3 +100,5 @@ Avoid these pitfalls:
 Ancient wisdom teaches that three things matter in property: "location, location, location." Modern investors would add that patience matters equally. Real estate is typically a long-term investment where wealth is built gradually through disciplined acquisition and management.
 
 In our next article, we'll explore commodities and precious metals—assets that have preserved wealth for millennia and can play a valuable role in your diversified portfolio.
+
+*The leverage example above is illustrative arithmetic, not a return guarantee — property values can also fall, and leverage magnifies losses the same way it magnifies gains.*

@@ -4,11 +4,18 @@ date: "2026-05-09"
 ---
 # Should You Invest or Pay Off the Mortgage?
 
+> **Quick answer:** Paying off a 4% mortgage is a guaranteed, tax-free 4%
+> return; investing in a global index fund averages roughly 7-9% but with
+> real volatility. There's no universally correct answer — max your
+> pension/ISA tax relief first, then overpay aggressively if your rate is
+> above 5-6% or the debt keeps you up at night, otherwise many people
+> (including the author) split the surplus roughly 50/50 between the two.
+
 This is the question I get asked more than any other. It's a classic conflict between two of the Babylonian cures: the **3rd Cure (Make thy gold multiply)** and the **5th Cure (Make of thy dwelling a profitable investment).**
 
 For years, I was torn. On one hand, the "math nerds" on the internet told me I should never pay off a low-interest mortgage. They argued that if my mortgage is 3% and the stock market returns 7%, I’m "losing" 4% by overpaying. On the other hand, my gut told me that owing the bank hundreds of thousands of pounds was a weight I didn't want to carry for thirty years.
 
-## The Math: Comparing Returns
+## What does the math actually say — mortgage payoff or investing?
 The mathematical answer is based on "opportunity cost." Where will your pound earn more?
 
 1. **Mortgage Payoff:** Paying down your mortgage gives you a guaranteed "return" equal to your mortgage interest rate. If your mortgage is 4%, every pound you overpay is exactly like earning 4% interest in a savings account. Even better, in many places (like the UK), this "earning" is tax-free because you are avoiding an expense rather than gaining an income.
@@ -60,6 +67,8 @@ I built the **Mortgage Overpayment Calculator** to give you the data. Put in you
 Arkad said: "Thus come many blessings to the man who owneth his own house. And greatly will it reduce his cost of living, making available more of his earnings for pleasures and the gratification of his desires."
 
 Own your house; don't let it own you.
+
+*The £42,000/6-years figures above are my own numbers on my own £250,000 mortgage, generated with the [Mortgage Overpayment Calculator](/tools/mortgage-overpayment-calculator/) — run your own balance and rate for your numbers.*
 
 <ToolCTA
   title="See the Impact of Overpaying"
