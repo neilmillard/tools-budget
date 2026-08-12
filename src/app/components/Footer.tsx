@@ -11,7 +11,7 @@ export function Footer() {
       href="https://twitter.com/neil_millard" target="_blank">Twitter</a> - <a
       href="https://www.facebook.com/neil.millard/" target="_blank">Facebook</a> - <a
       href="https://www.youtube.com/channel/UCAaoh3jk1qtvD3ALPp48_8w" target="_blank">YouTube channel</a> - <a
-      href="https://www.techanswers.club/" target="_blank">Tech Answers Club</a>
+      href="https://devops-answers.com" target="_blank">DevOps Answers</a>
     </div>
     <div className="text-xs text-gray-500 h-8 text-center">
       <a href="/about/">About</a> - <a href="/contact/">Contact</a> - <a href="/investing/">Investing Hub</a>
