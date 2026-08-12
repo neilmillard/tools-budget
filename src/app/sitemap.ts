@@ -27,7 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/mortgage',
     '/tools/mortgage-overpayment-calculator',
     '/tools/pension',
-    '/start-here',
   ];
 
   // Create sitemap entries for static routes
