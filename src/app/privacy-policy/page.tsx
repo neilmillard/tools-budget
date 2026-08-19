@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Helpful Money",
     description: "Learn about how Helpful Money collects, uses, and protects your personal information.",
   },
+  alternates: {
+    canonical: "/privacy-policy/",
+  },
 };
 
 export default function PrivacyPolicy() {
