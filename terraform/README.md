@@ -32,7 +32,9 @@ Requires:
 
 - `cloudflare_account_id` — non-secret, can go in `terraform.tfvars`.
 - `cloudflare_api_token` — set via `TF_VAR_cloudflare_api_token`, never
-  commit it.
+  commit it. Needs `Zone > Cache Rules > Edit` and `Zone > Zone > Read` in
+  addition to the Pages edit scope, for the `cloudflare_ruleset` /
+  `cloudflare_zone` data source below.
 - The Cloudflare GitHub App must already be authorised for this repo/account
   (one-time step done via the Cloudflare dashboard) before `cloudflare_pages_project`
   with a `github` source can be created.
@@ -49,3 +51,20 @@ Rollout:
 3. Manually confirm the Cloudflare Registrar transfer has completed (nameservers
    were already pointed at Cloudflare ahead of this, but the registrar transfer
    itself needs separate verification).
+
+## Edge caching for HTML (DEL-246)
+
+Cloudflare Pages serves HTML documents `cache-control: max-age=0,
+must-revalidate` with no edge cache (`cf-cache-status: DYNAMIC`) by
+default — every request round-trips to Cloudflare Pages' network rather
+than being served from the nearest edge PoP, which showed up as
+inconsistent TTFB on specific pages during an Ahrefs crawl.
+
+`cloudflare_ruleset.cache_html` adds a zone-level Cache Rule that caches
+any response for a path with no file extension (i.e. every page in this
+`trailingSlash: true` static export) at the edge for up to an hour,
+overriding the origin's `max-age=0`. Browser caching is left untouched
+(`browser_ttl.mode = "respect_origin"`), so repeat visitors still
+revalidate as before — only edge-to-edge requests get faster. Cloudflare
+Pages automatically purges the zone cache on every new production
+deployment, so this doesn't risk serving stale content after a deploy.
