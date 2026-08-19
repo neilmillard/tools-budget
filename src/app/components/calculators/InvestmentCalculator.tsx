@@ -1,9 +1,16 @@
 'use client';
 
 import React, {ChangeEvent, useEffect, useState} from 'react';
+import dynamic from "next/dynamic";
 import {CurrencyInput} from "@/app/components/ui/CurrencyInput";
 import {CurrencySelector, currencies, Currency, currencyLookup} from "@/app/components/ui/Currency";
-import InvestmentChart, {DataPoint} from "@/app/components/ui/InvestmentChart";
+import type {DataPoint} from "@/app/components/ui/InvestmentChart";
+
+// Chart.js is ~65KB gzipped and isn't needed until results exist, so keep it
+// out of the initial bundle for this page.
+const InvestmentChart = dynamic(() => import("@/app/components/ui/InvestmentChart"), {
+  ssr: false,
+});
 
 type CalcMode = 'endAmount' | 'contribution' | 'returnRate' | 'startingAmount' | 'length';
 type CompoundingFrequency = 'daily' | 'monthly' | 'yearly';
