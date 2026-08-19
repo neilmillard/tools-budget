@@ -36,3 +36,41 @@ resource "cloudflare_pages_domain" "www" {
   project_name = cloudflare_pages_project.budget.name
   domain       = "www.${var.domain_name}"
 }
+
+# Cloudflare Pages serves HTML documents with `cache-control: max-age=0,
+# must-revalidate` and no edge cache (cf-cache-status: DYNAMIC) by default —
+# every request round-trips to Cloudflare Pages' network instead of being
+# served from the nearest edge PoP. DEL-246 flagged inconsistent TTFB on
+# specific blog posts; this rule makes the edge cache HTML regardless of the
+# origin's max-age=0 (browser behaviour is left untouched, so repeat
+# visitors still revalidate as before). Cloudflare Pages automatically
+# purges the zone cache on every new production deployment, so this doesn't
+# introduce a stale-content risk.
+data "cloudflare_zone" "this" {
+  name = var.domain_name
+}
+
+resource "cloudflare_ruleset" "cache_html" {
+  zone_id     = data.cloudflare_zone.this.id
+  name        = "Edge-cache static HTML"
+  description = "Cache Pages HTML responses at the Cloudflare edge instead of treating them as DYNAMIC on every request."
+  kind        = "zone"
+  phase       = "http_request_cache_settings"
+
+  rules {
+    ref         = "cache_html_pages"
+    description = "Cache HTML page responses (paths with no file extension, per next.config.ts trailingSlash export)"
+    expression  = "(http.request.uri.path.extension eq \"\")"
+    action      = "set_cache_settings"
+    action_parameters {
+      cache = true
+      edge_ttl {
+        mode    = "override_origin"
+        default = 3600
+      }
+      browser_ttl {
+        mode = "respect_origin"
+      }
+    }
+  }
+}
