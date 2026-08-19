@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     title: "Terms of Service | Helpful Money",
     description: "Read the terms and conditions governing the use of Helpful Money's website and services.",
   },
+  alternates: {
+    canonical: "/terms-of-service/",
+  },
 };
 
 export default function TermsOfService() {
