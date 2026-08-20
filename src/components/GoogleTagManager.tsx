@@ -62,7 +62,7 @@ export function GoogleTagManager(props: GTMParams) {
 
   return (
     <>
-      <Script strategy="afterInteractive" src={gtmScript}/>
+      <Script strategy="afterInteractive" src={gtmScript} async/>
       <Script id="gtm-script" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
