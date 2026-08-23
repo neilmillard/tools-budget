@@ -3,6 +3,7 @@ import {extractFAQItems, hasFAQPattern} from "@/lib/faq";
 import BlogPost, {BlogNav, BlogPostShort} from "@/app/components/blog/BlogPost";
 import ArticleSchema from "@/components/schema/ArticleSchema";
 import FAQPageSchema from "@/components/schema/FAQPageSchema";
+import NewsletterForm from "@/app/components/NewsletterForm";
 import { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> | undefined }): Promise<Metadata> {
@@ -53,6 +54,8 @@ export default async function BlogPage({ params }: {
       <BlogNav previous={previous} next={next}/>
 
       <BlogPost title={blog.title} date={blog.date} content={blog.content} author={blog.author} authorUrl={blog.authorUrl}/>
+
+      <NewsletterForm/>
 
       <BlogNav previous={previous} next={next}/>
     </div>
