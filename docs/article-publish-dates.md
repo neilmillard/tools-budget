@@ -1,5 +1,22 @@
 # Blog Articles and Publish Dates
 
+## Publish cadence
+
+Articles are written and merged in batches roughly every couple of months,
+but a post only appears on the live site once its `date` frontmatter has
+arrived — `getAllBlogPosts` (`src/lib/blogs.ts`) filters out anything
+dated in the future at build time. Dates in the table below are staggered
+about a week apart, so in practice new articles go live **weekly**, not on
+the generation cadence.
+
+The site is only rebuilt on a push to `main` (Cloudflare Pages' GitHub
+integration) or the `build.yml` Sunday cron job, which now also triggers a
+Cloudflare Pages rebuild directly (see `.github/workflows/build.yml`) so a
+post's publish date is honoured even in a week with no code changes. The
+newsletter send (`scripts/send-newsletter.mjs`) is hooked to this same
+weekly publish check, keyed off each post's `date`, not the batch it was
+generated in.
+
 | Article Title                                                               | Publish Date |
 |:----------------------------------------------------------------------------|:-------------|
 | Taking Control of Your Financial Future: An Introduction to Smart Investing | 2025-03-16   |
