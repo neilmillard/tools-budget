@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/jest-globals";
 import { describe, test, expect } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import ToolCTA from "@/app/components/blog/ToolCTA";
