@@ -6,6 +6,7 @@ interface ArticleSchemaProps {
   datePublished: string;
   dateModified?: string;
   author: string;
+  authorUrl?: string;
   url: string;
 }
 
@@ -15,6 +16,7 @@ export default function ArticleSchema({
   datePublished,
   dateModified,
   author,
+  authorUrl,
   url,
 }: ArticleSchemaProps) {
   const schema = {
@@ -27,6 +29,7 @@ export default function ArticleSchema({
     "author": {
       "@type": "Person",
       "name": author,
+      ...(authorUrl ? { "url": authorUrl } : {}),
     },
     "publisher": {
       "@type": "Organization",
