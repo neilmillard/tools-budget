@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     title: "Blog Posts (Oldest First) | Helpful Money",
     description: "Browse our collection of articles on personal finance, budgeting tips, and investing strategies, sorted from oldest to newest.",
   },
+  alternates: {
+    canonical: "/blog/oldest/",
+  },
 };
 
 export default function BlogIndex() {
