@@ -48,4 +48,24 @@ describe("ArticleSchema", () => {
     expect(schema.dateModified).toBe("2026-01-01");
     expect(schema.description).toBeUndefined();
   });
+
+  it("links the author to a canonical Person entity when authorUrl is provided", () => {
+    const { container } = render(
+      <ArticleSchema
+        headline="Canonical Author"
+        datePublished="2026-03-01"
+        author="Neil Millard"
+        authorUrl="https://neilmillard.com"
+        url="https://www.helpfulmoney.site/blog/canonical-author/"
+      />
+    );
+
+    const script = container.querySelector('script[type="application/ld+json"]');
+    const schema = JSON.parse(script!.innerHTML);
+    expect(schema.author).toEqual({
+      "@type": "Person",
+      name: "Neil Millard",
+      url: "https://neilmillard.com",
+    });
+  });
 });
