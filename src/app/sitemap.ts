@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about',
     '/babylon',
-    '/blog',
     '/blog/newest',
     '/blog/oldest',
     '/contact',
