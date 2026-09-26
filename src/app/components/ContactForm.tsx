@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { sendFunnelBeacon, type FunnelStep } from '@/lib/funnelSteps';
 
 interface ContactFormProps {
   siteEmail: string;
@@ -6,6 +8,40 @@ interface ContactFormProps {
 
 export default function ContactForm(props: ContactFormProps) {
   const {siteEmail} = props;
+  const api = '/api/contact';
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [responseMessage, setResponseMessage] = useState<string>('');
+  const formRef = useRef<HTMLFormElement>(null);
+  const sentSteps = useRef(new Set<FunnelStep>());
+
+  // DEL-519: mirrors confident-contractor.co.uk's ContactForm (DEL-482).
+  // Each step fires at most once per page view.
+  const reportStep = useCallback((step: FunnelStep) => {
+    if (sentSteps.current.has(step)) return;
+    sentSteps.current.add(step);
+    sendFunnelBeacon('/api/funnel', step, 'contact');
+  }, []);
+
+  useEffect(() => {
+    reportStep('landing');
+  }, [reportStep]);
+
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          reportStep('form_visible');
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(form);
+    return () => observer.disconnect();
+  }, [reportStep]);
+
   return (
     <>
     <div className="w-[83%] mx-auto p-6 bg-white rounded-2xl shadow-md mt-10">
@@ -24,14 +60,47 @@ export default function ContactForm(props: ContactFormProps) {
     <div className="w-[83%] mx-auto p-6 bg-white rounded-2xl shadow-md mt-10">
       <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
         <form
-          action={`https://formspree.io/${siteEmail}`}
+          ref={formRef}
+          action={api}
           method="post"
           className="space-y-4"
+          onFocusCapture={() => reportStep('form_started')}
+          onSubmit={async (e) => {
+            e.preventDefault();
+            reportStep('form_submitted');
+            setFormStatus('submitting');
+
+            const formData = new FormData(e.currentTarget);
+            const formValues = Object.fromEntries(formData.entries());
+
+            try {
+              const response = await fetch(api, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formValues),
+              });
+
+              if (response.ok) {
+                const data = await response.json();
+                setResponseMessage(data.message);
+                setFormStatus('success');
+              } else {
+                setResponseMessage('An error occurred. Please try again later.');
+                setFormStatus('error');
+              }
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            } catch (error) {
+              setResponseMessage('An error occurred. Please try again later.');
+              setFormStatus('error');
+            }
+          }}
         >
           <input
             type="hidden"
-            name="_next"
-            value={`/thanks/`}
+            name="siteEmail"
+            value={siteEmail}
           />
           <input
             type="text"
@@ -61,7 +130,7 @@ export default function ContactForm(props: ContactFormProps) {
             <input
               type="email"
               id="email"
-              name="_replyto"
+              name="email"
               className="w-full max-w-md p-2 border rounded"
               required
               aria-required="true"
@@ -80,12 +149,27 @@ export default function ContactForm(props: ContactFormProps) {
             />
           </div>
 
-          <button
-            type="submit"
-            className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
-          >
-            Send
-          </button>
+          <div className="pt-2">
+            <button
+              type="submit"
+              className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
+              disabled={formStatus === 'submitting'}
+            >
+              {formStatus === 'submitting' ? 'Sending...' : 'Send'}
+            </button>
+
+            {formStatus === 'success' && (
+              <div className="mt-4 p-3 bg-green-100 text-green-800 rounded">
+                {responseMessage}
+              </div>
+            )}
+
+            {formStatus === 'error' && (
+              <div className="mt-4 p-3 bg-red-100 text-red-800 rounded">
+                {responseMessage}
+              </div>
+            )}
+          </div>
         </form>
       </div>
 
