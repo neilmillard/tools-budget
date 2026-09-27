@@ -34,9 +34,9 @@ describe("ContactForm Component", () => {
   test("form has correct action URL", () => {
     render(<ContactForm siteEmail={mockEmail} />);
 
-    // Check if the form has the correct action URL
+    // Check if the form posts to our own Cloudflare Pages Function, not Formspree
     const form = document.querySelector("form");
-    expect(form).toHaveAttribute("action", `https://formspree.io/${mockEmail}`);
+    expect(form).toHaveAttribute("action", "/api/contact");
 
     cleanup();
   });
