@@ -63,3 +63,11 @@ generated in.
 | The Fiat Transition (1971): Trust-Based Money                               | 2026-07-04   |
 | How Money is Made: Fractional Reserve Banking                               | 2026-07-11   |
 | Debt, Interest, and Inflation: The Mathematical Necessity                   | 2026-07-18   |
+| Rewards, Not Promises: Why People Respond to Incentives, Not Intentions     | 2026-07-25   |
+| The Price You Don't See: Why Every Financial Choice Has a Hidden Cost      | 2026-08-01   |
+| Nobody's in Charge of Pizza: What Prices Are Really Telling You            | 2026-08-08   |
+| Why Cheaper Never Stays Cheap: The Hidden Cost of Price Controls           | 2026-08-15   |
+| Profit and Loss: The Only Honest Feedback in Your Finances                | 2026-08-22   |
+| Your Salary Is a Price, Too: Getting Paid for Value, Not Time             | 2026-08-29   |
+| Why Trade Isn't a Zero-Sum Game (And What It Means for Your Time)         | 2026-09-05   |
+| Seven Economics Lessons That Explain Why Things Cost What They Cost       | 2026-09-12   |
