@@ -47,7 +47,7 @@ The problem with opportunity cost isn't that people don't understand it in theor
 
 None of this means never buying the nicer option — it means buying it with your eyes open to what you're actually trading away.
 
-*Investment growth figures above use a standard 6-7% long-run real-return assumption commonly cited for diversified equity portfolios; they are illustrative, not a forecast or guarantee. Run your own numbers with our [Investment Calculator](/tools/investment-calculator/).*
+*The opportunity-cost framing and the Venezuela/Switzerland resource comparison follow the account in Thomas Sowell's* Basic Economics*, used to illustrate trade-offs generally, not as commentary on either country's current economy. Investment growth figures above use a standard 6-7% long-run real-return assumption commonly cited for diversified equity portfolios; they are illustrative, not a forecast or guarantee. Run your own numbers with our [Investment Calculator](/tools/investment-calculator/).*
 
 <ToolCTA
   title="See What You're Really Giving Up"
