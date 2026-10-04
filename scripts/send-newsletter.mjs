@@ -59,7 +59,7 @@ async function sendCampaign(post) {
     body: JSON.stringify({
       name: `Newsletter - ${post.title}`,
       subject: post.title,
-      sender: { name: "Helpful Money", email: "hello@helpfulmoney.site" },
+      sender: { name: "Helpful Money", email: "team@deltafamiglia.com" },
       type: "classic",
       htmlContent: `<p>New from Helpful Money — ancient wisdom, modern tools.</p><p><a href="${url}">${post.title}</a></p>`,
       recipients: { listIds: [Number(listId)] },
