@@ -43,4 +43,12 @@ describe("GuideSalesPageContent", () => {
     render(<GuideSalesPageContent />);
     expect(screen.getByText(/does not recommend any specific bank, app, savings product or investment/i)).toBeInTheDocument();
   });
+
+  test("links to the 30-day challenge for guide visitors who haven't done it yet", () => {
+    render(<GuideSalesPageContent />);
+    expect(screen.getByRole("link", { name: /30-day.*challenge/i })).toHaveAttribute(
+      "href",
+      "/challenge/give-every-pound-a-job"
+    );
+  });
 });
