@@ -12,6 +12,11 @@ describe("GuideSalesPageContent", () => {
     expect(screen.getAllByRole("button", { name: /buy the guide/i }).length).toBeGreaterThan(0);
   });
 
+  test("tells the buyer the guide is a PDF", () => {
+    render(<GuideSalesPageContent />);
+    expect(screen.getByText(/a PDF, 15–20 minute read/i)).toBeInTheDocument();
+  });
+
   test("links to the free worksheet download, not the paid guide file", () => {
     render(<GuideSalesPageContent />);
     const worksheetLink = screen.getByRole("link", { name: /free budget worksheet/i });
