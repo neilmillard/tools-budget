@@ -76,12 +76,13 @@ export default function GuideSalesPageContent() {
 
       <section className="text-sm text-gray-500 space-y-2 border-t pt-6">
         <p>
-          This is a digital download, delivered immediately after payment. If anything&apos;s gone wrong —
-          wrong file, failed download, duplicate charge — email us at the address on the{' '}
+          This is an instant digital download. Because the file unlocks immediately, we don&apos;t offer
+          refunds once the guide has been downloaded. Haven&apos;t downloaded it, or hit a technical
+          issue? Email us via the{' '}
           <Link href="/contact/" className="text-blue-600 underline">
             contact page
           </Link>{' '}
-          and we&apos;ll sort it out.
+          within 7 days of purchase and we&apos;ll sort it out.
         </p>
         <p>
           General information about budgeting, not financial advice. This guide does not recommend any

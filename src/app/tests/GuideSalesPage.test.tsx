@@ -26,6 +26,14 @@ describe("GuideSalesPageContent", () => {
     expect(screen.getByRole("link", { name: /contact page/i })).toHaveAttribute("href", "/contact");
   });
 
+  test("states the no-refund-after-download policy and the 7-day contact window", () => {
+    render(<GuideSalesPageContent />);
+    expect(
+      screen.getByText(/we don.t offer refunds once the guide has been downloaded/i)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/within 7 days of purchase/i)).toBeInTheDocument();
+  });
+
   test("makes no investment, bank or product recommendations", () => {
     render(<GuideSalesPageContent />);
     expect(screen.getByText(/does not recommend any specific bank, app, savings product or investment/i)).toBeInTheDocument();
