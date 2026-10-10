@@ -70,6 +70,15 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <div className="mt-8 p-6 bg-green-50 rounded-2xl border border-green-100 text-center">
+          <p className="text-gray-700">
+            Want a hands-on start?{' '}
+            <Link href="/challenge/give-every-pound-a-job/" className="text-green-700 font-semibold hover:underline">
+              Join the free 30-day budgeting challenge
+            </Link>
+            .
+          </p>
+        </div>
       </section>
 
       {/* The Wisdom Section */}

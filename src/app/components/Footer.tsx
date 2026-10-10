@@ -14,7 +14,8 @@ export function Footer() {
       href="https://devops-answers.com" target="_blank">DevOps Answers</a>
     </div>
     <div className="text-xs text-gray-500 h-8 text-center">
-      <a href="/about/">About</a> - <a href="/contact/">Contact</a> - <a href="/investing/">Investing Hub</a>
+      <a href="/about/">About</a> - <a href="/contact/">Contact</a> - <a href="/investing/">Investing Hub</a> - <a
+      href="/challenge/give-every-pound-a-job/">30-Day Challenge</a>
     </div>
     <div className="text-xs text-gray-500 h-8 text-center">
       <a href="/privacy-policy/">Privacy Policy</a> - <a href="/terms-of-service/">Terms of Service</a>

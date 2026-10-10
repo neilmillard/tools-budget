@@ -52,6 +52,16 @@ export default function GuideSalesPageContent() {
       </section>
 
       <section className="mb-10">
+        <p className="text-lg text-gray-700 leading-relaxed">
+          Not ready to buy yet? Try the free{' '}
+          <Link href="/challenge/give-every-pound-a-job/" className="text-blue-600 underline">
+            30-day budgeting challenge
+          </Link>{' '}
+          first.
+        </p>
+      </section>
+
+      <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">Who it&apos;s not for</h2>
         <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 leading-relaxed">
           <li>
