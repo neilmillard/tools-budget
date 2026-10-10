@@ -43,6 +43,7 @@ describe('onRequestPost', () => {
     expect(body.get('line_items[0][quantity]')).toBe('1');
     expect(body.get('success_url')).toBe('https://www.helpfulmoney.site/thank-you?session_id={CHECKOUT_SESSION_ID}');
     expect(body.get('cancel_url')).toBe('https://www.helpfulmoney.site/checkout-cancelled');
+    expect(body.get('custom_text[submit][message]')).toMatch(/lose the right to cancel/i);
   });
 
   it('returns 503 when Stripe is not configured yet', async () => {
