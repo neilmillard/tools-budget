@@ -5,6 +5,8 @@ import { metadata as blogIndexMetadata } from "@/app/blog/page";
 import { metadata as blogNewestMetadata } from "@/app/blog/newest/page";
 import { metadata as blogOldestMetadata } from "@/app/blog/oldest/page";
 import { metadata as guideMetadata } from "@/app/guide/give-every-pound-a-job/page";
+import { metadata as challengeMetadata } from "@/app/challenge/give-every-pound-a-job/page";
+import { metadata as worksheetMetadata } from "@/app/download/budget-worksheet/page";
 
 describe("privacy-policy and terms-of-service page metadata", () => {
   test("privacy-policy page declares its own canonical URL", () => {
@@ -46,5 +48,23 @@ describe("guide sales page metadata", () => {
       canonical: "/guide/give-every-pound-a-job/",
     });
     expect(guideMetadata.robots).toBeUndefined();
+  });
+});
+
+describe("challenge sales page metadata", () => {
+  test("declares its own canonical URL and is indexable", () => {
+    expect(challengeMetadata.alternates).toEqual({
+      canonical: "/challenge/give-every-pound-a-job/",
+    });
+    expect(challengeMetadata.robots).toBeUndefined();
+  });
+});
+
+describe("worksheet download page metadata", () => {
+  test("declares its own canonical URL and is indexable", () => {
+    expect(worksheetMetadata.alternates).toEqual({
+      canonical: "/download/budget-worksheet/",
+    });
+    expect(worksheetMetadata.robots).toBeUndefined();
   });
 });
