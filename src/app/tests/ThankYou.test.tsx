@@ -22,14 +22,20 @@ describe("ThankYouContent", () => {
     expect(screen.getByText(/payment was successful/i)).toBeInTheDocument();
   });
 
-  test("shows the Stripe session id as a reference when present", () => {
+  test("shows a download button linking to /api/download with the session id, plus a reference and an email fallback line", () => {
     window.history.pushState({}, "", "/thank-you?session_id=cs_test_abc123");
     render(<ThankYouContent />);
+    expect(screen.getByRole("link", { name: /download your guide/i })).toHaveAttribute(
+      "href",
+      "/api/download?session_id=cs_test_abc123"
+    );
     expect(screen.getByText(/cs_test_abc123/)).toBeInTheDocument();
+    expect(screen.getByText(/email us/i)).toBeInTheDocument();
   });
 
-  test("omits the reference line when there is no session id", () => {
+  test("omits the download button and reference line when there is no session id", () => {
     render(<ThankYouContent />);
+    expect(screen.queryByRole("link", { name: /download your guide/i })).not.toBeInTheDocument();
     expect(screen.queryByText(/Reference:/)).not.toBeInTheDocument();
   });
 });

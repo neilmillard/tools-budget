@@ -8,11 +8,14 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/test-checkout/'],
+        disallow: ['/api/', '/test-checkout/', '/thank-you/', '/checkout-cancelled/'],
       },
       {
+        // A crawler matching this named group ignores the `*` group above,
+        // so the same disallow list needs repeating here.
         userAgent: ['GPTBot', 'ChatGPT-User', 'Google-Extended', 'Anthropic-AI', 'Claude-Web', 'CCBot'],
         allow: '/',
+        disallow: ['/api/', '/test-checkout/', '/thank-you/', '/checkout-cancelled/'],
       }
     ],
     sitemap: 'https://www.helpfulmoney.site/sitemap.xml',
