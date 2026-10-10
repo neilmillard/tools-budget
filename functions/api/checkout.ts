@@ -32,6 +32,10 @@ export async function createCheckoutSession(
     'line_items[0][quantity]': '1',
     success_url: `${siteUrl}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${siteUrl}/checkout-cancelled`,
+    // Repeats the consent-checkbox wording above Stripe's own Pay button, since
+    // the buyer already left the site's consent checkbox behind at this point.
+    'custom_text[submit][message]':
+      'Instant digital download: once downloaded, you lose the right to cancel and no refund is given. Technical issue? Contact us within 7 days.',
   });
 
   const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {

@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 
 interface BuyButtonProps {
   // Overridable for tests — jsdom's window.location can't be reassigned directly.
@@ -9,8 +9,13 @@ interface BuyButtonProps {
 export default function BuyButton({ navigate = (url) => { window.location.href = url; } }: BuyButtonProps) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
   const [error, setError] = useState('');
+  const [consent, setConsent] = useState(false);
+  // Each BuyButton instance needs its own id: the sales page renders two of them.
+  const consentId = useId();
 
   async function handleClick() {
+    if (!consent) return;
+
     setStatus('loading');
     setError('');
 
@@ -33,10 +38,22 @@ export default function BuyButton({ navigate = (url) => { window.location.href =
 
   return (
     <div>
+      <label htmlFor={consentId} className="flex items-start gap-2 mb-3 text-sm">
+        <input
+          id={consentId}
+          type="checkbox"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+        />
+        <span>
+          I want the guide straight away, and I understand that once I download it I lose my right to
+          cancel and get a refund.
+        </span>
+      </label>
       <button
         type="button"
         onClick={handleClick}
-        disabled={status === 'loading'}
+        disabled={!consent || status === 'loading'}
         className="px-6 py-3 rounded-lg bg-green-600 text-white font-semibold disabled:opacity-60"
       >
         {status === 'loading' ? 'Redirecting…' : 'Buy the guide — £7'}

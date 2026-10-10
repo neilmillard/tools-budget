@@ -26,6 +26,7 @@ describe("BuyButton", () => {
     const navigate = jest.fn();
 
     render(<BuyButton navigate={navigate} />);
+    fireEvent.click(screen.getByRole("checkbox"));
     fireEvent.click(screen.getByRole("button", { name: /buy/i }));
 
     await waitFor(() => expect(navigate).toHaveBeenCalledWith("https://checkout.stripe.com/c/pay/cs_test_abc"));
@@ -40,9 +41,23 @@ describe("BuyButton", () => {
     const navigate = jest.fn();
 
     render(<BuyButton navigate={navigate} />);
+    fireEvent.click(screen.getByRole("checkbox"));
     fireEvent.click(screen.getByRole("button", { name: /buy/i }));
 
     expect(await screen.findByRole("alert")).toHaveTextContent("Checkout is not configured yet.");
     expect(navigate).not.toHaveBeenCalled();
+  });
+
+  test("buy button is disabled until the consent box is ticked", () => {
+    render(<BuyButton />);
+    expect(screen.getByRole("button", { name: /buy/i })).toBeDisabled();
+    fireEvent.click(screen.getByRole("checkbox", { name: /lose my right to cancel/i }));
+    expect(screen.getByRole("button", { name: /buy/i })).toBeEnabled();
+  });
+
+  test("does not call /api/checkout without consent", () => {
+    render(<BuyButton />);
+    fireEvent.click(screen.getByRole("button", { name: /buy/i }));
+    expect(mockFetch).not.toHaveBeenCalled();
   });
 });
