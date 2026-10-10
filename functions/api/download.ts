@@ -1,6 +1,18 @@
+interface KVNamespace {
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string): Promise<void>;
+}
+
 interface Env {
   STRIPE_SECRET_KEY?: string;
   STRIPE_PRICE_ID?: string;
+  DOWNLOAD_LOG?: KVNamespace;
+}
+
+interface DownloadRecord {
+  count: number;
+  firstDownloadedAt: string;
+  lastDownloadedAt: string;
 }
 
 interface PagesContext<E> {
@@ -204,6 +216,24 @@ export async function verifyPaidSession(sessionId: string, priceId: string, secr
   }
 }
 
+// Records each successful download against the paying session, so a refund
+// decision can check whether (and how many times) the file was actually
+// pulled. Tracking is best-effort: a missing or failing KV binding must
+// never block a paid download.
+export async function recordDownload(sessionId: string, kv: KVNamespace, now: Date = new Date()): Promise<void> {
+  const nowIso = now.toISOString();
+  const existing = await kv.get(sessionId);
+  const previous = existing ? (JSON.parse(existing) as DownloadRecord) : null;
+
+  const record: DownloadRecord = {
+    count: (previous?.count ?? 0) + 1,
+    firstDownloadedAt: previous?.firstDownloadedAt ?? nowIso,
+    lastDownloadedAt: nowIso,
+  };
+
+  await kv.put(sessionId, JSON.stringify(record));
+}
+
 export const onRequestGet: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
 
@@ -216,6 +246,14 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   if (!paid) {
     return Response.json({ message: 'This download link is not valid.' }, { status: 403 });
+  }
+
+  if (env.DOWNLOAD_LOG) {
+    try {
+      await recordDownload(sessionId, env.DOWNLOAD_LOG);
+    } catch {
+      // Tracking is a nice-to-have; never fail the download because of it.
+    }
   }
 
   return new Response(GUIDE_CONTENT, {

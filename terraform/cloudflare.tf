@@ -23,6 +23,36 @@ resource "cloudflare_pages_project" "budget" {
     build_command   = "npm run build"
     destination_dir = "out"
   }
+
+  deployment_configs {
+    production {
+      kv_namespaces = {
+        DOWNLOAD_LOG = cloudflare_workers_kv_namespace.downloads.id
+      }
+    }
+  }
+}
+
+# Per-session download record for the paid guide (DEL-585), written by
+# functions/api/download.ts. Lets a refund decision check whether a session
+# actually downloaded the file, and how many times, via the Cloudflare
+# dashboard's KV browser (Workers & Pages > KV > helpfulmoney-downloads).
+resource "cloudflare_workers_kv_namespace" "downloads" {
+  account_id = var.cloudflare_account_id
+  title      = "helpfulmoney-downloads"
+}
+
+# Neil created this namespace and bound it to the Pages project by hand via
+# the Cloudflare dashboard on 2026-10-10 (no shell access to run `tofu
+# apply` for the DEL-585 download-tracking rollout). This import block
+# adopts that namespace into state on the next `tofu apply`/`plan`, instead
+# of Terraform trying to create a second one alongside it. The production
+# `kv_namespaces` binding on cloudflare_pages_project.budget above already
+# matches what's live, so no import is needed for that resource — applying
+# it will just confirm the existing binding rather than change anything.
+import {
+  to = cloudflare_workers_kv_namespace.downloads
+  id = "8f1b6bf33c4c994d864703b7c5e18594/f13260bae1134092bc00ca4e68a985fd"
 }
 
 
