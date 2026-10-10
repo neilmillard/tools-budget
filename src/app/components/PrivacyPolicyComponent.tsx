@@ -91,7 +91,13 @@ export default function PrivacyPolicyComponent() {
         <p className="mb-4">
           We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.
         </p>
-        
+        <p className="mb-4">
+          We use Brevo as our email processor. If you buy a guide, we send your receipt and download link
+          through Brevo; this service email is sent regardless of marketing consent. If you also tick the
+          marketing checkbox at checkout, we&apos;ll use Brevo to send you occasional money tips by email,
+          which you can unsubscribe from at any time.
+        </p>
+
         <h3 className="text-xl font-medium mb-2">Marketing Communications</h3>
         <p className="mb-4">
           With your consent, or with an opportunity for you to withdraw consent, we may share your information with third parties for marketing purposes.

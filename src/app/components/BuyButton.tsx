@@ -10,8 +10,10 @@ export default function BuyButton({ navigate = (url) => { window.location.href =
   const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle');
   const [error, setError] = useState('');
   const [consent, setConsent] = useState(false);
+  const [marketingConsent, setMarketingConsent] = useState(false);
   // Each BuyButton instance needs its own id: the sales page renders two of them.
   const consentId = useId();
+  const marketingConsentId = useId();
 
   async function handleClick() {
     if (!consent) return;
@@ -20,7 +22,11 @@ export default function BuyButton({ navigate = (url) => { window.location.href =
     setError('');
 
     try {
-      const response = await fetch('/api/checkout', { method: 'POST' });
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ marketingConsent }),
+      });
       const data = (await response.json()) as { url?: string; message?: string };
 
       if (!response.ok || !data.url) {
@@ -49,6 +55,15 @@ export default function BuyButton({ navigate = (url) => { window.location.href =
           I want the guide straight away, and I understand that once I download it I lose my right to
           cancel and get a refund.
         </span>
+      </label>
+      <label htmlFor={marketingConsentId} className="flex items-start gap-2 mb-3 text-sm">
+        <input
+          id={marketingConsentId}
+          type="checkbox"
+          checked={marketingConsent}
+          onChange={(e) => setMarketingConsent(e.target.checked)}
+        />
+        <span>Send me occasional money tips by email. Unsubscribe any time.</span>
       </label>
       <button
         type="button"

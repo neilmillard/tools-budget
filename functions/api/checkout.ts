@@ -24,7 +24,8 @@ interface CheckoutResult {
 export async function createCheckoutSession(
   priceId: string,
   siteUrl: string,
-  secretKey: string
+  secretKey: string,
+  marketingConsent: boolean
 ): Promise<CheckoutResult> {
   const body = new URLSearchParams({
     mode: 'payment',
@@ -36,6 +37,9 @@ export async function createCheckoutSession(
     // the buyer already left the site's consent checkbox behind at this point.
     'custom_text[submit][message]':
       'Instant digital download: once downloaded, you lose the right to cancel and no refund is given. Technical issue? Contact us within 7 days.',
+    // Carried through to download.ts via the session's own metadata, since the
+    // buyer's marketing choice is made here but only acted on at download time.
+    'metadata[marketing_consent]': String(marketingConsent),
   });
 
   const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
@@ -60,13 +64,26 @@ export async function createCheckoutSession(
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const { env } = context;
+  const { request, env } = context;
 
   if (!env.STRIPE_SECRET_KEY || !env.STRIPE_PRICE_ID || !env.NEXT_PUBLIC_SITE_URL) {
     return Response.json({ message: 'Checkout is not configured yet.' }, { status: 503 });
   }
 
-  const result = await createCheckoutSession(env.STRIPE_PRICE_ID, env.NEXT_PUBLIC_SITE_URL, env.STRIPE_SECRET_KEY);
+  let marketingConsent = false;
+  try {
+    const body = (await request.json()) as { marketingConsent?: boolean };
+    marketingConsent = body.marketingConsent === true;
+  } catch {
+    // No body (or a non-JSON one) just means no marketing consent was given.
+  }
+
+  const result = await createCheckoutSession(
+    env.STRIPE_PRICE_ID,
+    env.NEXT_PUBLIC_SITE_URL,
+    env.STRIPE_SECRET_KEY,
+    marketingConsent
+  );
 
   if (!result.ok || !result.url) {
     return Response.json({ message: result.message ?? 'Failed to start checkout.' }, { status: 500 });

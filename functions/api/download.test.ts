@@ -5,6 +5,7 @@ import {
   base64ToUint8Array,
   onRequestGet,
   recordDownload,
+  sendDownloadEmail,
   subscribeBuyerToBrevo,
   verifyPaidSession,
 } from './download';
@@ -36,13 +37,15 @@ function fakeKv(initial: Record<string, string> = {}) {
 
 function paidSession(
   charge: Record<string, unknown> = { refunded: false, disputed: false },
-  email: string | null = 'buyer@example.com'
+  email: string | null = 'buyer@example.com',
+  marketingConsent = false
 ) {
   return {
     payment_status: 'paid',
     line_items: { data: [{ price: { id: 'price_123' } }] },
     payment_intent: { latest_charge: charge },
     customer_details: email ? { email } : null,
+    metadata: { marketing_consent: String(marketingConsent) },
   };
 }
 
@@ -270,7 +273,48 @@ describe('onRequestGet', () => {
     expect(mockFetch).toHaveBeenCalledTimes(2);
     const [url, init] = mockFetch.mock.calls[1];
     expect(url).toBe('https://api.brevo.com/v3/contacts');
-    expect(JSON.parse(init.body)).toEqual({ email: 'buyer@example.com', listIds: [22], updateEnabled: true });
+    expect(JSON.parse(init.body)).toEqual({
+      email: 'buyer@example.com',
+      listIds: [22],
+      attributes: { MARKETING_CONSENT: false },
+      updateEnabled: true,
+    });
+  });
+
+  it('also adds the buyer to the marketing list when they opted in and BREVO_MARKETING_LIST_ID is configured', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession(undefined, undefined, true) });
+    mockFetch.mockResolvedValueOnce({ ok: true });
+
+    await call(
+      get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'),
+      { ...env, BREVO_API_KEY: 'brevo-key', BREVO_LIST_ID: '22', BREVO_MARKETING_LIST_ID: '23' }
+    );
+
+    const [, init] = mockFetch.mock.calls[1];
+    expect(JSON.parse(init.body)).toEqual({
+      email: 'buyer@example.com',
+      listIds: [22, 23],
+      attributes: { MARKETING_CONSENT: true },
+      updateEnabled: true,
+    });
+  });
+
+  it('does not add the marketing list when the buyer did not opt in, even if configured', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession(undefined, undefined, false) });
+    mockFetch.mockResolvedValueOnce({ ok: true });
+
+    await call(
+      get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'),
+      { ...env, BREVO_API_KEY: 'brevo-key', BREVO_LIST_ID: '22', BREVO_MARKETING_LIST_ID: '23' }
+    );
+
+    const [, init] = mockFetch.mock.calls[1];
+    expect(JSON.parse(init.body)).toEqual({
+      email: 'buyer@example.com',
+      listIds: [22],
+      attributes: { MARKETING_CONSENT: false },
+      updateEnabled: true,
+    });
   });
 
   it('does not call Brevo when BREVO_LIST_ID is not configured', async () => {
@@ -308,6 +352,70 @@ describe('onRequestGet', () => {
     );
 
     expect(mockFetch).toHaveBeenCalledTimes(1);
+  });
+
+  it('sends the buyer a download-link email on the first download when configured', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
+    mockFetch.mockResolvedValueOnce({ ok: true }); // Brevo smtp/email
+    const kv = fakeKv();
+
+    const res = await call(
+      get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'),
+      { ...env, DOWNLOAD_LOG: kv, BREVO_API_KEY: 'brevo-key', NEXT_PUBLIC_SITE_URL: 'https://www.helpfulmoney.site' }
+    );
+
+    expect(res.status).toBe(200);
+    expect(mockFetch).toHaveBeenCalledTimes(2);
+    const [url, init] = mockFetch.mock.calls[1];
+    expect(url).toBe('https://api.brevo.com/v3/smtp/email');
+    const body = JSON.parse(init.body);
+    expect(body.to).toEqual([{ email: 'buyer@example.com' }]);
+    expect(body.htmlContent).toContain('cs_test_abc');
+  });
+
+  it('does not re-send the download-link email on a repeat download', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
+    const kv = fakeKv({
+      cs_test_abc: JSON.stringify({
+        count: 1,
+        firstDownloadedAt: '2026-10-09T00:00:00.000Z',
+        lastDownloadedAt: '2026-10-09T00:00:00.000Z',
+        email: 'buyer@example.com',
+      }),
+    });
+
+    const res = await call(
+      get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'),
+      { ...env, DOWNLOAD_LOG: kv, BREVO_API_KEY: 'brevo-key', NEXT_PUBLIC_SITE_URL: 'https://www.helpfulmoney.site' }
+    );
+
+    expect(res.status).toBe(200);
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not send the download-link email when BREVO_API_KEY is not configured', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
+    const kv = fakeKv();
+
+    await call(
+      get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'),
+      { ...env, DOWNLOAD_LOG: kv, NEXT_PUBLIC_SITE_URL: 'https://www.helpfulmoney.site' }
+    );
+
+    expect(mockFetch).toHaveBeenCalledTimes(1);
+  });
+
+  it('still serves the file when sending the download-link email fails', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
+    mockFetch.mockResolvedValueOnce({ ok: false, status: 500 });
+    const kv = fakeKv();
+
+    const res = await call(
+      get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'),
+      { ...env, DOWNLOAD_LOG: kv, BREVO_API_KEY: 'brevo-key', NEXT_PUBLIC_SITE_URL: 'https://www.helpfulmoney.site' }
+    );
+
+    expect(res.status).toBe(200);
   });
 });
 
@@ -370,7 +478,7 @@ describe('verifyPaidSession', () => {
   it('returns "ok" and the buyer\'s email for a paid, unrefunded session with a matching price', async () => {
     mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
     const result = await verifyPaidSession('cs_test_abc', 'price_123', 'rk_test_key');
-    expect(result).toEqual({ status: 'ok', email: 'buyer@example.com' });
+    expect(result).toEqual({ status: 'ok', email: 'buyer@example.com', marketingConsent: false });
   });
 
   it('returns "ok" with a null email when Stripe has no customer details', async () => {
@@ -379,7 +487,16 @@ describe('verifyPaidSession', () => {
       json: async () => paidSession({ refunded: false, disputed: false }, null),
     });
     const result = await verifyPaidSession('cs_test_abc', 'price_123', 'rk_test_key');
-    expect(result).toEqual({ status: 'ok', email: null });
+    expect(result).toEqual({ status: 'ok', email: null, marketingConsent: false });
+  });
+
+  it('returns marketingConsent true when the Checkout session metadata says so', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => paidSession(undefined, undefined, true),
+    });
+    const result = await verifyPaidSession('cs_test_abc', 'price_123', 'rk_test_key');
+    expect(result.marketingConsent).toBe(true);
   });
 
   it('returns "refunded" when the latest charge was refunded', async () => {
@@ -402,7 +519,7 @@ describe('verifyPaidSession', () => {
 
   it('returns "invalid" without calling Stripe for an empty id', async () => {
     const result = await verifyPaidSession('', 'price_123', 'rk_test_key');
-    expect(result).toEqual({ status: 'invalid', email: null });
+    expect(result).toEqual({ status: 'invalid', email: null, marketingConsent: false });
     expect(mockFetch).not.toHaveBeenCalled();
   });
 
@@ -418,16 +535,67 @@ describe('subscribeBuyerToBrevo', () => {
 
   it('sends the email to the configured Brevo list with updateEnabled so repeat buyers do not error', async () => {
     mockFetch.mockResolvedValueOnce({ ok: true });
-    await subscribeBuyerToBrevo('buyer@example.com', '22', 'k');
+    await subscribeBuyerToBrevo('buyer@example.com', '22', 'k', false);
     const [url, init] = mockFetch.mock.calls[0];
     expect(url).toBe('https://api.brevo.com/v3/contacts');
-    expect(JSON.parse(init.body)).toEqual({ email: 'buyer@example.com', listIds: [22], updateEnabled: true });
+    expect(JSON.parse(init.body)).toEqual({
+      email: 'buyer@example.com',
+      listIds: [22],
+      attributes: { MARKETING_CONSENT: false },
+      updateEnabled: true,
+    });
     expect(init.headers).toEqual(expect.objectContaining({ 'api-key': 'k', 'Content-Type': 'application/json' }));
+  });
+
+  it('appends the marketing list id when consent is given and a marketing list is configured', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true });
+    await subscribeBuyerToBrevo('buyer@example.com', '22', 'k', true, '23');
+    const [, init] = mockFetch.mock.calls[0];
+    expect(JSON.parse(init.body)).toEqual({
+      email: 'buyer@example.com',
+      listIds: [22, 23],
+      attributes: { MARKETING_CONSENT: true },
+      updateEnabled: true,
+    });
   });
 
   it('returns ok:false when Brevo responds with failure', async () => {
     mockFetch.mockResolvedValueOnce({ ok: false, status: 400 });
-    const result = await subscribeBuyerToBrevo('buyer@example.com', '22', 'k');
+    const result = await subscribeBuyerToBrevo('buyer@example.com', '22', 'k', false);
+    expect(result.ok).toBe(false);
+  });
+});
+
+describe('sendDownloadEmail', () => {
+  beforeEach(() => mockFetch.mockReset());
+
+  it('sends a transactional email with the re-download link, contact fallback and a one-line challenge mention', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true });
+    await sendDownloadEmail(
+      'buyer@example.com',
+      'https://www.helpfulmoney.site/api/download?session_id=cs_test_abc',
+      'https://www.helpfulmoney.site',
+      'k'
+    );
+
+    const [url, init] = mockFetch.mock.calls[0];
+    expect(url).toBe('https://api.brevo.com/v3/smtp/email');
+    expect(init.headers).toEqual(expect.objectContaining({ 'api-key': 'k', 'Content-Type': 'application/json' }));
+    const body = JSON.parse(init.body);
+    expect(body.to).toEqual([{ email: 'buyer@example.com' }]);
+    expect(body.htmlContent).toContain('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc');
+    expect(body.htmlContent).toContain('https://www.helpfulmoney.site/contact/');
+    expect(body.htmlContent).toContain('https://www.helpfulmoney.site/challenge/give-every-pound-a-job/');
+  });
+
+  it('returns ok:false when Brevo responds with failure', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: false, status: 500 });
+    const result = await sendDownloadEmail(
+      'buyer@example.com',
+      'https://www.helpfulmoney.site/api/download?session_id=cs_test_abc',
+      'https://www.helpfulmoney.site',
+      'k'
+    );
     expect(result.ok).toBe(false);
   });
 });

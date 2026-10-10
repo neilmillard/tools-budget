@@ -11,6 +11,8 @@ interface Env {
   DOWNLOAD_LOG?: KVNamespace;
   BREVO_API_KEY?: string;
   BREVO_LIST_ID?: string;
+  BREVO_MARKETING_LIST_ID?: string;
+  NEXT_PUBLIC_SITE_URL?: string;
 }
 
 interface DownloadRecord {
@@ -39,6 +41,7 @@ interface StripeCheckoutSession {
   line_items?: { data?: Array<{ price?: { id?: string } }> };
   payment_intent?: { latest_charge?: StripeCharge };
   customer_details?: { email?: string | null } | null;
+  metadata?: { marketing_consent?: string };
 }
 
 type SessionCheck = 'ok' | 'refunded' | 'invalid';
@@ -46,6 +49,7 @@ type SessionCheck = 'ok' | 'refunded' | 'invalid';
 interface SessionCheckResult {
   status: SessionCheck;
   email: string | null;
+  marketingConsent: boolean;
 }
 
 const SESSION_ID_PATTERN = /^cs_[a-zA-Z0-9_]+$/;
@@ -87,7 +91,7 @@ export async function verifyPaidSession(
   secretKey: string
 ): Promise<SessionCheckResult> {
   if (!SESSION_ID_PATTERN.test(sessionId)) {
-    return { status: 'invalid', email: null };
+    return { status: 'invalid', email: null, marketingConsent: false };
   }
 
   try {
@@ -98,28 +102,29 @@ export async function verifyPaidSession(
     );
 
     if (!response.ok) {
-      return { status: 'invalid', email: null };
+      return { status: 'invalid', email: null, marketingConsent: false };
     }
 
     const session = (await response.json()) as StripeCheckoutSession;
     if (session.payment_status !== 'paid') {
-      return { status: 'invalid', email: null };
+      return { status: 'invalid', email: null, marketingConsent: false };
     }
 
     const paidPriceIds = session.line_items?.data?.map((item) => item.price?.id) ?? [];
     if (!paidPriceIds.includes(priceId)) {
-      return { status: 'invalid', email: null };
+      return { status: 'invalid', email: null, marketingConsent: false };
     }
 
     const email = session.customer_details?.email ?? null;
+    const marketingConsent = session.metadata?.marketing_consent === 'true';
     const charge = session.payment_intent?.latest_charge;
     if (charge?.refunded || charge?.disputed) {
-      return { status: 'refunded', email };
+      return { status: 'refunded', email, marketingConsent };
     }
 
-    return { status: 'ok', email };
+    return { status: 'ok', email, marketingConsent };
   } catch {
-    return { status: 'invalid', email: null };
+    return { status: 'invalid', email: null, marketingConsent: false };
   }
 }
 
@@ -127,18 +132,70 @@ export async function verifyPaidSession(
 // Contacts API, different list (BREVO_LIST_ID, the buyer list, vs.
 // BREVO_CHALLENGE_LIST_ID). Kept separate rather than shared since each
 // endpoint has its own small, self-contained Brevo call, matching contact.ts.
+// List 22 (the buyer list) stays service-email-only: marketing consent only
+// ever adds the separate marketing list/tag on top, it never gates list 22
+// itself. The MARKETING_CONSENT attribute is set either way so a future
+// campaign can filter on it even before a marketing list id exists.
 export async function subscribeBuyerToBrevo(
   email: string,
   listId: string,
-  apiKey: string
+  apiKey: string,
+  marketingConsent: boolean,
+  marketingListId?: string
 ): Promise<{ ok: boolean }> {
+  const listIds = [Number(listId)];
+  if (marketingConsent && marketingListId) {
+    listIds.push(Number(marketingListId));
+  }
+
   const response = await fetch('https://api.brevo.com/v3/contacts', {
     method: 'POST',
     headers: {
       'api-key': apiKey,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email, listIds: [Number(listId)], updateEnabled: true }),
+    body: JSON.stringify({
+      email,
+      listIds,
+      attributes: { MARKETING_CONSENT: marketingConsent },
+      updateEnabled: true,
+    }),
+  });
+
+  return { ok: response.ok };
+}
+
+const CHALLENGE_URL_PATH = '/challenge/give-every-pound-a-job/';
+
+// Reuses contact.ts's smtp/email Brevo call rather than the Contacts-list API
+// subscribeBuyerToBrevo uses above — this is a one-off transactional send, not
+// a list subscription.
+export async function sendDownloadEmail(
+  email: string,
+  downloadUrl: string,
+  siteUrl: string,
+  apiKey: string
+): Promise<{ ok: boolean }> {
+  const contactUrl = `${siteUrl}/contact/`;
+  const challengeUrl = `${siteUrl}${CHALLENGE_URL_PATH}`;
+
+  const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: {
+      'api-key': apiKey,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      sender: { name: 'Helpful Money', email: 'neil@deltafamiglia.com' },
+      to: [{ email }],
+      subject: 'Your guide: Give Every Pound a Job',
+      htmlContent: `
+        <p>Thanks for buying the guide. Here's your download link:</p>
+        <p><a href="${downloadUrl}">${downloadUrl}</a></p>
+        <p>Having trouble? Get in touch via <a href="${contactUrl}">${contactUrl}</a>.</p>
+        <p>P.S. If you haven't already, we also run a free <a href="${challengeUrl}">30-day budgeting challenge</a>.</p>
+      `,
+    }),
   });
 
   return { ok: response.ok };
@@ -153,7 +210,7 @@ export async function recordDownload(
   kv: KVNamespace,
   now: Date = new Date(),
   email?: string
-): Promise<void> {
+): Promise<DownloadRecord> {
   const nowIso = now.toISOString();
   const existing = await kv.get(sessionId);
   const previous = existing ? (JSON.parse(existing) as DownloadRecord) : null;
@@ -166,6 +223,7 @@ export async function recordDownload(
   };
 
   await kv.put(sessionId, JSON.stringify(record));
+  return record;
 }
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
@@ -201,9 +259,11 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     );
   }
 
+  let isFirstDownload = true;
   if (env.DOWNLOAD_LOG) {
     try {
-      await recordDownload(sessionId, env.DOWNLOAD_LOG, new Date(), check.email ?? undefined);
+      const record = await recordDownload(sessionId, env.DOWNLOAD_LOG, new Date(), check.email ?? undefined);
+      isFirstDownload = record.count === 1;
     } catch {
       // Tracking is a nice-to-have; never fail the download because of it.
     }
@@ -211,9 +271,27 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   if (check.email && env.BREVO_API_KEY && env.BREVO_LIST_ID) {
     try {
-      await subscribeBuyerToBrevo(check.email, env.BREVO_LIST_ID, env.BREVO_API_KEY);
+      await subscribeBuyerToBrevo(
+        check.email,
+        env.BREVO_LIST_ID,
+        env.BREVO_API_KEY,
+        check.marketingConsent,
+        env.BREVO_MARKETING_LIST_ID
+      );
     } catch {
       // Buyer-list capture is a nice-to-have; never fail the download because of it.
+    }
+  }
+
+  // A service email (receipt + delivery), sent regardless of marketing
+  // consent — same as the download itself. Only sent once per session so a
+  // buyer who re-opens the download link doesn't get repeat emails.
+  if (check.email && env.BREVO_API_KEY && env.NEXT_PUBLIC_SITE_URL && isFirstDownload) {
+    try {
+      const downloadUrl = `${env.NEXT_PUBLIC_SITE_URL}/api/download?session_id=${encodeURIComponent(sessionId)}`;
+      await sendDownloadEmail(check.email, downloadUrl, env.NEXT_PUBLIC_SITE_URL, env.BREVO_API_KEY);
+    } catch {
+      // Delivery already succeeded via the page itself; never fail because of this.
     }
   }
 

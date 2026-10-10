@@ -12,8 +12,12 @@ const env = {
   NEXT_PUBLIC_SITE_URL: 'https://www.helpfulmoney.site',
 };
 
-function post(): Request {
-  return new Request('https://www.helpfulmoney.site/api/checkout', { method: 'POST' });
+function post(body: Record<string, unknown> = {}): Request {
+  return new Request('https://www.helpfulmoney.site/api/checkout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
 }
 
 function call(request: Request, callEnv: Partial<typeof env> = env): Promise<Response> {
@@ -44,6 +48,16 @@ describe('onRequestPost', () => {
     expect(body.get('success_url')).toBe('https://www.helpfulmoney.site/thank-you?session_id={CHECKOUT_SESSION_ID}');
     expect(body.get('cancel_url')).toBe('https://www.helpfulmoney.site/checkout-cancelled');
     expect(body.get('custom_text[submit][message]')).toMatch(/lose the right to cancel/i);
+    expect(body.get('metadata[marketing_consent]')).toBe('false');
+  });
+
+  it('sends marketing_consent true in metadata when the buyer opted in', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => ({ url: 'https://checkout.stripe.com/c/pay/cs_test_abc' }) });
+    await call(post({ marketingConsent: true }));
+
+    const [, init] = mockFetch.mock.calls[0];
+    const body = new URLSearchParams(init.body);
+    expect(body.get('metadata[marketing_consent]')).toBe('true');
   });
 
   it('returns 503 when Stripe is not configured yet', async () => {
@@ -70,7 +84,7 @@ describe('createCheckoutSession', () => {
 
   it('returns ok:false with a message when the request fails', async () => {
     mockFetch.mockResolvedValueOnce({ ok: false, json: async () => ({}) });
-    const result = await createCheckoutSession('price_123', 'https://www.helpfulmoney.site', 'rk_test_key');
+    const result = await createCheckoutSession('price_123', 'https://www.helpfulmoney.site', 'rk_test_key', false);
     expect(result.ok).toBe(false);
     expect(result.message).toMatch(/failed/i);
   });
