@@ -26,10 +26,18 @@ interface PagesContext<E> {
 
 type PagesFunction<E> = (context: PagesContext<E>) => Response | Promise<Response>;
 
+interface StripeCharge {
+  refunded?: boolean;
+  disputed?: boolean;
+}
+
 interface StripeCheckoutSession {
   payment_status?: string;
   line_items?: { data?: Array<{ price?: { id?: string } }> };
+  payment_intent?: { latest_charge?: StripeCharge };
 }
+
+type SessionCheck = 'ok' | 'refunded' | 'invalid';
 
 const SESSION_ID_PATTERN = /^cs_[a-zA-Z0-9_]+$/;
 
@@ -44,30 +52,64 @@ export function base64ToUint8Array(base64: string): Uint8Array {
   return bytes;
 }
 
-export async function verifyPaidSession(sessionId: string, priceId: string, secretKey: string): Promise<boolean> {
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function htmlMessage(title: string, body: string): string {
+  return `<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>${escapeHtml(title)}</title></head>
+<body>
+<p>${body}</p>
+</body>
+</html>
+`;
+}
+
+export async function verifyPaidSession(
+  sessionId: string,
+  priceId: string,
+  secretKey: string
+): Promise<SessionCheck> {
   if (!SESSION_ID_PATTERN.test(sessionId)) {
-    return false;
+    return 'invalid';
   }
 
   try {
     const response = await fetch(
-      `https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(sessionId)}?expand[]=line_items`,
+      `https://api.stripe.com/v1/checkout/sessions/${encodeURIComponent(sessionId)}` +
+        '?expand[]=line_items&expand[]=payment_intent.latest_charge',
       { headers: { Authorization: `Bearer ${secretKey}` } }
     );
 
     if (!response.ok) {
-      return false;
+      return 'invalid';
     }
 
     const session = (await response.json()) as StripeCheckoutSession;
     if (session.payment_status !== 'paid') {
-      return false;
+      return 'invalid';
     }
 
     const paidPriceIds = session.line_items?.data?.map((item) => item.price?.id) ?? [];
-    return paidPriceIds.includes(priceId);
+    if (!paidPriceIds.includes(priceId)) {
+      return 'invalid';
+    }
+
+    const charge = session.payment_intent?.latest_charge;
+    if (charge?.refunded || charge?.disputed) {
+      return 'refunded';
+    }
+
+    return 'ok';
   } catch {
-    return false;
+    return 'invalid';
   }
 }
 
@@ -97,10 +139,29 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   }
 
   const sessionId = new URL(request.url).searchParams.get('session_id') ?? '';
-  const paid = await verifyPaidSession(sessionId, env.STRIPE_PRICE_ID, env.STRIPE_SECRET_KEY);
+  const check = await verifyPaidSession(sessionId, env.STRIPE_PRICE_ID, env.STRIPE_SECRET_KEY);
 
-  if (!paid) {
-    return Response.json({ message: 'This download link is not valid.' }, { status: 403 });
+  if (check === 'refunded') {
+    return new Response(
+      htmlMessage(
+        'Download not available',
+        'This purchase was refunded, so the download is no longer available. If you think this is a ' +
+          'mistake, get in touch via <a href="https://www.helpfulmoney.site/contact/">helpfulmoney.site/contact/</a> ' +
+          `and quote your reference: ${escapeHtml(sessionId)}.`
+      ),
+      { status: 410, headers: { 'Content-Type': 'text/html; charset=utf-8' } }
+    );
+  }
+
+  if (check === 'invalid') {
+    return new Response(
+      htmlMessage(
+        'Download link not valid',
+        "This download link isn't valid. If you've paid and can't get your guide, contact us via " +
+          '<a href="https://www.helpfulmoney.site/contact/">helpfulmoney.site/contact/</a>.'
+      ),
+      { status: 403, headers: { 'Content-Type': 'text/html; charset=utf-8' } }
+    );
   }
 
   if (env.DOWNLOAD_LOG) {
