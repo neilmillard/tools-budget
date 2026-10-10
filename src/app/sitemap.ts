@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/babylon',
     '/blog/newest',
     '/blog/oldest',
+    '/challenge/give-every-pound-a-job',
     '/contact',
     '/fiftythirtytwenty',
     '/guide/give-every-pound-a-job',
