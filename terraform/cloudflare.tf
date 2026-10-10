@@ -23,6 +23,23 @@ resource "cloudflare_pages_project" "budget" {
     build_command   = "npm run build"
     destination_dir = "out"
   }
+
+  deployment_configs {
+    production {
+      kv_namespaces = {
+        DOWNLOAD_LOG = cloudflare_workers_kv_namespace.downloads.id
+      }
+    }
+  }
+}
+
+# Per-session download record for the paid guide (DEL-585), written by
+# functions/api/download.ts. Lets a refund decision check whether a session
+# actually downloaded the file, and how many times, via the Cloudflare
+# dashboard's KV browser (Workers & Pages > KV > helpfulmoney-downloads).
+resource "cloudflare_workers_kv_namespace" "downloads" {
+  account_id = var.cloudflare_account_id
+  title      = "helpfulmoney-downloads"
 }
 
 
