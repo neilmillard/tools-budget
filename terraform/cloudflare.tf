@@ -42,6 +42,19 @@ resource "cloudflare_workers_kv_namespace" "downloads" {
   title      = "helpfulmoney-downloads"
 }
 
+# Neil created this namespace and bound it to the Pages project by hand via
+# the Cloudflare dashboard on 2026-10-10 (no shell access to run `tofu
+# apply` for the DEL-585 download-tracking rollout). This import block
+# adopts that namespace into state on the next `tofu apply`/`plan`, instead
+# of Terraform trying to create a second one alongside it. The production
+# `kv_namespaces` binding on cloudflare_pages_project.budget above already
+# matches what's live, so no import is needed for that resource — applying
+# it will just confirm the existing binding rather than change anything.
+import {
+  to = cloudflare_workers_kv_namespace.downloads
+  id = "8f1b6bf33c4c994d864703b7c5e18594/f13260bae1134092bc00ca4e68a985fd"
+}
+
 
 # www custom domain only — the apex/root (var.domain_name) is left out for
 # now since it isn't needed yet. Associating this domain is itself a
