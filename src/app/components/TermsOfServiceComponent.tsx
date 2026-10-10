@@ -4,7 +4,7 @@ export default function TermsOfServiceComponent() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
-      <p className="mb-4 text-gray-700">Last Updated: April 4, 2026</p>
+      <p className="mb-4 text-gray-700">Last Updated: October 10, 2026</p>
       
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">Affiliate Disclosure</h2>
@@ -68,6 +68,31 @@ export default function TermsOfServiceComponent() {
         <p className="mb-4">
           We make no representations or warranties about the accuracy, reliability, completeness, or timeliness of any content 
           of the Service, including the results of any calculators or tools.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">Digital Products and Purchases</h2>
+        <p className="mb-4">
+          We sell digital guides (currently the &quot;Give Every Pound a Job&quot; budgeting guide) through
+          Stripe&apos;s secure checkout. Each purchase is a one-off payment for instant access to
+          downloadable digital content, not a subscription.
+        </p>
+        <p className="mb-4">
+          <strong>Refunds.</strong> Because our digital guides unlock immediately on purchase, we don&apos;t
+          offer refunds once a guide has been downloaded. Haven&apos;t downloaded it, or hit a technical
+          issue? Contact us within 7 days of purchase via our{" "}
+          <a href="/contact/" className="text-blue-600 hover:underline">Contact Page</a> and we&apos;ll sort
+          it out.
+        </p>
+        <p className="mb-4">
+          <strong>Your right to cancel.</strong> Under the Consumer Contracts (Information, Cancellation and
+          Additional Charges) Regulations 2013, you normally have 14 days to cancel an online purchase of
+          digital content. Because our guides are supplied to you immediately on payment, you lose this
+          cancellation right once you expressly consent to immediate delivery and acknowledge that you lose
+          the right to cancel — which you do by ticking the consent box at checkout before completing your
+          purchase. This does not affect any other statutory rights you have that cannot be excluded or
+          limited under applicable law.
         </p>
       </section>
 
