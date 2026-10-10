@@ -28,17 +28,19 @@ function fakeKv(initial: Record<string, string> = {}) {
   };
 }
 
+function paidSession(charge: Record<string, unknown> = { refunded: false, disputed: false }) {
+  return {
+    payment_status: 'paid',
+    line_items: { data: [{ price: { id: 'price_123' } }] },
+    payment_intent: { latest_charge: charge },
+  };
+}
+
 describe('onRequestGet', () => {
   beforeEach(() => mockFetch.mockReset());
 
-  it('serves the guide as a PDF when the session is paid and matches the configured price', async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      json: async () => ({
-        payment_status: 'paid',
-        line_items: { data: [{ price: { id: 'price_123' } }] },
-      }),
-    });
+  it('serves the guide as a PDF when the session is paid, unrefunded and matches the configured price', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
 
     const res = await call(get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'));
     expect(res.status).toBe(200);
@@ -53,7 +55,64 @@ describe('onRequestGet', () => {
     expect(String.fromCharCode(...bytes.slice(0, 4))).toBe('%PDF');
   });
 
-  it('returns 403 when the session has not been paid', async () => {
+  it('still serves the PDF for a partial refund', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => paidSession({ refunded: false, disputed: false, amount_refunded: 300 }),
+    });
+
+    const res = await call(get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'));
+    expect(res.status).toBe(200);
+    expect(res.headers.get('content-type')).toBe('application/pdf');
+  });
+
+  it('requests both line_items and payment_intent.latest_charge from Stripe', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
+
+    await call(get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'));
+
+    const [url] = mockFetch.mock.calls[0];
+    expect(url).toContain('expand[]=line_items');
+    expect(url).toContain('expand[]=payment_intent.latest_charge');
+  });
+
+  it('returns 410 and an HTML "refunded" message for a fully refunded session, without serving the PDF', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => paidSession({ refunded: true, disputed: false }),
+    });
+
+    const res = await call(get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'));
+    expect(res.status).toBe(410);
+    expect(res.headers.get('content-type')).toMatch(/^text\/html/);
+    const body = await res.text();
+    expect(body).toMatch(/refunded/i);
+    expect(body).not.toMatch(/%PDF/);
+  });
+
+  it('returns 410 for a disputed charge, same as a refund', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => paidSession({ refunded: false, disputed: true }),
+    });
+
+    const res = await call(get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'));
+    expect(res.status).toBe(410);
+    expect(res.headers.get('content-type')).toMatch(/^text\/html/);
+  });
+
+  it('includes the session id as a reference on the refunded page', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => paidSession({ refunded: true, disputed: false }),
+    });
+
+    const res = await call(get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc123'));
+    const body = await res.text();
+    expect(body).toContain('cs_test_abc123');
+  });
+
+  it('returns 403 as HTML, not JSON, when the session has not been paid', async () => {
     mockFetch.mockResolvedValueOnce({
       ok: true,
       json: async () => ({
@@ -64,6 +123,8 @@ describe('onRequestGet', () => {
 
     const res = await call(get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'));
     expect(res.status).toBe(403);
+    expect(res.headers.get('content-type')).toMatch(/^text\/html/);
+    expect(await res.text()).toMatch(/isn't valid/i);
   });
 
   it('returns 403 when the paid line item is for a different price', async () => {
@@ -72,11 +133,13 @@ describe('onRequestGet', () => {
       json: async () => ({
         payment_status: 'paid',
         line_items: { data: [{ price: { id: 'price_other' } }] },
+        payment_intent: { latest_charge: { refunded: false, disputed: false } },
       }),
     });
 
     const res = await call(get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'));
     expect(res.status).toBe(403);
+    expect(res.headers.get('content-type')).toMatch(/^text\/html/);
   });
 
   it('returns 403 for a missing session id, without calling Stripe', async () => {
@@ -109,13 +172,7 @@ describe('onRequestGet', () => {
   });
 
   it('records a download against the session when a KV binding is present', async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      json: async () => ({
-        payment_status: 'paid',
-        line_items: { data: [{ price: { id: 'price_123' } }] },
-      }),
-    });
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
     const kv = fakeKv();
 
     const res = await call(
@@ -130,13 +187,7 @@ describe('onRequestGet', () => {
   });
 
   it('still serves the file when the KV binding throws', async () => {
-    mockFetch.mockResolvedValueOnce({
-      ok: true,
-      json: async () => ({
-        payment_status: 'paid',
-        line_items: { data: [{ price: { id: 'price_123' } }] },
-      }),
-    });
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
     const kv = {
       get: jest.fn().mockRejectedValue(new Error('kv down')),
       put: jest.fn(),
@@ -148,6 +199,39 @@ describe('onRequestGet', () => {
     );
 
     expect(res.status).toBe(200);
+  });
+
+  it('does not record a download for a refunded session', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => paidSession({ refunded: true, disputed: false }),
+    });
+    const kv = fakeKv();
+
+    await call(
+      get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'),
+      { ...env, DOWNLOAD_LOG: kv }
+    );
+
+    expect(kv.put).not.toHaveBeenCalled();
+  });
+
+  it('does not record a download for an invalid session', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({
+        payment_status: 'unpaid',
+        line_items: { data: [{ price: { id: 'price_123' } }] },
+      }),
+    });
+    const kv = fakeKv();
+
+    await call(
+      get('https://www.helpfulmoney.site/api/download?session_id=cs_test_abc'),
+      { ...env, DOWNLOAD_LOG: kv }
+    );
+
+    expect(kv.put).not.toHaveBeenCalled();
   });
 });
 
@@ -190,15 +274,39 @@ describe('base64ToUint8Array', () => {
 describe('verifyPaidSession', () => {
   beforeEach(() => mockFetch.mockReset());
 
-  it('returns false without calling Stripe for an empty id', async () => {
+  it('returns "ok" for a paid, unrefunded session with a matching price', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
+    const result = await verifyPaidSession('cs_test_abc', 'price_123', 'rk_test_key');
+    expect(result).toBe('ok');
+  });
+
+  it('returns "refunded" when the latest charge was refunded', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => paidSession({ refunded: true, disputed: false }),
+    });
+    const result = await verifyPaidSession('cs_test_abc', 'price_123', 'rk_test_key');
+    expect(result).toBe('refunded');
+  });
+
+  it('returns "refunded" when the latest charge is disputed', async () => {
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => paidSession({ refunded: false, disputed: true }),
+    });
+    const result = await verifyPaidSession('cs_test_abc', 'price_123', 'rk_test_key');
+    expect(result).toBe('refunded');
+  });
+
+  it('returns "invalid" without calling Stripe for an empty id', async () => {
     const result = await verifyPaidSession('', 'price_123', 'rk_test_key');
-    expect(result).toBe(false);
+    expect(result).toBe('invalid');
     expect(mockFetch).not.toHaveBeenCalled();
   });
 
-  it('returns false when the Stripe request throws', async () => {
+  it('returns "invalid" when the Stripe request throws', async () => {
     mockFetch.mockRejectedValueOnce(new Error('network down'));
     const result = await verifyPaidSession('cs_test_abc', 'price_123', 'rk_test_key');
-    expect(result).toBe(false);
+    expect(result).toBe('invalid');
   });
 });
