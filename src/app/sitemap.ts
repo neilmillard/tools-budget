@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog/oldest',
     '/challenge/give-every-pound-a-job',
     '/contact',
+    '/download/budget-worksheet',
     '/fiftythirtytwenty',
     '/guide/give-every-pound-a-job',
     '/investing',
