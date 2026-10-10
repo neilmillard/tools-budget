@@ -28,7 +28,7 @@ export default function GuideSalesPageContent() {
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">What you get</h2>
         <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 leading-relaxed">
           <li>
-            <strong>The guide</strong> (a 15–20 minute read): zero-based/envelope budgeting step by step, how
+            <strong>The guide</strong> (a PDF, 15–20 minute read): zero-based/envelope budgeting step by step, how
             to handle bills that don&apos;t come every month, what to do when a category runs over, and a
             full worked example you can copy row by row.
           </li>
