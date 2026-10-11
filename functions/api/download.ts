@@ -47,6 +47,8 @@ interface StripeCheckoutSession {
   payment_intent?: { latest_charge?: StripeCharge };
   customer_details?: { email?: string | null } | null;
   metadata?: { marketing_consent?: string };
+  amount_total?: number;
+  created?: number;
 }
 
 type SessionCheck = 'ok' | 'refunded' | 'invalid';
@@ -55,6 +57,8 @@ interface SessionCheckResult {
   status: SessionCheck;
   email: string | null;
   marketingConsent: boolean;
+  amountTotal: number | null;
+  purchasedAt: string | null;
 }
 
 const SESSION_ID_PATTERN = /^cs_[a-zA-Z0-9_]+$/;
@@ -95,8 +99,16 @@ export async function verifyPaidSession(
   priceId: string,
   secretKey: string
 ): Promise<SessionCheckResult> {
+  const invalid: SessionCheckResult = {
+    status: 'invalid',
+    email: null,
+    marketingConsent: false,
+    amountTotal: null,
+    purchasedAt: null,
+  };
+
   if (!SESSION_ID_PATTERN.test(sessionId)) {
-    return { status: 'invalid', email: null, marketingConsent: false };
+    return invalid;
   }
 
   try {
@@ -107,29 +119,31 @@ export async function verifyPaidSession(
     );
 
     if (!response.ok) {
-      return { status: 'invalid', email: null, marketingConsent: false };
+      return invalid;
     }
 
     const session = (await response.json()) as StripeCheckoutSession;
     if (session.payment_status !== 'paid') {
-      return { status: 'invalid', email: null, marketingConsent: false };
+      return invalid;
     }
 
     const paidPriceIds = session.line_items?.data?.map((item) => item.price?.id) ?? [];
     if (!paidPriceIds.includes(priceId)) {
-      return { status: 'invalid', email: null, marketingConsent: false };
+      return invalid;
     }
 
     const email = session.customer_details?.email ?? null;
     const marketingConsent = session.metadata?.marketing_consent === 'true';
+    const amountTotal = session.amount_total ?? null;
+    const purchasedAt = session.created ? new Date(session.created * 1000).toISOString() : null;
     const charge = session.payment_intent?.latest_charge;
     if (charge?.refunded || charge?.disputed) {
-      return { status: 'refunded', email, marketingConsent };
+      return { status: 'refunded', email, marketingConsent, amountTotal, purchasedAt };
     }
 
-    return { status: 'ok', email, marketingConsent };
+    return { status: 'ok', email, marketingConsent, amountTotal, purchasedAt };
   } catch {
-    return { status: 'invalid', email: null, marketingConsent: false };
+    return invalid;
   }
 }
 
@@ -146,11 +160,19 @@ export async function subscribeBuyerToBrevo(
   listId: string,
   apiKey: string,
   marketingConsent: boolean,
-  marketingListId?: string
+  marketingListId?: string,
+  sale?: { sessionId: string; amountTotal: number | null; purchasedAt: string | null }
 ): Promise<{ ok: boolean }> {
   const listIds = [Number(listId)];
   if (marketingConsent && marketingListId) {
     listIds.push(Number(marketingListId));
+  }
+
+  const attributes: Record<string, unknown> = { MARKETING_CONSENT: marketingConsent };
+  if (sale) {
+    attributes.LAST_PURCHASE_SESSION_ID = sale.sessionId;
+    attributes.LAST_PURCHASE_AMOUNT = sale.amountTotal;
+    attributes.LAST_PURCHASE_DATE = sale.purchasedAt;
   }
 
   const response = await fetch('https://api.brevo.com/v3/contacts', {
@@ -162,7 +184,7 @@ export async function subscribeBuyerToBrevo(
     body: JSON.stringify({
       email,
       listIds,
-      attributes: { MARKETING_CONSENT: marketingConsent },
+      attributes,
       updateEnabled: true,
     }),
   });
@@ -281,7 +303,8 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
         env.BREVO_LIST_ID,
         env.BREVO_API_KEY,
         check.marketingConsent,
-        env.BREVO_MARKETING_LIST_ID
+        env.BREVO_MARKETING_LIST_ID,
+        { sessionId, amountTotal: check.amountTotal, purchasedAt: check.purchasedAt }
       );
     } catch {
       // Buyer-list capture is a nice-to-have; never fail the download because of it.
