@@ -11,6 +11,7 @@ const rehypeRaw = process.env.NODE_ENV === 'test'
   ? null
   : require("rehype-raw").default;
 import ToolCTA from "./ToolCTA";
+import TrackedAnchor from "./TrackedAnchor";
 
 const MockReactMarkdown = ({ children, components }: any) => {
   const ToolCTAComponent = components?.ToolCTA;
@@ -80,6 +81,8 @@ export default function BlogPost({ title, date, content, author, authorUrl }: Bl
               ToolCTA: ({ node, ...props }: any) => <ToolCTA {...props} />,
               // @ts-ignore
               toolcta: ({ node, ...props }: any) => <ToolCTA {...props} />,
+              // @ts-ignore
+              a: ({ node, ...props }: any) => <TrackedAnchor {...props} />,
             }}
           >
             {content}

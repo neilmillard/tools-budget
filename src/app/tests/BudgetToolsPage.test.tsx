@@ -10,11 +10,11 @@ jest.mock("react-chartjs-2", () => ({
 afterEach(() => cleanup());
 
 describe("Budget tools page", () => {
-  test("links to the paid guide as a next step", () => {
+  test("links to the paid guide as a next step, tagged with its entry source", () => {
     render(<Budget />);
     expect(screen.getByRole("link", { name: /give every pound a job/i })).toHaveAttribute(
       "href",
-      "/guide/give-every-pound-a-job"
+      "/guide/give-every-pound-a-job?from=budget-planner"
     );
   });
 });
