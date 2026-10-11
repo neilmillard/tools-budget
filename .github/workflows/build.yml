@@ -11,6 +11,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # The Sunday schedule run commits scripts/newsletter-state.json back to main;
+    # the default read-only GITHUB_TOKEN caused that push to fail (403), which left
+    # the state file stuck and made every run resend the entire backlog.
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code

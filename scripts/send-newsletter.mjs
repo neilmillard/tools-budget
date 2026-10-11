@@ -102,11 +102,11 @@ async function main() {
     console.log(`${dryRun ? "[dry-run] " : ""}Sending newsletter for "${post.title}" (${post.date})`);
     if (!dryRun) {
       await sendCampaign(post);
+      // Persist after every send, not just at the end of the batch: if a later
+      // post fails (or the backlog is large), already-sent posts stay recorded
+      // instead of being resent on the next run.
+      saveState({ lastSentDate: post.date });
     }
-  }
-
-  if (!dryRun) {
-    saveState({ lastSentDate: newlyPublished[newlyPublished.length - 1].date });
   }
 }
 
