@@ -394,12 +394,26 @@ Worked example: R1.
 3. Tap **Aa (Text)** and add frame 1's on-screen text. Drag the text's length
    on the timeline so it shows only during that photo. Repeat for each frame.
    R1's frame 1 also needs the small "AI character" tag.
-4. Optional voiceover: tap the **mic / Voiceover** and read the VO line (under
-   30 seconds). Or skip it and add quiet background music.
+4. Optional voiceover: add Nan's voice (see "Nan's voice" below) as the
+   Reel's audio. Or skip it and add quiet background music.
 5. Tap **Next**, then paste in the caption and the hashtags.
 6. Under **More options / Advanced settings**, turn on the **AI label** ("Made
    with AI"). Do this on every post.
 7. Share at the slot in the calendar (section 4).
+
+### Nan's voice (voiceovers)
+
+Chosen on DEL-609 (2026-10-11): Higgsfield's **Vera** voice, slowed and pitched
+down slightly so she sounds older. Use the same settings for every Reel so Nan
+always sounds the same.
+
+1. On higgsfield.ai, open text-to-speech and choose the **Seed Audio** model and
+   the **Vera** voice.
+2. Set **speech rate -15** and **pitch -2**. Leave everything else at its
+   default.
+3. Paste in the Reel's VO line from section 2 and generate (about 1.5 credits).
+4. Download the audio, add it to the Reel in Instagram's editor, and line the
+   frames up with it.
 
 ### Carousels (C1–C5): add the text to the images first
 
