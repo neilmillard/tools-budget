@@ -19,13 +19,21 @@ interface CheckoutResult {
   message?: string;
 }
 
+// Keep in sync with ENTRY_SOURCES in src/lib/analytics.ts.
+const ENTRY_SOURCES = ['budget-planner', 'blog-50-30-20', 'challenge', 'worksheet', 'instagram'];
+
+export function resolveEntry(value: unknown): string {
+  return typeof value === 'string' && ENTRY_SOURCES.includes(value) ? value : 'direct';
+}
+
 // Hosted Checkout only: the session's own `url` is where the browser is sent,
 // so this never needs a publishable key or client-side Stripe.js.
 export async function createCheckoutSession(
   priceId: string,
   siteUrl: string,
   secretKey: string,
-  marketingConsent: boolean
+  marketingConsent: boolean,
+  entry: string = 'direct'
 ): Promise<CheckoutResult> {
   const body = new URLSearchParams({
     mode: 'payment',
@@ -40,6 +48,8 @@ export async function createCheckoutSession(
     // Carried through to download.ts via the session's own metadata, since the
     // buyer's marketing choice is made here but only acted on at download time.
     'metadata[marketing_consent]': String(marketingConsent),
+    // Which page sent the buyer here, so sales can be traced back to the link that drove them.
+    'metadata[entry]': resolveEntry(entry),
   });
 
   const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
@@ -71,18 +81,21 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   let marketingConsent = false;
+  let entry = 'direct';
   try {
-    const body = (await request.json()) as { marketingConsent?: boolean };
+    const body = (await request.json()) as { marketingConsent?: boolean; from?: string };
     marketingConsent = body.marketingConsent === true;
+    entry = resolveEntry(body.from);
   } catch {
-    // No body (or a non-JSON one) just means no marketing consent was given.
+    // No body (or a non-JSON one) just means no marketing consent or entry source was given.
   }
 
   const result = await createCheckoutSession(
     env.STRIPE_PRICE_ID,
     env.NEXT_PUBLIC_SITE_URL,
     env.STRIPE_SECRET_KEY,
-    marketingConsent
+    marketingConsent,
+    entry
   );
 
   if (!result.ok || !result.url) {

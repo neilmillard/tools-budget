@@ -51,4 +51,9 @@ describe("Blog Content Integration", () => {
       expect(post.content).toMatch(/description=/);
     }
   });
+
+  it("should link to the paid guide from the 50-30-20 post, tagged with its entry source", async () => {
+    const post = await getBlogPost("what-the-50-30-20-rule-looks-like");
+    expect(post.content).toContain("](/guide/give-every-pound-a-job/?from=blog-50-30-20)");
+  });
 });

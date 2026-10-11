@@ -1,5 +1,6 @@
 'use client';
 import { useId, useState } from 'react';
+import { getEntrySourceFromSearch, trackEvent } from '@/lib/analytics';
 
 interface BuyButtonProps {
   // Overridable for tests — jsdom's window.location can't be reassigned directly.
@@ -21,11 +22,14 @@ export default function BuyButton({ navigate = (url) => { window.location.href =
     setStatus('loading');
     setError('');
 
+    const from = getEntrySourceFromSearch(window.location.search);
+    trackEvent('begin_checkout', { source: from });
+
     try {
       const response = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ marketingConsent }),
+        body: JSON.stringify({ marketingConsent, from }),
       });
       const data = (await response.json()) as { url?: string; message?: string };
 

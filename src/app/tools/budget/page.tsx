@@ -1,5 +1,6 @@
 import BudgetPlanner from "@/app/components/calculators/BudgetPlanner";
 import RelatedInsights from "@/app/components/calculators/RelatedInsights";
+import GuideCTALink from "@/app/components/GuideCTALink";
 import { Metadata } from "next";
 import SoftwareApplicationSchema from "@/components/schema/SoftwareApplicationSchema";
 
@@ -33,6 +34,9 @@ export default function Budget() {
             <BudgetPlanner />
             <div className="max-w-4xl mx-auto px-6 pb-12">
                 <RelatedInsights posts={relatedPosts} />
+                <p className="mt-6 text-gray-700">
+                    Want a method, not just numbers? <GuideCTALink href="/guide/give-every-pound-a-job/?from=budget-planner" className="text-blue-600 underline">Give Every Pound a Job</GuideCTALink>, a step-by-step budgeting guide (£7).
+                </p>
             </div>
         </>
     )

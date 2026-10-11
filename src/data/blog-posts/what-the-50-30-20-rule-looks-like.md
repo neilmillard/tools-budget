@@ -68,6 +68,8 @@ In this scenario, Alex would need to reduce the "Wants" category to maintain the
 3. **Categorize every expense.**
 4. **Identify the gaps.** Are you spending 45% on "Wants" while only saving 5%?
 
+If you'd rather give every pound a specific job than work to percentages, our [Give Every Pound a Job guide](/guide/give-every-pound-a-job/?from=blog-50-30-20) (£7) walks you through it.
+
 Remember, the 50-30-20 rule is a target, not a law. The most important part is the **20%**. If you can hit that, you're ahead of the vast majority of people.
 
 *Alex's budget above is generated with our own [Budget Planner](/tools/budget/) on an illustrative £40,000 salary — enter your own take-home pay and outgoings for your split.*

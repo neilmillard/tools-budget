@@ -49,6 +49,13 @@ describe("guide sales page metadata", () => {
     });
     expect(guideMetadata.robots).toBeUndefined();
   });
+
+  test("declares a share image, og:url and its own twitter title/description", () => {
+    expect(guideMetadata.openGraph?.images).toBeTruthy();
+    expect(guideMetadata.openGraph?.url).toBe("https://www.helpfulmoney.site/guide/give-every-pound-a-job/");
+    expect(guideMetadata.twitter?.title).toBe(guideMetadata.title);
+    expect(guideMetadata.twitter?.description).toBe(guideMetadata.description);
+  });
 });
 
 describe("challenge sales page metadata", () => {
@@ -57,6 +64,13 @@ describe("challenge sales page metadata", () => {
       canonical: "/challenge/give-every-pound-a-job/",
     });
     expect(challengeMetadata.robots).toBeUndefined();
+  });
+
+  test("declares a share image, og:url and its own twitter title/description", () => {
+    expect(challengeMetadata.openGraph?.images).toBeTruthy();
+    expect(challengeMetadata.openGraph?.url).toBe("https://www.helpfulmoney.site/challenge/give-every-pound-a-job/");
+    expect(challengeMetadata.twitter?.title).toBe(challengeMetadata.title);
+    expect(challengeMetadata.twitter?.description).toBe(challengeMetadata.description);
   });
 });
 

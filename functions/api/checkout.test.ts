@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import { onRequestPost, createCheckoutSession } from './checkout';
+import { onRequestPost, createCheckoutSession, resolveEntry } from './checkout';
 
 const mockFetch = jest.fn();
 global.fetch = mockFetch;
@@ -49,6 +49,7 @@ describe('onRequestPost', () => {
     expect(body.get('cancel_url')).toBe('https://www.helpfulmoney.site/checkout-cancelled');
     expect(body.get('custom_text[submit][message]')).toMatch(/lose the right to cancel/i);
     expect(body.get('metadata[marketing_consent]')).toBe('false');
+    expect(body.get('metadata[entry]')).toBe('direct');
   });
 
   it('sends marketing_consent true in metadata when the buyer opted in', async () => {
@@ -58,6 +59,24 @@ describe('onRequestPost', () => {
     const [, init] = mockFetch.mock.calls[0];
     const body = new URLSearchParams(init.body);
     expect(body.get('metadata[marketing_consent]')).toBe('true');
+  });
+
+  it('sends the allowlisted entry source in metadata', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => ({ url: 'https://checkout.stripe.com/c/pay/cs_test_abc' }) });
+    await call(post({ from: 'budget-planner' }));
+
+    const [, init] = mockFetch.mock.calls[0];
+    const body = new URLSearchParams(init.body);
+    expect(body.get('metadata[entry]')).toBe('budget-planner');
+  });
+
+  it('falls back to direct in metadata for an unrecognised entry source', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, json: async () => ({ url: 'https://checkout.stripe.com/c/pay/cs_test_abc' }) });
+    await call(post({ from: 'totally-unknown' }));
+
+    const [, init] = mockFetch.mock.calls[0];
+    const body = new URLSearchParams(init.body);
+    expect(body.get('metadata[entry]')).toBe('direct');
   });
 
   it('returns 503 when Stripe is not configured yet', async () => {
@@ -87,5 +106,21 @@ describe('createCheckoutSession', () => {
     const result = await createCheckoutSession('price_123', 'https://www.helpfulmoney.site', 'rk_test_key', false);
     expect(result.ok).toBe(false);
     expect(result.message).toMatch(/failed/i);
+  });
+});
+
+describe('resolveEntry', () => {
+  it('passes through an allowlisted entry source', () => {
+    expect(resolveEntry('budget-planner')).toBe('budget-planner');
+    expect(resolveEntry('blog-50-30-20')).toBe('blog-50-30-20');
+    expect(resolveEntry('challenge')).toBe('challenge');
+    expect(resolveEntry('worksheet')).toBe('worksheet');
+    expect(resolveEntry('instagram')).toBe('instagram');
+  });
+
+  it('falls back to direct for anything else', () => {
+    expect(resolveEntry('totally-unknown')).toBe('direct');
+    expect(resolveEntry(undefined)).toBe('direct');
+    expect(resolveEntry(42)).toBe('direct');
   });
 });
