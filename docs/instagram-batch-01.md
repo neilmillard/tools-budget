@@ -403,17 +403,22 @@ Worked example: R1.
 
 ### Nan's voice (voiceovers)
 
-Chosen on DEL-609 (2026-10-11): Higgsfield's **Vera** voice, slowed and pitched
-down slightly so she sounds older. Use the same settings for every Reel so Nan
-always sounds the same.
+Chosen on DEL-609 (2026-10-11): Higgsfield's **Vera** voice, slowed by about
+10% and lowered by about 1.5 semitones so she sounds older. higgsfield.ai has
+no speed or pitch controls, so that adjustment is done afterwards, the same way
+for every Reel, so Nan always sounds the same.
 
-1. On higgsfield.ai, open text-to-speech and choose the **Seed Audio** model and
-   the **Vera** voice.
-2. Set **speech rate -15** and **pitch -2**. Leave everything else at its
-   default.
-3. Paste in the Reel's VO line from section 2 and generate (about 1.5 credits).
-4. Download the audio, add it to the Reel in Instagram's editor, and line the
-   frames up with it.
+1. On higgsfield.ai, open text-to-speech, choose the **Vera** voice and leave
+   the settings at their defaults.
+2. Paste in the Reel's VO line from section 2 and generate.
+3. Download the audio and attach it to that week's posting issue (DEL-622 to
+   DEL-625). An agent applies the Nan adjustment and attaches the finished file
+   back.
+4. Add the finished audio to the Reel in Instagram's editor and line the frames
+   up with it.
+
+The adjustment, for reference (ffmpeg, 44.1 kHz source):
+`asetrate=44100*0.917,aresample=44100,atempo=0.981`
 
 ### Carousels (C1–C5): add the text to the images first
 
