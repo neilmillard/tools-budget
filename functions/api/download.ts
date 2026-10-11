@@ -11,6 +11,11 @@ interface Env {
   DOWNLOAD_LOG?: KVNamespace;
   BREVO_API_KEY?: string;
   BREVO_LIST_ID?: string;
+  // DEL-608: this is Brevo list 4, set by Neil during DEL-607. NewsletterForm.tsx's
+  // own BREVO_NEWSLETTER_LIST_ID (functions/api/newsletter-signup.ts) likely points
+  // at the same list 4 - still unconfirmed in the Brevo dashboard - but is kept as a
+  // separate env var since the two opt-ins (homepage newsletter vs. checkout
+  // marketing consent) are independent triggers even if they land on the same list.
   BREVO_MARKETING_LIST_ID?: string;
   NEXT_PUBLIC_SITE_URL?: string;
 }
