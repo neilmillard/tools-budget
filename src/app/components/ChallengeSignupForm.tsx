@@ -52,9 +52,17 @@ export default function ChallengeSignupForm() {
         {status === 'submitting' ? 'Starting…' : 'Start Day 1 — free'}
       </button>
       {status === 'success' && (
-        <p className="mt-2 text-green-700" role="status">
-          {message}
-        </p>
+        <div className="mt-2 text-green-700" role="status">
+          <p>{message}</p>
+          <p className="mt-2">
+            <strong>Day 1:</strong> Write down every pound you spent yesterday. No judgment, just the list.
+          </p>
+          <p className="mt-2">
+            <a href="/download/Give Every Pound a Job - Budget Worksheet.xlsx" className="text-blue-600 underline">
+              Download the free worksheet
+            </a>
+          </p>
+        </div>
       )}
       {status === 'error' && (
         <p className="mt-2 text-red-600" role="alert">

@@ -74,5 +74,5 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return Response.json({ message: 'Failed to sign up. Please try again later.' }, { status: 500 });
   }
 
-  return Response.json({ message: "You're signed up — Day 1 starts now. Check your inbox." }, { status: 200 });
+  return Response.json({ message: "You're signed up. Here's Day 1. The rest comes by email." }, { status: 200 });
 };
