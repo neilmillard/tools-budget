@@ -38,7 +38,7 @@ export default function ChallengeSalesPageContent() {
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4 text-gray-800">What you get</h2>
         <ul className="list-disc pl-6 space-y-2 text-lg text-gray-700 leading-relaxed">
-          <li>One short daily email with that day&apos;s action — no app, no spreadsheet literacy required.</li>
+          <li>A short email each week with that week&apos;s actions — no app, no spreadsheet literacy required.</li>
           <li>The free budget worksheet, linked on Day 3.</li>
           <li>
             Want the full method with worked examples once you&apos;ve felt it work? The{' '}

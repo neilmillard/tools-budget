@@ -33,6 +33,12 @@ describe("ChallengeSalesPageContent", () => {
     );
   });
 
+  test("promises a weekly email, not a daily one", () => {
+    render(<ChallengeSalesPageContent />);
+    expect(screen.queryByText(/daily email/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/a short email each week with that week's actions/i)).toBeInTheDocument();
+  });
+
   test("makes no investment, bank or product recommendations", () => {
     render(<ChallengeSalesPageContent />);
     expect(
