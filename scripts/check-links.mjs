@@ -4,9 +4,33 @@ import path from 'path';
 const POSTS_DIR = path.join(process.cwd(), 'src', 'data', 'blog-posts');
 
 /**
- * Checks all markdown blog posts for internal links that are missing a trailing slash.
- * Internal links are defined as those starting with '/' and not having an extension (like .png).
+ * Finds internal markdown links that are missing a trailing slash. Internal
+ * links are those starting with '/' and not having a file extension (like
+ * .png). The path is checked before any '?query' or '#fragment', so a link
+ * such as `/guide/?from=x` is not flagged just because the full URL doesn't
+ * end in '/'.
  */
+export function findTrailingSlashIssues(content) {
+  const regex = /\[.*?]\((\/[^)]+)\)/g;
+  const issues = [];
+  let match;
+
+  while ((match = regex.exec(content)) !== null) {
+    const url = match[1];
+    const pathOnly = url.split(/[?#]/)[0];
+
+    // Skip if it looks like a file (has an extension)
+    if (/\.[a-z0-9]{2,4}$/i.test(pathOnly)) continue;
+
+    // Already has a trailing slash before any query/fragment
+    if (pathOnly.endsWith('/')) continue;
+
+    issues.push({ match: match[0], url });
+  }
+
+  return issues;
+}
+
 function checkTrailingSlashes() {
   if (!fs.existsSync(POSTS_DIR)) {
     console.log(`Directory ${POSTS_DIR} does not exist. Skipping check.`);
@@ -19,27 +43,11 @@ function checkTrailingSlashes() {
   files.forEach(file => {
     if (!file.endsWith('.md')) return;
     const content = fs.readFileSync(path.join(POSTS_DIR, file), 'utf-8');
-    
-    // Regex explanation:
-    // \[.*?\]\( - match markdown link start [text](
-    // ( - start group 1 (the URL)
-    // \/ - must start with /
-    // [^\)]+? - match one or more non-) characters (lazy)
-    // (?<!\/) - negative lookbehind: the character before ) must NOT be /
-    // (?<!\.(?:png|jpg|jpeg|gif|svg|pdf|webp)) - negative lookbehind: ensure it's not a file extension
-    // \) - match closing )
-    // We use a simplified version first and refine if needed, similar to what worked in previous session.
-    
-    const regex = /\[.*?]\(((\/[^)]+?)(?<!\/))\)/g;
-    let match;
-    while ((match = regex.exec(content)) !== null) {
-      const url = match[1];
-      // Skip if it looks like a file (has an extension)
-      if (/\.[a-z0-9]{2,4}$/i.test(url)) continue;
-      
-      console.log(`Issue in ${file}: ${match[0]} (URL: ${url}) - Missing trailing slash`);
+
+    findTrailingSlashIssues(content).forEach(issue => {
+      console.log(`Issue in ${file}: ${issue.match} (URL: ${issue.url}) - Missing trailing slash`);
       issuesFound++;
-    }
+    });
   });
 
   if (issuesFound > 0) {
@@ -51,4 +59,6 @@ function checkTrailingSlashes() {
   }
 }
 
-checkTrailingSlashes();
+if (import.meta.url === `file://${process.argv[1]}`) {
+  checkTrailingSlashes();
+}
