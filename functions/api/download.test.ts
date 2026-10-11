@@ -38,7 +38,9 @@ function fakeKv(initial: Record<string, string> = {}) {
 function paidSession(
   charge: Record<string, unknown> = { refunded: false, disputed: false },
   email: string | null = 'buyer@example.com',
-  marketingConsent = false
+  marketingConsent = false,
+  amountTotal = 700,
+  created = 1791590400 // 2026-10-10T00:00:00.000Z
 ) {
   return {
     payment_status: 'paid',
@@ -46,6 +48,8 @@ function paidSession(
     payment_intent: { latest_charge: charge },
     customer_details: email ? { email } : null,
     metadata: { marketing_consent: String(marketingConsent) },
+    amount_total: amountTotal,
+    created,
   };
 }
 
@@ -276,7 +280,12 @@ describe('onRequestGet', () => {
     expect(JSON.parse(init.body)).toEqual({
       email: 'buyer@example.com',
       listIds: [22],
-      attributes: { MARKETING_CONSENT: false },
+      attributes: {
+        MARKETING_CONSENT: false,
+        LAST_PURCHASE_SESSION_ID: 'cs_test_abc',
+        LAST_PURCHASE_AMOUNT: 700,
+        LAST_PURCHASE_DATE: '2026-10-10T00:00:00.000Z',
+      },
       updateEnabled: true,
     });
   });
@@ -294,7 +303,12 @@ describe('onRequestGet', () => {
     expect(JSON.parse(init.body)).toEqual({
       email: 'buyer@example.com',
       listIds: [22, 23],
-      attributes: { MARKETING_CONSENT: true },
+      attributes: {
+        MARKETING_CONSENT: true,
+        LAST_PURCHASE_SESSION_ID: 'cs_test_abc',
+        LAST_PURCHASE_AMOUNT: 700,
+        LAST_PURCHASE_DATE: '2026-10-10T00:00:00.000Z',
+      },
       updateEnabled: true,
     });
   });
@@ -312,7 +326,12 @@ describe('onRequestGet', () => {
     expect(JSON.parse(init.body)).toEqual({
       email: 'buyer@example.com',
       listIds: [22],
-      attributes: { MARKETING_CONSENT: false },
+      attributes: {
+        MARKETING_CONSENT: false,
+        LAST_PURCHASE_SESSION_ID: 'cs_test_abc',
+        LAST_PURCHASE_AMOUNT: 700,
+        LAST_PURCHASE_DATE: '2026-10-10T00:00:00.000Z',
+      },
       updateEnabled: true,
     });
   });
@@ -478,7 +497,13 @@ describe('verifyPaidSession', () => {
   it('returns "ok" and the buyer\'s email for a paid, unrefunded session with a matching price', async () => {
     mockFetch.mockResolvedValueOnce({ ok: true, json: async () => paidSession() });
     const result = await verifyPaidSession('cs_test_abc', 'price_123', 'rk_test_key');
-    expect(result).toEqual({ status: 'ok', email: 'buyer@example.com', marketingConsent: false });
+    expect(result).toEqual({
+      status: 'ok',
+      email: 'buyer@example.com',
+      marketingConsent: false,
+      amountTotal: 700,
+      purchasedAt: '2026-10-10T00:00:00.000Z',
+    });
   });
 
   it('returns "ok" with a null email when Stripe has no customer details', async () => {
@@ -487,7 +512,13 @@ describe('verifyPaidSession', () => {
       json: async () => paidSession({ refunded: false, disputed: false }, null),
     });
     const result = await verifyPaidSession('cs_test_abc', 'price_123', 'rk_test_key');
-    expect(result).toEqual({ status: 'ok', email: null, marketingConsent: false });
+    expect(result).toEqual({
+      status: 'ok',
+      email: null,
+      marketingConsent: false,
+      amountTotal: 700,
+      purchasedAt: '2026-10-10T00:00:00.000Z',
+    });
   });
 
   it('returns marketingConsent true when the Checkout session metadata says so', async () => {
@@ -519,7 +550,13 @@ describe('verifyPaidSession', () => {
 
   it('returns "invalid" without calling Stripe for an empty id', async () => {
     const result = await verifyPaidSession('', 'price_123', 'rk_test_key');
-    expect(result).toEqual({ status: 'invalid', email: null, marketingConsent: false });
+    expect(result).toEqual({
+      status: 'invalid',
+      email: null,
+      marketingConsent: false,
+      amountTotal: null,
+      purchasedAt: null,
+    });
     expect(mockFetch).not.toHaveBeenCalled();
   });
 
@@ -555,6 +592,27 @@ describe('subscribeBuyerToBrevo', () => {
       email: 'buyer@example.com',
       listIds: [22, 23],
       attributes: { MARKETING_CONSENT: true },
+      updateEnabled: true,
+    });
+  });
+
+  it('records the sale (session id, amount, date) on the contact when given', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true });
+    await subscribeBuyerToBrevo('buyer@example.com', '22', 'k', false, undefined, {
+      sessionId: 'cs_test_abc',
+      amountTotal: 700,
+      purchasedAt: '2026-10-10T00:00:00.000Z',
+    });
+    const [, init] = mockFetch.mock.calls[0];
+    expect(JSON.parse(init.body)).toEqual({
+      email: 'buyer@example.com',
+      listIds: [22],
+      attributes: {
+        MARKETING_CONSENT: false,
+        LAST_PURCHASE_SESSION_ID: 'cs_test_abc',
+        LAST_PURCHASE_AMOUNT: 700,
+        LAST_PURCHASE_DATE: '2026-10-10T00:00:00.000Z',
+      },
       updateEnabled: true,
     });
   });
