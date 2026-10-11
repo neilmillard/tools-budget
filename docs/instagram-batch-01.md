@@ -78,10 +78,10 @@ product/bank/investment recommendations, no income claims.
 - Hook (on-screen, frame 1): "I'm Nan Pearl. I'm not real — but my rules are."
 - Frames:
   1. B1, text: "I'm Nan Pearl. I'm not real — but my rules are." + small "AI character" tag overlay.
-  2. B1 (angle 2), text: "I'm an AI-created character. No financial advice — just the habits my generation used."
+  2. B1 (angle 2), text: "I'm an AI-created character. No financial advice — just old-fashioned budgeting habits."
   3. B2, text: "Think zero-based budgeting. Every pound gets a job before you spend it."
   4. B5, text: "Run by helpfulmoney.site. Free 30-day challenge, link in bio."
-- Voiceover (optional, <30s): "I'm Nan Pearl — an AI character, not a real person, sharing the money habits my generation grew up with. No advice, just rules. First one: give every pound a job. There's a free 30-day challenge to try it — link's in my bio."
+- Voiceover (optional, <30s): "I'm Nan Pearl — an AI character, not a real person, sharing old-fashioned budgeting habits. No advice, just rules. First one: give every pound a job. There's a free 30-day challenge to try it — link's in my bio."
 - Caption: "Not real, but the rules are. 🫖 I'm an AI-created character sharing old-fashioned budgeting habits — zero-based, envelope-style, no spreadsheet app required. Not financial advice, just method. Free 30-day challenge to try it yourself — link in bio."
 - Hashtags: #budgetingtips #zerobasedbudgeting #moneysavingtips
 - CTA: free challenge signup. No `#ad`.
@@ -102,10 +102,10 @@ product/bank/investment recommendations, no income claims.
 - Hook: "Decide where your money goes before it decides for you."
 - Frames:
   1. B4, text: "Pay yourself first."
-  2. B3, text: "Before rent, before groceries, before anything — decide what goes to savings."
+  2. B3, text: "After the essentials, before the extras — decide what goes to savings."
   3. B2, text: "Even a small envelope counts. £1 a day is still a habit."
   4. B6, text: "Try it for 30 days — free challenge, link in bio."
-- VO (<30s): "Pay yourself first. Before rent, before groceries — decide what goes to savings, even if it's small. A pound a day still builds the habit. There's a free 30-day challenge that walks through it, link's in my bio."
+- VO (<30s): "Pay yourself first. After the essentials, before the extras — decide what goes to savings, even if it's small. A pound a day still builds the habit. There's a free 30-day challenge that walks through it, link's in my bio."
 - Caption: "Pay yourself first isn't about how much — it's about deciding before the month spends it for you. Free 30-day challenge in bio if you want to build the habit properly."
 - Hashtags: #payyourselffirst #savingshabit #ukfinance
 - CTA: free challenge. No `#ad`.
@@ -137,14 +137,14 @@ product/bank/investment recommendations, no income claims.
 - CTA: free worksheet. No `#ad`.
 
 **R6 — "The full method is in the Helpful Money guide"** *(renamed per REVIEW-DEL-584 finding 1 — was "Nan Pearl's full budgeting method is written down"; now points at the guide's credibility, not Nan's biography)*
-- Hook: "Everything I've shared this month, written down properly."
+- Hook: "Everything I've shared so far, written down properly."
 - Frames:
-  1. B3, text: "#ad — Everything I've shared this month, written down properly."
+  1. B3, text: "#ad — Everything I've shared so far, written down properly."
   2. B2, text: "The full method, step by step, plus a worked example."
   3. B6, text: "£7. One-off. No subscription."
   4. B1, text: "Helpful Money guide — link in bio."
-- VO (<30s): "Everything I've shared this month is written down properly in the Helpful Money guide — the full method, step by step, with a worked example. It's £7, one-off, no subscription. Link's in my bio. #ad"
-- Caption: "#ad Everything I've shared this month, written down properly: the full zero-based method, step by step, plus a worked example. The 'Give Every Pound a Job' guide from Helpful Money — £7, one-off. Link in bio."
+- VO (<30s): "Everything I've shared so far is written down properly in the Helpful Money guide — the full method, step by step, with a worked example. It's £7, one-off, no subscription. Link's in my bio. #ad"
+- Caption: "#ad Everything I've shared so far, written down properly: the full zero-based method, step by step, plus a worked example. The 'Give Every Pound a Job' guide from Helpful Money — £7, one-off. Link in bio."
 - Hashtags: #zerobasedbudgeting #budgetingguide
 - CTA: £7 guide. **Starts with `#ad`.**
 
@@ -258,16 +258,16 @@ Same rules: AI label on, no testimonials, method only.
 - Hashtags: #budgetingtips #moneyrules
 - CTA: free worksheet. No `#ad`.
 
-**C4 (week 3, guide CTA) — "The 6 steps of Give Every Pound a Job"**
-- Slide 1 (cover, B1): "#ad — the 6-step method, in full."
+**C4 (week 3, free) — "The 6 steps of Give Every Pound a Job"**
+- Slide 1 (cover, B1): "The 6-step method, in full."
 - Slide 2 (B3): "1. List true expenses, including the annual ones."
 - Slide 3 (B2): "2. Turn expenses into categories ('tins')."
 - Slide 4 (B3): "3. Assign every pound until income minus jobs is zero."
 - Slide 5 (B4): "4. Track spend against each tin, not the whole account."
-- Slide 6 (B6): "5. Roll with overspends — move money or adjust. 6. Review monthly, rebuild categories around reality. Full guide, worked example, £7 — link in bio."
-- Caption: "#ad The six steps, in one save-able post — the Helpful Money guide goes through each one with a full worked example. £7, link in bio."
+- Slide 6 (B6): "5. Roll with overspends — move money or adjust. 6. Review monthly, rebuild categories around reality. Day-by-day in the free challenge — link in bio."
+- Caption: "The six steps, in one save-able post. Want them as daily actions instead? Free 30-day challenge in bio."
 - Hashtags: #zerobasedbudgeting #budgetingguide
-- CTA: £7 guide. **Starts with `#ad`.**
+- CTA: free challenge. No `#ad`.
 
 **C5 (week 4, free) — "Keep the habit past day 30"**
 - Slide 1 (cover, B6): "Keep the budget going past day one."
@@ -300,7 +300,7 @@ adjust from Insights after week 1 if the data says otherwise).
 | 3 | Wed | 7pm | C3 — What to do when you overspend | Free worksheet |
 | 3 | Thu | 7pm | R8 — Nan's rule: allocated, not spent | Free worksheet |
 | 3 | Fri | 7pm | R9 — Roll with the punches | **Guide, #ad** |
-| 3 | Sat | 12pm | C4 — The 6 steps in full | **Guide, #ad** |
+| 3 | Sat | 12pm | C4 — The 6 steps in full | Free challenge |
 | 4 | Mon | 7pm | R10 — Set up a true-expense tin | Free challenge |
 | 4 | Wed | 7pm | C5 — Keep the habit past day 30 | Free challenge |
 | 4 | Thu | 7pm | R11 — Automate one thing | Free challenge |
@@ -323,10 +323,10 @@ Generate once, reuse across the month:
 - On-screen text is burned in during editing (Instagram's own editor or
   CapCut), **not** a reason to regenerate the image — the same B1–B6 still is
   reused across every Reel frame and carousel slide that calls for it above.
-- A handful of frames reference the worksheet or guide directly (e.g. C4
-  slide 6, R6 frame 3) — these can use a plain screenshot/mockup of the real
-  worksheet or guide cover instead of a Higgsfield generation, since they're
-  showing the product, not Nan.
+- A handful of frames reference the worksheet or guide directly (e.g. R6
+  frame 3) — these can use a plain screenshot/mockup of the real worksheet or
+  guide cover instead of a Higgsfield generation, since they're showing the
+  product, not Nan.
 
 Total: **~7–9 core generations** (P0 + B1–B6, plus a couple of retries),
 reused across all 17 posts (12 Reels × up to 4 frames, 5 carousels × up to 6
@@ -340,7 +340,7 @@ specific frame.
 
 - **Mostly free:** 14/17 posts (82%) point to the free challenge or worksheet —
   above the 3-in-4 floor. ✅
-- **Guide posts start with `#ad`:** R6, R9, R12, C4 all open their caption and
+- **Guide posts start with `#ad`:** R6, R9, R12 all open their caption and
   on-screen text with `#ad`, and none appear before week 2. ✅
 - **AI label on every post:** called out per-post above (every Reel and
   carousel); R1's first frame also carries the explicit "AI character"
