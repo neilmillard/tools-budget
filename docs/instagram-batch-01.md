@@ -23,6 +23,9 @@ Context notes:
 - Ratio check for the whole batch: 17 posts total, 3 carry a guide CTA (one in
   week 2, one in week 3, one in week 4) = 14/17 free, comfortably inside the
   "3 in 4 free" floor.
+- **Status (2026-10-11):** P0 and B1–B6 are generated (DEL-588) and P0 is the
+  profile photo. To make and post each item on a phone, see section 7.
+  Posting is tracked in DEL-621 (weekly sub-issues DEL-622 to DEL-625).
 
 ---
 
@@ -365,3 +368,56 @@ specific frame.
 
 Out of scope here, per the issue: generating the images, posting, the Brevo
 drip build, and paid ads.
+
+---
+
+## 7. How to make and post each item (on a phone)
+
+No new image generation is needed. Every post is one of the P0/B1–B6 stills
+from DEL-588 with text on top, using the copy in sections 2 and 3. Instagram's
+menus move around, so the button names below may differ slightly on your phone.
+
+### One-time setup
+
+1. Save P0 and B1–B6 from the DEL-588 attachments to your phone's photos, in
+   an album called "Nan".
+2. Keep this doc open on GitHub in your phone browser so you can copy the
+   text for each frame, the caption and the hashtags.
+
+### Reels (R1–R12): Instagram's own editor
+
+Worked example: R1.
+
+1. Tap **+** → **Reel** and select the frame images in order. For R1 that's
+   B1, B1, B2, B5. There's only one B1 still, so reuse it for frame 2.
+2. Instagram makes these into a slideshow. Set each photo to about 3 seconds.
+3. Tap **Aa (Text)** and add frame 1's on-screen text. Drag the text's length
+   on the timeline so it shows only during that photo. Repeat for each frame.
+   R1's frame 1 also needs the small "AI character" tag.
+4. Optional voiceover: tap the **mic / Voiceover** and read the VO line (under
+   30 seconds). Or skip it and add quiet background music.
+5. Tap **Next**, then paste in the caption and the hashtags.
+6. Under **More options / Advanced settings**, turn on the **AI label** ("Made
+   with AI"). Do this on every post.
+7. Share at the slot in the calendar (section 4).
+
+### Carousels (C1–C5): add the text to the images first
+
+Instagram's photo-post editor can't put text on each slide, so add the text
+before you upload.
+
+1. In Instagram's **Edits** app or Canva on your phone, set the canvas to 4:5.
+   Drop in the still for each slide, add the slide's text and export each
+   slide as an image.
+2. Tap **+** → **Post** and select all the slides in order.
+3. Paste the caption and hashtags, turn on the **AI label**, and share.
+
+Example: C1 is 6 slides: B1, B3, B2, B5, B4, B6, each with one line of text.
+
+### Rules to check on every post
+
+- [ ] AI label is on.
+- [ ] Guide posts (R6, R9, R12) start with `#ad`, both in the caption and in
+      the first on-screen text.
+- [ ] The CTA says "link in bio". The bio link already goes to
+      `helpfulmoney.site`.
