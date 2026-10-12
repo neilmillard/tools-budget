@@ -1,0 +1,6 @@
+# Cloudflare Pages response headers.
+# Social media files (Instagram Reels etc.) must be publicly fetchable but
+# never indexed. Keep them out of the sitemap and do NOT disallow /media/ in
+# robots.txt, or Meta's fetcher may refuse the video_url.
+/media/*
+  X-Robots-Tag: noindex
