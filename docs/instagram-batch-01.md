@@ -15,8 +15,9 @@ Context notes:
   habits. Not financial advice." + "Run by helpfulmoney.site". Bio link is
   `helpfulmoney.site`.
 - CTA targets, checked live today: `/challenge/give-every-pound-a-job/` (200),
-  `/guide/give-every-pound-a-job/` (200), `/download/Give Every Pound a Job -
-  Budget Worksheet.xlsx` (200).
+  `/guide/give-every-pound-a-job/` (200), `/download/budget-worksheet/` (200).
+  Worksheet CTAs go to the download page, not the raw `.xlsx`: the page links
+  on to the challenge and the guide, the bare file links to nothing.
 - Format call from DEL-606 (`e961e952`, 2026-10-10): slideshow Reels for reach
   (new account, no followers — Reels is the format Instagram pushes to
   strangers), carousels for saves. No generated video in this batch.
@@ -363,8 +364,8 @@ specific frame.
   `docs/content-plan.md` and the character brief throughout — kitchen table,
   biscuit tin, allotment, teapot; no jets, no designer wear. ✅
 - **CTA targets live (200 checked 2026-10-10):** `/challenge/give-every-pound-a-job/`,
-  `/guide/give-every-pound-a-job/`, `/download/Give Every Pound a Job - Budget
-  Worksheet.xlsx`. ✅
+  `/guide/give-every-pound-a-job/`, `/download/budget-worksheet/` (re-checked
+  2026-10-12). ✅
 
 Out of scope here, per the issue: generating the images, posting, the Brevo
 drip build, and paid ads.
