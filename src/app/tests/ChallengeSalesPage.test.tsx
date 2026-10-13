@@ -39,6 +39,16 @@ describe("ChallengeSalesPageContent", () => {
     expect(screen.getByText(/a short email each week with that week's actions/i)).toBeInTheDocument();
   });
 
+  test("links straight to the free worksheet page, while the email sign-up stays the main action", () => {
+    render(<ChallengeSalesPageContent />);
+    expect(screen.getByRole("link", { name: /download it now/i })).toHaveAttribute(
+      "href",
+      "/download/budget-worksheet"
+    );
+    expect(screen.getByText(/or we'll send it on day 3/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+  });
+
   test("makes no investment, bank or product recommendations", () => {
     render(<ChallengeSalesPageContent />);
     expect(
