@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { describe, expect, test } from "@jest/globals";
 import { render, screen, cleanup } from "@testing-library/react";
+import { getEntrySourceFromSearch } from "@/lib/analytics";
 import ChallengeSalesPageContent from "@/app/components/ChallengeSalesPageContent";
 
 afterEach(() => cleanup());
@@ -29,8 +30,15 @@ describe("ChallengeSalesPageContent", () => {
     render(<ChallengeSalesPageContent />);
     expect(screen.getByRole("link", { name: /give every pound a job/i })).toHaveAttribute(
       "href",
-      "/guide/give-every-pound-a-job"
+      "/guide/give-every-pound-a-job?from=challenge"
     );
+  });
+
+  test("tags the guide link with its entry source so a sale it drives is attributed in Stripe", () => {
+    render(<ChallengeSalesPageContent />);
+    const href = screen.getByRole("link", { name: /give every pound a job/i }).getAttribute("href") ?? "";
+    const from = new URLSearchParams(href.slice(href.indexOf("?"))).get("from");
+    expect(getEntrySourceFromSearch(`?from=${from}`)).toBe("challenge");
   });
 
   test("promises a weekly email, not a daily one", () => {

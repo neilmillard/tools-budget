@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import GuideCTALink from '@/app/components/GuideCTALink';
 import ChallengeSignupForm from '@/app/components/ChallengeSignupForm';
 
 export default function ChallengeSalesPageContent() {
@@ -48,9 +49,9 @@ export default function ChallengeSalesPageContent() {
           </li>
           <li>
             Want the full method with worked examples once you&apos;ve felt it work? The{' '}
-            <Link href="/guide/give-every-pound-a-job/" className="text-blue-600 underline">
+            <GuideCTALink href="/guide/give-every-pound-a-job/?from=challenge" className="text-blue-600 underline">
               Give Every Pound a Job
-            </Link>{' '}
+            </GuideCTALink>{' '}
             guide goes deeper — £7, entirely optional.
           </li>
         </ul>
