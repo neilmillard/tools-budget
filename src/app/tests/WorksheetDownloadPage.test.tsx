@@ -1,6 +1,7 @@
 import "@testing-library/jest-dom";
 import { describe, expect, test } from "@jest/globals";
 import { render, screen, cleanup } from "@testing-library/react";
+import { getEntrySourceFromSearch } from "@/lib/analytics";
 import WorksheetDownloadPageContent from "@/app/components/WorksheetDownloadPageContent";
 
 afterEach(() => cleanup());
@@ -24,8 +25,15 @@ describe("WorksheetDownloadPageContent", () => {
     render(<WorksheetDownloadPageContent />);
     expect(screen.getByRole("link", { name: /give every pound a job/i })).toHaveAttribute(
       "href",
-      "/guide/give-every-pound-a-job"
+      "/guide/give-every-pound-a-job?from=worksheet"
     );
+  });
+
+  test("tags the guide link with its entry source so a sale it drives is attributed in Stripe", () => {
+    render(<WorksheetDownloadPageContent />);
+    const href = screen.getByRole("link", { name: /give every pound a job/i }).getAttribute("href") ?? "";
+    const from = new URLSearchParams(href.slice(href.indexOf("?"))).get("from");
+    expect(getEntrySourceFromSearch(`?from=${from}`)).toBe("worksheet");
   });
 
   test("links to the 30-day challenge", () => {

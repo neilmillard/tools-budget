@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import GuideCTALink from '@/app/components/GuideCTALink';
 
 const WORKSHEET_HREF = '/download/Give%20Every%20Pound%20a%20Job%20-%20Budget%20Worksheet.xlsx';
 
@@ -33,9 +34,9 @@ export default function WorksheetDownloadPageContent() {
           </li>
           <li>
             Want the full method with worked examples? The{' '}
-            <Link href="/guide/give-every-pound-a-job/" className="text-blue-600 underline">
+            <GuideCTALink href="/guide/give-every-pound-a-job/?from=worksheet" className="text-blue-600 underline">
               Give Every Pound a Job
-            </Link>{' '}
+            </GuideCTALink>{' '}
             guide goes deeper — £7, entirely optional.
           </li>
         </ul>
