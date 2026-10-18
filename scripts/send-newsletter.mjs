@@ -7,6 +7,8 @@ import matter from "gray-matter";
 const POSTS_DIR = path.join(process.cwd(), "src", "data", "blog-posts");
 const STATE_FILE = path.join(process.cwd(), "scripts", "newsletter-state.json");
 const BREVO_API_URL = "https://api.brevo.com/v3/emailCampaigns";
+const SITE_URL = "https://www.helpfulmoney.site";
+const EXCERPT_MAX = 220;
 
 /**
  * Posts crossed into "published" since the last send, gated by publish date
@@ -58,12 +60,114 @@ export async function fetchSentCampaignNames(fetchFn, apiKey, pageSize = 100) {
   }
 }
 
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function stripMarkdown(text) {
+  return text
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/[*_`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function truncate(text, max) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,;:.]+$/, "")}…`;
+}
+
+/** One or two sentences for the email body and inbox preview. */
+export function excerptFor({ description = "", content = "" }) {
+  if (description) return truncate(stripMarkdown(description), EXCERPT_MAX);
+  const lines = content.split("\n");
+  const start = lines.findIndex((line) => line.startsWith("> **Quick answer:**"));
+  let source;
+  if (start >= 0) {
+    const quote = [];
+    for (let i = start; i < lines.length && lines[i].startsWith(">"); i++) quote.push(lines[i].replace(/^> ?/, ""));
+    source = quote.join(" ").replace("**Quick answer:**", "");
+  } else {
+    source = content.replace(/^#.*$/m, "").trim().split(/\n\s*\n/)[0] ?? "";
+  }
+  return truncate(stripMarkdown(source), EXCERPT_MAX);
+}
+
+export function renderEmailHtml(post) {
+  const utm = `utm_source=newsletter&utm_medium=email&utm_campaign=${post.id}`;
+  const postUrl = escapeHtml(`${SITE_URL}/blog/${post.id}/?${utm}`);
+  const guideUrl = escapeHtml(`${SITE_URL}/guide/give-every-pound-a-job/?from=newsletter&${utm}`);
+  const imageUrl = escapeHtml(`${SITE_URL}/images/blog/${post.id}.png`);
+  const title = escapeHtml(post.title);
+  const excerpt = escapeHtml(post.excerpt ?? "");
+  const font = "font-family:Arial,Helvetica,sans-serif;";
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${title}</title>
+</head>
+<body style="margin:0;padding:0;background:#f3f4f6;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">${excerpt}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;">
+  <tr><td align="center" style="padding:24px 12px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border-radius:12px;overflow:hidden;">
+      <tr><td style="padding:20px 28px;${font}font-size:15px;font-weight:bold;color:#111827;">
+        Helpful Money <span style="font-weight:normal;color:#6b7280;">· ancient wisdom, modern tools</span>
+      </td></tr>
+      <tr><td>
+        <a href="${postUrl}"><img src="${imageUrl}" width="600" alt="${title}" style="display:block;width:100%;max-width:600px;height:auto;border:0;"></a>
+      </td></tr>
+      <tr><td style="padding:28px 28px 8px;${font}">
+        <p style="margin:0 0 8px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#2F855A;font-weight:bold;">New on the blog</p>
+        <h1 style="margin:0 0 14px;font-size:24px;line-height:1.3;color:#111827;">${title}</h1>
+        <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#374151;">${excerpt}</p>
+        <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+          <td style="background:#2F855A;border-radius:8px;">
+            <a href="${postUrl}" style="display:inline-block;padding:14px 26px;${font}font-size:16px;font-weight:bold;color:#ffffff;text-decoration:none;">Read the article →</a>
+          </td>
+        </tr></table>
+      </td></tr>
+      <tr><td style="padding:24px 28px 28px;${font}">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#FBF7EF;border-left:4px solid #2F855A;border-radius:10px;">
+          <tr><td style="padding:18px 20px;">
+            <p style="margin:0 0 6px;font-size:15px;font-weight:bold;color:#111827;">Want the whole method in one place?</p>
+            <p style="margin:0 0 10px;font-size:14px;line-height:1.5;color:#374151;">The <em>Give Every Pound a Job</em> guide walks you through zero-based budgeting step by step, with a worked example. £7, one-off.</p>
+            <a href="${guideUrl}" style="font-size:14px;font-weight:bold;color:#2F855A;">Get the guide →</a>
+          </td></tr>
+        </table>
+      </td></tr>
+    </table>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;">
+      <tr><td align="center" style="padding:18px 12px;${font}font-size:12px;line-height:1.5;color:#6b7280;">
+        You're getting this because you signed up at helpfulmoney.site.<br>
+        <a href="{{ unsubscribe }}" style="color:#6b7280;">Unsubscribe</a>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>
+</body>
+</html>`;
+}
+
 function loadPosts() {
   return fs.readdirSync(POSTS_DIR)
     .filter((file) => file.endsWith(".md"))
     .map((file) => {
-      const { data } = matter(fs.readFileSync(path.join(POSTS_DIR, file), "utf-8"));
-      return { id: file.replace(/\.md$/, ""), title: data.title, date: data.date };
+      const { data, content } = matter(fs.readFileSync(path.join(POSTS_DIR, file), "utf-8"));
+      return {
+        id: file.replace(/\.md$/, ""),
+        title: data.title,
+        date: data.date,
+        excerpt: excerptFor({ description: data.description, content }),
+      };
     });
 }
 
@@ -83,7 +187,6 @@ async function sendCampaign(post) {
     throw new Error("BREVO_API_KEY and BREVO_LIST_ID must be set to send a campaign");
   }
 
-  const url = `https://www.helpfulmoney.site/blog/${post.id}/`;
   const response = await fetch(BREVO_API_URL, {
     method: "POST",
     headers: {
@@ -95,7 +198,7 @@ async function sendCampaign(post) {
       subject: post.title,
       sender: { name: "Helpful Money", email: "team@deltafamiglia.com" },
       type: "classic",
-      htmlContent: `<p>New from Helpful Money — ancient wisdom, modern tools.</p><p><a href="${url}">${post.title}</a></p>`,
+      htmlContent: renderEmailHtml(post),
       recipients: { listIds: [Number(listId)] },
       scheduledAt: undefined,
     }),

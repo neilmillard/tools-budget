@@ -20,7 +20,7 @@ interface CheckoutResult {
 }
 
 // Keep in sync with ENTRY_SOURCES in src/lib/analytics.ts.
-const ENTRY_SOURCES = ['budget-planner', 'blog-50-30-20', 'blog-zero-based', 'challenge', 'worksheet', 'instagram'];
+const ENTRY_SOURCES = ['budget-planner', 'blog-50-30-20', 'blog-zero-based', 'challenge', 'worksheet', 'instagram', 'newsletter'];
 
 export function resolveEntry(value: unknown): string {
   return typeof value === 'string' && ENTRY_SOURCES.includes(value) ? value : 'direct';

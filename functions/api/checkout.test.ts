@@ -114,6 +114,7 @@ describe('resolveEntry', () => {
     expect(resolveEntry('budget-planner')).toBe('budget-planner');
     expect(resolveEntry('blog-50-30-20')).toBe('blog-50-30-20');
     expect(resolveEntry('challenge')).toBe('challenge');
+    expect(resolveEntry('newsletter')).toBe('newsletter');
     expect(resolveEntry('worksheet')).toBe('worksheet');
     expect(resolveEntry('instagram')).toBe('instagram');
     expect(resolveEntry('blog-zero-based')).toBe('blog-zero-based');
