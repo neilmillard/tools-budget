@@ -73,7 +73,8 @@ describe("withoutAlreadySent", () => {
 
   it("drops posts that already have a campaign in Brevo, so a stale state file cannot resend them", () => {
     const sent = new Set(["Newsletter - Net Worth Tracking", "Newsletter - Zero-Based Budgeting"]);
-    expect(withoutAlreadySent(posts, sent).map((p) => p.id)).toEqual(["lc"]);
+    const kept: Post[] = withoutAlreadySent(posts, sent);
+    expect(kept.map((p) => p.id)).toEqual(["lc"]);
   });
 
   it("keeps every post when nothing has been sent", () => {
