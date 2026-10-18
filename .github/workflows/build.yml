@@ -11,11 +11,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # The Sunday schedule run commits scripts/newsletter-state.json back to main;
-    # the default read-only GITHUB_TOKEN caused that push to fail (403), which left
-    # the state file stuck and made every run resend the entire backlog.
+    # main is protected (PR + "test" check required), so this job cannot push.
+    # The newsletter step therefore never commits its state file back: it skips
+    # any post that already has a campaign in Brevo, which makes a stale
+    # scripts/newsletter-state.json harmless. Bump that file by PR occasionally
+    # to keep the date window short.
     permissions:
-      contents: write
+      contents: read
 
     steps:
       - name: Checkout code
@@ -57,9 +59,9 @@ jobs:
           curl -fsS -X POST "$DEPLOY_HOOK_URL"
 
       # Sends a newsletter campaign for each post that has crossed its
-      # publish date since the last run, keyed off scripts/newsletter-state.json
-      # rather than the content-generation batch, so the send cadence tracks
-      # the site's actual staggered weekly releases.
+      # publish date after scripts/newsletter-state.json and has no campaign in
+      # Brevo yet, so the send cadence tracks the site's staggered weekly
+      # releases and a post is never mailed twice.
       - name: Send newsletter for newly published posts
         if: github.event_name == 'schedule'
         env:
@@ -71,14 +73,3 @@ jobs:
             exit 0
           fi
           node scripts/send-newsletter.mjs
-
-      - name: Commit newsletter state
-        if: github.event_name == 'schedule'
-        run: |
-          if ! git diff --quiet scripts/newsletter-state.json; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add scripts/newsletter-state.json
-            git commit -m "chore: update newsletter state [skip ci]"
-            git push
-          fi

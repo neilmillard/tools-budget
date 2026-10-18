@@ -1,3 +1,4 @@
+/* global process, console, fetch */
 import fs from "fs";
 import path from "path";
 import { pathToFileURL } from "url";
@@ -23,6 +24,38 @@ export function getNewlyPublishedPosts(posts, lastSentDate, today = new Date()) 
       return publishDate > since && publishDate <= today;
     })
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+}
+
+export function campaignName(post) {
+  return `Newsletter - ${post.title}`;
+}
+
+/**
+ * Brevo is the record of what has actually gone out. The state file is only a
+ * floor for the date window: it can lag (main is protected, so CI cannot commit
+ * it back), and a lagging file must never cause a resend.
+ */
+export function withoutAlreadySent(posts, sentNames) {
+  return posts.filter((post) => !sentNames.has(campaignName(post)));
+}
+
+export async function fetchSentCampaignNames(fetchFn, apiKey, pageSize = 100) {
+  const names = new Set();
+  for (let offset = 0; ; offset += pageSize) {
+    const response = await fetchFn(
+      `${BREVO_API_URL}?type=classic&limit=${pageSize}&offset=${offset}&excludeHtmlContent=true`,
+      { headers: { "api-key": apiKey, Accept: "application/json" } },
+    );
+    if (!response.ok) {
+      const body = await response.text();
+      throw new Error(`Brevo campaign list failed: ${response.status} ${body}`);
+    }
+    const { campaigns = [], count = 0 } = await response.json();
+    for (const campaign of campaigns) {
+      if (campaign.status !== "draft") names.add(campaign.name);
+    }
+    if (campaigns.length === 0 || offset + campaigns.length >= count) return names;
+  }
 }
 
 function loadPosts() {
@@ -58,7 +91,7 @@ async function sendCampaign(post) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: `Newsletter - ${post.title}`,
+      name: campaignName(post),
       subject: post.title,
       sender: { name: "Helpful Money", email: "team@deltafamiglia.com" },
       type: "classic",
@@ -92,7 +125,10 @@ async function main() {
   const state = loadState();
   const today = new Date();
 
-  const newlyPublished = getNewlyPublishedPosts(posts, state.lastSentDate, today);
+  const candidates = getNewlyPublishedPosts(posts, state.lastSentDate, today);
+  const newlyPublished = dryRun || candidates.length === 0
+    ? candidates
+    : withoutAlreadySent(candidates, await fetchSentCampaignNames(fetch, process.env.BREVO_API_KEY));
 
   if (newlyPublished.length === 0) {
     console.log("No newly published posts since last send. Nothing to do.");
