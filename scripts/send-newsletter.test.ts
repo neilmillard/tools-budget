@@ -1,4 +1,9 @@
-import { getNewlyPublishedPosts } from "./send-newsletter.mjs";
+import {
+  campaignName,
+  fetchSentCampaignNames,
+  getNewlyPublishedPosts,
+  withoutAlreadySent,
+} from "./send-newsletter.mjs";
 
 type Post = { id: string; title: string; date: string };
 
@@ -48,5 +53,72 @@ describe("getNewlyPublishedPosts", () => {
   it("treats a null lastSentDate as never-sent and includes all published posts", () => {
     const result: Post[] = getNewlyPublishedPosts(posts, null, today);
     expect(result.map((p) => p.id)).toEqual(["a", "b", "c"]);
+  });
+});
+
+describe("campaignName", () => {
+  it("names the Brevo campaign after the post title", () => {
+    expect(campaignName({ id: "a", title: "Zero-Based Budgeting", date: "2026-10-18" })).toBe(
+      "Newsletter - Zero-Based Budgeting",
+    );
+  });
+});
+
+describe("withoutAlreadySent", () => {
+  const posts: Post[] = [
+    { id: "nw", title: "Net Worth Tracking", date: "2026-10-17" },
+    { id: "zb", title: "Zero-Based Budgeting", date: "2026-10-18" },
+    { id: "lc", title: "Lifestyle Creep", date: "2026-10-24" },
+  ];
+
+  it("drops posts that already have a campaign in Brevo, so a stale state file cannot resend them", () => {
+    const sent = new Set(["Newsletter - Net Worth Tracking", "Newsletter - Zero-Based Budgeting"]);
+    expect(withoutAlreadySent(posts, sent).map((p) => p.id)).toEqual(["lc"]);
+  });
+
+  it("keeps every post when nothing has been sent", () => {
+    expect(withoutAlreadySent(posts, new Set())).toHaveLength(3);
+  });
+});
+
+describe("fetchSentCampaignNames", () => {
+  const page = (campaigns: { name: string; status: string }[], count: number) => ({
+    ok: true,
+    json: async () => ({ campaigns, count }),
+  });
+
+  it("collects non-draft campaign names across pages", async () => {
+    const fetchFn = jest
+      .fn()
+      .mockResolvedValueOnce(
+        page(
+          [
+            { name: "Newsletter - A", status: "sent" },
+            { name: "Newsletter - B", status: "draft" },
+          ],
+          3,
+        ),
+      )
+      .mockResolvedValueOnce(page([{ name: "Newsletter - C", status: "queued" }], 3));
+
+    const names = await fetchSentCampaignNames(fetchFn, "key", 2);
+
+    expect([...names].sort()).toEqual(["Newsletter - A", "Newsletter - C"]);
+    expect(fetchFn).toHaveBeenCalledTimes(2);
+    expect(fetchFn.mock.calls[0][0]).toContain("offset=0");
+    expect(fetchFn.mock.calls[1][0]).toContain("offset=2");
+    expect(fetchFn.mock.calls[0][1].headers["api-key"]).toBe("key");
+  });
+
+  it("stops on an empty page even if count is larger", async () => {
+    const fetchFn = jest.fn().mockResolvedValueOnce(page([], 50));
+    const names = await fetchSentCampaignNames(fetchFn, "key", 100);
+    expect(names.size).toBe(0);
+    expect(fetchFn).toHaveBeenCalledTimes(1);
+  });
+
+  it("throws rather than sending blind when Brevo cannot be read", async () => {
+    const fetchFn = jest.fn().mockResolvedValueOnce({ ok: false, status: 401, text: async () => "unauthorized" });
+    await expect(fetchSentCampaignNames(fetchFn, "key", 100)).rejects.toThrow(/401/);
   });
 });
