@@ -70,6 +70,18 @@ export const MOTIFS = {
       `<path d="M96 214 L178 168 L238 124 L318 64" fill="none" stroke="${TERRACOTTA}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>` +
       `<path d="M290 60 L322 62 L316 94" fill="none" stroke="${TERRACOTTA}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>`
   ),
+  fees: svg(
+    `<line x1="60" y1="330" x2="350" y2="330" stroke="${INK}" stroke-width="8" stroke-linecap="round"/>` +
+      `<line x1="64" y1="70" x2="64" y2="330" stroke="${INK}" stroke-width="8" stroke-linecap="round"/>` +
+      `<rect x="96" y="110" width="44" height="220" rx="6" fill="${GREEN}" stroke="${INK}" stroke-width="6"/>` +
+      `<rect x="160" y="160" width="44" height="170" rx="6" fill="${BLUE_LIGHT}" stroke="${INK}" stroke-width="6"/>` +
+      `<rect x="224" y="208" width="44" height="122" rx="6" fill="${BLUE_LIGHT}" stroke="${INK}" stroke-width="6"/>` +
+      `<rect x="288" y="250" width="44" height="80" rx="6" fill="${BLUE_LIGHT}" stroke="${INK}" stroke-width="6"/>` +
+      `<path d="M100 74 L180 120 L246 164 L318 212" fill="none" stroke="${TERRACOTTA}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>` +
+      `<path d="M286 214 L320 214 L312 182" fill="none" stroke="${TERRACOTTA}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>` +
+      coin(352, 96, 18) +
+      coin(330, 150, 14)
+  ),
   coins: svg(
     coinStack(118, 330, 3) +
       coinStack(212, 330, 6) +
@@ -97,6 +109,7 @@ export const DEFAULT_MOTIF = "jar";
 
 // First matching rule wins, so the more specific topics come first.
 const RULES = [
+  ["fees", /fees/],
   ["house", /mortgage|property|afford|home/],
   ["envelopes", /budget|envelope|sinking|50-30-20|balance|lifestyle-creep|below-your-means|operating-system|taking-control|keeping-what-you-earn/],
   ["chart", /invest|dividend|index|portfolio|platform-fees|rebalanc|owning-a-piece|net-worth|pension|lifetime|stability|wealth/],
