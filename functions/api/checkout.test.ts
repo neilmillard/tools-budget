@@ -116,6 +116,7 @@ describe('resolveEntry', () => {
     expect(resolveEntry('challenge')).toBe('challenge');
     expect(resolveEntry('worksheet')).toBe('worksheet');
     expect(resolveEntry('instagram')).toBe('instagram');
+    expect(resolveEntry('blog-zero-based')).toBe('blog-zero-based');
   });
 
   it('falls back to direct for anything else', () => {

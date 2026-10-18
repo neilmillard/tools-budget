@@ -5,6 +5,7 @@ describe("getEntrySourceFromSearch", () => {
   test("returns the source when it is on the allowlist", () => {
     expect(getEntrySourceFromSearch("?from=budget-planner")).toBe("budget-planner");
     expect(getEntrySourceFromSearch("?from=blog-50-30-20")).toBe("blog-50-30-20");
+    expect(getEntrySourceFromSearch("?from=blog-zero-based")).toBe("blog-zero-based");
     expect(getEntrySourceFromSearch("?from=challenge")).toBe("challenge");
     expect(getEntrySourceFromSearch("?from=worksheet")).toBe("worksheet");
     expect(getEntrySourceFromSearch("?from=instagram")).toBe("instagram");
