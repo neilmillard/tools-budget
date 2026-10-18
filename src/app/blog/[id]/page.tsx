@@ -1,4 +1,4 @@
-import {getAdjacentBlogPosts, getAllBlogPosts, getBlogPost} from "@/lib/blogs";
+import {getAdjacentBlogPosts, getAllBlogPosts, getBlogOgImage, getBlogPost} from "@/lib/blogs";
 import {extractFAQItems, hasFAQPattern} from "@/lib/faq";
 import BlogPost, {BlogNav, BlogPostShort} from "@/app/components/blog/BlogPost";
 import ArticleSchema from "@/components/schema/ArticleSchema";
@@ -10,6 +10,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const resolvedParams = params ? await params : { id: '' };
   const { id } = resolvedParams;
   const blog = await getBlogPost(id);
+  const image = getBlogOgImage(id);
 
   // Use description from frontmatter if available, otherwise create an excerpt
   const description = blog.description || 
@@ -23,6 +24,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     openGraph: {
       title: `${blog.title} | Helpful Money Blog`,
       description: description,
+      images: [{ url: image, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${blog.title} | Helpful Money Blog`,
+      description: description,
+      images: [image],
     },
     alternates: {
       canonical: `/blog/${id}/`,
