@@ -5,6 +5,7 @@ export const ENTRY_SOURCES = [
   "challenge",
   "worksheet",
   "instagram",
+  "newsletter",
 ] as const;
 
 export type EntrySource = (typeof ENTRY_SOURCES)[number];

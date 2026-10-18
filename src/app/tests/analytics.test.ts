@@ -9,6 +9,7 @@ describe("getEntrySourceFromSearch", () => {
     expect(getEntrySourceFromSearch("?from=challenge")).toBe("challenge");
     expect(getEntrySourceFromSearch("?from=worksheet")).toBe("worksheet");
     expect(getEntrySourceFromSearch("?from=instagram")).toBe("instagram");
+    expect(getEntrySourceFromSearch("?from=newsletter")).toBe("newsletter");
   });
 
   test("falls back to direct for an unknown or missing source", () => {
