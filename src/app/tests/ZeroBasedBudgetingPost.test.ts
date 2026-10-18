@@ -47,3 +47,17 @@ describe("Zero-based budgeting post", () => {
     expect(post.content.toLowerCase()).toContain("businesses");
   });
 });
+
+describe("Internal links into the zero-based budgeting post", () => {
+  const linkingPosts = [
+    "what-the-50-30-20-rule-looks-like",
+    "sinking-funds-envelope-method",
+    "debt-snowball-vs-avalanche",
+    "building-financial-operating-system",
+  ];
+
+  it.each(linkingPosts)("%s links to the zero-based budgeting post", async (id) => {
+    const post = await getBlogPost(id);
+    expect(post.content).toContain(`](/blog/${POST_ID}/)`);
+  });
+});

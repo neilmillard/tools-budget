@@ -43,7 +43,7 @@ If the interest-rate gap between your debts is small, use snowball — the inter
 - Interest-rate spread across your debts: small (all within a few percentage points) → snowball
 - Interest-rate spread across your debts: large (10+ percentage points) → avalanche
 
-Either way, the method that fails is the one you abandon. Map out your actual balances and minimum payments with the [Budget Planner](/tools/budget/) to see how much spare payment capacity you genuinely have each month before committing to either order.
+Either way, the method that fails is the one you abandon. Map out your actual balances and minimum payments with the [Budget Planner](/tools/budget/) to see how much spare payment capacity you genuinely have each month before committing to either order. A [zero-based budget](/blog/zero-based-budgeting/) makes that capacity explicit: the extra payment becomes a job you assign before the month starts, not whatever happens to be left over.
 
 *The behavioural research referenced is Kettle, Trudel, Blanchard & Häubl, "Failure Aversion," Journal of Consumer Research (2016), cited here for its finding on debt-account-closure and completion rates, not as financial advice specific to any individual's circumstances.*
 

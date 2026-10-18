@@ -36,7 +36,7 @@ Take the expense's total annual cost and divide by the number of months until it
 - Months to save across: 12
 → Monthly sinking-fund contribution needed: £140/month
 
-Once that £140/month is built into the budget as a fixed line item — not a "nice to have" — the December scramble and the surprise insurance renewal both stop being surprises.
+Once that £140/month is built into the budget as a fixed line item — not a "nice to have" — the December scramble and the surprise insurance renewal both stop being surprises. Do the same for every pound you earn, not just the annual bills, and you have a [zero-based budget](/blog/zero-based-budgeting/).
 
 ## Where should sinking fund money actually sit?
 

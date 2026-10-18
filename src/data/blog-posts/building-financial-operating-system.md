@@ -23,7 +23,7 @@ Modern financial success requires a similar approach. You need a "Financial Oper
 
 The first component of your FOS is the **1st Cure: "Start thy purse to fattening."** This is the engine of your wealth. 
 
-You should aim to save 10-20% of your income before you pay for anything else. Use our [Budget Planner](/tools/budget/) to map out your 50/30/20 rule and see exactly where that surplus is coming from. 
+You should aim to save 10-20% of your income before you pay for anything else. Use our [Budget Planner](/tools/budget/) to map out your 50/30/20 rule and see exactly where that surplus is coming from. If percentages feel too loose, a [zero-based budget](/blog/zero-based-budgeting/) gives every pound a job instead. 
 
 Once your budget is set, **automate it.** Set up a standing order to move that 10% into your investment account the day after you get paid.
 
