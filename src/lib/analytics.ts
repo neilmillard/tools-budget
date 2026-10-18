@@ -1,6 +1,7 @@
 export const ENTRY_SOURCES = [
   "budget-planner",
   "blog-50-30-20",
+  "blog-zero-based",
   "challenge",
   "worksheet",
   "instagram",

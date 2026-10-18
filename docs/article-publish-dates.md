@@ -75,6 +75,7 @@ generated in.
 | Debt Snowball vs. Debt Avalanche: Which Payoff Method Actually Works?    | 2026-09-26   |
 | Understanding Your Credit Score: What UK Lenders Actually Look At       | 2026-10-03   |
 | Lifestyle Creep: Why a Pay Rise Doesn't Feel Like a Pay Rise             | 2026-10-10   |
+| Zero-Based Budgeting: How to Give Every Pound a Job (UK Guide)          | 2026-10-18   |
 | Net Worth Tracking: The One Number That Actually Measures Progress      | 2026-10-17   |
 | Workplace Pension Auto-Enrolment: What You're Actually Saving           | 2026-10-24   |
 | Investment Fees: How a 1% Platform Fee Quietly Costs You Tens of Thousands | 2026-10-31 |
