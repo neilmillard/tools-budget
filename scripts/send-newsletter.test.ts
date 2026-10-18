@@ -2,6 +2,25 @@ import { getNewlyPublishedPosts } from "./send-newsletter.mjs";
 
 type Post = { id: string; title: string; date: string };
 
+describe("importing send-newsletter.mjs", () => {
+  it("has no side effects (no fetch calls, no process.exit)", async () => {
+    const fetchSpy = jest.fn();
+    global.fetch = fetchSpy as unknown as typeof fetch;
+    const exitSpy = jest.spyOn(process, "exit").mockImplementation(() => {
+      throw new Error("process.exit should not be called on import");
+    });
+
+    await jest.isolateModulesAsync(async () => {
+      await import("./send-newsletter.mjs");
+    });
+
+    expect(fetchSpy).not.toHaveBeenCalled();
+    expect(exitSpy).not.toHaveBeenCalled();
+
+    exitSpy.mockRestore();
+  });
+});
+
 describe("getNewlyPublishedPosts", () => {
   const posts: Post[] = [
     { id: "a", title: "A", date: "2026-07-25" },
