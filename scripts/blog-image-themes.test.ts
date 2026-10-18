@@ -10,6 +10,7 @@ describe("motifForPost", () => {
     ["how-much-save-mortgage-overpayment", "house"],
     ["building-wealth-through-property", "house"],
     ["power-of-dividends", "chart"],
+    ["investment-platform-fees", "fees"],
     ["workplace-pension-auto-enrolment", "chart"],
     ["debt-snowball-vs-avalanche", "coins"],
     ["inflation-invisible-thief", "coins"],
