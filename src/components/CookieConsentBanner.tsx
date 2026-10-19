@@ -1,28 +1,33 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
 import Link from 'next/link';
 
-export default function CookieBanner() {
-  const [showBanner, setShowBanner] = useState(false);
+function subscribe(onChange: () => void) {
+  window.addEventListener('consentUpdated', onChange);
+  window.addEventListener('storage', onChange);
+  return () => {
+    window.removeEventListener('consentUpdated', onChange);
+    window.removeEventListener('storage', onChange);
+  };
+}
 
-  useEffect(() => {
-    // Check if consent has already been given
-    const consent = localStorage.getItem('tac_consent');
-    if (!consent) {
-      setShowBanner(true);
-    }
-  }, []);
+export default function CookieBanner() {
+  // Hidden during SSR; shown on the client until a choice has been stored.
+  const showBanner = useSyncExternalStore(
+    subscribe,
+    () => !localStorage.getItem('tac_consent'),
+    () => false,
+  );
 
   const handleAccept = () => {
     localStorage.setItem('tac_consent', 'granted');
     window.dispatchEvent(new Event('consentUpdated'));
-    setShowBanner(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem('tac_consent', 'denied');
-    setShowBanner(false);
+    window.dispatchEvent(new Event('consentUpdated'));
   };
 
   if (!showBanner) {

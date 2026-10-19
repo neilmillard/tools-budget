@@ -1,7 +1,8 @@
 'use client';
 
 import Script from "next/script";
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
+import {queueGtag} from "@/lib/analytics";
 
 type DataLayerArray = GTMEvent[];
 
@@ -16,46 +17,47 @@ export type GTMParams = {
   gtmId: string;
 };
 
+type ConsentState = 'granted' | 'denied';
+
+const CONSENT_SIGNALS = ['ad_storage', 'ad_user_data', 'ad_personalization', 'analytics_storage'] as const;
+
+function consentParams(state: ConsentState): Record<string, ConsentState> {
+  return Object.fromEntries(CONSENT_SIGNALS.map((signal) => [signal, state]));
+}
+
+// Runs before gtag config: everything denied until the visitor chooses,
+// then granted straight away if they accepted on an earlier visit.
+export function gtagInitScript(gtmId: string): string {
+  return `
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {window.dataLayer.push(arguments);}
+    gtag('consent', 'default', ${JSON.stringify({ ...consentParams('denied'), wait_for_update: 500 })});
+    try {
+      if (localStorage.getItem('tac_consent') === 'granted') {
+        gtag('consent', 'update', ${JSON.stringify(consentParams('granted'))});
+      }
+    } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', ${JSON.stringify(gtmId)});
+  `;
+}
+
+function applyStoredConsent(): void {
+  const state: ConsentState = localStorage.getItem('tac_consent') === 'granted' ? 'granted' : 'denied';
+  const send = typeof window.gtag === 'function' ? window.gtag : queueGtag;
+  send('consent', 'update', consentParams(state));
+}
+
 export function GoogleTagManager(props: GTMParams) {
-  const [consent, setConsent] = useState<string | null>(null);
   const { gtmId } = props;
 
-  // Set the consent value from localStorage after the client loads
-  // Assuming the answer is stored in localStorage called cookie
+  // The stored choice is applied by the init script; this handles the banner.
   useEffect(() => {
-    setConsent(localStorage.getItem('tac_consent') === "granted" ? 'granted' : 'denied');
-  }, [gtmId]);
-
-  useEffect(() => {
-    const handleConsentUpdated = () => {
-      setConsent(localStorage.getItem('tac_consent') === "granted" ? 'granted' : 'denied');
-    };
-    window.addEventListener('consentUpdated', handleConsentUpdated);
+    window.addEventListener('consentUpdated', applyStoredConsent);
     return () => {
-      window.removeEventListener('consentUpdated', handleConsentUpdated);
+      window.removeEventListener('consentUpdated', applyStoredConsent);
     };
   }, []);
-
-  // Initialise gtag with consent value
-  useEffect(() => {
-    if (consent === null) return;
-    console.log("consent", consent);
-
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(
-      command: 'js' | 'config' | 'consent',
-      ...args: [Date] | [string, object] | ['default', object]
-    ): void {
-      window.dataLayer!.push([command, ...args] as unknown as GTMEvent);
-    }
-    gtag('consent', 'update', {
-      'ad_storage': consent,
-      'ad_user_data': consent,
-      'ad_personalization': consent,
-      'analytics_storage': consent
-    })
-  }, [consent, gtmId]);
 
   const gtmScriptUrl = 'https://www.googletagmanager.com/gtag/js';
   const gtmScript = `${gtmScriptUrl}?id=${gtmId}`
@@ -64,13 +66,7 @@ export function GoogleTagManager(props: GTMParams) {
     <>
       <Script strategy="afterInteractive" src={gtmScript} async/>
       <Script id="gtm-script" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('consent', 'default', {})
-          gtag('config', '${gtmId}');
-          `}
+        {gtagInitScript(gtmId)}
       </Script>
     </>
   )
