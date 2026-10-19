@@ -38,7 +38,7 @@ const GUIDE_PRICE_GBP = 7;
 const LIVE_SESSION = /^cs_live_[A-Za-z0-9]+$/;
 
 // gtag.js reads its queue as `arguments` objects, so a plain array push would be ignored.
-function queueGtag(...args: unknown[]): void {
+export function queueGtag(...args: unknown[]): void {
   void args;
   window.dataLayer = window.dataLayer || [];
   // eslint-disable-next-line prefer-rest-params
