@@ -4,8 +4,14 @@ import { render, screen, cleanup } from "@testing-library/react";
 import { metadata } from "@/app/thank-you/page";
 import ThankYouContent from "@/app/components/ThankYouContent";
 
+const trackGuidePurchase = jest.fn();
+jest.mock("../../lib/analytics", () => ({
+  trackGuidePurchase: (id: string | null) => trackGuidePurchase(id),
+}));
+
 afterEach(() => {
   cleanup();
+  trackGuidePurchase.mockClear();
   window.history.pushState({}, "", "/thank-you");
 });
 
@@ -37,5 +43,11 @@ describe("ThankYouContent", () => {
     render(<ThankYouContent />);
     expect(screen.queryByRole("link", { name: /download your guide/i })).not.toBeInTheDocument();
     expect(screen.queryByText(/Reference:/)).not.toBeInTheDocument();
+  });
+
+  test("reports the purchase to analytics with the Stripe session id", () => {
+    window.history.pushState({}, "", "/thank-you?session_id=cs_live_abc123");
+    render(<ThankYouContent />);
+    expect(trackGuidePurchase).toHaveBeenCalledWith("cs_live_abc123");
   });
 });

@@ -1,5 +1,5 @@
 import { describe, expect, test, beforeEach } from "@jest/globals";
-import { getEntrySourceFromSearch, trackEvent, trackGuideLinkClick } from "@/lib/analytics";
+import { getEntrySourceFromSearch, trackEvent, trackGuideLinkClick, trackGuidePurchase } from "@/lib/analytics";
 
 describe("getEntrySourceFromSearch", () => {
   test("returns the source when it is on the allowlist", () => {
@@ -55,5 +55,55 @@ describe("trackGuideLinkClick", () => {
   test("defaults to direct when the href has no recognised from param", () => {
     trackGuideLinkClick("/guide/give-every-pound-a-job/");
     expect(window.gtag).toHaveBeenCalledWith("event", "guide_link_click", { source: "direct" });
+  });
+});
+
+describe("trackGuidePurchase", () => {
+  const originalGtag = window.gtag;
+
+  beforeEach(() => {
+    window.gtag = undefined;
+    window.dataLayer = [];
+    window.sessionStorage.clear();
+  });
+
+  afterAll(() => {
+    window.gtag = originalGtag;
+  });
+
+  test("sends a GA4 purchase for a live Stripe session, keyed on the session id", () => {
+    const gtag = jest.fn();
+    window.gtag = gtag;
+    expect(trackGuidePurchase("cs_live_abc123")).toBe(true);
+    expect(gtag).toHaveBeenCalledWith("event", "purchase", {
+      transaction_id: "cs_live_abc123",
+      value: 7,
+      currency: "GBP",
+      items: [{ item_id: "give-every-pound-a-job", item_name: "Give Every Pound a Job guide", price: 7, quantity: 1 }],
+    });
+  });
+
+  test("fires only once per session, so a refresh is not a second sale", () => {
+    const gtag = jest.fn();
+    window.gtag = gtag;
+    trackGuidePurchase("cs_live_abc123");
+    expect(trackGuidePurchase("cs_live_abc123")).toBe(false);
+    expect(gtag).toHaveBeenCalledTimes(1);
+  });
+
+  test("ignores Stripe test-mode and malformed session ids", () => {
+    const gtag = jest.fn();
+    window.gtag = gtag;
+    expect(trackGuidePurchase("cs_test_abc123")).toBe(false);
+    expect(trackGuidePurchase("not-a-session")).toBe(false);
+    expect(trackGuidePurchase(null)).toBe(false);
+    expect(gtag).not.toHaveBeenCalled();
+  });
+
+  test("queues the event on dataLayer in gtag's arguments format when gtag.js has not loaded yet", () => {
+    expect(trackGuidePurchase("cs_live_xyz")).toBe(true);
+    const queued = window.dataLayer?.[0] as unknown as IArguments;
+    expect(Object.prototype.toString.call(queued)).toBe("[object Arguments]");
+    expect(Array.from(queued).slice(0, 2)).toEqual(["event", "purchase"]);
   });
 });
