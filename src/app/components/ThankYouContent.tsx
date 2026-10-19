@@ -1,7 +1,14 @@
 'use client';
 
+import { useEffect } from 'react';
+import { trackGuidePurchase } from '@/lib/analytics';
+
 export default function ThankYouContent() {
   const sessionId = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('session_id') : null;
+
+  useEffect(() => {
+    trackGuidePurchase(sessionId);
+  }, [sessionId]);
 
   return (
     <div className="w-[83%] mx-auto p-6 bg-white rounded-2xl shadow-md mt-10 text-center">
