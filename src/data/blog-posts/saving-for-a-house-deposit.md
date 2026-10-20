@@ -63,7 +63,7 @@ If you plan to buy within about five years, keep it in cash. Stock markets can f
 
 Treat the deposit fund as its own [sinking fund](/blog/sinking-funds-envelope-method/), separate from your emergency fund, so a broken boiler doesn't wipe out your deposit.
 
-*Lifetime ISA limits, bonus and property cap are as set by HMRC at the time of writing. The government has signalled it may reform the Lifetime ISA, so check gov.uk before opening one. Worked figures exclude interest. This is not financial advice.*
+*Lifetime ISA limits, bonus and property cap are as set by HMRC at the time of writing. The government has confirmed it will replace the Lifetime ISA with a new account for first-time buyers. Until then you can still open one, and existing accounts carry on as normal, but check gov.uk for the latest before opening one. Worked figures exclude interest. This is not financial advice.*
 
 <ToolCTA
   title="Find Your Target Deposit"

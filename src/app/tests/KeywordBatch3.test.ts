@@ -91,4 +91,20 @@ describe("Keyword research batch 3 (DEL-272)", () => {
     expect(row).toBeDefined();
     expect(row).toContain(date);
   });
+
+  // Facts checked against gov.uk and MoneySavingExpert on 2026-10-20.
+  it("says the Lifetime ISA is being replaced, not just possibly reformed", async () => {
+    const post = await getBlogPost("saving-for-a-house-deposit");
+    expect(post.content).toContain("confirmed it will replace the Lifetime ISA");
+    expect(post.content).not.toContain("signalled");
+  });
+
+  it("gives the gov.uk Debt Relief Order limits, and says they apply in England and Wales", async () => {
+    const post = await getBlogPost("get-out-of-debt-on-a-low-income");
+    expect(post.content).toContain("less than £50,000");
+    expect(post.content).toContain("less than £75 a month");
+    expect(post.content).toContain("less than £2,000");
+    expect(post.content).toContain("£4,000");
+    expect(post.content).toContain("England and Wales");
+  });
 });

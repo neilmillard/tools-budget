@@ -55,7 +55,7 @@ Free, regulated debt advice is the most important step. Advisers can:
 - **Arrange Breathing Space:** 60 days in which most creditors must freeze interest and charges and pause enforcement while you get advice.
 - **Negotiate reduced or token payments** with non-priority creditors.
 - **Set up a debt management plan:** one affordable monthly payment shared between your creditors.
-- **Help you apply for a Debt Relief Order (DRO):** for people with debts of up to £50,000, less than £75 a month spare after essentials, and few assets. The debts are usually written off after 12 months, and there's no application fee.
+- **Help you apply for a Debt Relief Order (DRO):** available in England and Wales if you owe less than £50,000, have less than £75 a month spare after essentials, have less than £2,000 of assets, don't own a vehicle worth £4,000 or more, and don't own your home. The debts are usually written off after 12 months, and there's no fee. Scotland and Northern Ireland have their own schemes, which a free adviser can explain.
 
 ### Worked Example
 
