@@ -24,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/journey/saving',
     '/journey/buying-a-home',
     '/journey/investing',
+    '/privacy-policy',
+    '/terms-of-service',
     '/tools/afford',
     '/tools/budget',
     '/tools/mortgage',
