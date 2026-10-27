@@ -162,6 +162,10 @@ export default function Home() {
             <h4 className="font-bold mb-1">Basic Mortgage</h4>
             <p className="text-sm text-gray-500">Simple monthly payment check.</p>
           </Link>
+          <Link href="/fiftythirtytwenty/" className="p-4 border rounded-xl hover:border-green-300 hover:bg-green-50 transition-all">
+            <h4 className="font-bold mb-1">50/30/20 Rule</h4>
+            <p className="text-sm text-gray-500">Simple budgeting framework.</p>
+          </Link>
         </div>
       </section>
 
