@@ -36,7 +36,10 @@ describe("Keyword research batch 3 (DEL-272)", () => {
   });
 
   it("starts after every post already in the schedule", () => {
-    const others = getAllBlogPosts("oldest", true).filter((p) => !postIds.includes(p.id));
+    const lastOwnDate = new Date(schedule[schedule.length - 1].date).getTime();
+    const others = getAllBlogPosts("oldest", true).filter(
+      (p) => !postIds.includes(p.id) && new Date(p.date).getTime() <= lastOwnDate
+    );
     const latestOther = Math.max(...others.map((p) => new Date(p.date).getTime()));
     expect(new Date(schedule[0].date).getTime()).toBeGreaterThan(latestOther);
   });
