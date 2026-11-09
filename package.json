@@ -45,7 +45,7 @@
     "jest": "^30.5.2",
     "jest-environment-jsdom": "^30.5.2",
     "linkinator": "^8.1.0",
-    "minimatch": "^10.2.6",
+    "minimatch": "^11.0.5",
     "tailwindcss": "^4.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^6",
